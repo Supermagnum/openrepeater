@@ -11,6 +11,7 @@
 
 #include <cstdint>
 #include <cstddef>
+#include <algorithm>
 #include <gnuradio/qradiolink/mod_2fsk.h>
 #include <gnuradio/blocks/null_sink.h>
 #include <gnuradio/blocks/vector_source.h>
@@ -39,13 +40,20 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
         auto mod = gr::qradiolink::mod_2fsk::make(sps, samp_rate, carrier_freq, filter_width, fm);
         auto sink = gr::blocks::null_sink::make(sizeof(gr_complex));
         
-        // Create vector source from fuzzer input
-        std::vector<unsigned char> input_data(data, data + size);
-        auto source = gr::blocks::vector_source<unsigned char>::make(input_data, false);
+        // Pad input to minimum size to ensure enough data is processed
+        // This prevents corpus from shrinking to 1-2 bytes which don't exercise code paths
+        // Minimum 64 bytes ensures modulator processes enough data to reach different code paths
+        const size_t min_size = 64;
+        std::vector<unsigned char> input_data;
+        input_data.reserve(std::max(size, min_size));
+        input_data.assign(data, data + size);
+        // Pad with zeros if input is smaller than minimum
+        if (input_data.size() < min_size) {
+            input_data.resize(min_size, 0);
+        }
         
-        // Use head block to limit processing to prevent infinite loops
-        // Limit to input size to ensure we process all fuzzer data
-        auto head = gr::blocks::head::make(sizeof(unsigned char), size);
+        auto source = gr::blocks::vector_source<unsigned char>::make(input_data, false);
+        auto head = gr::blocks::head::make(sizeof(unsigned char), input_data.size());
         
         // Connect blocks
         tb->connect(source, 0, head, 0);

@@ -6,6 +6,10 @@ GNU Radio out-of-tree (OOT) module for QRadioLink blocks.
 
 This module provides GNU Radio blocks for various digital and analog modulation schemes, specialized for amateur radio and digital voice communications.
 
+This module was converted from the [QRadioLink](https://qradiolink.org/) application, which is a multimode SDR transceiver for GNU Radio, ADALM-Pluto, LimeSDR, USRP, and other SDR hardware. The original source code is located at [https://codeberg.org/qradiolink/qradiolink](https://codeberg.org/qradiolink/qradiolink).
+
+The QRadioLink Codeberg page does not mention any crashes or other known issues. The code has been fuzzed extensively using libFuzzer with over 104 million executions across multiple blocks, and no crashes or memory leaks were discovered. However, the codebase could potentially benefit from further fuzzing, particularly for blocks that have not yet been fuzzed (see [fuzzing-results/results.md](fuzzing-results/results.md) for coverage details).
+
 ## Features
 
 ### Modulation/Demodulation Blocks

@@ -20,7 +20,9 @@
 #include <complex>
 
 extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
-    if (size == 0 || size > 2048) {
+    // Require minimum size to ensure enough complex samples are generated
+    // Need at least 128 bytes to generate 64 complex samples (minimum for meaningful processing)
+    if (size < 128 || size > 2048) {
         return 0;
     }
 
@@ -32,16 +34,21 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
         auto sink1 = gr::blocks::null_sink::make(sizeof(gr_complex));
         auto sink2 = gr::blocks::null_sink::make(sizeof(char));
         
+        // Convert bytes to complex samples, ensuring minimum number of samples
+        const size_t min_complex_samples = 32;
         std::vector<gr_complex> complex_data;
-        complex_data.reserve(size / 2);
+        complex_data.reserve(std::max(size / 2, min_complex_samples));
+        
         for (size_t i = 0; i + 1 < size; i += 2) {
             float real = (float)((int8_t)data[i]) / 127.0f;
             float imag = (float)((int8_t)data[i + 1]) / 127.0f;
             complex_data.push_back(gr_complex(real, imag));
         }
         
-        if (complex_data.empty()) {
-            return 0;
+        // Pad with zero complex samples if we don't have enough
+        // This ensures enough data is processed to exercise different code paths
+        while (complex_data.size() < min_complex_samples) {
+            complex_data.push_back(gr_complex(0.0f, 0.0f));
         }
         
         auto source = gr::blocks::vector_source<gr_complex>::make(complex_data, false);

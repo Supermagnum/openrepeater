@@ -10,6 +10,7 @@
 
 #include <cstdint>
 #include <cstddef>
+#include <algorithm>
 #include <gnuradio/qradiolink/mod_qpsk.h>
 #include <gnuradio/blocks/null_sink.h>
 #include <gnuradio/blocks/vector_source.h>
@@ -28,9 +29,19 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
         auto mod = gr::qradiolink::mod_qpsk::make(125, 250000, 1700, 8000);
         auto sink = gr::blocks::null_sink::make(sizeof(gr_complex));
         
-        std::vector<unsigned char> input_data(data, data + size);
+        // Pad input to minimum size to ensure enough data is processed
+        // Prevents corpus from shrinking to 1-2 bytes
+        const size_t min_size = 64;
+        std::vector<unsigned char> input_data;
+        input_data.reserve(std::max(size, min_size));
+        input_data.assign(data, data + size);
+        // Pad with zeros if input is smaller than minimum
+        if (input_data.size() < min_size) {
+            input_data.resize(min_size, 0);
+        }
+        
         auto source = gr::blocks::vector_source<unsigned char>::make(input_data, false);
-        auto head = gr::blocks::head::make(sizeof(unsigned char), size);
+        auto head = gr::blocks::head::make(sizeof(unsigned char), input_data.size());
         
         tb->connect(source, 0, head, 0);
         tb->connect(head, 0, mod, 0);
