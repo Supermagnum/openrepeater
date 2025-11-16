@@ -1,8 +1,8 @@
 tests/CMakeFiles/test_mod_2fsk.dir/test_mod_2fsk.cc.o: \
- /home/haaken/github-projects/qradiolink/gr-qradiolink/tests/test_mod_2fsk.cc \
+ /home/haaken/github-projects/gr-qradiolink/tests/test_mod_2fsk.cc \
  /usr/include/stdc-predef.h \
- /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../include/gnuradio/qradiolink/mod_2fsk.h \
- /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../include/gnuradio/qradiolink/api.h \
+ /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/mod_2fsk.h \
+ /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/api.h \
  /usr/include/gnuradio/attributes.h /usr/include/gnuradio/hier_block2.h \
  /usr/include/gnuradio/api.h /usr/include/gnuradio/basic_block.h \
  /usr/include/gnuradio/io_signature.h /usr/include/spdlog/tweakme.h \

@@ -8,5 +8,14 @@
 ########################################################################
 # Example flowgraphs
 ########################################################################
-# Example flowgraphs will be added here as the module develops
+
+# Install example flowgraphs and Python scripts
+install(FILES
+    nbfm_example.grc
+    m17_demod_example.grc
+    freedv_example.py
+    m17_mod_example.py
+    DESTINATION ${GR_DOC_DIR}/examples/qradiolink
+    COMPONENT examples
+)
 

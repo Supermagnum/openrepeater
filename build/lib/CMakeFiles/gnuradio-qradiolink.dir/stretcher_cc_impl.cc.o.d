@@ -1,5 +1,5 @@
 lib/CMakeFiles/gnuradio-qradiolink.dir/stretcher_cc_impl.cc.o: \
- /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/stretcher_cc_impl.cc \
+ /home/haaken/github-projects/gr-qradiolink/lib/stretcher_cc_impl.cc \
  /usr/include/stdc-predef.h /usr/include/c++/13/climits \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -31,8 +31,8 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/stretcher_cc_impl.cc.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
- /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../include/gnuradio/qradiolink/stretcher_cc.h \
- /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../include/gnuradio/qradiolink/api.h \
+ /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/stretcher_cc.h \
+ /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/api.h \
  /usr/include/gnuradio/attributes.h /usr/include/gnuradio/block.h \
  /usr/include/c++/13/memory /usr/include/c++/13/bits/memoryfwd.h \
  /usr/include/c++/13/bits/allocator.h \
@@ -1054,7 +1054,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/stretcher_cc_impl.cc.o: \
  /usr/include/gmpxx.h /usr/include/c++/13/cfloat \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h \
  /usr/include/x86_64-linux-gnu/gmp.h \
- /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/stretcher_cc_impl.h \
+ /home/haaken/github-projects/gr-qradiolink/lib/stretcher_cc_impl.h \
  /usr/include/volk/volk.h /usr/include/volk/volk_typedefs.h \
  /usr/include/inttypes.h /usr/include/volk/volk_complex.h \
  /usr/include/volk/volk_config_fixed.h /usr/include/volk/volk_common.h \

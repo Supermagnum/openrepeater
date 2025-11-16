@@ -10,7 +10,7 @@
 ########################################################################
 GR_PYTHON_INSTALL(
     FILES __init__.py
-    DESTINATION ${GR_PYTHON_DIR}/qradiolink
+    DESTINATION ${GR_PYTHON_DIR}/gnuradio/qradiolink
 )
 
 ########################################################################

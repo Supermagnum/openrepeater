@@ -29,6 +29,7 @@ outputs:
 -   domain: stream
     dtype: complex
     label: Filtered
+    optional: true
 -   domain: stream
     dtype: float
     label: Audio

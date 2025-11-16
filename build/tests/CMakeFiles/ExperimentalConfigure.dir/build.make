@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/haaken/github-projects/qradiolink/gr-qradiolink
+CMAKE_SOURCE_DIR = /home/haaken/github-projects/gr-qradiolink
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/haaken/github-projects/qradiolink/gr-qradiolink/build
+CMAKE_BINARY_DIR = /home/haaken/github-projects/gr-qradiolink/build
 
 # Utility rule file for ExperimentalConfigure.
 
@@ -67,7 +67,7 @@ include tests/CMakeFiles/ExperimentalConfigure.dir/compiler_depend.make
 include tests/CMakeFiles/ExperimentalConfigure.dir/progress.make
 
 tests/CMakeFiles/ExperimentalConfigure:
-	cd /home/haaken/github-projects/qradiolink/gr-qradiolink/build/tests && /usr/bin/ctest -D ExperimentalConfigure
+	cd /home/haaken/github-projects/gr-qradiolink/build/tests && /usr/bin/ctest -D ExperimentalConfigure
 
 ExperimentalConfigure: tests/CMakeFiles/ExperimentalConfigure
 ExperimentalConfigure: tests/CMakeFiles/ExperimentalConfigure.dir/build.make
@@ -78,10 +78,10 @@ tests/CMakeFiles/ExperimentalConfigure.dir/build: ExperimentalConfigure
 .PHONY : tests/CMakeFiles/ExperimentalConfigure.dir/build
 
 tests/CMakeFiles/ExperimentalConfigure.dir/clean:
-	cd /home/haaken/github-projects/qradiolink/gr-qradiolink/build/tests && $(CMAKE_COMMAND) -P CMakeFiles/ExperimentalConfigure.dir/cmake_clean.cmake
+	cd /home/haaken/github-projects/gr-qradiolink/build/tests && $(CMAKE_COMMAND) -P CMakeFiles/ExperimentalConfigure.dir/cmake_clean.cmake
 .PHONY : tests/CMakeFiles/ExperimentalConfigure.dir/clean
 
 tests/CMakeFiles/ExperimentalConfigure.dir/depend:
-	cd /home/haaken/github-projects/qradiolink/gr-qradiolink/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/haaken/github-projects/qradiolink/gr-qradiolink /home/haaken/github-projects/qradiolink/gr-qradiolink/tests /home/haaken/github-projects/qradiolink/gr-qradiolink/build /home/haaken/github-projects/qradiolink/gr-qradiolink/build/tests /home/haaken/github-projects/qradiolink/gr-qradiolink/build/tests/CMakeFiles/ExperimentalConfigure.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/haaken/github-projects/gr-qradiolink /home/haaken/github-projects/gr-qradiolink/tests /home/haaken/github-projects/gr-qradiolink/build /home/haaken/github-projects/gr-qradiolink/build/tests /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/ExperimentalConfigure.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : tests/CMakeFiles/ExperimentalConfigure.dir/depend
 

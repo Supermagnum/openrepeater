@@ -52,6 +52,10 @@ PYBIND11_MODULE(qradiolink_python, m)
     // (otherwise we will see segmentation faults)
     init_numpy();
 
+    // Ensure GNU Radio's Python module is loaded first
+    // This registers hier_block2 and other base types that our bindings need
+    py::module::import("gnuradio.gr");
+
     m.doc() = "QRadioLink GNU Radio blocks";
 
     // Bind blocks

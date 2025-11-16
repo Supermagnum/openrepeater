@@ -1,5 +1,5 @@
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi_impl.cc.o: \
- /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/demod_mmdvm_multi_impl.cc \
+ /home/haaken/github-projects/gr-qradiolink/lib/demod_mmdvm_multi_impl.cc \
  /usr/include/stdc-predef.h /usr/include/c++/13/climits \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -31,8 +31,8 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi_impl.cc.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
- /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../include/gnuradio/qradiolink/demod_mmdvm_multi.h \
- /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../include/gnuradio/qradiolink/api.h \
+ /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/demod_mmdvm_multi.h \
+ /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/api.h \
  /usr/include/gnuradio/attributes.h /usr/include/gnuradio/hier_block2.h \
  /usr/include/gnuradio/api.h /usr/include/gnuradio/basic_block.h \
  /usr/include/gnuradio/io_signature.h /usr/include/spdlog/tweakme.h \
@@ -1052,7 +1052,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi_impl.cc.o: \
  /usr/include/gnuradio/rpcserver_booter_base.h \
  /usr/include/gnuradio/rpcserver_selector.h \
  /usr/include/gnuradio/config.h /usr/include/gnuradio/block_registry.h \
- /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/demod_mmdvm_multi_impl.h \
+ /home/haaken/github-projects/gr-qradiolink/lib/demod_mmdvm_multi_impl.h \
  /usr/include/gnuradio/filter/firdes.h /usr/include/gnuradio/fft/window.h \
  /usr/include/gnuradio/fft/api.h /usr/include/gnuradio/filter/api.h \
  /usr/include/gnuradio/filter/rational_resampler.h \
@@ -1070,8 +1070,8 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi_impl.cc.o: \
  /usr/include/gnuradio/blocks/api.h \
  /usr/include/gnuradio/blocks/multiply_const.h \
  /usr/include/gnuradio/blocks/rotator_cc.h \
- /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../include/gnuradio/qradiolink/mmdvm_sink.h \
- /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../include/gnuradio/qradiolink/rssi_tag_block.h \
- /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../../src/bursttimer.h \
- /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../../src/config_mmdvm.h \
- /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../../src/config_mmdvm.h
+ /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/mmdvm_sink.h \
+ /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/rssi_tag_block.h \
+ /home/haaken/github-projects/gr-qradiolink/lib/../../qradiolink/src/gr/../../src/bursttimer.h \
+ /home/haaken/github-projects/gr-qradiolink/lib/../../qradiolink/src/config_mmdvm.h \
+ /home/haaken/github-projects/gr-qradiolink/lib/../../qradiolink/src/gr/../../src/config_mmdvm.h

@@ -1,5 +1,5 @@
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_wbfm_python.cc.o: \
- /home/haaken/github-projects/qradiolink/gr-qradiolink/python/qradiolink/bindings/demod_wbfm_python.cc \
+ /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/demod_wbfm_python.cc \
  /usr/include/stdc-predef.h /usr/include/pybind11/complex.h \
  /usr/include/pybind11/pybind11.h /usr/include/pybind11/detail/class.h \
  /usr/include/pybind11/attr.h /usr/include/pybind11/detail/common.h \
@@ -386,8 +386,8 @@ python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_wbfm_python.cc
  /usr/include/c++/13/bits/mask_array.h \
  /usr/include/c++/13/bits/indirect_array.h /usr/include/c++/13/variant \
  /usr/include/c++/13/bits/parse_numbers.h \
- /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../include/gnuradio/qradiolink/demod_wbfm.h \
- /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../include/gnuradio/qradiolink/api.h \
+ /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/demod_wbfm.h \
+ /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/api.h \
  /usr/include/gnuradio/attributes.h /usr/include/gnuradio/hier_block2.h \
  /usr/include/gnuradio/api.h /usr/include/gnuradio/basic_block.h \
  /usr/include/gnuradio/io_signature.h /usr/include/spdlog/tweakme.h \

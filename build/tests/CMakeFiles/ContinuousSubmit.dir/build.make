@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/haaken/github-projects/qradiolink/gr-qradiolink
+CMAKE_SOURCE_DIR = /home/haaken/github-projects/gr-qradiolink
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/haaken/github-projects/qradiolink/gr-qradiolink/build
+CMAKE_BINARY_DIR = /home/haaken/github-projects/gr-qradiolink/build
 
 # Utility rule file for ContinuousSubmit.
 
@@ -67,7 +67,7 @@ include tests/CMakeFiles/ContinuousSubmit.dir/compiler_depend.make
 include tests/CMakeFiles/ContinuousSubmit.dir/progress.make
 
 tests/CMakeFiles/ContinuousSubmit:
-	cd /home/haaken/github-projects/qradiolink/gr-qradiolink/build/tests && /usr/bin/ctest -D ContinuousSubmit
+	cd /home/haaken/github-projects/gr-qradiolink/build/tests && /usr/bin/ctest -D ContinuousSubmit
 
 ContinuousSubmit: tests/CMakeFiles/ContinuousSubmit
 ContinuousSubmit: tests/CMakeFiles/ContinuousSubmit.dir/build.make
@@ -78,10 +78,10 @@ tests/CMakeFiles/ContinuousSubmit.dir/build: ContinuousSubmit
 .PHONY : tests/CMakeFiles/ContinuousSubmit.dir/build
 
 tests/CMakeFiles/ContinuousSubmit.dir/clean:
-	cd /home/haaken/github-projects/qradiolink/gr-qradiolink/build/tests && $(CMAKE_COMMAND) -P CMakeFiles/ContinuousSubmit.dir/cmake_clean.cmake
+	cd /home/haaken/github-projects/gr-qradiolink/build/tests && $(CMAKE_COMMAND) -P CMakeFiles/ContinuousSubmit.dir/cmake_clean.cmake
 .PHONY : tests/CMakeFiles/ContinuousSubmit.dir/clean
 
 tests/CMakeFiles/ContinuousSubmit.dir/depend:
-	cd /home/haaken/github-projects/qradiolink/gr-qradiolink/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/haaken/github-projects/qradiolink/gr-qradiolink /home/haaken/github-projects/qradiolink/gr-qradiolink/tests /home/haaken/github-projects/qradiolink/gr-qradiolink/build /home/haaken/github-projects/qradiolink/gr-qradiolink/build/tests /home/haaken/github-projects/qradiolink/gr-qradiolink/build/tests/CMakeFiles/ContinuousSubmit.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/haaken/github-projects/gr-qradiolink /home/haaken/github-projects/gr-qradiolink/tests /home/haaken/github-projects/gr-qradiolink/build /home/haaken/github-projects/gr-qradiolink/build/tests /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/ContinuousSubmit.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : tests/CMakeFiles/ContinuousSubmit.dir/depend
 

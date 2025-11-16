@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/haaken/github-projects/qradiolink/gr-qradiolink
+CMAKE_SOURCE_DIR = /home/haaken/github-projects/gr-qradiolink
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/haaken/github-projects/qradiolink/gr-qradiolink/build
+CMAKE_BINARY_DIR = /home/haaken/github-projects/gr-qradiolink/build
 
 # Utility rule file for NightlyCoverage.
 
@@ -67,7 +67,7 @@ include tests/CMakeFiles/NightlyCoverage.dir/compiler_depend.make
 include tests/CMakeFiles/NightlyCoverage.dir/progress.make
 
 tests/CMakeFiles/NightlyCoverage:
-	cd /home/haaken/github-projects/qradiolink/gr-qradiolink/build/tests && /usr/bin/ctest -D NightlyCoverage
+	cd /home/haaken/github-projects/gr-qradiolink/build/tests && /usr/bin/ctest -D NightlyCoverage
 
 NightlyCoverage: tests/CMakeFiles/NightlyCoverage
 NightlyCoverage: tests/CMakeFiles/NightlyCoverage.dir/build.make
@@ -78,10 +78,10 @@ tests/CMakeFiles/NightlyCoverage.dir/build: NightlyCoverage
 .PHONY : tests/CMakeFiles/NightlyCoverage.dir/build
 
 tests/CMakeFiles/NightlyCoverage.dir/clean:
-	cd /home/haaken/github-projects/qradiolink/gr-qradiolink/build/tests && $(CMAKE_COMMAND) -P CMakeFiles/NightlyCoverage.dir/cmake_clean.cmake
+	cd /home/haaken/github-projects/gr-qradiolink/build/tests && $(CMAKE_COMMAND) -P CMakeFiles/NightlyCoverage.dir/cmake_clean.cmake
 .PHONY : tests/CMakeFiles/NightlyCoverage.dir/clean
 
 tests/CMakeFiles/NightlyCoverage.dir/depend:
-	cd /home/haaken/github-projects/qradiolink/gr-qradiolink/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/haaken/github-projects/qradiolink/gr-qradiolink /home/haaken/github-projects/qradiolink/gr-qradiolink/tests /home/haaken/github-projects/qradiolink/gr-qradiolink/build /home/haaken/github-projects/qradiolink/gr-qradiolink/build/tests /home/haaken/github-projects/qradiolink/gr-qradiolink/build/tests/CMakeFiles/NightlyCoverage.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/haaken/github-projects/gr-qradiolink /home/haaken/github-projects/gr-qradiolink/tests /home/haaken/github-projects/gr-qradiolink/build /home/haaken/github-projects/gr-qradiolink/build/tests /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/NightlyCoverage.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : tests/CMakeFiles/NightlyCoverage.dir/depend
 

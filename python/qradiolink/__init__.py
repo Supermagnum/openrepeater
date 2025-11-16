@@ -13,6 +13,10 @@ Blocks and utilities for QRadioLink modulation and demodulation schemes.
 
 import os
 
+# Import GNU Radio first to ensure hier_block2 and other base types are registered
+# This is required for pybind11 to recognize the base types when loading our bindings
+import gnuradio
+
 try:
     from .qradiolink_python import *
 except ImportError:

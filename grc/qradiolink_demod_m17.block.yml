@@ -29,9 +29,11 @@ outputs:
 -   domain: stream
     dtype: complex
     label: Filtered
+    optional: true
 -   domain: stream
     dtype: complex
     label: Constellation
+    optional: true
 -   domain: stream
     dtype: byte
     label: Decoded

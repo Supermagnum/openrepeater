@@ -1,4 +1,4 @@
-# Install script for directory: /home/haaken/github-projects/qradiolink/gr-qradiolink/docs/doxygen
+# Install script for directory: /home/haaken/github-projects/gr-qradiolink/docs/doxygen
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

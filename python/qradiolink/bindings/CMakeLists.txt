@@ -67,6 +67,6 @@ endif()
 
 install(
     TARGETS qradiolink_python
-    DESTINATION ${GR_PYTHON_DIR}/qradiolink
+    DESTINATION ${GR_PYTHON_DIR}/gnuradio/qradiolink
     COMPONENT pythonapi)
 

@@ -1,8 +1,8 @@
 tests/CMakeFiles/qradiolink_test_demod_dsss.dir/test_demod_dsss.cc.o: \
- /home/haaken/github-projects/qradiolink/gr-qradiolink/tests/test_demod_dsss.cc \
+ /home/haaken/github-projects/gr-qradiolink/tests/test_demod_dsss.cc \
  /usr/include/stdc-predef.h /usr/include/gnuradio/attributes.h \
- /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../include/gnuradio/qradiolink/demod_dsss.h \
- /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../include/gnuradio/qradiolink/api.h \
+ /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/demod_dsss.h \
+ /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/api.h \
  /usr/include/gnuradio/hier_block2.h /usr/include/gnuradio/api.h \
  /usr/include/gnuradio/basic_block.h /usr/include/gnuradio/io_signature.h \
  /usr/include/spdlog/tweakme.h /usr/include/spdlog/fmt/fmt.h \

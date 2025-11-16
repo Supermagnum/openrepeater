@@ -1,5 +1,5 @@
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_2fsk_python.cc.o: \
- /home/haaken/github-projects/qradiolink/gr-qradiolink/python/qradiolink/bindings/mod_2fsk_python.cc \
+ /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/mod_2fsk_python.cc \
  /usr/include/stdc-predef.h /usr/include/pybind11/pybind11.h \
  /usr/include/pybind11/detail/class.h /usr/include/pybind11/attr.h \
  /usr/include/pybind11/detail/common.h /usr/include/python3.12/Python.h \
@@ -366,8 +366,8 @@ python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_2fsk_python.cc.o
  /usr/include/c++/13/bits/ostream.tcc \
  /usr/include/c++/13/bits/istream.tcc \
  /usr/include/c++/13/bits/sstream.tcc \
- /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../include/gnuradio/qradiolink/mod_2fsk.h \
- /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../include/gnuradio/qradiolink/api.h \
+ /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/mod_2fsk.h \
+ /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/api.h \
  /usr/include/gnuradio/attributes.h /usr/include/gnuradio/hier_block2.h \
  /usr/include/gnuradio/api.h /usr/include/gnuradio/basic_block.h \
  /usr/include/gnuradio/io_signature.h /usr/include/spdlog/tweakme.h \

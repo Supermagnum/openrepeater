@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/haaken/github-projects/qradiolink/gr-qradiolink
+CMAKE_SOURCE_DIR = /home/haaken/github-projects/gr-qradiolink
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/haaken/github-projects/qradiolink/gr-qradiolink/build
+CMAKE_BINARY_DIR = /home/haaken/github-projects/gr-qradiolink/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,9 +142,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/haaken/github-projects/qradiolink/gr-qradiolink/build/CMakeFiles /home/haaken/github-projects/qradiolink/gr-qradiolink/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/haaken/github-projects/gr-qradiolink/build/CMakeFiles /home/haaken/github-projects/gr-qradiolink/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/haaken/github-projects/qradiolink/gr-qradiolink/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/haaken/github-projects/gr-qradiolink/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -172,6 +172,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named uninstall
+
+# Build rule for target.
+uninstall: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 uninstall
+.PHONY : uninstall
+
+# fast build rule for target.
+uninstall/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/build
+.PHONY : uninstall/fast
+
+#=============================================================================
 # Target rules for targets named gnuradio-qradiolink
 
 # Build rule for target.
@@ -185,17 +198,17 @@ gnuradio-qradiolink/fast:
 .PHONY : gnuradio-qradiolink/fast
 
 #=============================================================================
-# Target rules for targets named pygen_python_qradiolink_9b31b396537e2f2d060cf94f41f6c122
+# Target rules for targets named pygen_python_qradiolink_ed0f04db319a629b57d0e77610a5d272
 
 # Build rule for target.
-pygen_python_qradiolink_9b31b396537e2f2d060cf94f41f6c122: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pygen_python_qradiolink_9b31b396537e2f2d060cf94f41f6c122
-.PHONY : pygen_python_qradiolink_9b31b396537e2f2d060cf94f41f6c122
+pygen_python_qradiolink_ed0f04db319a629b57d0e77610a5d272: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pygen_python_qradiolink_ed0f04db319a629b57d0e77610a5d272
+.PHONY : pygen_python_qradiolink_ed0f04db319a629b57d0e77610a5d272
 
 # fast build rule for target.
-pygen_python_qradiolink_9b31b396537e2f2d060cf94f41f6c122/fast:
-	$(MAKE) $(MAKESILENT) -f python/qradiolink/CMakeFiles/pygen_python_qradiolink_9b31b396537e2f2d060cf94f41f6c122.dir/build.make python/qradiolink/CMakeFiles/pygen_python_qradiolink_9b31b396537e2f2d060cf94f41f6c122.dir/build
-.PHONY : pygen_python_qradiolink_9b31b396537e2f2d060cf94f41f6c122/fast
+pygen_python_qradiolink_ed0f04db319a629b57d0e77610a5d272/fast:
+	$(MAKE) $(MAKESILENT) -f python/qradiolink/CMakeFiles/pygen_python_qradiolink_ed0f04db319a629b57d0e77610a5d272.dir/build.make python/qradiolink/CMakeFiles/pygen_python_qradiolink_ed0f04db319a629b57d0e77610a5d272.dir/build
+.PHONY : pygen_python_qradiolink_ed0f04db319a629b57d0e77610a5d272/fast
 
 #=============================================================================
 # Target rules for targets named qradiolink_python
@@ -875,7 +888,8 @@ help:
 	@echo "... NightlySubmit"
 	@echo "... NightlyTest"
 	@echo "... NightlyUpdate"
-	@echo "... pygen_python_qradiolink_9b31b396537e2f2d060cf94f41f6c122"
+	@echo "... pygen_python_qradiolink_ed0f04db319a629b57d0e77610a5d272"
+	@echo "... uninstall"
 	@echo "... gnuradio-qradiolink"
 	@echo "... qradiolink_python"
 	@echo "... qradiolink_test_demod_2fsk"

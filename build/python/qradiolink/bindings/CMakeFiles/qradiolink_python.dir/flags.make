@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -Dqradiolink_python_EXPORTS
 
-CXX_INCLUDES = -I/home/haaken/github-projects/qradiolink/gr-qradiolink/build/python/qradiolink/bindings -I/home/haaken/github-projects/qradiolink/gr-qradiolink/python/qradiolink/bindings/../../lib -I/home/haaken/github-projects/qradiolink/gr-qradiolink/python/qradiolink/bindings/../../include -I/usr/include/pgm-5.3 -I/usr/include/libxml2 -I/home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../include -I/home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../../src/gr/cessb -I/home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../../src/gr -I/home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../.. -isystem /usr/include/python3.12 -isystem /usr/lib/python3/dist-packages/numpy/core/include
+CXX_INCLUDES = -I/home/haaken/github-projects/gr-qradiolink/build/python/qradiolink/bindings -I/home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/../../lib -I/home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/../../include -I/usr/include/pgm-5.3 -I/usr/include/libxml2 -I/usr/include/mit-krb5 -I/home/haaken/github-projects/gr-qradiolink/lib/../include -I/home/haaken/github-projects/gr-qradiolink/lib/../../qradiolink/src/gr/cessb -I/home/haaken/github-projects/gr-qradiolink/lib/../../qradiolink/src/gr -I/home/haaken/github-projects/gr-qradiolink/lib/../../qradiolink -isystem /usr/include/python3.12 -isystem /usr/lib/python3/dist-packages/numpy/core/include
 
-CXX_FLAGS =  -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized -O3 -DNDEBUG -std=c++17 -fPIC -fvisibility=hidden -Wno-unused-variable -Wno-error=deprecated-declarations -flto -fno-fat-lto-objects
+CXX_FLAGS =  -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized -Wignored-qualifiers -Wcast-qual -O3 -DNDEBUG -std=c++17 -fPIC -fvisibility=hidden -Wno-unused-variable -Wno-error=deprecated-declarations -flto -fno-fat-lto-objects
 
