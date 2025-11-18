@@ -1,0 +1,192 @@
+options:
+  parameters:
+    author: gr-packet-protocols
+    catch_exceptions: 'True'
+    category: Packet Protocols
+    cmake_opt: ''
+    comment: AX.25 KISS TNC Example
+    copyright: ''
+    description: Receive and verify signed text messages using NFM and AX.25
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: signed_message_rx
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Signed Message Receiver
+    window_size: (1280, 1024)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [16, 48.0]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '250000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [64, 320.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_0
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: /tmp/verified_message.bin
+    type: byte
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1280, 184.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_source_0
+  id: blocks_file_source
+  parameters:
+    affinity: ''
+    alias: ''
+    begin_tag: pmt.PMT_NIL
+    comment: ''
+    file: /tmp/signed_message_tx.bin
+    length: '0'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    repeat: 'False'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [272, 144.0]
+    rotation: 0
+    state: enabled
+- name: blocks_float_to_char_0
+  id: blocks_float_to_char
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    scale: '127.0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 192.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_0
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\ntry:\n    from gnuradio\
+      \ import nacl\n    NACL_AVAILABLE = True\nexcept ImportError:\n    NACL_AVAILABLE\
+      \ = False\n\nclass blk(gr.sync_block):\n    def __init__(self):\n        gr.sync_block.__init__(self,\
+      \ name='Message Verifier', in_sig=[np.uint8, np.uint8], out_sig=[np.uint8])\n\
+      \        self._msg_buffer = bytearray()\n        self._key_buffer = bytearray()\n\
+      \    def work(self, input_items, output_items):\n        msg_in = input_items[0]\n\
+      \        key_in = input_items[1]\n        if len(msg_in) > 0:\n            self._msg_buffer.extend(msg_in.tolist())\n\
+      \        if len(key_in) > 0:\n            self._key_buffer.extend(key_in.tolist())\n\
+      \            if len(self._key_buffer) > 32:\n                self._key_buffer\
+      \ = self._key_buffer[-32:]\n        # Verify when we have message + signature\
+      \ (separated by 0x00)\n        if len(self._msg_buffer) > 100 and len(self._key_buffer)\
+      \ >= 32:\n            try:\n                sep_idx = self._msg_buffer.find(0)\n\
+      \                if sep_idx > 0 and len(self._msg_buffer) >= sep_idx + 65:\n\
+      \                    msg_bytes = bytes(self._msg_buffer[:sep_idx])\n       \
+      \             sig_bytes = bytes(self._msg_buffer[sep_idx+1:sep_idx+65])\n  \
+      \                  key = bytes(self._key_buffer[:32])\n                    if\
+      \ NACL_AVAILABLE and len(sig_bytes) == 64:\n                        is_valid\
+      \ = nacl.verify_ed25519(msg_bytes, sig_bytes, key)\n                       \
+      \ if is_valid:\n                            n = min(len(output_items[0]), len(msg_bytes))\n\
+      \                            if n > 0:\n                                output_items[0][:n]\
+      \ = np.frombuffer(msg_bytes[:n], dtype=np.uint8)\n                         \
+      \       self._msg_buffer = self._msg_buffer[sep_idx+65:]\n                 \
+      \               return n\n                    self._msg_buffer = self._msg_buffer[sep_idx+65:]\n\
+      \            except:\n                pass\n        return 0"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: ('Message Verifier', 'blk', [], [('0', 'byte', 1), ('1', 'byte', 1)],
+      [('0', 'byte', 1)], '', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [992, 192.0]
+    rotation: 0
+    state: enabled
+- name: linux_crypto_kernel_keyring_source_0
+  id: linux_crypto_kernel_keyring_source
+  parameters:
+    affinity: ''
+    alias: ''
+    auto_repeat: 'False'
+    comment: ''
+    key_id: '0'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [512, 304.0]
+    rotation: 0
+    state: enabled
+- name: qradiolink_demod_nbfm_0
+  id: qradiolink_demod_nbfm
+  parameters:
+    affinity: ''
+    alias: ''
+    carrier_freq: '1700'
+    comment: ''
+    filter_width: '8000'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate
+    sps: '125'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [512, 152.0]
+    rotation: 0
+    state: enabled
+
+connections:
+- [blocks_file_source_0, '0', qradiolink_demod_nbfm_0, '0']
+- [blocks_float_to_char_0, '0', epy_block_0, '0']
+- [epy_block_0, '0', blocks_file_sink_0, '0']
+- [linux_crypto_kernel_keyring_source_0, '0', epy_block_0, '1']
+- [qradiolink_demod_nbfm_0, '1', blocks_float_to_char_0, '0']
+
+metadata:
+  file_format: 1
+  grc_version: 3.10.12.0

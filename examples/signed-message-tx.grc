@@ -1,0 +1,414 @@
+options:
+  parameters:
+    author: gr-packet-protocols
+    catch_exceptions: 'True'
+    category: Packet Protocols
+    cmake_opt: ''
+    comment: AX.25 KISS TNC Example
+    copyright: ''
+    description: Transmit signed text messages using NFM and AX.25
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: signed_message_tx
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Signed Message Transmitter
+    window_size: (1280, 1024)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [24, 40.0]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: dest_callsign
+  id: variable_qtgui_entry
+  parameters:
+    comment: ''
+    entry_signal: editingFinished
+    gui_hint: ''
+    label: Dest Callsign
+    type: string
+    value: N0CALL
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [376, 16.0]
+    rotation: 0
+    state: enabled
+- name: message_text
+  id: variable_qtgui_entry
+  parameters:
+    comment: ''
+    entry_signal: editingFinished
+    gui_hint: 0,0,2,1
+    label: Message Text
+    type: string
+    value: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [624, 160.0]
+    rotation: 0
+    state: enabled
+- name: nitrokey_slot
+  id: variable_qtgui_entry
+  parameters:
+    comment: ''
+    entry_signal: editingFinished
+    gui_hint: ''
+    label: Nitrokey Slot
+    type: int
+    value: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [568, 16.0]
+    rotation: 0
+    state: enabled
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '48000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [16, 584.0]
+    rotation: 0
+    state: enabled
+- name: send_button
+  id: variable_qtgui_push_button
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: Send
+    pressed: '1'
+    released: '0'
+    type: int
+    value: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [216, 120.0]
+    rotation: 0
+    state: enabled
+- name: src_callsign
+  id: variable_qtgui_entry
+  parameters:
+    comment: ''
+    entry_signal: editingFinished
+    gui_hint: ''
+    label: Src Callsign
+    type: string
+    value: N0CALL
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [208, 16.0]
+    rotation: 0
+    state: enabled
+- name: use_pkcs11
+  id: variable_qtgui_check_box
+  parameters:
+    comment: ''
+    'false': 'False'
+    gui_hint: ''
+    label: Use PKCS#11 (unchecked = Kernel Keyring)
+    'true': 'True'
+    type: bool
+    value: 'True'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 128.0]
+    rotation: 0
+    state: enabled
+- name: audio_source_0
+  id: audio_source
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    device_name: default
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_outputs: '1'
+    ok_to_block: 'True'
+    samp_rate: samp_rate
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [800, 176.0]
+    rotation: 0
+    state: enabled
+- name: blocks_char_to_float_0
+  id: blocks_char_to_float
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    scale: 1.0/127.0
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [952, 336.0]
+    rotation: 0
+    state: enabled
+- name: blocks_null_sink_0
+  id: blocks_null_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    bus_structure_sink: '[[0,],]'
+    comment: ''
+    num_inputs: '1'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1536, 328.0]
+    rotation: 0
+    state: enabled
+- name: blocks_throttle2_0
+  id: blocks_throttle2
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    limit: auto
+    maximum: '0.1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: byte
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [544, 328.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_0
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport os\n\ntry:\n\
+      \    from pkcs11 import lib as pkcs11_lib\n    from pkcs11 import Token\n  \
+      \  from pkcs11.constants import UserType, ObjectClass, KeyType, Mechanism\n\
+      \    PKCS11_AVAILABLE = True\nexcept ImportError:\n    PKCS11_AVAILABLE = False\n\
+      \ntry:\n    from gnuradio import nacl\n    NACL_AVAILABLE = True\nexcept ImportError:\n\
+      \    NACL_AVAILABLE = False\n\nclass blk(gr.sync_block):\n    def __init__(self):\n\
+      \        gr.sync_block.__init__(\n            self,\n            name='Message\
+      \ Signer (PKCS#11/Kernel Keyring)',\n            in_sig=[np.uint8],  # Key data\
+      \ from kernel keyring (fallback)\n            out_sig=[np.uint8]\n        )\n\
+      \        self._key_buffer = bytearray()\n        self._signed_msg = None\n \
+      \       self._output_idx = 0\n        self._last_send = False\n        self._pkcs11_lib\
+      \ = None\n        self._use_pkcs11 = True  # Default to PKCS#11\n        \n\
+      \        if PKCS11_AVAILABLE:\n            self._init_pkcs11()\n    \n    def\
+      \ _init_pkcs11(self):\n        lib_paths = [\n            '/usr/lib/x86_64-linux-gnu/opensc-pkcs11.so',\n\
+      \            '/usr/lib/opensc-pkcs11.so',\n            '/usr/lib/x86_64-linux-gnu/p11-kit-proxy.so',\n\
+      \            '/usr/lib/p11-kit-proxy.so',\n        ]\n        for path in lib_paths:\n\
+      \            if os.path.exists(path):\n                try:\n              \
+      \      self._pkcs11_lib = pkcs11_lib(path)\n                    print(f\"PKCS#11:\
+      \ Loaded {path}\")\n                    return True\n                except\
+      \ Exception as e:\n                    continue\n        return False\n    \n\
+      \    def _get_token(self, pin=None):\n        if not self._pkcs11_lib:\n   \
+      \         return None\n        try:\n            tokens = self._pkcs11_lib.get_tokens()\n\
+      \            if not tokens:\n                return None\n            token\
+      \ = tokens[0]\n            if pin:\n                token.open(UserType.USER,\
+      \ pin.encode())\n            else:\n                try:\n                 \
+      \   token.open(UserType.USER)\n                except:\n                   \
+      \ return None\n            return token\n        except:\n            return\
+      \ None\n    \n    def _sign_with_pkcs11(self, data, pin=None):\n        if not\
+      \ PKCS11_AVAILABLE or not self._pkcs11_lib:\n            return None\n     \
+      \   try:\n            token = self._get_token(pin)\n            if not token:\n\
+      \                return None\n            session = token.open(UserType.USER,\
+      \ pin.encode() if pin else None)\n            private_keys = session.get_objects({ObjectClass.PRIVATE_KEY,\
+      \ KeyType.EC})\n            if not private_keys:\n                return None\n\
+      \            signature = private_keys[0].sign(data, mechanism=Mechanism.ECDSA)\n\
+      \            return signature\n        except Exception as e:\n            print(f\"\
+      PKCS#11 signing error: {e}\")\n            return None\n    \n    def work(self,\
+      \ input_items, output_items):\n        # Check configuration\n        try:\n\
+      \            import __main__\n            if hasattr(__main__, 'use_pkcs11'):\n\
+      \                self._use_pkcs11 = getattr(__main__, 'use_pkcs11').value()\n\
+      \        except:\n            pass\n        \n        # Collect key data from\
+      \ kernel keyring (if not using PKCS#11)\n        key_in = input_items[0]\n \
+      \       if len(key_in) > 0 and not self._use_pkcs11:\n            self._key_buffer.extend(key_in.tolist())\n\
+      \            if len(self._key_buffer) > 32:\n                self._key_buffer\
+      \ = self._key_buffer[-32:]\n        \n        try:\n            import __main__\n\
+      \            if hasattr(__main__, 'send_button'):\n                btn = getattr(__main__,\
+      \ 'send_button')\n                if btn.value() and not self._last_send:\n\
+      \                    if hasattr(__main__, 'message_text'):\n               \
+      \         msg = getattr(__main__, 'message_text').value()\n                \
+      \        if msg:\n                            msg_bytes = msg.encode('utf-8')\n\
+      \                            signature = None\n                            \n\
+      \                            # Use PKCS#11 if configured\n                 \
+      \           if self._use_pkcs11:\n                                signature\
+      \ = self._sign_with_pkcs11(msg_bytes)\n                            \n      \
+      \                      # Fallback to kernel keyring + nacl\n               \
+      \             if not signature and len(self._key_buffer) >= 32 and NACL_AVAILABLE:\n\
+      \                                key = bytes(self._key_buffer[:32])\n      \
+      \                          signature = nacl.sign_ed25519(msg_bytes, key)\n \
+      \                           \n                            if signature:\n  \
+      \                              self._signed_msg = msg_bytes + b'\\x00' + signature\n\
+      \                                self._output_idx = 0\n                \n  \
+      \              self._last_send = btn.value()\n        except Exception as e:\n\
+      \            pass\n        \n        if self._signed_msg and self._output_idx\
+      \ < len(self._signed_msg):\n            n = min(len(output_items[0]), len(self._signed_msg)\
+      \ - self._output_idx)\n            if n > 0:\n                output_items[0][:n]\
+      \ = np.frombuffer(\n                    self._signed_msg[self._output_idx:self._output_idx+n],\n\
+      \                    dtype=np.uint8\n                )\n                self._output_idx\
+      \ += n\n                if self._output_idx >= len(self._signed_msg):\n    \
+      \                self._signed_msg = None\n                    self._output_idx\
+      \ = 0\n                return n\n        \n        if len(output_items[0]) >\
+      \ 0:\n            output_items[0][:len(output_items[0])] = 0\n            return\
+      \ len(output_items[0])\n        return 0"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: ('Message Signer (PKCS#11/Kernel Keyring)', 'blk', [], [('0', 'byte',
+      1)], [('0', 'byte', 1)], '', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [240, 344.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\n\n\nclass blk(gr.sync_block):\n\
+      \    def __init__(self, silence_threshold=1e-3, hold_samples=2400):\n      \
+      \  gr.sync_block.__init__(\n            self,\n            name='Audio/Data\
+      \ Scheduler',\n            in_sig=[np.float32, np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self._thresh = float(silence_threshold)\n        self._hold\
+      \ = max(1, int(hold_samples))\n        self._silence = self._hold\n\n    def\
+      \ work(self, input_items, output_items):\n        audio = input_items[0]\n \
+      \       data = input_items[1]\n        out = output_items[0]\n        n = min(len(out),\
+      \ len(audio), len(data))\n        for i in range(n):\n            sample = audio[i]\n\
+      \            if abs(sample) > self._thresh:\n                out[i] = sample\n\
+      \                self._silence = 0\n                continue\n            if\
+      \ self._silence < self._hold:\n                out[i] = sample\n           \
+      \     self._silence += 1\n                continue\n            data_sample\
+      \ = data[i]\n            if abs(data_sample) > 1e-12:\n                out[i]\
+      \ = data_sample\n                continue\n            out[i] = 0.0\n      \
+      \  return n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    hold_samples: '2400'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    silence_threshold: '0.001'
+  states:
+    _io_cache: ('Audio/Data Scheduler', 'blk', [('silence_threshold', '0.001'), ('hold_samples',
+      '2400')], [('0', 'float', 1), ('1', 'float', 1)], [('0', 'float', 1)], '', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1120, 312.0]
+    rotation: 0
+    state: enabled
+- name: linux_crypto_kernel_keyring_source_0
+  id: linux_crypto_kernel_keyring_source
+  parameters:
+    affinity: ''
+    alias: ''
+    auto_repeat: 'False'
+    comment: ''
+    key_id: '0'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [40, 328.0]
+    rotation: 0
+    state: enabled
+- name: packet_protocols_ax25_encoder_0
+  id: packet_protocols_ax25_encoder
+  parameters:
+    affinity: ''
+    alias: ''
+    command_response: 'False'
+    comment: AX.25 Encoder
+    dest_callsign: dest_callsign
+    dest_ssid: '0'
+    digipeaters: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    poll_final: 'False'
+    src_callsign: src_callsign
+    src_ssid: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [720, 284.0]
+    rotation: 0
+    state: enabled
+- name: qradiolink_mod_nbfm_0
+  id: qradiolink_mod_nbfm
+  parameters:
+    affinity: ''
+    alias: ''
+    carrier_freq: '1700'
+    comment: ''
+    filter_width: '8000'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate
+    sps: '125'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1320, 296.0]
+    rotation: 0
+    state: enabled
+
+connections:
+- [audio_source_0, '0', epy_block_1, '0']
+- [blocks_char_to_float_0, '0', epy_block_1, '1']
+- [blocks_throttle2_0, '0', packet_protocols_ax25_encoder_0, '0']
+- [epy_block_0, '0', blocks_throttle2_0, '0']
+- [epy_block_1, '0', qradiolink_mod_nbfm_0, '0']
+- [linux_crypto_kernel_keyring_source_0, '0', epy_block_0, '0']
+- [packet_protocols_ax25_encoder_0, '0', blocks_char_to_float_0, '0']
+- [qradiolink_mod_nbfm_0, '0', blocks_null_sink_0, '0']
+
+metadata:
+  file_format: 1
+  grc_version: 3.10.12.0

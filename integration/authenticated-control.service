@@ -1,0 +1,37 @@
+[Unit]
+Description=Authenticated Repeater Control Service
+Documentation=https://github.com/Supermagnum/openrepeater
+After=network.target svxlink.service
+Wants=svxlink.service
+
+[Service]
+Type=simple
+User=svxlink
+Group=svxlink
+WorkingDirectory=/usr/local/share/authenticated-repeater
+
+# Main command handler
+ExecStart=/usr/bin/python3 /usr/local/share/authenticated-repeater/authenticated_command_handler.py
+
+# Restart policy
+Restart=always
+RestartSec=10
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/log/authenticated-repeater /etc/authenticated-repeater
+
+# Resource limits
+LimitNOFILE=1024
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=authenticated-control
+
+[Install]
+WantedBy=multi-user.target
+
