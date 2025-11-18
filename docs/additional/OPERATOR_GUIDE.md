@@ -168,6 +168,22 @@ STATUS
 3. Transmit using your radio setup
 4. Command will be received, verified, and executed automatically
 
+### Using PTT Button
+
+For manual PTT control:
+
+1. **Prepare your command** (sign and format)
+2. **Press and hold PTT button** before transmission
+3. **Transmit the command** (two frames: command + signature)
+4. **Release PTT button** after transmission completes
+
+**PTT Timing:**
+- Press PTT 50-100ms before starting transmission
+- Hold PTT for entire transmission duration
+- Keep PTT active 100-200ms after transmission ends (hang time)
+
+For detailed PTT setup and usage, see [PTT Button Usage Guide](PTT_BUTTON_USAGE.md).
+
 ### Command Format for Transmission
 
 The full command format for transmission is:

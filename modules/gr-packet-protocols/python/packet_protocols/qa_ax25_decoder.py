@@ -7,15 +7,18 @@
 #
 
 from gnuradio import gr, gr_unittest
+
 # from gnuradio import blocks
 try:
     from gnuradio.packet_protocols import ax25_decoder
 except ImportError:
     import os
     import sys
+
     dirname, filename = os.path.split(os.path.abspath(__file__))
     sys.path.append(os.path.join(dirname, "bindings"))
     from gnuradio.packet_protocols import ax25_decoder
+
 
 class qa_ax25_decoder(gr_unittest.TestCase):
 
@@ -35,5 +38,5 @@ class qa_ax25_decoder(gr_unittest.TestCase):
         # check data
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     gr_unittest.run(qa_ax25_decoder)

@@ -98,11 +98,28 @@ sudo ./install_authenticated_modules.sh
 
 This will:
 1. Install GNU Radio (if not present)
-2. Build and install GNU Radio OOT modules
-3. Set up Python environment and dependencies
-4. Create key management directories
-5. Install systemd service
-6. Verify installation
+2. Install all dependencies including web stack (Nginx, PHP, SQLite)
+3. Build and install GNU Radio OOT modules
+4. Set up Python environment and dependencies
+5. Create key management directories
+6. Install systemd service
+7. Verify installation
+
+### Uninstallation
+
+To uninstall the authenticated control system:
+
+```bash
+cd integration
+sudo ./uninstall_authenticated_modules.sh
+```
+
+This will:
+1. Stop and disable services
+2. Remove systemd service files
+3. Remove GNU Radio OOT modules
+4. Remove Python packages
+5. Optionally remove configuration, logs, and flowgraphs
 
 ## Configuration
 
@@ -346,9 +363,12 @@ python3 -c "import yaml; yaml.safe_load(open('/etc/authenticated-repeater/config
 
 ### Installation & Configuration
 
-- **[Installation Guide](docs/additional/INSTALLATION.md)** - Complete installation guide for GNU Radio OOT modules
+- **[Installation Guide](docs/additional/INSTALLATION.md)** - Complete installation guide for GNU Radio OOT modules (includes LAMP stack dependencies)
 - **[Configuration Guide](docs/additional/CONFIGURATION.md)** - Configuration guide for repeater operators
 - **[Troubleshooting Guide](docs/additional/TROUBLESHOOTING.md)** - Troubleshooting common issues
+- **[Module Usage Guide](docs/additional/MODULE_USAGE.md)** - How to use GNU Radio OOT modules in flowgraphs
+- **[PTT Button Usage Guide](docs/additional/PTT_BUTTON_USAGE.md)** - Complete guide for Push-To-Talk button setup and usage
+- **[Uninstall Guide](docs/UNINSTALL.md)** - Complete uninstallation instructions
 
 ### Security & Testing
 
@@ -373,12 +393,15 @@ GPL-3.0 - See LICENSE files in individual repositories
 
 ## Contributing
 
-Contributions welcome! Please:
+Contributions welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
+Quick summary:
 1. Follow code quality standards (see below)
 2. Test on real hardware when possible
 3. Document your changes
 4. Submit pull requests with clear descriptions
+
+For complete contribution guidelines, including development setup, coding standards, and pull request process, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Code Quality
 

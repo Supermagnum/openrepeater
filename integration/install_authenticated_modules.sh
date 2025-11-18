@@ -11,7 +11,7 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-BASE_DIR="/usr/src"
+# BASE_DIR="/usr/src"  # Reserved for future use
 
 ################################################################################
 # Check prerequisites
@@ -32,6 +32,7 @@ fi
 ################################################################################
 
 if [ -f "$SCRIPT_DIR/../openrepeater/scripts/functions/functions_authenticated_control.sh" ]; then
+    # shellcheck source=../openrepeater/scripts/functions/functions_authenticated_control.sh
     source "$SCRIPT_DIR/../openrepeater/scripts/functions/functions_authenticated_control.sh"
 else
     echo "ERROR: functions_authenticated_control.sh not found"

@@ -1,5 +1,7 @@
+dev
 log
 sounds
+install
 install/sql/openrepeater.db
 
 # Windows image file caches
@@ -45,6 +47,3 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
-*.db
-install/sql/openrepeater.db
-

@@ -61,6 +61,26 @@ function install_authenticated_control () {
 	libboost-thread-dev
 	libboost-filesystem-dev
 	swig			# Python bindings generator
+	# Web stack dependencies (for OpenRepeater integration)
+	nginx			# Web server
+	nginx-extras		# Extended nginx features
+	php8.2-fpm		# PHP FastCGI Process Manager
+	php8.2-common		# Common PHP files
+	php8.2-cli		# PHP command line interface
+	php8.2-curl		# PHP cURL extension
+	php8.2-dev		# PHP development files
+	php8.2-gd		# PHP GD graphics library
+	php8.2-mbstring		# PHP multibyte string support
+	php8.2-sqlite3		# PHP SQLite3 support
+	php8.2-xml		# PHP XML support
+	php8.2-xmlrpc		# PHP XML-RPC support
+	php8.2-zip		# PHP ZIP support
+	php-memcached		# PHP memcached extension
+	php-imagick		# PHP ImageMagick extension
+	php-ssh2		# PHP SSH2 extension
+	sqlite3			# SQLite database
+	memcached		# Memcached server
+	ssl-cert		# SSL certificates
 	)
 	
 	apt install "${args[@]}"
@@ -194,8 +214,16 @@ EOF
 	mkdir -p /usr/local/share/authenticated-repeater/flowgraphs
 	
 	# Copy flowgraphs if they exist in the integration directory
+	# Try multiple possible paths for flowgraphs
+	FLOWGRAPH_DIR=""
 	if [ -d "$SCRIPT_DIR/../integration/flowgraphs" ]; then
-		cp -r "$SCRIPT_DIR/../integration/flowgraphs"/* /usr/local/share/authenticated-repeater/flowgraphs/ 2>/dev/null || true
+		FLOWGRAPH_DIR="$SCRIPT_DIR/../integration/flowgraphs"
+	elif [ -d "$SCRIPT_DIR/../../integration/flowgraphs" ]; then
+		FLOWGRAPH_DIR="$SCRIPT_DIR/../../integration/flowgraphs"
+	fi
+	
+	if [ -n "$FLOWGRAPH_DIR" ] && [ -d "$FLOWGRAPH_DIR" ]; then
+		cp -r "$FLOWGRAPH_DIR"/* /usr/local/share/authenticated-repeater/flowgraphs/ 2>/dev/null || true
 	fi
 	
 	# Set permissions
@@ -208,8 +236,18 @@ EOF
 	##########################################
 	
 	# Copy service file if it exists
+	# Try multiple possible paths for the service file
+	SERVICE_FILE=""
 	if [ -f "$SCRIPT_DIR/../integration/authenticated-control.service" ]; then
-		cp "$SCRIPT_DIR/../integration/authenticated-control.service" /etc/systemd/system/
+		SERVICE_FILE="$SCRIPT_DIR/../integration/authenticated-control.service"
+	elif [ -f "$SCRIPT_DIR/../../integration/authenticated-control.service" ]; then
+		SERVICE_FILE="$SCRIPT_DIR/../../integration/authenticated-control.service"
+	elif [ -f "/home/haaken/github-projects/authenticated-repeater-control/integration/authenticated-control.service" ]; then
+		SERVICE_FILE="/home/haaken/github-projects/authenticated-repeater-control/integration/authenticated-control.service"
+	fi
+	
+	if [ -n "$SERVICE_FILE" ] && [ -f "$SERVICE_FILE" ]; then
+		cp "$SERVICE_FILE" /etc/systemd/system/
 		systemctl daemon-reload
 		systemctl enable authenticated-control.service
 		echo "Service installed and enabled (not started yet)"

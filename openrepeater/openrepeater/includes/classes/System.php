@@ -5,7 +5,7 @@
 
 class System {
 
-	public function orp_helper_call($section, $subfunc) {
+	private function orp_helper_call($section, $subfunc) {
 		return shell_exec( "sudo orp_helper " . trim($section) . " " . trim($subfunc) );
 	}
 
@@ -21,8 +21,7 @@ class System {
 			'datetime' => date( 'Y/m/d H:i:s', time() ),
 			'date' => date( 'd M Y', time() ),
 			'time' => date( 'H:i:s', time() ),
-// 			'tz_long' => $systemTimeZone,
-			'tz_long' => date_default_timezone_get(),
+			'tz_long' => $systemTimeZone,
 			'tz_short' => date( 'T', time() ),
 		];
 	}
@@ -132,17 +131,7 @@ class System {
 
 	public function svxlink_status() {
 		$status = $this->orp_helper_call('svxlink', 'status');
-		if ($status) {
-			return trim($status);
-		} else {
-			return 'not_available';
-		}
- 	}
-
-	// stop, start, restart
-	public function svxlink_state($state) {
-		$result = $this->orp_helper_call('svxlink', $state);
-		return trim($result);
+		return trim($status);
  	}
 
 
@@ -221,12 +210,7 @@ class System {
 			$count++;
 		}
 		
-		if ($diskArray) {
-			return $diskArray;
-		} else {
-			return ['status' => 'not_available'];
-		}
-
+		return $diskArray;
 	}
 
 

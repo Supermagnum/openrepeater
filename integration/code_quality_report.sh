@@ -30,14 +30,11 @@ This report contains results from all code quality tools run on the authenticate
 EOF
 
 # Count files
-PYTHON_FILES=$(find "$PROJECT_ROOT" -name "*.py" -type f | grep -v __pycache__ | grep -v ".pyc" | wc -l)
-SHELL_FILES=$(find "$PROJECT_ROOT" -name "*.sh" -type f | wc -l)
+PYTHON_FILES=$(find "$PROJECT_ROOT" -name "*.py" -type f | grep -v __pycache__ | grep -v ".pyc" | grep -c . || true)
+SHELL_FILES=$(find "$PROJECT_ROOT" -name "*.sh" -type f | grep -c . || true)
 
 echo "Found $PYTHON_FILES Python files and $SHELL_FILES shell scripts"
 echo ""
-
-# Python files
-PYTHON_FILES_LIST=$(find "$PROJECT_ROOT" -name "*.py" -type f | grep -v __pycache__ | grep -v ".pyc")
 
 # Shell files
 SHELL_FILES_LIST=$(find "$PROJECT_ROOT" -name "*.sh" -type f)
@@ -57,12 +54,14 @@ echo "" >> "$REPORT_FILE"
 # Bandit - Security scanner
 echo "Running bandit (security scanner)..."
 {
-    echo "### Bandit (Security Scanner)" >> "$REPORT_FILE"
-    echo "" >> "$REPORT_FILE"
-    echo "\`\`\`" >> "$REPORT_FILE"
-    bandit -r "$PROJECT_ROOT/integration" -f json 2>&1 | tee /tmp/bandit_output.json || true
-    echo "\`\`\`" >> "$REPORT_FILE"
-    echo "" >> "$REPORT_FILE"
+    {
+        echo "### Bandit (Security Scanner)"
+        echo ""
+        echo "\`\`\`"
+        bandit -r "$PROJECT_ROOT/integration" -f json 2>&1 | tee /tmp/bandit_output.json || true
+        echo "\`\`\`"
+        echo ""
+    } >> "$REPORT_FILE"
     
     # Count issues
     if [ -f /tmp/bandit_output.json ]; then
@@ -79,12 +78,14 @@ echo "Running bandit (security scanner)..."
 # Flake8 - Style guide
 echo "Running flake8 (PEP 8 style checker)..."
 {
-    echo "### Flake8 (PEP 8 Style Checker)" >> "$REPORT_FILE"
-    echo "" >> "$REPORT_FILE"
-    echo "\`\`\`" >> "$REPORT_FILE"
-    flake8 "$PROJECT_ROOT/integration" --max-line-length=120 --extend-ignore=E501,W503 2>&1 | tee /tmp/flake8_output.txt || true
-    echo "\`\`\`" >> "$REPORT_FILE"
-    echo "" >> "$REPORT_FILE"
+    {
+        echo "### Flake8 (PEP 8 Style Checker)"
+        echo ""
+        echo "\`\`\`"
+        flake8 "$PROJECT_ROOT/integration" --max-line-length=120 --extend-ignore=E501,W503 2>&1 | tee /tmp/flake8_output.txt || true
+        echo "\`\`\`"
+        echo ""
+    } >> "$REPORT_FILE"
     
     FLAKE8_COUNT=$(wc -l < /tmp/flake8_output.txt 2>/dev/null || echo "0")
     echo "**Issues found:** $FLAKE8_COUNT" >> "$REPORT_FILE"
@@ -95,12 +96,14 @@ echo "Running flake8 (PEP 8 style checker)..."
 # Pylint - Comprehensive analysis
 echo "Running pylint (comprehensive analysis)..."
 {
-    echo "### Pylint (Comprehensive Analysis)" >> "$REPORT_FILE"
-    echo "" >> "$REPORT_FILE"
-    echo "\`\`\`" >> "$REPORT_FILE"
-    pylint "$PROJECT_ROOT/integration/authenticated_command_handler.py" --max-line-length=120 --disable=C0103,C0114,C0115,C0116 2>&1 | tail -50 | tee /tmp/pylint_output.txt || true
-    echo "\`\`\`" >> "$REPORT_FILE"
-    echo "" >> "$REPORT_FILE"
+    {
+        echo "### Pylint (Comprehensive Analysis)"
+        echo ""
+        echo "\`\`\`"
+        pylint "$PROJECT_ROOT/integration/authenticated_command_handler.py" --max-line-length=120 --disable=C0103,C0114,C0115,C0116 2>&1 | tail -50 | tee /tmp/pylint_output.txt || true
+        echo "\`\`\`"
+        echo ""
+    } >> "$REPORT_FILE"
     
     PYLINT_ERRORS=$(grep -c "error" /tmp/pylint_output.txt 2>/dev/null || echo "0")
     PYLINT_WARNINGS=$(grep -c "warning" /tmp/pylint_output.txt 2>/dev/null || echo "0")
@@ -111,12 +114,14 @@ echo "Running pylint (comprehensive analysis)..."
 # Vulture - Dead code detection
 echo "Running vulture (dead code detection)..."
 {
-    echo "### Vulture (Dead Code Detection)" >> "$REPORT_FILE"
-    echo "" >> "$REPORT_FILE"
-    echo "\`\`\`" >> "$REPORT_FILE"
-    vulture "$PROJECT_ROOT/integration" --min-confidence=80 2>&1 | tee /tmp/vulture_output.txt || true
-    echo "\`\`\`" >> "$REPORT_FILE"
-    echo "" >> "$REPORT_FILE"
+    {
+        echo "### Vulture (Dead Code Detection)"
+        echo ""
+        echo "\`\`\`"
+        vulture "$PROJECT_ROOT/integration" --min-confidence=80 2>&1 | tee /tmp/vulture_output.txt || true
+        echo "\`\`\`"
+        echo ""
+    } >> "$REPORT_FILE"
     
     VULTURE_COUNT=$(wc -l < /tmp/vulture_output.txt 2>/dev/null || echo "0")
     echo "**Unused code found:** $VULTURE_COUNT items" >> "$REPORT_FILE"
@@ -126,12 +131,14 @@ echo "Running vulture (dead code detection)..."
 # Black - Code formatting check
 echo "Running black (code formatting check)..."
 {
-    echo "### Black (Code Formatting Check)" >> "$REPORT_FILE"
-    echo "" >> "$REPORT_FILE"
-    echo "\`\`\`" >> "$REPORT_FILE"
-    black --check "$PROJECT_ROOT/integration" 2>&1 | tee /tmp/black_output.txt || true
-    echo "\`\`\`" >> "$REPORT_FILE"
-    echo "" >> "$REPORT_FILE"
+    {
+        echo "### Black (Code Formatting Check)"
+        echo ""
+        echo "\`\`\`"
+        black --check "$PROJECT_ROOT/integration" 2>&1 | tee /tmp/black_output.txt || true
+        echo "\`\`\`"
+        echo ""
+    } >> "$REPORT_FILE"
     
     BLACK_COUNT=$(grep -c "would reformat" /tmp/black_output.txt 2>/dev/null || echo "0")
     echo "**Files needing reformatting:** $BLACK_COUNT" >> "$REPORT_FILE"
@@ -141,12 +148,14 @@ echo "Running black (code formatting check)..."
 # isort - Import sorting check
 echo "Running isort (import sorting check)..."
 {
-    echo "### isort (Import Sorting Check)" >> "$REPORT_FILE"
-    echo "" >> "$REPORT_FILE"
-    echo "\`\`\`" >> "$REPORT_FILE"
-    isort --check-only "$PROJECT_ROOT/integration" 2>&1 | tee /tmp/isort_output.txt || true
-    echo "\`\`\`" >> "$REPORT_FILE"
-    echo "" >> "$REPORT_FILE"
+    {
+        echo "### isort (Import Sorting Check)"
+        echo ""
+        echo "\`\`\`"
+        isort --check-only "$PROJECT_ROOT/integration" 2>&1 | tee /tmp/isort_output.txt || true
+        echo "\`\`\`"
+        echo ""
+    } >> "$REPORT_FILE"
     
     ISORT_COUNT=$(grep -c "would be reformatted" /tmp/isort_output.txt 2>/dev/null || echo "0")
     echo "**Files needing import sorting:** $ISORT_COUNT" >> "$REPORT_FILE"
@@ -163,15 +172,17 @@ echo "" >> "$REPORT_FILE"
 # Shellcheck
 echo "Running shellcheck (shell script analysis)..."
 {
-    echo "### Shellcheck (Shell Script Analysis)" >> "$REPORT_FILE"
-    echo "" >> "$REPORT_FILE"
-    echo "\`\`\`" >> "$REPORT_FILE"
-    for file in $SHELL_FILES_LIST; do
-        echo "Checking: $file"
-        shellcheck "$file" 2>&1 || true
-    done | tee /tmp/shellcheck_output.txt
-    echo "\`\`\`" >> "$REPORT_FILE"
-    echo "" >> "$REPORT_FILE"
+    {
+        echo "### Shellcheck (Shell Script Analysis)"
+        echo ""
+        echo "\`\`\`"
+        for file in $SHELL_FILES_LIST; do
+            echo "Checking: $file"
+            shellcheck "$file" 2>&1 || true
+        done | tee /tmp/shellcheck_output.txt
+        echo "\`\`\`"
+        echo ""
+    } >> "$REPORT_FILE"
     
     SHELLCHECK_COUNT=$(grep -c "SC" /tmp/shellcheck_output.txt 2>/dev/null || echo "0")
     echo "**Issues found:** $SHELLCHECK_COUNT" >> "$REPORT_FILE"

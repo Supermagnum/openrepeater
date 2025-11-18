@@ -1,6 +1,6 @@
 # Authenticated Control – Test & Analysis Report
 
-_Last updated: 2025‑11‑17_
+_Last updated: 2025‑11‑18_
 
 This document captures the current status of all automated quality checks that were
 requested for the authenticated control project. Each subsection lists the command
@@ -54,7 +54,43 @@ excluded via `.coveragerc`:
 These modules require physical radios, kernel keyrings or SVXLink services that
 are not available in CI; manual validation is documented in the respective READMEs.
 
-## 4. Additional Tooling
+## 4. Module Import Tests
+
+| Module | Test Command | Result | Notes |
+| --- | --- | --- | --- |
+| `gr-linux-crypto` | `python3 -c "from gr_linux_crypto.crypto_helpers import CryptoHelpers"` | [PASS] | Module imports successfully. Requires `modules/gr-linux-crypto` in PYTHONPATH. Symlink `gr_linux_crypto -> python` created to enable package structure. |
+| `gr-packet-protocols` | `python3 -c "from gnuradio.packet_protocols import ax25_decoder, ax25_encoder"` | [PASS] | Module imports successfully. Installed as part of GNU Radio distribution. |
+| `authenticated_command_handler` | `python3 authenticated_command_handler.py` | [PASS] | Command handler starts successfully with placeholder config. Correctly reports missing authorized keys (expected behavior). |
+
+**Test Environment:**
+- Python: 3.12.3
+- Test Date: 2025-11-18
+- Config: Placeholder config file created at `integration/test_config/config.yaml`
+- Environment Variable: `AUTHENTICATED_CONFIG` supported for testing without sudo
+
+**Configuration:**
+- Placeholder config file created: `integration/config.yaml.placeholder`
+- Test config location: `integration/test_config/config.yaml` (uses `/tmp` directories)
+- System config location: `/etc/authenticated-repeater/config.yaml` (requires sudo)
+
+**Module Import Requirements:**
+- `gr-linux-crypto`: Add `modules/gr-linux-crypto` to PYTHONPATH or install via setup.py
+- `gr-packet-protocols`: Installed system-wide via GNU Radio build/install process
+
+## 5. OpenRepeater Integration
+
+| Component | Status | Notes |
+| --- | --- | --- |
+| Function file integration | [PASS] | `functions_authenticated_control.sh` can be sourced and functions are callable |
+| Install script integration | [PASS] | `install_orp.sh` sources the function file at line 193 |
+| Service file path resolution | [FIXED] | Updated to handle multiple path scenarios |
+| Verification function | [PASS] | Correctly identifies installed/missing components |
+
+**Detailed Report:** See [OpenRepeater Integration Test Report](OPENREPEATER_INTEGRATION_TEST.md)
+
+**Note:** The `install_authenticated_control()` function is available but not automatically called during OpenRepeater installation. It must be called manually or added to the installation sequence.
+
+## 6. Additional Tooling
 
 | Tool | Purpose | Status |
 | --- | --- | --- |

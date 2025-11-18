@@ -1,6 +1,5 @@
 #!/bin/bash
-# OpenRepeater Project
-# Aaron Crawford (N3MBH), Richard Neese (N4CNR), and Daniel Loranger (KG7PAR)
+# Copyright ©2017 OpenRepeater Project - Aaron Crawford, N3MBH & Richard Neese KB3VGW
 # Licended under GPL v2 or later
 
 # This is a helper script for OpenRepeater. This script is primarily intended
@@ -13,39 +12,11 @@
 
 # NOTE: NO NEED TO PREFIX COMMANDS WITH SUDO AS THIS SCRIPT IS INTENDED TO BE RUN AS ROOT USING SUDO COMMAND
 
-#outside support scripts
-#source board_drivers_loader
+####### WORK IN PROGRESS........
+
 ###############################################################################
 # DEFINE FUNCTIONS
 ###############################################################################
-
-
-### DOCKER FUNCTIONS FOR CONTAINERIZED SETUP ###
-
-function docker_svxlink_start {
-	docker exec SVXLink systemctl start svxlink
-
-	#svxlink_devices_permissions
-	#systemctl start svxlink
-	#svxlink_status
-
-	echo "FAKE COMMAND 1 - to be replace with docker pass thru command."
-}
-
-function docker_svxlink_stop {
-	echo "FAKE COMMAND 2 - to be replace with docker pass thru command."
-}
-
-function docker_svxlink_restart {
-	echo "FAKE COMMAND 3 - to be replace with docker pass thru command."
-}
-
-function docker_svxlink_status {
-	#systemctl is-active svxlink
-	echo "FAKE COMMAND 4 - to be replace with docker pass thru command."
-}
-
-
 
 ### SVXLINK FUNCTIONS ###
 function display_help {
@@ -56,9 +27,6 @@ function display_help {
 	echo "perform due to security reasons in Linux."
 	echo ""
 	echo "USAGE: orp_helper [service] [option]"
-	echo "[service] options:"
-	echo "svxlink|system|info|www|audio|set_mixer|alsa|network|pty|gps|docker"
-	echo "drivers"
 }
 
 function svxlink_disable {
@@ -74,20 +42,17 @@ function svxlink_enable {
 }
 
 function svxlink_restart {
-	svxlink_stop
-	svxlink_gpio_down
-	svxlink_gpio_up
-	svxlink_start
+	service svxlink restart
+	svxlink_status
 }
 
 function svxlink_stop {
-	systemctl stop svxlink
+	service svxlink stop
 	svxlink_status
 }
 
 function svxlink_start {
-	svxlink_devices_permissions
-	systemctl start svxlink
+	service svxlink start
 	svxlink_status
 }
 
@@ -97,17 +62,12 @@ function svxlink_status {
 
 function svxlink_gpio_up {
 	/usr/sbin/svxlink_gpio_up
-	echo "GPIO Up"
+	echo up
 }
 
 function svxlink_gpio_down {
 	/usr/sbin/svxlink_gpio_down
-	echo "GPIO Down"
-}
-
-function svxlink_devices_permissions {
-	/usr/sbin/svxlink_devices
-	echo "Set Device Permissions"
+	echo down
 }
 
 
@@ -142,16 +102,8 @@ function audio_version {
 	cat /proc/asound/version 2>&1
 }
 
-# get detailed information from the arecord verbose dump by plughw (card) number, then filter it down to only return the "channels" detail
-function audio_channels_in  {
-    ((arecord -vvv -f dat /dev/null --duration=1 --device=plughw:$1,0) 2> >( grep  -PA 50 "(Hardware PCM card $1)"))| grep -Pa "(channels)"| grep -o '[0-9][0-9]*'
-}
 
-# get detailed information from the aplay verbose dump by plughw (card) number, then filter it down to only return the "channels" detail
-function audio_channels_out  {
-	((aplay -d 1 -t raw /dev/null -vvv --device=plughw:$1,0) 2> >( grep  -PA 50 "(Hardware PCM card $1)"))| grep -Pa "(channels)"| grep -o '[0-9][0-9]*'
-}
-
+### AUDIO FUNCTIONS ###
 function set_mixer {
 	if [ -n "$3" ]; then
 		amixer -c$3 set "$1" $2
@@ -246,61 +198,9 @@ function info_os {
 	uname -a
 }
 
-
-
-### SVXLINK PTY FUNCTIONS ###
-function set_pty {
-	if [ ! -d "$1" ] 
-	then
-		mkdir -p "$1"
-		chown svxlink:svxlink "$1" -R
-	fi
-}
-
-function send_pty {
-	echo "$2" > "$1"
-	echo "true"
-}
-
-
-
-
-### GPS FUNCTIONS ###
-function gps_read {
-	#Read a few sentences of GPS data and return first TPV sentence which is JSON string
-	GPS_RESULT=$(gpspipe -w -n 5 | grep -m 1 TPV)
-	echo $GPS_RESULT
-}
-
-
-
-### Hardware specific drivers ###
-function drivers_prepare_services {
-	# edit /lib/systemd/system/svxlink_gpio_setup.service to insert the new dependency
-	# for the hardware preconfig script 
-	prepare_svxlink_gpio_up
-}
-
-function drivers_ics_1x_v1 {
-	# put in the desired contents
-	load_drivers_pi_repeater_1x_v1
-}
-
-function drivers_ics_2x_v3 {
-	load_drivers_pi_repeater_2x_v3
-}
-
-function drivers_ics_4x_v2 {
-	load_drivers_pi_repeater_4x_v2
-}
-
-function drivers_ics_8x_v2 {
-	load_drivers_pi_repeater_4x_v2
-}
-
 # TODO LIST
 # Setting Timezone
-
+# Expanding Filesystem
 
 
 ###############################################################################
@@ -342,6 +242,7 @@ while :; do
 			else echo "INVALID OPTION"; echo "USAGE: orp_helper info (timezone|cpu_type|cpu_speed|cpu_load|cpu_temp|uptime|memory_usage|disk_usage|os)"
 			fi
 			exit;;
+#info_uptime
         www)
 			if [ "$2" == "stop" ]; then www_stop
 			elif [ "$2" == "start" ]; then www_start
@@ -354,13 +255,8 @@ while :; do
         audio)
 			if [ "$2" == "inputs" ]; then audio_inputs
 			elif [ "$2" == "outputs" ]; then audio_outputs
-			elif [ "$2" == "channels_in" ]; then audio_channels_in $3
-			elif [ "$2" == "channels_out" ]; then audio_channels_out $3
 			elif [ "$2" == "version" ]; then audio_version
-			else 
-				echo "INVALID OPTION"; 
-				echo "USAGE: orp_helper audio (inputs|outputs|channels_in <input plughw#>|channels_out <output plughw#>|version)";
-				echo "EXAMPLE: orp_helper audio channels_in 0";
+			else echo "INVALID OPTION"; echo "USAGE: orp_helper audio (inputs|outputs|version)"
 			fi
 			exit;;
         set_mixer)
@@ -381,37 +277,11 @@ while :; do
 			else echo "INVALID OPTION"; echo "USAGE: orp_helper network (read|write)"
 			fi
 			exit;;
-        pty)
-			if [ "$2" == "set" ]; then set_pty "$3"
-			elif [ "$2" == "send" ]; then send_pty "$3" "$4"
-			else echo "INVALID OPTION"; echo "USAGE: orp_helper pty (set|send) [path] (option)"
-			fi
-			exit;;
-        gps)
-			if [ "$2" == "read" ]; then gps_read
-			else echo "INVALID OPTION"; echo "USAGE: orp_helper gps (read)"
-			fi
+
+        TEST)
+			echo "Testing..."
 			exit;;
 
-        docker)
-			if [ "$2" == "svxlink_start" ]; then docker_svxlink_start
-			elif [ "$2" == "svxlink_stop" ]; then docker_svxlink_stop
-			elif [ "$2" == "svxlink_restart" ]; then docker_svxlink_restart
-			elif [ "$2" == "svxlink_status" ]; then docker_svxlink_status
-			else echo "INVALID OPTION"; echo "USAGE: orp_helper docker (svxlink_start|svxlink_stop|svxlink_restart|svxlink_status)"
-			fi
-			exit;;
-
-			
-		drivers)
-			if [ "$2" == "1x_v1" ]; then drivers_ics_1x_v1
-			elif [ "$2" == "2x_v3" ]; then drivers_ics_2x_v3
-			elif [ "$2" == "4x_v2" ]; then drivers_ics_4x_v2
-			elif [ "$2" == "8x_v2" ]; then drivers_ics_8x_v2
-			else echo "INVALID OPTION"; echo "USAGE: orp_helper drivers <HW_TYPE (see script for options)>"
-                        fi
-			exit;;
-			
         -h|-\?|--help|*)   # Display general help/info.
 			display_help
 			exit;;

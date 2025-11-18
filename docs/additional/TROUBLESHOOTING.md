@@ -321,6 +321,119 @@ journalctl -u svxlink -n 50
 3. Reduce replay protection window
 4. Limit number of authorized keys
 
+## Module Usage Issues
+
+### Module Not Found
+
+**Symptoms:**
+- Import errors when running flowgraphs
+- "No module named 'gnuradio.packet_protocols'" errors
+
+**Solution:**
+1. Verify modules are installed:
+   ```bash
+   python3 -c "from gnuradio import packet_protocols; print('OK')"
+   ```
+
+2. Check PYTHONPATH:
+   ```bash
+   export PYTHONPATH=/usr/local/lib/python3/dist-packages:$PYTHONPATH
+   ```
+
+3. Update library cache:
+   ```bash
+   sudo ldconfig
+   ```
+
+4. Reinstall modules if needed:
+   ```bash
+   cd /usr/src/gr-packet-protocols/build
+   sudo make install
+   sudo ldconfig
+   ```
+
+### Module Import Errors
+
+**Symptoms:**
+- "Failed to import linux_crypto_python module" errors
+- Generic type errors during import
+
+**Solution:**
+1. Rebuild the module:
+   ```bash
+   cd /usr/src/gr-linux-crypto/build
+   rm -rf *
+   cmake ..
+   make -j$(nproc)
+   sudo make install
+   sudo ldconfig
+   ```
+
+2. Check GNU Radio version compatibility:
+   ```bash
+   gnuradio-config-info --version
+   ```
+   Must be >= 3.10.12.0
+
+3. Verify dependencies:
+   ```bash
+   pkg-config --modversion gnuradio-runtime
+   ```
+
+For detailed module usage, see [Module Usage Guide](MODULE_USAGE.md).
+
+## PTT Button Issues
+
+### PTT Not Activating
+
+**Symptoms:**
+- Radio does not key when button is pressed
+- No transmission occurs
+
+**Solution:**
+1. Check GPIO pin configuration:
+   ```bash
+   # Test GPIO manually
+   echo 18 > /sys/class/gpio/export
+   echo out > /sys/class/gpio/gpio18/direction
+   echo 1 > /sys/class/gpio/gpio18/value  # PTT ON
+   echo 0 > /sys/class/gpio/gpio18/value  # PTT OFF
+   ```
+
+2. Verify wiring and connections
+3. Check radio PTT input polarity (active high vs active low)
+4. Verify user permissions (may need `sudo` or add to `gpio` group)
+
+### PTT Stuck On
+
+**Symptoms:**
+- Radio remains keyed after transmission
+- Cannot receive signals
+
+**Solution:**
+1. Manually reset GPIO:
+   ```bash
+   echo 0 > /sys/class/gpio/gpio18/value
+   ```
+
+2. Restart flowgraph
+3. Check for software crashes
+4. Verify hardware connections
+
+### Timing Issues
+
+**Symptoms:**
+- Audio cut off at start of transmission
+- Audio cut off at end of transmission
+
+**Solution:**
+1. Increase TX delay (pre-key time)
+2. Increase hang time (post-key time)
+3. Check radio specifications for timing requirements
+4. Adjust timing values in PTT control block
+
+For detailed PTT setup, see [PTT Button Usage Guide](PTT_BUTTON_USAGE.md).
+
 ## Testing Without Radio Hardware
 
 ### Simulating Radio Link with Audio Cables

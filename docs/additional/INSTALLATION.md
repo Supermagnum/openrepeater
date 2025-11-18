@@ -59,6 +59,7 @@ If you prefer to install manually or need to customize the build process:
 
 #### Step 1: Install Dependencies
 
+**Core Dependencies:**
 ```bash
 sudo apt-get update
 sudo apt-get install -y \
@@ -82,6 +83,39 @@ sudo apt-get install -y \
     libgsm1-dev \
     libopus-dev \
     libspeex-dev
+```
+
+**Web Stack Dependencies (for OpenRepeater integration):**
+```bash
+sudo apt-get install -y \
+    nginx \
+    nginx-extras \
+    php8.2-fpm \
+    php8.2-common \
+    php8.2-cli \
+    php8.2-curl \
+    php8.2-dev \
+    php8.2-gd \
+    php8.2-mbstring \
+    php8.2-sqlite3 \
+    php8.2-xml \
+    php8.2-xmlrpc \
+    php8.2-zip \
+    php-memcached \
+    php-imagick \
+    php-ssh2 \
+    sqlite3 \
+    memcached \
+    ssl-cert
+```
+
+**Python Dependencies:**
+```bash
+sudo apt-get install -y \
+    python3-cryptography \
+    python3-pkcs11 \
+    python3-zmq \
+    python3-yaml
 ```
 
 #### Step 2: Install gr-qradiolink (First)

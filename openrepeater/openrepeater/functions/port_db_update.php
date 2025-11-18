@@ -11,49 +11,39 @@ if ((!isset($_SESSION['username'])) || (!isset($_SESSION['userID']))){
 # AUTOLOAD CLASSES
 require_once(rtrim($_SERVER['DOCUMENT_ROOT'], '/') . '/includes/autoloadClasses.php');
 ################################################################################
+$Database = new Database();
 
 if(isset($_POST)==true && empty($_POST)==false) {
-	$Database = new Database();
+	// Clear old settings
+	$Database->delete_row('DELETE from PORTS;');
+	$Database->delete_row('DELETE FROM "gpio_pins" WHERE type = "Port";');
 
 	// Define sub arrays
 	$portNum=$_POST['portNum'];
 	$portLabel=$_POST['portLabel'];			
-	$rxAudioDev=$_POST['rxAudioDev'];					
-	$txAudioDev=$_POST['txAudioDev'];
-	$portType=$_POST['portType'];
-	$portEnabled=$_POST['portEnabled'];
-
 	$rxMode=$_POST['rxMode'];
 	$rxGPIO=$_POST['rxGPIO'];					
-	$txGPIO=$_POST['txGPIO'];
 	$rxGPIO_active=$_POST['rxGPIO_active'];					
+	$txGPIO=$_POST['txGPIO'];
 	$txGPIO_active=$_POST['txGPIO_active'];					
-	$linkGroup=$_POST['linkGroup'];
+	$rxAudioDev=$_POST['rxAudioDev'];					
+	$txAudioDev=$_POST['txAudioDev'];
 
-
-	$insertArray = [];
-	foreach($portLabel as $portNum => $portArr) {
-
-		// Static Columns
-		$insertArray[$portNum] = ['portNum' => $portNum];
-		$insertArray[$portNum] += ['portLabel' => $portLabel[$portNum]];
-		$insertArray[$portNum] += ['rxAudioDev' => $rxAudioDev[$portNum]];
-		$insertArray[$portNum] += ['txAudioDev' => $txAudioDev[$portNum]];
-		$insertArray[$portNum] += ['portType' => 'GPIO'];
-		$insertArray[$portNum] += ['portEnabled' => $portEnabled[$portNum]];
-
-		// Columns to be saved to JSON object later
-		$insertArray[$portNum] += ['rxMode' => $rxMode[$portNum]];
-		$insertArray[$portNum] += ['rxGPIO' => $rxGPIO[$portNum]];
-		$insertArray[$portNum] += ['txGPIO' => $txGPIO[$portNum]];
-		$insertArray[$portNum] += ['rxGPIO_active' => $rxGPIO_active[$portNum]];
-		$insertArray[$portNum] += ['txGPIO_active' => $txGPIO_active[$portNum]];
-// 		$insertArray[$portNum] += ['linkGroup' => $linkGroup[$portNum]];
-		$insertArray[$portNum] += [ 'linkGroup' => [intval($linkGroup[$portNum])] ];
+	foreach($portLabel as $a => $b) {
+		$newPortNum = $a+1;
+		
+		// Write settings into Port DB Table
+		$sql = "INSERT INTO ports (portNum,portLabel,rxMode,rxGPIO,txGPIO,rxAudioDev,txAudioDev,rxGPIO_active,txGPIO_active) VALUES ('$newPortNum','$portLabel[$a]','$rxMode[$a]','$rxGPIO[$a]','$txGPIO[$a]','$rxAudioDev[$a]','$txAudioDev[$a]','$rxGPIO_active[$a]','$txGPIO_active[$a]')";
+		$Database->update($sql);	
+		
+		// Write RX pin to GPIO Pin table in DB
+		$gpio_rx = "INSERT INTO gpio_pins (gpio_num,direction,active,description,type) VALUES ('$rxGPIO[$a]','in','$rxGPIO_active[$a]','PORT $newPortNum RX: $portLabel[$a]','Port');";
+		$Database->update($gpio_rx);	
+		
+		// Write TX pin to GPIO Pin table in DB
+		$gpio_tx = "INSERT INTO gpio_pins (gpio_num,direction,active,description,type) VALUES ('$txGPIO[$a]','out','$txGPIO_active[$a]','PORT $newPortNum TX: $portLabel[$a]','Port');";
+		$Database->update($gpio_tx);	
 	}
-
-	// Write settings into Port DB Table
-	$Database->update_ports_table($insertArray);
 
 	return true;
 	

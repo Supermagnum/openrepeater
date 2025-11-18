@@ -1,0 +1,41 @@
+# Placeholder configuration file for Authenticated Repeater Control
+# This file allows the command handler to start for testing purposes
+# 
+# NOTE: This is a placeholder. For production use, configure:
+# - Add authorized operator public keys to: /etc/authenticated-repeater/authorized_operators/
+# - Generate repeater keypair in: /etc/authenticated-repeater/repeater_keys/
+# - Adjust settings below as needed
+
+# IPC mechanism: zmq, fifo, or socket
+ipc_mechanism: zmq
+
+# ZMQ socket paths (if using zmq)
+zmq_rx_socket: ipc:///tmp/authenticated_rx.sock
+zmq_tx_socket: ipc:///tmp/authenticated_tx.sock
+
+# FIFO path (if using fifo)
+fifo_path: /tmp/authenticated_commands.fifo
+
+# SVXLink control method: tcp, config, or dtmf
+svxlink_control: tcp
+
+# SVXLink TCP settings (if using tcp)
+svxlink_tcp_host: localhost
+svxlink_tcp_port: 5210
+
+# SVXLink config file path (if using config)
+svxlink_config: /etc/svxlink/svxlink.conf
+
+# Logging
+log_file: /tmp/authenticated-repeater-test/commands.log
+log_level: INFO
+
+# Security settings
+replay_protection_window: 300  # seconds
+max_commands_per_minute: 10
+command_timeout: 30  # seconds
+
+# Key management
+authorized_keys_dir: /tmp/authenticated-repeater-test/authorized_operators
+repeater_keys_dir: /tmp/authenticated-repeater-test/repeater_keys
+

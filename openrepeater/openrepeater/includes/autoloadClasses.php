@@ -3,8 +3,7 @@
 # Class Autoloader
 ###########################################################################################
 
-
-function myAutoload($class_name) {
+function __autoload($class_name) {
     $file = rtrim($_SERVER['DOCUMENT_ROOT'], '/') . '/includes/classes/' . $class_name . '.php';
 
     if (file_exists($file))
@@ -12,5 +11,3 @@ function myAutoload($class_name) {
     else
         die('File Not Found: ' . $file);
 }
-
-spl_autoload_register('myAutoLoad');
