@@ -2,6 +2,26 @@
 
 Complete authenticated control system for amateur radio repeaters using cryptographic signatures and GNU Radio.
 
+## Important: This System Does NOT Encrypt Anything
+
+**This system DOES NOT encrypt anything.** All frames are transmitted in the clear and can be read by anyone monitoring the frequency.
+
+### Signing vs. Encryption
+
+**Signing** and **encryption** are fundamentally different:
+
+- **Signing**: Provides authentication and integrity verification. The signature is mathematical proof that a command was signed by an authorized operator's private key. The command content itself remains readable by anyone.
+
+- **Encryption**: Hides the content of messages so only authorized parties can read them. This system does NOT use encryption.
+
+**ALL frames are transmitted in the clear:**
+- Command frames contain readable ASCII text
+- Signature frames contain the digital signature (mathematical proof of authenticity)
+- Anyone monitoring the frequency can read the command content
+- The signature only proves who sent it, it does not hide what was sent
+
+This design ensures compliance with amateur radio regulations that prohibit encrypted communications on amateur bands. The system provides authentication (proving who sent the command) without encryption (hiding what was sent).
+
 ## Overview
 
 This system enables licensed operators to remotely control repeater settings using cryptographically-signed commands transmitted via radio. It eliminates the need for dangerous trips to remote mountain repeater sites in harsh weather conditions.
@@ -26,7 +46,7 @@ Repeater maintenance and configuration typically requires physical access to the
 5. **If valid, executes command** via SVXLink control interface
 6. **Logs operation** with operator callsign and timestamp
 
-Voice transmissions remain completely open - normal amateur radio conversations pass through unchanged and unencrypted, fully compliant with radio regulations. Only the control commands are authenticated.
+Voice transmissions remain completely open - normal amateur radio conversations pass through unchanged and unencrypted, fully compliant with radio regulations. Control commands are authenticated (signed) but NOT encrypted - they remain readable by anyone monitoring the frequency. The digital signature only proves the command came from an authorized operator, it does not hide the command content.
 
 ### Key Benefits
 
@@ -75,6 +95,17 @@ authenticated-repeater-control/
 - **OpenRepeater** (web-based repeater management)
 
 ## Installation
+
+### Option 0: Docker Installation (Recommended for Testing)
+
+For easy deployment and testing, use Docker:
+
+```bash
+# See Docker Setup Guide for complete instructions
+docker-compose up -d
+```
+
+See [Docker Setup Guide](docs/additional/DOCKER_SETUP.md) for detailed Docker installation and configuration instructions.
 
 ### Option 1: Integrated with OpenRepeater
 
@@ -364,6 +395,7 @@ python3 -c "import yaml; yaml.safe_load(open('/etc/authenticated-repeater/config
 ### Installation & Configuration
 
 - **[Installation Guide](docs/additional/INSTALLATION.md)** - Complete installation guide for GNU Radio OOT modules (includes LAMP stack dependencies)
+- **[Docker Setup Guide](docs/additional/DOCKER_SETUP.md)** - How to set up and run the system in Docker
 - **[Configuration Guide](docs/additional/CONFIGURATION.md)** - Configuration guide for repeater operators
 - **[Troubleshooting Guide](docs/additional/TROUBLESHOOTING.md)** - Troubleshooting common issues
 - **[Module Usage Guide](docs/additional/MODULE_USAGE.md)** - How to use GNU Radio OOT modules in flowgraphs
