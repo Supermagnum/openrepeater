@@ -396,6 +396,8 @@ python3 -c "import yaml; yaml.safe_load(open('/etc/authenticated-repeater/config
 
 - **[Installation Guide](docs/additional/INSTALLATION.md)** - Complete installation guide for GNU Radio OOT modules (includes LAMP stack dependencies)
 - **[Docker Setup Guide](docs/additional/DOCKER_SETUP.md)** - How to set up and run the system in Docker
+- **[ZMQ Bidirectional Setup](docs/additional/ZMQ_BIDIRECTIONAL_SETUP.md)** - Complete guide for bidirectional ZMQ command handler with reply messages
+- **[SVXLink Command Reference](docs/additional/SVXLINK_COMMANDS.md)** - Complete reference of SVXLink commands supported via TCP control port
 - **[Configuration Guide](docs/additional/CONFIGURATION.md)** - Configuration guide for repeater operators
 - **[Troubleshooting Guide](docs/additional/TROUBLESHOOTING.md)** - Troubleshooting common issues
 - **[Module Usage Guide](docs/additional/MODULE_USAGE.md)** - How to use GNU Radio OOT modules in flowgraphs

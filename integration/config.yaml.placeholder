@@ -9,9 +9,14 @@
 # IPC mechanism: zmq, fifo, or socket
 ipc_mechanism: zmq
 
-# ZMQ socket paths (if using zmq)
+# ZMQ socket paths (if using zmq - legacy IPC sockets)
 zmq_rx_socket: ipc:///tmp/authenticated_rx.sock
 zmq_tx_socket: ipc:///tmp/authenticated_tx.sock
+
+# ZMQ TCP ports (for bidirectional handler)
+zmq_rx_bind: tcp://*:5555      # Receive commands from RX flowgraph
+zmq_param_bind: tcp://*:5556   # Send parameter updates to GNU Radio
+zmq_reply_bind: tcp://*:5557   # Send replies to TX flowgraph
 
 # FIFO path (if using fifo)
 fifo_path: /tmp/authenticated_commands.fifo
@@ -29,6 +34,13 @@ svxlink_config: /etc/svxlink/svxlink.conf
 # Logging
 log_file: /var/log/authenticated-repeater/commands.log
 log_level: INFO
+
+# Separate log files for ZMQ bidirectional handler
+service_log_file: /var/log/authenticated_repeater.log
+command_log_file: /var/log/repeater_commands.log
+
+# Repeater settings
+repeater_callsign: REPEATER
 
 # Security settings
 replay_protection_window: 300  # seconds

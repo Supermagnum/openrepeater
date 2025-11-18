@@ -35,7 +35,7 @@ echo "  - Configuration files (optional)"
 echo "  - Log files (optional)"
 echo "  - Authorized keys (optional)"
 echo ""
-read -p "Continue with uninstallation? (y/N): " confirm
+read -r -p "Continue with uninstallation? (y/N): " confirm
 if [ "$confirm" != "y" ] && [ "$confirm" != "Y" ]; then
     echo "Uninstallation cancelled."
     exit 0
@@ -182,7 +182,7 @@ echo "================================================================"
 echo " Configuration and Data Removal"
 echo "================================================================"
 echo ""
-read -p "Remove configuration files? (y/N): " remove_config
+read -r -p "Remove configuration files? (y/N): " remove_config
 if [ "$remove_config" = "y" ] || [ "$remove_config" = "Y" ]; then
     if [ -d "/etc/authenticated-repeater" ]; then
         echo "Removing configuration directory..."
@@ -195,7 +195,7 @@ else
     echo "Configuration files preserved."
 fi
 
-read -p "Remove log files? (y/N): " remove_logs
+read -r -p "Remove log files? (y/N): " remove_logs
 if [ "$remove_logs" = "y" ] || [ "$remove_logs" = "Y" ]; then
     if [ -d "/var/log/authenticated-repeater" ]; then
         echo "Removing log directory..."
@@ -208,7 +208,7 @@ else
     echo "Log files preserved."
 fi
 
-read -p "Remove flowgraphs? (y/N): " remove_flowgraphs
+read -r -p "Remove flowgraphs? (y/N): " remove_flowgraphs
 if [ "$remove_flowgraphs" = "y" ] || [ "$remove_flowgraphs" = "Y" ]; then
     if [ -d "/usr/local/share/authenticated-repeater/flowgraphs" ]; then
         echo "Removing flowgraphs..."
@@ -235,7 +235,7 @@ echo "================================================================"
 echo " Source Directory Removal"
 echo "================================================================"
 echo ""
-read -p "Remove source directories? (y/N): " remove_sources
+read -r -p "Remove source directories? (y/N): " remove_sources
 if [ "$remove_sources" = "y" ] || [ "$remove_sources" = "Y" ]; then
     if [ -d "/usr/src/gr-linux-crypto" ]; then
         echo "Removing /usr/src/gr-linux-crypto..."

@@ -1,0 +1,30 @@
+[Unit]
+Description=Authenticated Repeater Control Command Handler (ZMQ Bidirectional)
+After=network.target svxlink.service
+Wants=svxlink.service
+
+[Service]
+Type=simple
+User=svxlink
+Group=svxlink
+WorkingDirectory=/usr/local/share/authenticated-repeater
+ExecStart=/usr/bin/python3 /usr/local/share/authenticated-repeater/authenticated_command_handler_zmq.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/log/authenticated-repeater /var/log/repeater_commands.log
+
+# Environment
+Environment="AUTHENTICATED_CONFIG=/etc/authenticated-repeater/config.yaml"
+Environment="PYTHONPATH=/usr/local/lib/python3/dist-packages"
+
+[Install]
+WantedBy=multi-user.target
+
