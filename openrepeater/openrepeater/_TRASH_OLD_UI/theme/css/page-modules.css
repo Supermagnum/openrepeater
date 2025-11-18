@@ -1,0 +1,25 @@
+button.btn.upload {
+	float: left;
+}
+
+button.btn.find_new {
+	float: right;
+}
+
+/* Mods to File Upload Field */
+
+#uniform-file.uploader {
+	width: 400px;
+}
+
+#uniform-file span.filename {
+	width: 292px;
+}
+
+#uniform-file span.action {
+	float: right;
+}
+
+input#file {
+	width: 400px;
+}

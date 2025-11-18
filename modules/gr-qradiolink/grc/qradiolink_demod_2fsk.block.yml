@@ -1,0 +1,53 @@
+id: qradiolink_demod_2fsk
+label: 2FSK Demod
+category: '[QRadioLink]'
+flags: [ python ]
+
+parameters:
+-   id: sps
+    label: Samples/Symbol
+    dtype: int
+    default: '125'
+-   id: samp_rate
+    label: Sample Rate
+    dtype: int
+    default: '250000'
+-   id: carrier_freq
+    label: Carrier Freq
+    dtype: int
+    default: '1700'
+-   id: filter_width
+    label: Filter Width
+    dtype: int
+    default: '8000'
+-   id: fm
+    label: FM Mode
+    dtype: bool
+    default: 'False'
+    options: ['True', 'False']
+    option_labels: ['On', 'Off']
+
+inputs:
+-   domain: stream
+    dtype: complex
+
+outputs:
+-   domain: stream
+    dtype: complex
+    label: Filtered
+-   domain: stream
+    dtype: complex
+    label: Constellation
+-   domain: stream
+    dtype: byte
+    label: Decoded (Primary)
+-   domain: stream
+    dtype: byte
+    label: Decoded (Delayed)
+
+templates:
+    imports: from gnuradio import qradiolink
+    make: qradiolink.demod_2fsk(sps=${sps}, samp_rate=${samp_rate}, carrier_freq=${carrier_freq}, filter_width=${filter_width}, fm=${fm})
+
+file_format: 1
+

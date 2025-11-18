@@ -1,0 +1,7 @@
+Fuzzing Campaign Configuration
+==============================
+Start time: on. 05. nov. 14:48:16 +0100 2025
+Duration: 21600 seconds (6 hours)
+Build directory: build-fuzz
+Fuzzer binary directory: /home/haaken/github-projects/qradiolink/gr-qradiolink/fuzzing/../build-fuzz/fuzzing/harnesses
+Fuzzers: 10

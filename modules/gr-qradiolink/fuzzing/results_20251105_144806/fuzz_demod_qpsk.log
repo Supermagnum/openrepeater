@@ -1,0 +1,43 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2881696834
+INFO: Loaded 1 modules   (282 inline 8-bit counters): 282 [0x58bda69c7fe0, 0x58bda69c80fa), 
+INFO: Loaded 1 PC tables (282 PCs): 282 [0x58bda69c8100,0x58bda69c92a0), 
+INFO:        1 files found in /home/haaken/github-projects/qradiolink/gr-qradiolink/fuzzing/results_20251105_144806/fuzz_demod_qpsk_corpus/
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: seed corpus: files: 1 min: 6b max: 6b total: 6b rss: 48Mb
+#3	INITED cov: 64 ft: 65 corp: 1/6b exec/s: 0 rss: 63Mb
+#18	NEW    cov: 64 ft: 67 corp: 2/11b lim: 6 exec/s: 0 rss: 96Mb L: 5/6 MS: 5 ShuffleBytes-ChangeBit-CopyPart-ChangeByte-EraseBytes-
+#19	REDUCE cov: 64 ft: 67 corp: 2/10b lim: 6 exec/s: 0 rss: 99Mb L: 4/6 MS: 1 EraseBytes-
+#32	REDUCE cov: 64 ft: 68 corp: 3/12b lim: 6 exec/s: 0 rss: 127Mb L: 2/6 MS: 3 ChangeBit-ShuffleBytes-EraseBytes-
+#40	REDUCE cov: 71 ft: 78 corp: 4/13b lim: 6 exec/s: 0 rss: 141Mb L: 1/6 MS: 3 CMP-ChangeBinInt-CrossOver- DE: "fuzz"-
+#256	pulse  cov: 71 ft: 78 corp: 4/13b lim: 8 exec/s: 85 rss: 475Mb
+#276	NEW    cov: 71 ft: 80 corp: 5/21b lim: 8 exec/s: 92 rss: 476Mb L: 8/8 MS: 1 InsertRepeatedBytes-
+#512	pulse  cov: 71 ft: 80 corp: 5/21b lim: 8 exec/s: 73 rss: 486Mb
+#584	NEW    cov: 71 ft: 81 corp: 6/31b lim: 11 exec/s: 73 rss: 487Mb L: 10/10 MS: 3 ChangeByte-ChangeBit-InsertRepeatedBytes-
+#1024	pulse  cov: 71 ft: 81 corp: 6/31b lim: 14 exec/s: 68 rss: 495Mb
+#1232	NEW    cov: 71 ft: 82 corp: 7/48b lim: 17 exec/s: 64 rss: 497Mb L: 17/17 MS: 3 PersAutoDict-ChangeBinInt-InsertRepeatedBytes- DE: "fuzz"-
+#1504	REDUCE cov: 71 ft: 82 corp: 7/47b lim: 17 exec/s: 62 rss: 499Mb L: 16/16 MS: 2 ChangeByte-CrossOver-
+#1919	NEW    cov: 71 ft: 83 corp: 8/65b lim: 21 exec/s: 61 rss: 503Mb L: 18/18 MS: 5 ChangeByte-PersAutoDict-InsertRepeatedBytes-ChangeBit-PersAutoDict- DE: "fuzz"-"fuzz"-
+#2048	pulse  cov: 71 ft: 83 corp: 8/65b lim: 21 exec/s: 62 rss: 504Mb
+#3192	NEW    cov: 71 ft: 84 corp: 9/97b lim: 33 exec/s: 60 rss: 508Mb L: 32/32 MS: 3 ChangeBinInt-PersAutoDict-InsertRepeatedBytes- DE: "fuzz"-
+#3707	NEW    cov: 71 ft: 85 corp: 10/135b lim: 38 exec/s: 58 rss: 510Mb L: 38/38 MS: 5 ShuffleBytes-PersAutoDict-CopyPart-InsertRepeatedBytes-CopyPart- DE: "fuzz"-
+#3966	REDUCE cov: 71 ft: 85 corp: 10/132b lim: 38 exec/s: 59 rss: 511Mb L: 35/35 MS: 4 CopyPart-ChangeBit-EraseBytes-InsertRepeatedBytes-
+#4096	pulse  cov: 71 ft: 85 corp: 10/132b lim: 38 exec/s: 59 rss: 511Mb
+#6130	REDUCE cov: 71 ft: 85 corp: 10/131b lim: 58 exec/s: 58 rss: 519Mb L: 34/34 MS: 4 ChangeBinInt-InsertByte-ChangeByte-EraseBytes-
+#7190	REDUCE cov: 71 ft: 87 corp: 11/199b lim: 68 exec/s: 57 rss: 523Mb L: 68/68 MS: 5 InsertRepeatedBytes-CrossOver-CrossOver-ChangeBit-InsertRepeatedBytes-
+#7744	REDUCE cov: 71 ft: 87 corp: 11/198b lim: 68 exec/s: 57 rss: 525Mb L: 67/67 MS: 4 ChangeBit-ChangeBinInt-CMP-EraseBytes- DE: "\001\000\000\000\000\000\000\022"-
+#8192	pulse  cov: 71 ft: 87 corp: 11/198b lim: 68 exec/s: 57 rss: 526Mb
+#10321	REDUCE cov: 71 ft: 87 corp: 11/197b lim: 92 exec/s: 57 rss: 535Mb L: 66/66 MS: 2 EraseBytes-InsertRepeatedBytes-
+#16384	pulse  cov: 71 ft: 87 corp: 11/197b lim: 149 exec/s: 55 rss: 557Mb
+==3066165== libFuzzer: run interrupted; exiting
+stat::number_of_executed_units: 24887
+stat::average_exec_per_sec:     54
+stat::new_units_added:          16
+stat::slowest_unit_time_sec:    0
+==3066165== libFuzzer: run interrupted; exiting
+stat::number_of_executed_units: 24887
+stat::peak_rss_mb:              589
+stat::average_exec_per_sec:     54
+stat::new_units_added:          16
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              589

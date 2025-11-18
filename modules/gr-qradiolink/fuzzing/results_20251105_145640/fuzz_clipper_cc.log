@@ -1,0 +1,68 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 3369146179
+INFO: Loaded 1 modules   (230 inline 8-bit counters): 230 [0x60b34d9d8f40, 0x60b34d9d9026), 
+INFO: Loaded 1 PC tables (230 PCs): 230 [0x60b34d9d9028,0x60b34d9d9e88), 
+INFO:        1 files found in /home/haaken/github-projects/qradiolink/gr-qradiolink/fuzzing/results_20251105_145640/fuzz_clipper_cc_corpus/
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: seed corpus: files: 1 min: 6b max: 6b total: 6b rss: 47Mb
+#3	INITED cov: 48 ft: 49 corp: 1/6b exec/s: 0 rss: 52Mb
+#6	NEW    cov: 48 ft: 50 corp: 2/9b lim: 6 exec/s: 0 rss: 54Mb L: 3/6 MS: 3 ShuffleBytes-ChangeByte-EraseBytes-
+#10	NEW    cov: 48 ft: 52 corp: 3/13b lim: 6 exec/s: 0 rss: 55Mb L: 4/6 MS: 4 ShuffleBytes-CrossOver-ChangeByte-EraseBytes-
+#127	REDUCE cov: 48 ft: 52 corp: 3/12b lim: 6 exec/s: 0 rss: 99Mb L: 2/6 MS: 2 ChangeBit-EraseBytes-
+#153	REDUCE cov: 53 ft: 60 corp: 4/13b lim: 6 exec/s: 0 rss: 108Mb L: 1/6 MS: 1 EraseBytes-
+#399	REDUCE cov: 53 ft: 62 corp: 5/21b lim: 8 exec/s: 0 rss: 193Mb L: 8/8 MS: 1 InsertRepeatedBytes-
+#706	NEW    cov: 53 ft: 63 corp: 6/31b lim: 11 exec/s: 706 rss: 299Mb L: 10/10 MS: 2 CopyPart-InsertRepeatedBytes-
+#1024	pulse  cov: 53 ft: 63 corp: 6/31b lim: 14 exec/s: 512 rss: 412Mb
+#1321	NEW    cov: 53 ft: 64 corp: 7/48b lim: 17 exec/s: 660 rss: 447Mb L: 17/17 MS: 5 CopyPart-ChangeByte-ChangeBinInt-InsertRepeatedBytes-InsertRepeatedBytes-
+#1378	REDUCE cov: 53 ft: 64 corp: 7/47b lim: 17 exec/s: 689 rss: 447Mb L: 16/16 MS: 2 ChangeByte-EraseBytes-
+#1805	NEW    cov: 53 ft: 65 corp: 8/65b lim: 21 exec/s: 601 rss: 450Mb L: 18/18 MS: 2 ChangeBinInt-InsertRepeatedBytes-
+#2048	pulse  cov: 53 ft: 65 corp: 8/65b lim: 21 exec/s: 512 rss: 452Mb
+#3071	REDUCE cov: 53 ft: 66 corp: 9/98b lim: 33 exec/s: 511 rss: 456Mb L: 33/33 MS: 1 InsertRepeatedBytes-
+#3474	REDUCE cov: 53 ft: 66 corp: 9/97b lim: 33 exec/s: 496 rss: 458Mb L: 32/32 MS: 3 CrossOver-InsertRepeatedBytes-InsertRepeatedBytes-
+#4048	REDUCE cov: 53 ft: 67 corp: 10/132b lim: 38 exec/s: 506 rss: 460Mb L: 35/35 MS: 4 InsertByte-ChangeBit-CopyPart-CrossOver-
+#4096	pulse  cov: 53 ft: 67 corp: 10/132b lim: 38 exec/s: 512 rss: 460Mb
+#7151	NEW    cov: 53 ft: 69 corp: 11/199b lim: 68 exec/s: 446 rss: 466Mb L: 67/67 MS: 3 CrossOver-InsertRepeatedBytes-InsertRepeatedBytes-
+#7554	REDUCE cov: 53 ft: 69 corp: 11/198b lim: 68 exec/s: 444 rss: 466Mb L: 66/66 MS: 3 InsertByte-ShuffleBytes-EraseBytes-
+#8192	pulse  cov: 53 ft: 69 corp: 11/198b lim: 74 exec/s: 455 rss: 467Mb
+#10453	REDUCE cov: 53 ft: 69 corp: 11/197b lim: 92 exec/s: 435 rss: 469Mb L: 34/66 MS: 4 CMP-ShuffleBytes-ShuffleBytes-EraseBytes- DE: "\001\000\000\000\000\000\000\000"-
+#16384	pulse  cov: 53 ft: 69 corp: 11/197b lim: 149 exec/s: 420 rss: 474Mb
+#29852	NEW    cov: 53 ft: 71 corp: 12/456b lim: 277 exec/s: 403 rss: 484Mb L: 259/259 MS: 4 CrossOver-InsertRepeatedBytes-ChangeBinInt-CopyPart-
+#32768	pulse  cov: 53 ft: 71 corp: 12/456b lim: 301 exec/s: 399 rss: 485Mb
+#37796	REDUCE cov: 53 ft: 71 corp: 12/455b lim: 349 exec/s: 397 rss: 489Mb L: 258/258 MS: 4 InsertRepeatedBytes-ShuffleBytes-CrossOver-EraseBytes-
+#65536	pulse  cov: 53 ft: 71 corp: 12/455b lim: 616 exec/s: 392 rss: 509Mb
+#131072	pulse  cov: 53 ft: 71 corp: 12/455b lim: 1270 exec/s: 382 rss: 554Mb
+#262144	pulse  cov: 53 ft: 71 corp: 12/455b lim: 2578 exec/s: 364 rss: 648Mb
+#524288	pulse  cov: 53 ft: 71 corp: 12/455b lim: 4096 exec/s: 368 rss: 830Mb
+#1048576	pulse  cov: 53 ft: 71 corp: 12/455b lim: 4096 exec/s: 345 rss: 1149Mb
+#2097152	pulse  cov: 53 ft: 71 corp: 12/455b lim: 4096 exec/s: 311 rss: 1880Mb
+==2373341== ERROR: libFuzzer: out-of-memory (used: 2001Mb; limit: 2000Mb)
+   To change the out-of-memory limit use -rss_limit_mb=<N>
+
+Live Heap Allocations: 24707253 bytes in 882 chunks; quarantined: 46308150 bytes in 710892 chunks; 2595097 other chunks; total chunks: 3306871; showing top 95% (at most 8 unique contexts)
+21233984 byte(s) (85%) in 1 allocation(s)
+    #0 0x60b34d9884e1 in operator new(unsigned long) (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_clipper_cc+0x1424e1) (BuildId: 099058224c0ab0a0ad2fbd481faed9803cc3fcc9)
+    #1 0x60b34d8840dd in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_clipper_cc+0x3e0dd) (BuildId: 099058224c0ab0a0ad2fbd481faed9803cc3fcc9)
+    #2 0x60b34d8af156 in main (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_clipper_cc+0x69156) (BuildId: 099058224c0ab0a0ad2fbd481faed9803cc3fcc9)
+    #3 0x7f0f5a22a1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #4 0x7f0f5a22a28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #5 0x60b34d879ab4 in _start (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_clipper_cc+0x33ab4) (BuildId: 099058224c0ab0a0ad2fbd481faed9803cc3fcc9)
+
+3148000 byte(s) (12%) in 1 allocation(s)
+    #0 0x60b34d9884e1 in operator new(unsigned long) (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_clipper_cc+0x1424e1) (BuildId: 099058224c0ab0a0ad2fbd481faed9803cc3fcc9)
+    #1 0x60b34d8840ba in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_clipper_cc+0x3e0ba) (BuildId: 099058224c0ab0a0ad2fbd481faed9803cc3fcc9)
+    #2 0x60b34d8af156 in main (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_clipper_cc+0x69156) (BuildId: 099058224c0ab0a0ad2fbd481faed9803cc3fcc9)
+    #3 0x7f0f5a22a1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #4 0x7f0f5a22a28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #5 0x60b34d879ab4 in _start (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_clipper_cc+0x33ab4) (BuildId: 099058224c0ab0a0ad2fbd481faed9803cc3fcc9)
+
+MS: 5 ChangeByte-CopyPart-ChangeBinInt-InsertRepeatedBytes-EraseBytes-; base unit: b0c03cbae8aea67f0806ec823cf6eeb4066f1540
+
+
+artifact_prefix='./'; Test unit written to ./oom-da39a3ee5e6b4b0d3255bfef95601890afd80709
+Base64: 
+SUMMARY: libFuzzer: out-of-memory
+stat::number_of_executed_units: 2271046
+stat::average_exec_per_sec:     308
+stat::new_units_added:          17
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              2001

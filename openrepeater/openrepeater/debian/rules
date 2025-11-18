@@ -1,0 +1,38 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Sample debian/rules that uses debhelper.
+# This file was originally written by Joey Hess and Craig Small.
+# As a special exception, when this file is copied by dh-make into a
+# dh-make output file, you may use that output file without restriction.
+# This special exception was added by Craig Small in version 0.37 of dh-make.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+override_dh_installinit:
+	mkdir -p debian/usr/share/examples/openrepeater/sites-available
+	mkdir -p debian/openrepeater/etc/openrepeater/svxlink
+	mkdir -p debian/openrepeater/usr/sbin
+	mkdir -p debian/openrepeater/usr/share/examples/openrepeater
+	mkdir -p debian/openrepeater/var/lib/openrepeater/db
+	mkdir -p debian/openrepeater/var/www/openrepeater
+	cp -rp install/nginx/openrepeater debian/usr/share/examples/openrepeater/sites-available
+	cp -rp install/default debian/openrepeater/usr/share/examples/openrepeater
+	cp -rp install/nginx debian/openrepeater/usr/share/examples/openrepeater
+	cp -rp install/php5 debian/openrepeater/usr/share/examples/openrepeater
+	cp -rp install/sql debian/openrepeater/usr/share/examples/openrepeater
+	cp -rp install/svxlink-conf/* debian/openrepeater/etc/openrepeater/svxlink
+	cp -rp install/sounds debian/openrepeater/var/lib/openrepeater
+	cp -rp install/scripts/* debian/openrepeater/usr/sbin
+	cp -rp functions includes modules theme wizard *.php debian/openrepeater/var/www/openrepeater
+ 
+override_dh_fixperms:
+	dh_fixperms
+	chown root:www-data debian/openrepeater/etc/openrepeater
+	chmod a+x debian/openrepeater/usr/sbin/*
+    chown root:root debian/openrepeater/usr/sbin/*
+    
+%:
+	dh $@ 
+
+.PHONY: build

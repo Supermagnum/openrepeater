@@ -1,0 +1,48 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 3886604743
+INFO: Loaded 1 modules   (230 inline 8-bit counters): 230 [0x5af849a1ef40, 0x5af849a1f026), 
+INFO: Loaded 1 PC tables (230 PCs): 230 [0x5af849a1f028,0x5af849a1fe88), 
+INFO:        1 files found in /home/haaken/github-projects/qradiolink/gr-qradiolink/fuzzing/results_20251105_144806/fuzz_clipper_cc_corpus/
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: seed corpus: files: 1 min: 6b max: 6b total: 6b rss: 48Mb
+#3	INITED cov: 48 ft: 49 corp: 1/6b exec/s: 0 rss: 52Mb
+#5	NEW    cov: 48 ft: 51 corp: 2/11b lim: 6 exec/s: 0 rss: 53Mb L: 5/6 MS: 2 ChangeByte-EraseBytes-
+#6	NEW    cov: 48 ft: 52 corp: 3/13b lim: 6 exec/s: 0 rss: 54Mb L: 2/6 MS: 1 CrossOver-
+#13	NEW    cov: 53 ft: 60 corp: 4/14b lim: 6 exec/s: 0 rss: 56Mb L: 1/6 MS: 2 ChangeBinInt-EraseBytes-
+#43	REDUCE cov: 53 ft: 60 corp: 4/13b lim: 6 exec/s: 0 rss: 64Mb L: 4/6 MS: 5 ChangeBit-ShuffleBytes-ChangeBit-EraseBytes-CrossOver-
+#258	NEW    cov: 53 ft: 62 corp: 5/21b lim: 8 exec/s: 0 rss: 136Mb L: 8/8 MS: 5 CrossOver-ShuffleBytes-CopyPart-InsertByte-InsertRepeatedBytes-
+#592	NEW    cov: 53 ft: 63 corp: 6/31b lim: 11 exec/s: 592 rss: 251Mb L: 10/10 MS: 4 InsertByte-ChangeBinInt-ChangeBit-InsertByte-
+#1234	NEW    cov: 53 ft: 64 corp: 7/47b lim: 17 exec/s: 617 rss: 445Mb L: 16/16 MS: 2 CrossOver-CopyPart-
+#1673	REDUCE cov: 53 ft: 65 corp: 8/68b lim: 21 exec/s: 557 rss: 449Mb L: 21/21 MS: 4 InsertByte-CrossOver-ChangeByte-InsertRepeatedBytes-
+#2048	pulse  cov: 53 ft: 65 corp: 8/68b lim: 21 exec/s: 512 rss: 451Mb
+#2374	REDUCE cov: 53 ft: 65 corp: 8/65b lim: 25 exec/s: 593 rss: 453Mb L: 18/18 MS: 1 EraseBytes-
+#3196	REDUCE cov: 53 ft: 66 corp: 9/97b lim: 33 exec/s: 532 rss: 456Mb L: 32/32 MS: 2 CopyPart-InsertRepeatedBytes-
+#3704	NEW    cov: 53 ft: 67 corp: 10/133b lim: 38 exec/s: 529 rss: 459Mb L: 36/36 MS: 3 CMP-ChangeBinInt-CMP- DE: "\001\000\000\000\001\000\000\000"-"N2gr11hier_block2E"-
+#3708	REDUCE cov: 53 ft: 67 corp: 10/132b lim: 38 exec/s: 529 rss: 459Mb L: 35/35 MS: 4 CrossOver-PersAutoDict-InsertRepeatedBytes-InsertRepeatedBytes- DE: "N2gr11hier_block2E"-
+#4096	pulse  cov: 53 ft: 67 corp: 10/132b lim: 38 exec/s: 512 rss: 460Mb
+#4120	REDUCE cov: 53 ft: 67 corp: 10/131b lim: 38 exec/s: 515 rss: 460Mb L: 34/34 MS: 2 EraseBytes-InsertRepeatedBytes-
+#7194	NEW    cov: 53 ft: 68 corp: 11/196b lim: 68 exec/s: 479 rss: 466Mb L: 65/65 MS: 4 CopyPart-ChangeByte-InsertRepeatedBytes-PersAutoDict- DE: "\001\000\000\000\001\000\000\000"-
+#7235	NEW    cov: 53 ft: 69 corp: 12/264b lim: 68 exec/s: 452 rss: 466Mb L: 68/68 MS: 1 InsertRepeatedBytes-
+#7304	REDUCE cov: 53 ft: 69 corp: 12/263b lim: 68 exec/s: 456 rss: 466Mb L: 67/67 MS: 4 EraseBytes-CopyPart-PersAutoDict-CMP- DE: "N2gr11hier_block2E"-"\001\000\000\000"-
+#7374	REDUCE cov: 53 ft: 69 corp: 12/262b lim: 68 exec/s: 460 rss: 466Mb L: 66/66 MS: 5 CrossOver-InsertByte-ChangeBit-ChangeBit-InsertByte-
+#8192	pulse  cov: 53 ft: 69 corp: 12/262b lim: 74 exec/s: 455 rss: 468Mb
+#16384	pulse  cov: 53 ft: 69 corp: 12/262b lim: 156 exec/s: 420 rss: 474Mb
+#16684	REDUCE cov: 53 ft: 69 corp: 12/261b lim: 156 exec/s: 427 rss: 474Mb L: 64/66 MS: 5 ChangeByte-InsertRepeatedBytes-EraseBytes-PersAutoDict-InsertByte- DE: "N2gr11hier_block2E"-
+#28158	REDUCE cov: 53 ft: 70 corp: 13/517b lim: 269 exec/s: 408 rss: 482Mb L: 256/256 MS: 4 InsertRepeatedBytes-CMP-ShuffleBytes-InsertRepeatedBytes- DE: "\002\000\000\000\000\000\000\000"-
+#28239	NEW    cov: 53 ft: 71 corp: 14/777b lim: 269 exec/s: 409 rss: 482Mb L: 260/260 MS: 1 CMP- DE: "\001\000\000\000"-
+#32768	pulse  cov: 53 ft: 71 corp: 14/777b lim: 309 exec/s: 404 rss: 486Mb
+#34954	REDUCE cov: 53 ft: 71 corp: 14/775b lim: 333 exec/s: 406 rss: 488Mb L: 258/258 MS: 5 CrossOver-ChangeBit-CrossOver-ChangeByte-EraseBytes-
+#65536	pulse  cov: 53 ft: 71 corp: 14/775b lim: 634 exec/s: 392 rss: 509Mb
+#131072	pulse  cov: 53 ft: 71 corp: 14/775b lim: 1280 exec/s: 377 rss: 556Mb
+==3074390== libFuzzer: run interrupted; exiting
+stat::number_of_executed_units: 169300
+stat::average_exec_per_sec:     372
+stat::new_units_added:          21
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              583
+==3074390== libFuzzer: run interrupted; exiting
+stat::number_of_executed_units: 169300
+stat::average_exec_per_sec:     372
+stat::new_units_added:          21
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              583

@@ -1,0 +1,30 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 597906223
+INFO: Loaded 1 modules   (205 inline 8-bit counters): 205 [0x60a44601af30, 0x60a44601affd), 
+INFO: Loaded 1 PC tables (205 PCs): 205 [0x60a44601b000,0x60a44601bcd0), 
+INFO:        1 files found in /home/haaken/github-projects/qradiolink/gr-qradiolink/fuzzing/results_20251105_144806/fuzz_dsss_encoder_corpus/
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: seed corpus: files: 1 min: 4b max: 4b total: 4b rss: 47Mb
+#3	INITED cov: 45 ft: 46 corp: 1/4b exec/s: 0 rss: 52Mb
+#4	REDUCE cov: 45 ft: 46 corp: 1/2b lim: 4 exec/s: 0 rss: 53Mb L: 2/2 MS: 1 EraseBytes-
+#32	REDUCE cov: 46 ft: 47 corp: 2/3b lim: 4 exec/s: 0 rss: 63Mb L: 1/2 MS: 3 ShuffleBytes-ChangeByte-CrossOver-
+#1024	pulse  cov: 46 ft: 47 corp: 2/3b lim: 11 exec/s: 512 rss: 413Mb
+#2048	pulse  cov: 46 ft: 47 corp: 2/3b lim: 21 exec/s: 512 rss: 469Mb
+#4096	pulse  cov: 46 ft: 47 corp: 2/3b lim: 43 exec/s: 455 rss: 479Mb
+#8192	pulse  cov: 46 ft: 47 corp: 2/3b lim: 80 exec/s: 431 rss: 486Mb
+#16384	pulse  cov: 46 ft: 47 corp: 2/3b lim: 163 exec/s: 409 rss: 492Mb
+#32768	pulse  cov: 46 ft: 47 corp: 2/3b lim: 325 exec/s: 390 rss: 505Mb
+#65536	pulse  cov: 46 ft: 47 corp: 2/3b lim: 652 exec/s: 376 rss: 529Mb
+#131072	pulse  cov: 46 ft: 47 corp: 2/3b lim: 1300 exec/s: 363 rss: 578Mb
+==3084152== libFuzzer: run interrupted; exiting
+stat::number_of_executed_units: 162642
+stat::average_exec_per_sec:     358
+stat::new_units_added:          2
+stat::slowest_unit_time_sec:    0
+==3084152== libFuzzer: run interrupted; exiting
+stat::number_of_executed_units: 162642
+stat::average_exec_per_sec:     358
+stat::new_units_added:          2
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              598
+stat::peak_rss_mb:              598
