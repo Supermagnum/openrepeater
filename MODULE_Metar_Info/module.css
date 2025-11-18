@@ -1,0 +1,64 @@
+/* Module CSS */
+#stationsWrap {
+	overflow:hidden;
+}
+
+.stationRow {
+	background-color:#f0f0f0;
+	overflow-x:auto;
+	white-space:normal;
+	min-height:38px;
+	padding:5px;
+	width:100%;
+	border-top:1px solid silver;
+	border-bottom:1px solid silver;
+}
+
+.stationRow.additional {
+	margin-top:8px;
+}
+
+.stationRow span {
+	display:inline-block;
+	white-space:normal;
+	margin:0 4px;
+	padding:4px;
+	float:left;
+}
+
+.stationRow span.num {
+	font-size:24px;
+	font-weight:700;
+	color:#666;
+	padding-top:8px;
+}
+
+.stationLabel {
+	min-width:100px;
+}
+
+.stationICAO {
+	width:50px;
+}
+
+.addStation,.removeStation {
+	float:left;
+	margin-top:12px;
+	margin-left:5px;
+}
+
+
+.radio {
+	
+}
+
+.radio span {
+    margin: 0;
+    padding: 0;
+    background: yellow;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.defaultStation {
+}

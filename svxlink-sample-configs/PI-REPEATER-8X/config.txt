@@ -1,0 +1,24 @@
+
+#uncomment to overclock the arm. 700 MHz is the default.
+arm_freq_min=1200
+
+# Uncomment some or all of these to enable the optional hardware interfaces
+dtparam=i2c_arm=on
+#dtparam=i2s=on
+#dtparam=spi=on
+
+# Uncomment this to enable the lirc-rpi module
+#dtoverlay=lirc-rpi
+
+# Additional overlays and parameters are documented /boot/overlays/README
+
+# Enable audio (loads snd_bcm2835)
+#dtparam=audio=on
+
+##### MAIN BOARD #####
+dtoverlay=mcp23017,addr=0x27,gpiopin=23
+dtoverlay=mcp23017,addr=0x26,gpiopin=24
+dtoverlay=mcp23017,addr=0x25,gpiopin=25
+##### RELAY BOARD #####
+dtoverlay=mcp23017,addr=0x24,gpiopin=13
+

@@ -321,6 +321,42 @@ journalctl -u svxlink -n 50
 3. Reduce replay protection window
 4. Limit number of authorized keys
 
+## Testing Without Radio Hardware
+
+### Simulating Radio Link with Audio Cables
+
+It is possible to simulate a radio link between two Raspberry Pis or laptops using two cheap audio cables, one from mic input to speaker, one from speaker to mic. One only needs to have the needed sound interfaces. Noise can be generated in GNU Radio.
+
+**Setup:**
+
+1. **Hardware Requirements:**
+   - Two devices (Raspberry Pis or laptops) with audio input/output
+   - Two audio cables:
+     - Cable 1: Connect Device A's microphone input to Device B's speaker/headphone output
+     - Cable 2: Connect Device B's microphone input to Device A's speaker/headphone output
+
+2. **Software Configuration:**
+   - Configure GNU Radio flowgraphs to use audio interfaces instead of SDR hardware
+   - Set audio source/sink blocks to use the appropriate audio devices
+   - Use GNU Radio noise generation blocks to simulate radio noise and interference
+
+3. **Testing Workflow:**
+   - Device A: Run transmitter flowgraph (signed-message-tx.grc) using audio output
+   - Device B: Run receiver flowgraph (signed-message-rx.grc) using audio input
+   - Commands transmitted from Device A will be received by Device B via the audio cable link
+   - This allows full end-to-end testing of the authenticated control system without radio hardware
+
+**Benefits:**
+- Test the complete system without requiring radio hardware or licenses
+- Debug protocol issues in a controlled environment
+- Add controlled noise and interference using GNU Radio blocks
+- Verify command signing, verification, and execution without RF concerns
+
+**Limitations:**
+- Does not test actual RF propagation characteristics
+- Audio bandwidth limitations may affect high-speed packet transmission
+- Cable length and quality may introduce signal degradation
+
 ## Getting Help
 
 ### Information to Provide
