@@ -58,6 +58,24 @@ RUNNING: bool = True
 COMMAND_HISTORY: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
 
 
+def normalize_callsign(callsign: Optional[str]) -> Tuple[str, str]:
+    """
+    Normalize a callsign string.
+
+    Returns:
+        (normalized_callsign_with_ssid, base_callsign_without_ssid)
+    """
+    if not callsign:
+        return "", ""
+
+    normalized = callsign.strip().upper()
+    if "-" in normalized:
+        base, _, suffix = normalized.partition("-")
+        if suffix.isdigit():
+            return normalized, base
+    return normalized, normalized
+
+
 def load_config(config_path: Optional[str] = None) -> Dict:
     """Load configuration from YAML file."""
     if config_path is None:
@@ -176,9 +194,15 @@ def parse_json_command(json_data: bytes) -> Optional[Dict]:
             logging.error("Invalid JSON command format: missing required fields")
             return None
 
+        normalized_callsign, base_callsign = normalize_callsign(data["operator"])
+        if not normalized_callsign:
+            logging.error("Invalid operator callsign in command")
+            return None
+
         return {
             "timestamp": float(data["timestamp"]),
-            "callsign": data["operator"].upper(),
+            "callsign": normalized_callsign,
+            "callsign_base": base_callsign,
             "command": data["command"].strip(),
             "raw": json_data,
         }
@@ -192,7 +216,7 @@ def parse_json_command(json_data: bytes) -> Optional[Dict]:
 
 def check_replay_protection(command_data: Dict, config: Dict) -> bool:
     """Check if command is a replay attack."""
-    callsign = command_data["callsign"]
+    callsign = command_data.get("callsign_base") or command_data["callsign"]
     timestamp = command_data["timestamp"]
     command_hash = hashlib.sha256(command_data["raw"]).hexdigest()
 
@@ -202,14 +226,14 @@ def check_replay_protection(command_data: Dict, config: Dict) -> bool:
     # Check if timestamp is too old
     if current_time - timestamp > window:
         logging.warning(
-            f"Command timestamp too old: {timestamp} (current: {current_time})"
+            f"Command timestamp too old for {command_data['callsign']}: {timestamp} (current: {current_time})"
         )
         return False
 
     # Check if timestamp is in the future (clock skew)
     if timestamp > current_time + 60:
         logging.warning(
-            f"Command timestamp in future: {timestamp} (current: {current_time})"
+            f"Command timestamp in future for {command_data['callsign']}: {timestamp} (current: {current_time})"
         )
         return False
 
@@ -217,7 +241,9 @@ def check_replay_protection(command_data: Dict, config: Dict) -> bool:
     history = COMMAND_HISTORY[callsign]
     for entry in history:
         if entry["hash"] == command_hash:
-            logging.warning(f"Replay detected: duplicate command from {callsign}")
+            logging.warning(
+                f"Replay detected: duplicate command from {command_data['callsign']}"
+            )
             return False
 
     # Add to history
@@ -232,7 +258,7 @@ def check_replay_protection(command_data: Dict, config: Dict) -> bool:
     recent_commands = [e for e in history if e["time"] > current_time - 60]
     if len(recent_commands) > max_per_minute:
         logging.warning(
-            f"Rate limit exceeded for {callsign}: {len(recent_commands)} commands in last minute"
+            f"Rate limit exceeded for {command_data['callsign']}: {len(recent_commands)} commands in last minute"
         )
         return False
 
@@ -285,10 +311,18 @@ def process_command(
         return False, reply
 
     callsign = command_data["callsign"]
+    base_callsign = command_data.get("callsign_base", callsign)
 
     # Check if operator is authorized
-    if callsign not in authorized_keys:
-        logging.warning(f"Unauthorized operator: {callsign}")
+    if callsign in authorized_keys:
+        key_identifier = callsign
+    elif base_callsign in authorized_keys:
+        key_identifier = base_callsign
+    else:
+        key_identifier = None
+
+    if key_identifier is None:
+        logging.warning(f"Unauthorized operator: {callsign} (base: {base_callsign})")
         reply = reply_formatter.format_failure_reply(
             callsign, "AUTH_ERROR", f"Operator {callsign} not authorized"
         )
@@ -303,7 +337,7 @@ def process_command(
 
     # Verify signature (skip if signature is empty for testing)
     if signature and len(signature) > 0:
-        public_key_data = authorized_keys[callsign]
+        public_key_data = authorized_keys[key_identifier]
         if not verify_signature(json_command, signature, public_key_data):
             logging.warning(f"Invalid signature from {callsign}")
             reply = reply_formatter.format_failure_reply(

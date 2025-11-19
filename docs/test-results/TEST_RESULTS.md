@@ -1,6 +1,6 @@
 # Authenticated Control – Test & Analysis Report
 
-_Last updated: 2025‑11‑18_
+_Last updated: 2025‑11‑19_
 
 This document captures the current status of all automated quality checks that were
 requested for the authenticated control project. Each subsection lists the command
@@ -96,6 +96,21 @@ are not available in CI; manual validation is documented in the respective READM
 | --- | --- | --- |
 | `pytest-randomly`, `pytest-repeat` | Exercise tests with varied ordering and repetition | Installed & used (`pytest --count=10`). |
 | `mutmut`, `memory-profiler` | Mutation testing & profiling (not yet run) | Installed for future workflows. |
+
+## 7. Scapy-based Protocol Tests
+
+| Scope | Command | Result | Notes |
+| --- | --- | --- | --- |
+| Signature verification | `python3 integration/test_signature_verification.py` | [PASS] 22/22 | Generates two valid Brainpool signatures + 20 invalid variants; Scapy builds IP/UDP/Raw frames for TX/RX verification. |
+| Comprehensive security (Scapy + ZMQ) | `python3 integration/test_security_comprehensive.py` | [PASS] 45/45 | Covers cryptographic edge cases, replay & rate limiting, injection attempts, authorization (incl. SSID normalization), and valid/invalid AX.25 frames with Scapy payload generation. |
+
+**Test Environment (Scapy suites):**
+- Python 3.12.3
+- Scapy 2.5+
+- pyzmq 26.x
+- Test Date: 2025-11-19
+
+Both suites exercise the ZMQ interface and AX.25 framing logic without requiring RF hardware; failures are logged to `integration/test_security_comprehensive.py` output for quick diagnosis.
 
 ---
 

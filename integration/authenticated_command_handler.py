@@ -51,6 +51,24 @@ COMMAND_HISTORY: Dict[str, List[Dict[str, Any]]] = defaultdict(
 )  # Track commands for replay protection
 
 
+def normalize_callsign(callsign: Optional[str]) -> Tuple[str, str]:
+    """
+    Normalize a callsign string.
+
+    Returns:
+        (normalized_callsign_with_ssid, base_callsign_without_ssid)
+    """
+    if not callsign:
+        return "", ""
+
+    normalized = callsign.strip().upper()
+    if "-" in normalized:
+        base, _, suffix = normalized.partition("-")
+        if suffix.isdigit():
+            return normalized, base
+    return normalized, normalized
+
+
 def load_config(config_path: Optional[str] = None) -> Dict:
     """Load configuration from YAML file."""
     # Allow config path to be overridden via environment variable
@@ -177,7 +195,7 @@ def parse_command_frame(frame_data: bytes) -> Optional[Dict]:
             logging.error(f"Invalid command frame format: {frame_str}")
             return None
 
-        timestamp_str, callsign, command = parts
+        timestamp_str, callsign_raw, command = parts
 
         try:
             timestamp = float(timestamp_str)
@@ -185,9 +203,15 @@ def parse_command_frame(frame_data: bytes) -> Optional[Dict]:
             logging.error(f"Invalid timestamp: {timestamp_str}")
             return None
 
+        normalized_callsign, base_callsign = normalize_callsign(callsign_raw)
+        if not normalized_callsign:
+            logging.error(f"Invalid callsign: {callsign_raw}")
+            return None
+
         return {
             "timestamp": timestamp,
-            "callsign": callsign.upper(),
+            "callsign": normalized_callsign,
+            "callsign_base": base_callsign,
             "command": command.strip(),
             "raw": frame_data,
         }
@@ -203,7 +227,7 @@ def check_replay_protection(command_data: Dict, config: Dict) -> bool:
     Returns:
         True if command is valid (not a replay), False if replay detected
     """
-    callsign = command_data["callsign"]
+    callsign = command_data.get("callsign_base") or command_data["callsign"]
     timestamp = command_data["timestamp"]
     command_hash = hashlib.sha256(command_data["raw"]).hexdigest()
 
@@ -213,14 +237,14 @@ def check_replay_protection(command_data: Dict, config: Dict) -> bool:
     # Check if timestamp is too old
     if current_time - timestamp > window:
         logging.warning(
-            f"Command timestamp too old: {timestamp} (current: {current_time})"
+            f"Command timestamp too old for {command_data['callsign']}: {timestamp} (current: {current_time})"
         )
         return False
 
     # Check if timestamp is in the future (clock skew)
     if timestamp > current_time + 60:  # Allow 60 second clock skew
         logging.warning(
-            f"Command timestamp in future: {timestamp} (current: {current_time})"
+            f"Command timestamp in future for {command_data['callsign']}: {timestamp} (current: {current_time})"
         )
         return False
 
@@ -228,7 +252,9 @@ def check_replay_protection(command_data: Dict, config: Dict) -> bool:
     history = COMMAND_HISTORY[callsign]
     for entry in history:
         if entry["hash"] == command_hash:
-            logging.warning(f"Replay detected: duplicate command from {callsign}")
+            logging.warning(
+                f"Replay detected: duplicate command from {command_data['callsign']}"
+            )
             return False
 
     # Add to history
@@ -243,7 +269,7 @@ def check_replay_protection(command_data: Dict, config: Dict) -> bool:
     recent_commands = [e for e in history if e["time"] > current_time - 60]
     if len(recent_commands) > max_per_minute:
         logging.warning(
-            f"Rate limit exceeded for {callsign}: {len(recent_commands)} commands in last minute"
+            f"Rate limit exceeded for {command_data['callsign']}: {len(recent_commands)} commands in last minute"
         )
         return False
 
