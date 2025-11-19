@@ -21,7 +21,7 @@ used, the overall result, and any noteworthy findings.
 | `flake8` | [PASS] Pass | Zero lint errors across `svxlink_control` and `ax25_protocol`. |
 | `black --check .` | [PASS] Pass | All files formatted; enforced via `make format`. |
 | `isort --check-only .` | [PASS] Pass | Import ordering matches Black profile. |
-| `pylint --disable=C0114,C0115,C0116 *.py` | [WARNING] Score 8.81/10 | Remaining warnings are expected for logging style, TODO placeholders, and broad exception handling in `command_handler.py`. |
+| `pylint --disable=C0114,C0115,C0116 *.py` | [WARNING] Score 8.81/10 | Remaining warnings are limited to defensive logging style and broad exception handling in `integration/authenticated_command_handler.py` while the real SVXLink execution layer is still stubbed. |
 
 ## 2. Static Analysis & Security
 
@@ -118,8 +118,8 @@ Both suites exercise the ZMQ interface and AX.25 framing logic without requiring
 
 1. Increase functional coverage by integrating hardware‑in‑the‑loop tests once
    GNU Radio and SVXLink environments are available.
-2. Resolve the remaining pylint TODO warnings when the real SVXLink execution code
-   is implemented.
+2. Implement the real SVXLink execution path so the temporary broad exception
+   handling can be tightened and the pylint warnings cleared.
 3. Hook these commands into CI (GitHub Actions) so new changes automatically
    trigger the same suite.
 
