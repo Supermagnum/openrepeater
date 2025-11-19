@@ -44,6 +44,28 @@ except ImportError:
     print("ERROR: cryptography library not available. Cannot verify signatures.")
     sys.exit(1)
 
+# Default SVXLink command translations
+DEFAULT_SVXLINK_TRANSFORMS = {
+    "SET_SQUELCH": {
+        "requires_value": True,
+        "formatter": lambda value: f"RX1.SQL_OPEN_THRESH={value}",
+        "validator": float,  # ensure numeric input
+    },
+    "SET_POWER": {
+        "requires_value": True,
+        "formatter": lambda value: f"TX1.TX_POWER={value}",
+        "validator": float,
+    },
+    "PTT_ENABLE": {
+        "requires_value": False,
+        "formatter": lambda _value: "TX1.PTT=ON",
+    },
+    "PTT_DISABLE": {
+        "requires_value": False,
+        "formatter": lambda _value: "TX1.PTT=OFF",
+    },
+}
+
 # Global state
 RUNNING: bool = True
 COMMAND_HISTORY: Dict[str, List[Dict[str, Any]]] = defaultdict(
@@ -316,6 +338,74 @@ def execute_svxlink_command_tcp(command: str, config: Dict) -> Tuple[bool, str]:
         return False, error_msg
 
 
+def parse_command_payload(command_text: str) -> Tuple[Optional[str], Optional[str]]:
+    """
+    Split a command string into command name and value.
+
+    Supports formats such as "CMD=value" or "CMD value".
+    """
+    if not command_text:
+        return None, None
+
+    text = command_text.strip()
+    if not text:
+        return None, None
+
+    if "=" in text:
+        name, value = text.split("=", 1)
+    elif " " in text:
+        name, value = text.split(" ", 1)
+    else:
+        return text.strip().upper(), None
+
+    return name.strip().upper(), value.strip()
+
+
+def translate_command_to_svxlink(
+    command_text: str, config: Dict
+) -> Tuple[bool, Optional[str], str]:
+    """
+    Convert a logical command string into an SVXLink command.
+
+    Returns:
+        success flag, SVXLink payload (or None), and status message
+    """
+    cmd_name, value = parse_command_payload(command_text)
+
+    if not cmd_name:
+        return False, None, "Empty command payload"
+
+    # Allow custom templates from config, e.g. {"SET_ID": "LOGICS:1#DTMF_CMD={value}"}
+    custom_map = config.get("svxlink_command_map", {})
+    template = custom_map.get(cmd_name)
+    if template:
+        if "{value}" in template:
+            if value is None:
+                return False, None, f"{cmd_name} requires a value"
+            return True, template.replace("{value}", value), "OK"
+        return True, template, "OK"
+
+    transform = DEFAULT_SVXLINK_TRANSFORMS.get(cmd_name)
+    if transform:
+        if transform.get("requires_value") and value is None:
+            return False, None, f"{cmd_name} requires a value"
+
+        validator = transform.get("validator")
+        if validator and value is not None:
+            try:
+                validator(value)
+            except ValueError:
+                return False, None, f"{cmd_name} value '{value}' is invalid"
+
+        payload = transform["formatter"](value)
+        return True, payload, "OK"
+
+    passthrough = command_text.strip()
+    if not passthrough:
+        return False, None, "Command text is empty"
+    return True, passthrough, "OK"
+
+
 def execute_svxlink_command_config(
     command: str, config: Dict[str, Any]
 ) -> Tuple[bool, str]:
@@ -352,12 +442,17 @@ def execute_svxlink_command(command: str, config: Dict) -> Tuple[bool, str]:
     Returns:
         (success, result_message)
     """
+    translate_ok, svx_payload, status = translate_command_to_svxlink(command, config)
+    if not translate_ok or not svx_payload:
+        logging.error(f"Failed to build SVXLink command for '{command}': {status}")
+        return False, status
+
     method = config.get("svxlink_control", "tcp")
 
     if method == "tcp":
-        return execute_svxlink_command_tcp(command, config)
+        return execute_svxlink_command_tcp(svx_payload, config)
     elif method == "config":
-        return execute_svxlink_command_config(command, config)
+        return execute_svxlink_command_config(svx_payload, config)
     elif method == "dtmf":
         # DTMF injection would require additional implementation
         logging.warning("DTMF injection method not implemented")
