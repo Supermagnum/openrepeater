@@ -2,6 +2,43 @@
 
 Complete authenticated control system for OpenRepeater repeaters using ECDSA digital signatures and AX.25 packet radio protocol.
 
+## Table of Contents
+
+- [Legal Compliance](#legal-compliance)
+- [Components](#components)
+- [Quick Start](#quick-start)
+  - [Installation](#installation)
+  - [Building from Source](#building-from-source)
+- [Usage](#usage)
+  - [Generate Keys](#generate-keys)
+  - [Manage Authorized Keys](#manage-authorized-keys)
+  - [Send Authenticated Commands](#send-authenticated-commands)
+- [Development](#development)
+  - [Setup Development Environment](#setup-development-environment)
+  - [Run Tests](#run-tests)
+  - [Code Quality](#code-quality)
+  - [Clean Build Artifacts](#clean-build-artifacts)
+- [Makefile Targets](#makefile-targets)
+- [System Dependencies](#system-dependencies)
+  - [Required](#required)
+  - [Optional](#optional)
+  - [Installation on Debian/Ubuntu](#installation-on-debianubuntu)
+- [Configuration](#configuration)
+- [Documentation](#documentation)
+  - [Essential Guides](#essential-guides)
+  - [Installation & Configuration](#installation--configuration)
+  - [Flowgraphs](#flowgraphs)
+  - [Components](#components-1)
+  - [Installation & Build](#installation--build)
+  - [Testing & Results](#testing--results)
+  - [Additional Resources](#additional-resources)
+- [Systemd Service](#systemd-service)
+- [Troubleshooting](#troubleshooting)
+  - [Check Installation](#check-installation)
+  - [Common Issues](#common-issues)
+- [License](#license)
+- [Support](#support)
+
 ## Legal Compliance
 
 **IMPORTANT**: This system uses a **two-frame protocol** to comply with amateur radio regulations:
@@ -206,6 +243,7 @@ See [Admin Guide](guides/ADMIN_GUIDE.md) for detailed configuration instructions
 - **[Operator Guide](guides/OPERATOR_GUIDE.md)** - Operator usage guide
 - **[Admin Guide](guides/ADMIN_GUIDE.md)** - Repeater administrator guide
 - **[Key Management Guide](guides/KEY_MANAGEMENT.md)** - Comprehensive key management guide
+- **[Club Key Hierarchy](guides/CLUB_KEY_HIERARCHY.md)** - Three-tier key management structure for amateur radio clubs
 
 ### Installation & Configuration
 
