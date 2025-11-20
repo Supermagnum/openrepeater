@@ -2,6 +2,53 @@
 
 Complete authenticated control system for amateur radio repeaters using cryptographic signatures and GNU Radio.
 
+## Table of Contents
+
+- [Important: This System Does NOT Encrypt Anything](#important-this-system-does-not-encrypt-anything)
+  - [Signing vs. Encryption](#signing-vs-encryption)
+- [Overview](#overview)
+  - [What Problem Does This Solve?](#what-problem-does-this-solve)
+  - [How It Works](#how-it-works)
+  - [Key Benefits](#key-benefits)
+- [Project Structure](#project-structure)
+- [Prerequisites](#prerequisites)
+  - [Hardware](#hardware)
+  - [Software](#software)
+- [Installation](#installation)
+  - [Option 0: Docker Installation (Recommended for Testing)](#option-0-docker-installation-recommended-for-testing)
+  - [Option 1: Integrated with OpenRepeater](#option-1-integrated-with-openrepeater)
+  - [Option 2: Standalone Installation](#option-2-standalone-installation)
+  - [Uninstallation](#uninstallation)
+- [Configuration](#configuration)
+  - [1. Key Management](#1-key-management)
+    - [Generate Repeater Keypair](#generate-repeater-keypair)
+    - [Add Authorized Operator Keys](#add-authorized-operator-keys)
+  - [2. System Configuration](#2-system-configuration)
+  - [3. Place Flowgraphs](#3-place-flowgraphs)
+  - [4. Configure SVXLink](#4-configure-svxlink)
+- [Usage](#usage)
+  - [Start the Service](#start-the-service)
+  - [View Logs](#view-logs)
+  - [Send Authenticated Command](#send-authenticated-command)
+  - [Example Commands](#example-commands)
+- [Security Considerations](#security-considerations)
+- [Troubleshooting](#troubleshooting)
+  - [Service Won't Start](#service-wont-start)
+  - [No Commands Received](#no-commands-received)
+  - [Signature Verification Fails](#signature-verification-fails)
+  - [SVXLink Command Execution Fails](#svxlink-command-execution-fails)
+- [Related Repositories](#related-repositories)
+- [Documentation](#documentation)
+  - [Essential Documentation](#essential-documentation)
+  - [Detailed Documentation](#detailed-documentation)
+  - [Installation & Configuration](#installation--configuration)
+  - [Security & Testing](#security--testing)
+  - [Additional Resources](#additional-resources)
+- [License](#license)
+- [Support](#support)
+- [Contributing](#contributing)
+- [Code Quality](#code-quality)
+
 ## Important: This System Does NOT Encrypt Anything
 
 **This system DOES NOT encrypt anything.** All frames are transmitted in the clear and can be read by anyone monitoring the frequency.
@@ -388,6 +435,7 @@ python3 -c "import yaml; yaml.safe_load(open('/etc/authenticated-repeater/config
 
 - **[Protocol Specification](docs/guides/PROTOCOL.md)** - Complete AX.25 authenticated command protocol specification (two-frame format)
 - **[Key Management Guide](docs/guides/KEY_MANAGEMENT.md)** - Comprehensive guide to key creation, handling, key servers, and battery-friendly cryptography
+- **[Club Key Hierarchy](docs/guides/CLUB_KEY_HIERARCHY.md)** - Three-tier key management structure for amateur radio clubs
 - **[Flowgraph Documentation](docs/flowgraphs/FLOWGRAPHS.md)** - Detailed flowgraph documentation with block references and hardware integration
 - **[Admin Guide](docs/guides/ADMIN_GUIDE.md)** - Administrator guide for repeater setup and configuration
 - **[Operator Guide](docs/guides/OPERATOR_GUIDE.md)** - Operator usage guide for sending authenticated commands
