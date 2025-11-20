@@ -76,6 +76,86 @@ with open('operator_private.pem', 'wb') as f:
 - `brainpoolP384r1` - 384-bit curve (higher security)
 - `brainpoolP512r1` - 512-bit curve (maximum security)
 
+### Generating Brainpool P256r1 Keys on Nitrokey 3A
+
+Use Nitrokey 3A (in OpenPGP smartcard mode) to hold hardware-backed Brainpool keys. These steps assume a current Debian/Ubuntu-based system; adjust package names if your distribution differs.
+
+**1. Prepare the host**
+```bash
+sudo apt update
+sudo apt install pcscd pcsc-tools scdaemon gpg
+
+# Start and enable the smartcard daemon
+sudo systemctl start pcscd
+sudo systemctl enable pcscd
+
+# Avoid ccid driver conflicts with Nitrokey 3A
+mkdir -p ~/.gnupg
+echo "disable-ccid" >> ~/.gnupg/scdaemon.conf
+
+# Restart scdaemon so changes apply
+gpg-connect-agent "SCD KILLSCD" /bye
+
+# Confirm the token is detected
+pcsc_scan -r
+```
+
+**2. Enter the expert card editor**
+```bash
+gpg --card-edit --expert
+```
+
+At the `gpg/card>` prompt:
+```
+gpg/card> admin
+gpg/card> key-attr
+```
+
+Configure each subkey slot (Signature, Encryption, Authentication):
+1. Select key type `(2) ECC`
+2. Choose curve `(5) Brainpool P-256` for Signature
+3. Repeat for Encryption (choose your preferred ECC curve; Brainpool P-256 recommended)  
+4. Repeat for Authentication selecting `(5) Brainpool P-256`
+
+**3. Generate keys on-card**
+```
+gpg/card> generate
+```
+
+When prompted:
+- Decline off-card backups for encryption subkeys if you require exclusive hardware residency (`Make off-card backup of encryption key? (Y/n) n`)
+- Enter your operator details (name/callsign, email, comment such as `Repeater Authentication`)
+- Enter the default User PIN (`123456`) and Admin PIN (`12345678`) when requested
+
+**4. Change both PINs immediately**
+```bash
+gpg --card-edit
+
+gpg/card> admin
+gpg/card> passwd
+```
+
+Use the menu:
+```
+1 - change PIN          # User PIN (used for signing/decryption)
+2 - unblock PIN         # Requires reset code
+3 - change Admin PIN    # Needed for key management operations
+4 - set the Reset Code  # Recommended after initial setup
+Q - quit
+```
+
+- Choose option `1` to set a new User PIN
+- Choose option `3` to set a new Admin PIN
+- Consider setting a reset code (option `4`) to recover from lockouts
+
+**Security reminders**
+- User PIN is required whenever the repeater controller signs authenticated commands (gpg-agent can cache it per session).
+- Admin PIN is required for card management operations; protect it carefully.
+- Three incorrect attempts block the respective PIN; use the reset code or Admin PIN to unblock.
+- Never record PINs insecurely; treat them as credentials.
+
+Following these steps keeps the OpenRepeater authentication key material on the Nitrokey 3A, leveraging Brainpool P-256 curves for compliant, battery-friendly elliptic-curve signatures.
+
 ### Centralized Key Generation and Distribution
 
 For organizations, teams, or groups that need to manage multiple users:
