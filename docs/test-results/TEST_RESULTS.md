@@ -107,7 +107,8 @@ are not available in CI; manual validation is documented in the respective READM
 | Tool | Purpose | Status |
 | --- | --- | --- |
 | `pytest-randomly`, `pytest-repeat` | Exercise tests with varied ordering and repetition | Installed & used (`pytest --count=10`). **What it tests:** `pytest-randomly` runs tests in random order to find test dependencies (tests that only pass when run in a specific order). `pytest-repeat` runs tests multiple times to catch non-deterministic bugs. These tools ensure tests are robust and independent. |
-| `mutmut`, `memory-profiler` | Mutation testing & profiling (not yet run) | Installed for future workflows. **What it tests:** `mutmut` performs mutation testing by making small changes to code and checking if tests catch the mutations. This helps identify weak tests that don't actually verify behavior. `memory-profiler` analyzes memory usage to find memory leaks or excessive memory consumption. |
+| `mutmut` | Mutation testing | [CONFIGURATION ISSUES] Generated 772 mutants but unable to complete testing due to test file structure conflicts. **What it tests:** Performs mutation testing by making small changes to code and checking if tests catch the mutations. This helps identify weak tests that don't actually verify behavior. Issue: Test helper functions with `test_` prefix are interpreted as pytest fixtures. See [Mutmut and Memory Profiler Results](MUTMUT_MEMORY_PROFILER_RESULTS.md) for detailed analysis and recommendations. |
+| `memory-profiler` | Memory usage analysis | [PASS] Successfully completed. **What it tests:** Analyzes memory usage to find memory leaks or excessive memory consumption. Results show stable memory usage (48 MiB baseline, no leaks detected). See [Mutmut and Memory Profiler Results](MUTMUT_MEMORY_PROFILER_RESULTS.md) for detailed analysis. |
 
 ## 7. Scapy-based Protocol Tests
 
