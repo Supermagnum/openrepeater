@@ -399,3 +399,12 @@ echo 0 > /sys/class/gpio/gpio18/value
 - [GNU Radio Embedded Python Blocks](https://wiki.gnuradio.org/index.php/Embedded_Python_Block)
 - [Flowgraph Documentation](../flowgraphs/FLOWGRAPHS.md)
 
+## Comprehensive PTT Documentation
+
+For detailed PTT control documentation covering all methods, hardware-specific examples, and advanced techniques, see:
+
+- **[gr-packet-protocols PTT Control Guide](https://github.com/Supermagnum/gr-packet-protocols/blob/main/docs/PTT_CONTROL.md)** - Comprehensive guide covering KISS TNC PTT, SDR hardware blocks, custom GPIO control, message-based control, timing considerations, and hardware-specific examples
+- **[gr-qradiolink PTT Control Guide](https://github.com/Supermagnum/gr-qradiolink/blob/main/docs/PTT_CONTROL.md)** - Detailed guide for PTT control with gr-osmosdr and gr-qradiolink blocks, including serial/GPIO control, SDR device-specific notes, and integration examples
+
+These guides provide extensive code examples, hardware-specific configurations, troubleshooting tips, and best practices for implementing PTT control in GNU Radio applications.
+

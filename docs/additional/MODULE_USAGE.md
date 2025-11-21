@@ -399,3 +399,11 @@ If flowgraphs fail to run:
 - [Flowgraph Examples](../flowgraphs/FLOWGRAPHS.md)
 - [Troubleshooting Guide](TROUBLESHOOTING.md)
 
+## PTT Control Documentation
+
+For comprehensive PTT (Push-To-Talk) control documentation:
+
+- **[gr-packet-protocols PTT Control Guide](https://github.com/Supermagnum/gr-packet-protocols/blob/main/docs/PTT_CONTROL.md)** - Complete guide for PTT control with packet protocols, including KISS TNC PTT, SDR hardware blocks, custom GPIO control, and timing considerations
+- **[gr-qradiolink PTT Control Guide](https://github.com/Supermagnum/gr-qradiolink/blob/main/docs/PTT_CONTROL.md)** - Detailed guide for PTT control with gr-osmosdr and gr-qradiolink blocks, including serial/GPIO control and SDR device-specific configurations
+- **[PTT Button Usage Guide](PTT_BUTTON_USAGE.md)** - This project's guide for PTT button setup and usage with the authenticated repeater control system
+
