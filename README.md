@@ -33,7 +33,8 @@ gr-qradiolink/
 │       └── bindings/
 ├── grc/                    # GNU Radio Companion block definitions
 ├── docs/                   # Documentation
-│   └── doxygen/
+│   ├── doxygen/
+│   └── PTT_CONTROL.md      # PTT control with gr-osmosdr
 ├── examples/               # Example flowgraphs
 ├── tests/                  # Unit tests
 └── cmake/                  # CMake modules
@@ -94,6 +95,10 @@ The module includes comprehensive fuzzing coverage using libFuzzer. See [fuzzing
 - Execution metrics (104+ million executions)
 - Performance analysis
 - Security assessment (0 crashes, 0 memory leaks)
+
+## Documentation
+
+- **[PTT Control Guide](docs/PTT_CONTROL.md)**: Comprehensive guide on controlling PTT (Push-To-Talk) with gr-osmosdr and similar SDR hardware when using gr-qradiolink blocks.
 
 ## License
 
