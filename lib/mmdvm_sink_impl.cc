@@ -18,7 +18,7 @@
 #include "mmdvm_sink_impl.h"
 #include <gnuradio/io_signature.h>
 #include <gnuradio/tags.h>
-#include "../../src/bursttimer.h"
+#include "../src/bursttimer.h"
 #include <zmq.hpp>
 #include <algorithm>
 #include <cmath>

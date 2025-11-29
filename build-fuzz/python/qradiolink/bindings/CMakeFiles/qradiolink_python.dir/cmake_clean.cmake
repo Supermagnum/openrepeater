@@ -21,6 +21,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/qradiolink_python.dir/demod_ssb_python.cc.o.d"
   "CMakeFiles/qradiolink_python.dir/demod_wbfm_python.cc.o"
   "CMakeFiles/qradiolink_python.dir/demod_wbfm_python.cc.o.d"
+  "CMakeFiles/qradiolink_python.dir/m17_deframer_python.cc.o"
+  "CMakeFiles/qradiolink_python.dir/m17_deframer_python.cc.o.d"
   "CMakeFiles/qradiolink_python.dir/mod_2fsk_python.cc.o"
   "CMakeFiles/qradiolink_python.dir/mod_2fsk_python.cc.o.d"
   "CMakeFiles/qradiolink_python.dir/mod_4fsk_python.cc.o"

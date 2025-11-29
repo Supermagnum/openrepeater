@@ -1,0 +1,44 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 3841660005
+INFO: Loaded 1 modules   (195 inline 8-bit counters): 195 [0x55741dfb9f50, 0x55741dfba013), 
+INFO: Loaded 1 PC tables (195 PCs): 195 [0x55741dfba018,0x55741dfbac48), 
+INFO:        6 files found in /home/haaken/github-projects/gr-qradiolink/fuzzing/results_new_20251121_112130/fuzz_m17_deframer_corpus/
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: seed corpus: files: 6 min: 10b max: 100b total: 356b rss: 48Mb
+ALARM: working on the last Unit for 31 seconds
+       and the timeout value is 30 (use -timeout=N to change)
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0x4d,0x31,0x37,0x46,0x52,0x41,0x4d,0x45,0xa,0xa,
+M17FRAME\012\012
+artifact_prefix='./'; Test unit written to ./timeout-8c973e92dff2f60cfbb8e582f2f55e77f14e00c7
+Base64: TTE3RlJBTUUKCg==
+==41427== ERROR: libFuzzer: timeout after 31 seconds
+    #0 0x55741df35d75 in __sanitizer_print_stack_trace (/home/haaken/github-projects/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_m17_deframer+0x10ed75) (BuildId: af1fbd23ad60f45981afad47286004013145661a)
+    #1 0x55741de8f88c in fuzzer::PrintStackTrace() (/home/haaken/github-projects/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_m17_deframer+0x6888c) (BuildId: af1fbd23ad60f45981afad47286004013145661a)
+    #2 0x55741de7588b in fuzzer::Fuzzer::AlarmCallback() (/home/haaken/github-projects/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_m17_deframer+0x4e88b) (BuildId: af1fbd23ad60f45981afad47286004013145661a)
+    #3 0x7adee6a4532f  (/lib/x86_64-linux-gnu/libc.so.6+0x4532f) (BuildId: 274eec488d230825a136fa9c4d85370fed7a0a5e)
+    #4 0x7adee6a98d70 in __futex_abstimed_wait_common64 nptl/futex-internal.c:57:12
+    #5 0x7adee6a98d70 in __futex_abstimed_wait_common nptl/futex-internal.c:87:9
+    #6 0x7adee6a98d70 in __GI___futex_abstimed_wait_cancelable64 nptl/futex-internal.c:139:10
+    #7 0x7adee6a9b7ec in __pthread_cond_wait_common nptl/pthread_cond_wait.c:503:10
+    #8 0x7adee6a9b7ec in pthread_cond_wait nptl/pthread_cond_wait.c:627:10
+    #9 0x7adee6d6c962 in boost::thread::join_noexcept() (/lib/x86_64-linux-gnu/libboost_thread.so.1.83.0+0x15962) (BuildId: cdf2ab5aa23cece03cad83b104e3376e2e8edecb)
+    #10 0x7adee778d650 in gr::thread::thread_group::join_all() (/lib/x86_64-linux-gnu/libgnuradio-runtime.so.3.10.12+0xcc650) (BuildId: 52ff72ab5ca9dcad010fe791e4f338d50492662d)
+    #11 0x7adee7776e3e in gr::top_block_impl::wait() (/lib/x86_64-linux-gnu/libgnuradio-runtime.so.3.10.12+0xb5e3e) (BuildId: 52ff72ab5ca9dcad010fe791e4f338d50492662d)
+    #12 0x55741df6ce73 in LLVMFuzzerTestOneInput /home/haaken/github-projects/gr-qradiolink/fuzzing/harnesses/fuzz_m17_deframer.cc:45:13
+    #13 0x55741de76ee4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/home/haaken/github-projects/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_m17_deframer+0x4fee4) (BuildId: af1fbd23ad60f45981afad47286004013145661a)
+    #14 0x55741de765d9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/home/haaken/github-projects/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_m17_deframer+0x4f5d9) (BuildId: af1fbd23ad60f45981afad47286004013145661a)
+    #15 0x55741de781f6 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/home/haaken/github-projects/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_m17_deframer+0x511f6) (BuildId: af1fbd23ad60f45981afad47286004013145661a)
+    #16 0x55741de78707 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/home/haaken/github-projects/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_m17_deframer+0x51707) (BuildId: af1fbd23ad60f45981afad47286004013145661a)
+    #17 0x55741de65bff in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/home/haaken/github-projects/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_m17_deframer+0x3ebff) (BuildId: af1fbd23ad60f45981afad47286004013145661a)
+    #18 0x55741de90286 in main (/home/haaken/github-projects/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_m17_deframer+0x69286) (BuildId: af1fbd23ad60f45981afad47286004013145661a)
+    #19 0x7adee6a2a1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #20 0x7adee6a2a28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #21 0x55741de5abe4 in _start (/home/haaken/github-projects/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_m17_deframer+0x33be4) (BuildId: af1fbd23ad60f45981afad47286004013145661a)
+
+SUMMARY: libFuzzer: timeout
+stat::number_of_executed_units: 2
+stat::average_exec_per_sec:     0
+stat::new_units_added:          0
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              411

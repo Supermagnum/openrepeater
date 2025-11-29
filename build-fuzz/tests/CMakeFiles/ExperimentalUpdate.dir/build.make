@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/haaken/github-projects/qradiolink/gr-qradiolink
+CMAKE_SOURCE_DIR = /home/haaken/github-projects/gr-qradiolink
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz
+CMAKE_BINARY_DIR = /home/haaken/github-projects/gr-qradiolink/build-fuzz
 
 # Utility rule file for ExperimentalUpdate.
 
@@ -67,7 +67,7 @@ include tests/CMakeFiles/ExperimentalUpdate.dir/compiler_depend.make
 include tests/CMakeFiles/ExperimentalUpdate.dir/progress.make
 
 tests/CMakeFiles/ExperimentalUpdate:
-	cd /home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/tests && /usr/bin/ctest -D ExperimentalUpdate
+	cd /home/haaken/github-projects/gr-qradiolink/build-fuzz/tests && /usr/bin/ctest -D ExperimentalUpdate
 
 ExperimentalUpdate: tests/CMakeFiles/ExperimentalUpdate
 ExperimentalUpdate: tests/CMakeFiles/ExperimentalUpdate.dir/build.make
@@ -78,10 +78,10 @@ tests/CMakeFiles/ExperimentalUpdate.dir/build: ExperimentalUpdate
 .PHONY : tests/CMakeFiles/ExperimentalUpdate.dir/build
 
 tests/CMakeFiles/ExperimentalUpdate.dir/clean:
-	cd /home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/tests && $(CMAKE_COMMAND) -P CMakeFiles/ExperimentalUpdate.dir/cmake_clean.cmake
+	cd /home/haaken/github-projects/gr-qradiolink/build-fuzz/tests && $(CMAKE_COMMAND) -P CMakeFiles/ExperimentalUpdate.dir/cmake_clean.cmake
 .PHONY : tests/CMakeFiles/ExperimentalUpdate.dir/clean
 
 tests/CMakeFiles/ExperimentalUpdate.dir/depend:
-	cd /home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/haaken/github-projects/qradiolink/gr-qradiolink /home/haaken/github-projects/qradiolink/gr-qradiolink/tests /home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz /home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/tests /home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/tests/CMakeFiles/ExperimentalUpdate.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/haaken/github-projects/gr-qradiolink/build-fuzz && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/haaken/github-projects/gr-qradiolink /home/haaken/github-projects/gr-qradiolink/tests /home/haaken/github-projects/gr-qradiolink/build-fuzz /home/haaken/github-projects/gr-qradiolink/build-fuzz/tests /home/haaken/github-projects/gr-qradiolink/build-fuzz/tests/CMakeFiles/ExperimentalUpdate.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : tests/CMakeFiles/ExperimentalUpdate.dir/depend
 

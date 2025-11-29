@@ -1,4 +1,4 @@
-# Install script for directory: /home/haaken/github-projects/qradiolink/gr-qradiolink
+# Install script for directory: /home/haaken/github-projects/gr-qradiolink
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,41 +44,41 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/include/gnuradio/qradiolink/cmake_install.cmake")
+  include("/home/haaken/github-projects/gr-qradiolink/build-fuzz/include/gnuradio/qradiolink/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/lib/cmake_install.cmake")
+  include("/home/haaken/github-projects/gr-qradiolink/build-fuzz/lib/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/docs/cmake_install.cmake")
+  include("/home/haaken/github-projects/gr-qradiolink/build-fuzz/docs/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/python/qradiolink/cmake_install.cmake")
+  include("/home/haaken/github-projects/gr-qradiolink/build-fuzz/python/qradiolink/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/grc/cmake_install.cmake")
+  include("/home/haaken/github-projects/gr-qradiolink/build-fuzz/grc/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/tests/cmake_install.cmake")
+  include("/home/haaken/github-projects/gr-qradiolink/build-fuzz/tests/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/cmake_install.cmake")
+  include("/home/haaken/github-projects/gr-qradiolink/build-fuzz/fuzzing/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/x86_64-linux-gnu/pkgconfig" TYPE FILE FILES "/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/gnuradio-qradiolink.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/x86_64-linux-gnu/pkgconfig" TYPE FILE FILES "/home/haaken/github-projects/gr-qradiolink/build-fuzz/gnuradio-qradiolink.pc")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -89,5 +89,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/haaken/github-projects/gr-qradiolink/build-fuzz/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

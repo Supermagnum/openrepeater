@@ -19,8 +19,8 @@
 #include <gnuradio/io_signature.h>
 #include <cmath>
 #include <algorithm>
-#include "../../src/bursttimer.h"
-#include "../../src/config_mmdvm.h"
+#include "../src/bursttimer.h"
+#include "../src/config_mmdvm.h"
 
 namespace gr {
 namespace qradiolink {

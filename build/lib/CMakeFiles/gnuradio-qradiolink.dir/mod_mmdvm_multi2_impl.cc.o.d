@@ -1072,5 +1072,4 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_multi2_impl.cc.o: \
  /usr/include/gnuradio/blocks/null_source.h \
  /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/mmdvm_source.h \
  /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/zero_idle_bursts.h \
- /home/haaken/github-projects/gr-qradiolink/lib/../../qradiolink/src/gr/../../src/bursttimer.h \
- /home/haaken/github-projects/gr-qradiolink/lib/../../qradiolink/src/config_mmdvm.h
+ /home/haaken/github-projects/gr-qradiolink/lib/../src/bursttimer.h

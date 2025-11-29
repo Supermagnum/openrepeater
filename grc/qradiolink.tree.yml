@@ -15,6 +15,8 @@ description: QRadioLink blocks for digital and analog modulation
   - qradiolink_mod_qpsk
   - qradiolink_mod_nbfm
   - qradiolink_mod_dsss
+  - qradiolink_mod_nxdn
+  - qradiolink_mod_dpmr
 - Demodulators:
   - qradiolink_demod_2fsk
   - qradiolink_demod_am
@@ -27,4 +29,8 @@ description: QRadioLink blocks for digital and analog modulation
   - qradiolink_demod_4fsk
   - qradiolink_demod_dsss
   - qradiolink_demod_m17
+  - qradiolink_demod_nxdn
+  - qradiolink_demod_dpmr
+- Supporting Blocks:
+  - qradiolink_m17_deframer
 

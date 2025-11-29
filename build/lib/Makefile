@@ -329,29 +329,29 @@ demod_dmr_impl.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dmr_impl.cc.s
 .PHONY : demod_dmr_impl.cc.s
 
-demod_dsss_impl.o: demod_dsss_impl.cc.o
-.PHONY : demod_dsss_impl.o
+demod_dpmr_impl.o: demod_dpmr_impl.cc.o
+.PHONY : demod_dpmr_impl.o
 
 # target to build an object file
-demod_dsss_impl.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dsss_impl.cc.o
-.PHONY : demod_dsss_impl.cc.o
+demod_dpmr_impl.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dpmr_impl.cc.o
+.PHONY : demod_dpmr_impl.cc.o
 
-demod_dsss_impl.i: demod_dsss_impl.cc.i
-.PHONY : demod_dsss_impl.i
+demod_dpmr_impl.i: demod_dpmr_impl.cc.i
+.PHONY : demod_dpmr_impl.i
 
 # target to preprocess a source file
-demod_dsss_impl.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dsss_impl.cc.i
-.PHONY : demod_dsss_impl.cc.i
+demod_dpmr_impl.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dpmr_impl.cc.i
+.PHONY : demod_dpmr_impl.cc.i
 
-demod_dsss_impl.s: demod_dsss_impl.cc.s
-.PHONY : demod_dsss_impl.s
+demod_dpmr_impl.s: demod_dpmr_impl.cc.s
+.PHONY : demod_dpmr_impl.s
 
 # target to generate assembly for a file
-demod_dsss_impl.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dsss_impl.cc.s
-.PHONY : demod_dsss_impl.cc.s
+demod_dpmr_impl.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dpmr_impl.cc.s
+.PHONY : demod_dpmr_impl.cc.s
 
 demod_freedv_impl.o: demod_freedv_impl.cc.o
 .PHONY : demod_freedv_impl.o
@@ -473,29 +473,29 @@ demod_mmdvm_multi_impl.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi_impl.cc.s
 .PHONY : demod_mmdvm_multi_impl.cc.s
 
-demod_nbfm_impl.o: demod_nbfm_impl.cc.o
-.PHONY : demod_nbfm_impl.o
+demod_nxdn_impl.o: demod_nxdn_impl.cc.o
+.PHONY : demod_nxdn_impl.o
 
 # target to build an object file
-demod_nbfm_impl.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nbfm_impl.cc.o
-.PHONY : demod_nbfm_impl.cc.o
+demod_nxdn_impl.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nxdn_impl.cc.o
+.PHONY : demod_nxdn_impl.cc.o
 
-demod_nbfm_impl.i: demod_nbfm_impl.cc.i
-.PHONY : demod_nbfm_impl.i
+demod_nxdn_impl.i: demod_nxdn_impl.cc.i
+.PHONY : demod_nxdn_impl.i
 
 # target to preprocess a source file
-demod_nbfm_impl.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nbfm_impl.cc.i
-.PHONY : demod_nbfm_impl.cc.i
+demod_nxdn_impl.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nxdn_impl.cc.i
+.PHONY : demod_nxdn_impl.cc.i
 
-demod_nbfm_impl.s: demod_nbfm_impl.cc.s
-.PHONY : demod_nbfm_impl.s
+demod_nxdn_impl.s: demod_nxdn_impl.cc.s
+.PHONY : demod_nxdn_impl.s
 
 # target to generate assembly for a file
-demod_nbfm_impl.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nbfm_impl.cc.s
-.PHONY : demod_nbfm_impl.cc.s
+demod_nxdn_impl.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nxdn_impl.cc.s
+.PHONY : demod_nxdn_impl.cc.s
 
 demod_qpsk_impl.o: demod_qpsk_impl.cc.o
 .PHONY : demod_qpsk_impl.o
@@ -545,30 +545,6 @@ demod_ssb_impl.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_ssb_impl.cc.s
 .PHONY : demod_ssb_impl.cc.s
 
-demod_wbfm_impl.o: demod_wbfm_impl.cc.o
-.PHONY : demod_wbfm_impl.o
-
-# target to build an object file
-demod_wbfm_impl.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_wbfm_impl.cc.o
-.PHONY : demod_wbfm_impl.cc.o
-
-demod_wbfm_impl.i: demod_wbfm_impl.cc.i
-.PHONY : demod_wbfm_impl.i
-
-# target to preprocess a source file
-demod_wbfm_impl.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_wbfm_impl.cc.i
-.PHONY : demod_wbfm_impl.cc.i
-
-demod_wbfm_impl.s: demod_wbfm_impl.cc.s
-.PHONY : demod_wbfm_impl.s
-
-# target to generate assembly for a file
-demod_wbfm_impl.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_wbfm_impl.cc.s
-.PHONY : demod_wbfm_impl.cc.s
-
 gr_4fsk_discriminator_impl.o: gr_4fsk_discriminator_impl.cc.o
 .PHONY : gr_4fsk_discriminator_impl.o
 
@@ -593,77 +569,29 @@ gr_4fsk_discriminator_impl.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/gr_4fsk_discriminator_impl.cc.s
 .PHONY : gr_4fsk_discriminator_impl.cc.s
 
-home/haaken/github-projects/qradiolink/src/gr/dsss_decoder_cc_impl.o: home/haaken/github-projects/qradiolink/src/gr/dsss_decoder_cc_impl.cc.o
-.PHONY : home/haaken/github-projects/qradiolink/src/gr/dsss_decoder_cc_impl.o
+m17_deframer_impl.o: m17_deframer_impl.cc.o
+.PHONY : m17_deframer_impl.o
 
 # target to build an object file
-home/haaken/github-projects/qradiolink/src/gr/dsss_decoder_cc_impl.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/home/haaken/github-projects/qradiolink/src/gr/dsss_decoder_cc_impl.cc.o
-.PHONY : home/haaken/github-projects/qradiolink/src/gr/dsss_decoder_cc_impl.cc.o
+m17_deframer_impl.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/m17_deframer_impl.cc.o
+.PHONY : m17_deframer_impl.cc.o
 
-home/haaken/github-projects/qradiolink/src/gr/dsss_decoder_cc_impl.i: home/haaken/github-projects/qradiolink/src/gr/dsss_decoder_cc_impl.cc.i
-.PHONY : home/haaken/github-projects/qradiolink/src/gr/dsss_decoder_cc_impl.i
-
-# target to preprocess a source file
-home/haaken/github-projects/qradiolink/src/gr/dsss_decoder_cc_impl.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/home/haaken/github-projects/qradiolink/src/gr/dsss_decoder_cc_impl.cc.i
-.PHONY : home/haaken/github-projects/qradiolink/src/gr/dsss_decoder_cc_impl.cc.i
-
-home/haaken/github-projects/qradiolink/src/gr/dsss_decoder_cc_impl.s: home/haaken/github-projects/qradiolink/src/gr/dsss_decoder_cc_impl.cc.s
-.PHONY : home/haaken/github-projects/qradiolink/src/gr/dsss_decoder_cc_impl.s
-
-# target to generate assembly for a file
-home/haaken/github-projects/qradiolink/src/gr/dsss_decoder_cc_impl.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/home/haaken/github-projects/qradiolink/src/gr/dsss_decoder_cc_impl.cc.s
-.PHONY : home/haaken/github-projects/qradiolink/src/gr/dsss_decoder_cc_impl.cc.s
-
-home/haaken/github-projects/qradiolink/src/gr/dsss_encoder_bb_impl.o: home/haaken/github-projects/qradiolink/src/gr/dsss_encoder_bb_impl.cc.o
-.PHONY : home/haaken/github-projects/qradiolink/src/gr/dsss_encoder_bb_impl.o
-
-# target to build an object file
-home/haaken/github-projects/qradiolink/src/gr/dsss_encoder_bb_impl.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/home/haaken/github-projects/qradiolink/src/gr/dsss_encoder_bb_impl.cc.o
-.PHONY : home/haaken/github-projects/qradiolink/src/gr/dsss_encoder_bb_impl.cc.o
-
-home/haaken/github-projects/qradiolink/src/gr/dsss_encoder_bb_impl.i: home/haaken/github-projects/qradiolink/src/gr/dsss_encoder_bb_impl.cc.i
-.PHONY : home/haaken/github-projects/qradiolink/src/gr/dsss_encoder_bb_impl.i
+m17_deframer_impl.i: m17_deframer_impl.cc.i
+.PHONY : m17_deframer_impl.i
 
 # target to preprocess a source file
-home/haaken/github-projects/qradiolink/src/gr/dsss_encoder_bb_impl.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/home/haaken/github-projects/qradiolink/src/gr/dsss_encoder_bb_impl.cc.i
-.PHONY : home/haaken/github-projects/qradiolink/src/gr/dsss_encoder_bb_impl.cc.i
+m17_deframer_impl.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/m17_deframer_impl.cc.i
+.PHONY : m17_deframer_impl.cc.i
 
-home/haaken/github-projects/qradiolink/src/gr/dsss_encoder_bb_impl.s: home/haaken/github-projects/qradiolink/src/gr/dsss_encoder_bb_impl.cc.s
-.PHONY : home/haaken/github-projects/qradiolink/src/gr/dsss_encoder_bb_impl.s
-
-# target to generate assembly for a file
-home/haaken/github-projects/qradiolink/src/gr/dsss_encoder_bb_impl.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/home/haaken/github-projects/qradiolink/src/gr/dsss_encoder_bb_impl.cc.s
-.PHONY : home/haaken/github-projects/qradiolink/src/gr/dsss_encoder_bb_impl.cc.s
-
-home/haaken/github-projects/qradiolink/src/gr/emphasis.o: home/haaken/github-projects/qradiolink/src/gr/emphasis.cpp.o
-.PHONY : home/haaken/github-projects/qradiolink/src/gr/emphasis.o
-
-# target to build an object file
-home/haaken/github-projects/qradiolink/src/gr/emphasis.cpp.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/home/haaken/github-projects/qradiolink/src/gr/emphasis.cpp.o
-.PHONY : home/haaken/github-projects/qradiolink/src/gr/emphasis.cpp.o
-
-home/haaken/github-projects/qradiolink/src/gr/emphasis.i: home/haaken/github-projects/qradiolink/src/gr/emphasis.cpp.i
-.PHONY : home/haaken/github-projects/qradiolink/src/gr/emphasis.i
-
-# target to preprocess a source file
-home/haaken/github-projects/qradiolink/src/gr/emphasis.cpp.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/home/haaken/github-projects/qradiolink/src/gr/emphasis.cpp.i
-.PHONY : home/haaken/github-projects/qradiolink/src/gr/emphasis.cpp.i
-
-home/haaken/github-projects/qradiolink/src/gr/emphasis.s: home/haaken/github-projects/qradiolink/src/gr/emphasis.cpp.s
-.PHONY : home/haaken/github-projects/qradiolink/src/gr/emphasis.s
+m17_deframer_impl.s: m17_deframer_impl.cc.s
+.PHONY : m17_deframer_impl.s
 
 # target to generate assembly for a file
-home/haaken/github-projects/qradiolink/src/gr/emphasis.cpp.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/home/haaken/github-projects/qradiolink/src/gr/emphasis.cpp.s
-.PHONY : home/haaken/github-projects/qradiolink/src/gr/emphasis.cpp.s
+m17_deframer_impl.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/m17_deframer_impl.cc.s
+.PHONY : m17_deframer_impl.cc.s
 
 mmdvm_sink_impl.o: mmdvm_sink_impl.cc.o
 .PHONY : mmdvm_sink_impl.o
@@ -833,29 +761,29 @@ mod_dmr_impl.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dmr_impl.cc.s
 .PHONY : mod_dmr_impl.cc.s
 
-mod_dsss_impl.o: mod_dsss_impl.cc.o
-.PHONY : mod_dsss_impl.o
+mod_dpmr_impl.o: mod_dpmr_impl.cc.o
+.PHONY : mod_dpmr_impl.o
 
 # target to build an object file
-mod_dsss_impl.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dsss_impl.cc.o
-.PHONY : mod_dsss_impl.cc.o
+mod_dpmr_impl.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dpmr_impl.cc.o
+.PHONY : mod_dpmr_impl.cc.o
 
-mod_dsss_impl.i: mod_dsss_impl.cc.i
-.PHONY : mod_dsss_impl.i
+mod_dpmr_impl.i: mod_dpmr_impl.cc.i
+.PHONY : mod_dpmr_impl.i
 
 # target to preprocess a source file
-mod_dsss_impl.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dsss_impl.cc.i
-.PHONY : mod_dsss_impl.cc.i
+mod_dpmr_impl.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dpmr_impl.cc.i
+.PHONY : mod_dpmr_impl.cc.i
 
-mod_dsss_impl.s: mod_dsss_impl.cc.s
-.PHONY : mod_dsss_impl.s
+mod_dpmr_impl.s: mod_dpmr_impl.cc.s
+.PHONY : mod_dpmr_impl.s
 
 # target to generate assembly for a file
-mod_dsss_impl.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dsss_impl.cc.s
-.PHONY : mod_dsss_impl.cc.s
+mod_dpmr_impl.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dpmr_impl.cc.s
+.PHONY : mod_dpmr_impl.cc.s
 
 mod_freedv_impl.o: mod_freedv_impl.cc.o
 .PHONY : mod_freedv_impl.o
@@ -977,29 +905,29 @@ mod_mmdvm_multi2_impl.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_multi2_impl.cc.s
 .PHONY : mod_mmdvm_multi2_impl.cc.s
 
-mod_nbfm_impl.o: mod_nbfm_impl.cc.o
-.PHONY : mod_nbfm_impl.o
+mod_nxdn_impl.o: mod_nxdn_impl.cc.o
+.PHONY : mod_nxdn_impl.o
 
 # target to build an object file
-mod_nbfm_impl.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nbfm_impl.cc.o
-.PHONY : mod_nbfm_impl.cc.o
+mod_nxdn_impl.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nxdn_impl.cc.o
+.PHONY : mod_nxdn_impl.cc.o
 
-mod_nbfm_impl.i: mod_nbfm_impl.cc.i
-.PHONY : mod_nbfm_impl.i
+mod_nxdn_impl.i: mod_nxdn_impl.cc.i
+.PHONY : mod_nxdn_impl.i
 
 # target to preprocess a source file
-mod_nbfm_impl.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nbfm_impl.cc.i
-.PHONY : mod_nbfm_impl.cc.i
+mod_nxdn_impl.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nxdn_impl.cc.i
+.PHONY : mod_nxdn_impl.cc.i
 
-mod_nbfm_impl.s: mod_nbfm_impl.cc.s
-.PHONY : mod_nbfm_impl.s
+mod_nxdn_impl.s: mod_nxdn_impl.cc.s
+.PHONY : mod_nxdn_impl.s
 
 # target to generate assembly for a file
-mod_nbfm_impl.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nbfm_impl.cc.s
-.PHONY : mod_nbfm_impl.cc.s
+mod_nxdn_impl.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nxdn_impl.cc.s
+.PHONY : mod_nxdn_impl.cc.s
 
 mod_qpsk_impl.o: mod_qpsk_impl.cc.o
 .PHONY : mod_qpsk_impl.o
@@ -1153,9 +1081,9 @@ help:
 	@echo "... demod_dmr_impl.o"
 	@echo "... demod_dmr_impl.i"
 	@echo "... demod_dmr_impl.s"
-	@echo "... demod_dsss_impl.o"
-	@echo "... demod_dsss_impl.i"
-	@echo "... demod_dsss_impl.s"
+	@echo "... demod_dpmr_impl.o"
+	@echo "... demod_dpmr_impl.i"
+	@echo "... demod_dpmr_impl.s"
 	@echo "... demod_freedv_impl.o"
 	@echo "... demod_freedv_impl.i"
 	@echo "... demod_freedv_impl.s"
@@ -1171,30 +1099,21 @@ help:
 	@echo "... demod_mmdvm_multi_impl.o"
 	@echo "... demod_mmdvm_multi_impl.i"
 	@echo "... demod_mmdvm_multi_impl.s"
-	@echo "... demod_nbfm_impl.o"
-	@echo "... demod_nbfm_impl.i"
-	@echo "... demod_nbfm_impl.s"
+	@echo "... demod_nxdn_impl.o"
+	@echo "... demod_nxdn_impl.i"
+	@echo "... demod_nxdn_impl.s"
 	@echo "... demod_qpsk_impl.o"
 	@echo "... demod_qpsk_impl.i"
 	@echo "... demod_qpsk_impl.s"
 	@echo "... demod_ssb_impl.o"
 	@echo "... demod_ssb_impl.i"
 	@echo "... demod_ssb_impl.s"
-	@echo "... demod_wbfm_impl.o"
-	@echo "... demod_wbfm_impl.i"
-	@echo "... demod_wbfm_impl.s"
 	@echo "... gr_4fsk_discriminator_impl.o"
 	@echo "... gr_4fsk_discriminator_impl.i"
 	@echo "... gr_4fsk_discriminator_impl.s"
-	@echo "... home/haaken/github-projects/qradiolink/src/gr/dsss_decoder_cc_impl.o"
-	@echo "... home/haaken/github-projects/qradiolink/src/gr/dsss_decoder_cc_impl.i"
-	@echo "... home/haaken/github-projects/qradiolink/src/gr/dsss_decoder_cc_impl.s"
-	@echo "... home/haaken/github-projects/qradiolink/src/gr/dsss_encoder_bb_impl.o"
-	@echo "... home/haaken/github-projects/qradiolink/src/gr/dsss_encoder_bb_impl.i"
-	@echo "... home/haaken/github-projects/qradiolink/src/gr/dsss_encoder_bb_impl.s"
-	@echo "... home/haaken/github-projects/qradiolink/src/gr/emphasis.o"
-	@echo "... home/haaken/github-projects/qradiolink/src/gr/emphasis.i"
-	@echo "... home/haaken/github-projects/qradiolink/src/gr/emphasis.s"
+	@echo "... m17_deframer_impl.o"
+	@echo "... m17_deframer_impl.i"
+	@echo "... m17_deframer_impl.s"
 	@echo "... mmdvm_sink_impl.o"
 	@echo "... mmdvm_sink_impl.i"
 	@echo "... mmdvm_sink_impl.s"
@@ -1216,9 +1135,9 @@ help:
 	@echo "... mod_dmr_impl.o"
 	@echo "... mod_dmr_impl.i"
 	@echo "... mod_dmr_impl.s"
-	@echo "... mod_dsss_impl.o"
-	@echo "... mod_dsss_impl.i"
-	@echo "... mod_dsss_impl.s"
+	@echo "... mod_dpmr_impl.o"
+	@echo "... mod_dpmr_impl.i"
+	@echo "... mod_dpmr_impl.s"
 	@echo "... mod_freedv_impl.o"
 	@echo "... mod_freedv_impl.i"
 	@echo "... mod_freedv_impl.s"
@@ -1234,9 +1153,9 @@ help:
 	@echo "... mod_mmdvm_multi2_impl.o"
 	@echo "... mod_mmdvm_multi2_impl.i"
 	@echo "... mod_mmdvm_multi2_impl.s"
-	@echo "... mod_nbfm_impl.o"
-	@echo "... mod_nbfm_impl.i"
-	@echo "... mod_nbfm_impl.s"
+	@echo "... mod_nxdn_impl.o"
+	@echo "... mod_nxdn_impl.i"
+	@echo "... mod_nxdn_impl.s"
 	@echo "... mod_qpsk_impl.o"
 	@echo "... mod_qpsk_impl.i"
 	@echo "... mod_qpsk_impl.s"

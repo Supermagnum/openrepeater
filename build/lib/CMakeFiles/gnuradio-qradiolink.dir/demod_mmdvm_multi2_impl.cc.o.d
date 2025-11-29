@@ -1072,6 +1072,5 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi2_impl.cc.o: \
  /usr/include/gnuradio/filter/pfb_channelizer_ccf.h \
  /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/mmdvm_sink.h \
  /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/rssi_tag_block.h \
- /home/haaken/github-projects/gr-qradiolink/lib/../../qradiolink/src/gr/../../src/bursttimer.h \
- /home/haaken/github-projects/gr-qradiolink/lib/../../qradiolink/src/config_mmdvm.h \
- /home/haaken/github-projects/gr-qradiolink/lib/../../qradiolink/src/gr/../../src/config_mmdvm.h
+ /home/haaken/github-projects/gr-qradiolink/lib/../src/bursttimer.h \
+ /home/haaken/github-projects/gr-qradiolink/lib/../src/config_mmdvm.h

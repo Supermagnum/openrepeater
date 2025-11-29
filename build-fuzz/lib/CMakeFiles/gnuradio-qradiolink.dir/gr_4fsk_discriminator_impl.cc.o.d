@@ -1,5 +1,5 @@
 lib/CMakeFiles/gnuradio-qradiolink.dir/gr_4fsk_discriminator_impl.cc.o: \
-  /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/gr_4fsk_discriminator_impl.cc \
+  /home/haaken/github-projects/gr-qradiolink/lib/gr_4fsk_discriminator_impl.cc \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/climits \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/x86_64-linux-gnu/c++/13/bits/c++config.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -31,8 +31,8 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/gr_4fsk_discriminator_impl.cc.o: \
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
-  /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../include/gnuradio/qradiolink/gr_4fsk_discriminator.h \
-  /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../include/gnuradio/qradiolink/api.h \
+  /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/gr_4fsk_discriminator.h \
+  /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/api.h \
   /usr/include/gnuradio/attributes.h /usr/include/gnuradio/sync_block.h \
   /usr/include/gnuradio/api.h /usr/include/gnuradio/block.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory \
@@ -1130,4 +1130,4 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/gr_4fsk_discriminator_impl.cc.o: \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/cfloat \
   /usr/lib/llvm-18/lib/clang/18/include/float.h \
   /usr/include/x86_64-linux-gnu/gmp.h \
-  /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/gr_4fsk_discriminator_impl.h
+  /home/haaken/github-projects/gr-qradiolink/lib/gr_4fsk_discriminator_impl.h

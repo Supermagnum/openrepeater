@@ -18,14 +18,14 @@
 #include "mmdvm_source_impl.h"
 #include <gnuradio/io_signature.h>
 #include <gnuradio/tags.h>
-#include "../../src/bursttimer.h"
+#include "../src/bursttimer.h"
 #include <zmq.hpp>
 #include <algorithm>
 #include <iostream>
 #include <cstring>
 #include <ctime>
 
-#include "../../src/config_mmdvm.h"
+#include "../src/config_mmdvm.h"
 
 namespace gr {
 namespace qradiolink {

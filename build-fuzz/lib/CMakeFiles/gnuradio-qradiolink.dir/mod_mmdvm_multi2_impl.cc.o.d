@@ -1,5 +1,5 @@
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_multi2_impl.cc.o: \
-  /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/mod_mmdvm_multi2_impl.cc \
+  /home/haaken/github-projects/gr-qradiolink/lib/mod_mmdvm_multi2_impl.cc \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/climits \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/x86_64-linux-gnu/c++/13/bits/c++config.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -31,8 +31,8 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_multi2_impl.cc.o: \
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
-  /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../include/gnuradio/qradiolink/mod_mmdvm_multi2.h \
-  /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../include/gnuradio/qradiolink/api.h \
+  /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/mod_mmdvm_multi2.h \
+  /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/api.h \
   /usr/include/gnuradio/attributes.h /usr/include/gnuradio/hier_block2.h \
   /usr/include/gnuradio/api.h /usr/include/gnuradio/basic_block.h \
   /usr/include/gnuradio/io_signature.h /usr/include/spdlog/tweakme.h \
@@ -1124,7 +1124,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_multi2_impl.cc.o: \
   /usr/include/gnuradio/rpcserver_booter_base.h \
   /usr/include/gnuradio/rpcserver_selector.h \
   /usr/include/gnuradio/config.h /usr/include/gnuradio/block_registry.h \
-  /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/mod_mmdvm_multi2_impl.h \
+  /home/haaken/github-projects/gr-qradiolink/lib/mod_mmdvm_multi2_impl.h \
   /usr/include/gnuradio/analog/frequency_modulator_fc.h \
   /usr/include/gnuradio/analog/api.h /usr/include/gnuradio/sync_block.h \
   /usr/include/gnuradio/block.h /usr/include/gmpxx.h \
@@ -1143,7 +1143,6 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_multi2_impl.cc.o: \
   /usr/include/gnuradio/filter/rational_resampler.h \
   /usr/include/gnuradio/blocks/multiply_const.h \
   /usr/include/gnuradio/blocks/null_source.h \
-  /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../include/gnuradio/qradiolink/mmdvm_source.h \
-  /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../include/gnuradio/qradiolink/zero_idle_bursts.h \
-  /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../../src/bursttimer.h \
-  /home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../../src/config_mmdvm.h
+  /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/mmdvm_source.h \
+  /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/zero_idle_bursts.h \
+  /home/haaken/github-projects/gr-qradiolink/lib/../src/bursttimer.h

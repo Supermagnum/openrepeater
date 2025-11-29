@@ -19,7 +19,7 @@
 #include <gnuradio/io_signature.h>
 #include <cmath>
 #include <algorithm>
-#include "../../src/bursttimer.h"
+#include "../src/bursttimer.h"
 
 namespace gr {
 namespace qradiolink {

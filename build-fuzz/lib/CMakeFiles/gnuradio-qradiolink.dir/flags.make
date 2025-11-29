@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/clang++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/include/pgm-5.3 -I/usr/include/libxml2 -I/usr/include/mit-krb5 -I/home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../include -I/home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../../src/gr/cessb -I/home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../../src/gr -I/home/haaken/github-projects/qradiolink/gr-qradiolink/lib/../..
+CXX_INCLUDES = -I/usr/include/pgm-5.3 -I/usr/include/libxml2 -I/home/haaken/github-projects/gr-qradiolink/lib/../include -I/home/haaken/github-projects/gr-qradiolink/lib/../../qradiolink/src/gr/cessb -I/home/haaken/github-projects/gr-qradiolink/lib/../../qradiolink/src/gr -I/home/haaken/github-projects/gr-qradiolink/lib/../../qradiolink
 
-CXX_FLAGS =  -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized -O3 -DNDEBUG -std=c++17 -fPIC
+CXX_FLAGS =  -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized -Wignored-qualifiers -Wcast-qual -O3 -DNDEBUG -std=c++17 -fPIC
 

@@ -21,19 +21,22 @@ list(
     mod_bpsk_python.cc
     mod_ssb_python.cc
     mod_qpsk_python.cc
-    mod_nbfm_python.cc
-    mod_dsss_python.cc
+    # mod_nbfm_python.cc  # Commented out - mod_nbfm_impl.cc requires missing emphasis.h
+    # mod_dsss_python.cc  # Commented out - mod_dsss_impl.cc requires missing dsss_encoder_bb_impl.h
+    mod_m17_python.cc
+    mod_dmr_python.cc
     demod_2fsk_python.cc
     demod_am_python.cc
     demod_ssb_python.cc
-    demod_wbfm_python.cc
-    demod_nbfm_python.cc
+    # demod_wbfm_python.cc  # Commented out - demod_wbfm_impl.cc requires missing emphasis.h
+    # demod_nbfm_python.cc  # Commented out - demod_nbfm_impl.cc requires missing emphasis.h
     demod_bpsk_python.cc
     demod_qpsk_python.cc
     demod_gmsk_python.cc
     demod_4fsk_python.cc
-    demod_dsss_python.cc
+    # demod_dsss_python.cc  # Commented out - demod_dsss_impl.cc requires missing dsss_decoder_cc_impl.h
     demod_m17_python.cc
+    m17_deframer_python.cc
     python_bindings.cc)
 
 pybind11_add_module(qradiolink_python ${qradiolink_python_files})

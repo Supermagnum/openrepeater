@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/haaken/github-projects/qradiolink/gr-qradiolink
+CMAKE_SOURCE_DIR = /home/haaken/github-projects/gr-qradiolink
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz
+CMAKE_BINARY_DIR = /home/haaken/github-projects/gr-qradiolink/build-fuzz
 
 # Include any dependencies generated for this target.
 include tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/depend.make
@@ -70,18 +70,18 @@ include tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/progress.make
 include tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/flags.make
 
 tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/test_demod_qpsk.cc.o: tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/flags.make
-tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/test_demod_qpsk.cc.o: /home/haaken/github-projects/qradiolink/gr-qradiolink/tests/test_demod_qpsk.cc
+tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/test_demod_qpsk.cc.o: /home/haaken/github-projects/gr-qradiolink/tests/test_demod_qpsk.cc
 tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/test_demod_qpsk.cc.o: tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/test_demod_qpsk.cc.o"
-	cd /home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/tests && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/test_demod_qpsk.cc.o -MF CMakeFiles/qradiolink_test_demod_qpsk.dir/test_demod_qpsk.cc.o.d -o CMakeFiles/qradiolink_test_demod_qpsk.dir/test_demod_qpsk.cc.o -c /home/haaken/github-projects/qradiolink/gr-qradiolink/tests/test_demod_qpsk.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build-fuzz/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/test_demod_qpsk.cc.o"
+	cd /home/haaken/github-projects/gr-qradiolink/build-fuzz/tests && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/test_demod_qpsk.cc.o -MF CMakeFiles/qradiolink_test_demod_qpsk.dir/test_demod_qpsk.cc.o.d -o CMakeFiles/qradiolink_test_demod_qpsk.dir/test_demod_qpsk.cc.o -c /home/haaken/github-projects/gr-qradiolink/tests/test_demod_qpsk.cc
 
 tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/test_demod_qpsk.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/qradiolink_test_demod_qpsk.dir/test_demod_qpsk.cc.i"
-	cd /home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/tests && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/haaken/github-projects/qradiolink/gr-qradiolink/tests/test_demod_qpsk.cc > CMakeFiles/qradiolink_test_demod_qpsk.dir/test_demod_qpsk.cc.i
+	cd /home/haaken/github-projects/gr-qradiolink/build-fuzz/tests && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/haaken/github-projects/gr-qradiolink/tests/test_demod_qpsk.cc > CMakeFiles/qradiolink_test_demod_qpsk.dir/test_demod_qpsk.cc.i
 
 tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/test_demod_qpsk.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/qradiolink_test_demod_qpsk.dir/test_demod_qpsk.cc.s"
-	cd /home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/tests && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haaken/github-projects/qradiolink/gr-qradiolink/tests/test_demod_qpsk.cc -o CMakeFiles/qradiolink_test_demod_qpsk.dir/test_demod_qpsk.cc.s
+	cd /home/haaken/github-projects/gr-qradiolink/build-fuzz/tests && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haaken/github-projects/gr-qradiolink/tests/test_demod_qpsk.cc -o CMakeFiles/qradiolink_test_demod_qpsk.dir/test_demod_qpsk.cc.s
 
 # Object files for target qradiolink_test_demod_qpsk
 qradiolink_test_demod_qpsk_OBJECTS = \
@@ -96,18 +96,18 @@ tests/qradiolink_test_demod_qpsk: lib/libgnuradio-qradiolink.a
 tests/qradiolink_test_demod_qpsk: /usr/lib/x86_64-linux-gnu/libboost_unit_test_framework.so.1.83.0
 tests/qradiolink_test_demod_qpsk: /usr/lib/x86_64-linux-gnu/libvolk.so.3.1.2
 tests/qradiolink_test_demod_qpsk: tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable qradiolink_test_demod_qpsk"
-	cd /home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/qradiolink_test_demod_qpsk.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/haaken/github-projects/gr-qradiolink/build-fuzz/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable qradiolink_test_demod_qpsk"
+	cd /home/haaken/github-projects/gr-qradiolink/build-fuzz/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/qradiolink_test_demod_qpsk.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/build: tests/qradiolink_test_demod_qpsk
 .PHONY : tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/build
 
 tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/clean:
-	cd /home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/tests && $(CMAKE_COMMAND) -P CMakeFiles/qradiolink_test_demod_qpsk.dir/cmake_clean.cmake
+	cd /home/haaken/github-projects/gr-qradiolink/build-fuzz/tests && $(CMAKE_COMMAND) -P CMakeFiles/qradiolink_test_demod_qpsk.dir/cmake_clean.cmake
 .PHONY : tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/clean
 
 tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/depend:
-	cd /home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/haaken/github-projects/qradiolink/gr-qradiolink /home/haaken/github-projects/qradiolink/gr-qradiolink/tests /home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz /home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/tests /home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/haaken/github-projects/gr-qradiolink/build-fuzz && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/haaken/github-projects/gr-qradiolink /home/haaken/github-projects/gr-qradiolink/tests /home/haaken/github-projects/gr-qradiolink/build-fuzz /home/haaken/github-projects/gr-qradiolink/build-fuzz/tests /home/haaken/github-projects/gr-qradiolink/build-fuzz/tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/depend
 

@@ -1,0 +1,39 @@
+id: qradiolink_demod_dpmr
+label: dPMR Demod
+category: '[QRadioLink]'
+flags: [ python ]
+
+parameters:
+-   id: sps
+    label: Samples/Symbol
+    dtype: int
+    default: '125'
+-   id: samp_rate
+    label: Sample Rate
+    dtype: int
+    default: '1000000'
+
+inputs:
+-   domain: stream
+    dtype: complex
+
+outputs:
+-   domain: stream
+    dtype: complex
+    label: Filtered
+-   domain: stream
+    dtype: complex
+    label: Constellation
+-   domain: stream
+    dtype: byte
+    label: Decoded
+-   domain: stream
+    dtype: float
+    label: Symbol Error Rate
+
+templates:
+    imports: from gnuradio import qradiolink
+    make: qradiolink.demod_dpmr(sps=${sps}, samp_rate=${samp_rate})
+
+file_format: 1
+

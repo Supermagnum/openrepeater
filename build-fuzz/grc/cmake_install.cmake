@@ -1,4 +1,4 @@
-# Install script for directory: /home/haaken/github-projects/qradiolink/gr-qradiolink/grc
+# Install script for directory: /home/haaken/github-projects/gr-qradiolink/grc
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,27 +44,28 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gnuradio/grc/blocks" TYPE FILE FILES
-    "/home/haaken/github-projects/qradiolink/gr-qradiolink/grc/qradiolink_mod_2fsk.block.yml"
-    "/home/haaken/github-projects/qradiolink/gr-qradiolink/grc/qradiolink_mod_4fsk.block.yml"
-    "/home/haaken/github-projects/qradiolink/gr-qradiolink/grc/qradiolink_mod_am.block.yml"
-    "/home/haaken/github-projects/qradiolink/gr-qradiolink/grc/qradiolink_mod_gmsk.block.yml"
-    "/home/haaken/github-projects/qradiolink/gr-qradiolink/grc/qradiolink_mod_bpsk.block.yml"
-    "/home/haaken/github-projects/qradiolink/gr-qradiolink/grc/qradiolink_mod_ssb.block.yml"
-    "/home/haaken/github-projects/qradiolink/gr-qradiolink/grc/qradiolink_mod_qpsk.block.yml"
-    "/home/haaken/github-projects/qradiolink/gr-qradiolink/grc/qradiolink_mod_nbfm.block.yml"
-    "/home/haaken/github-projects/qradiolink/gr-qradiolink/grc/qradiolink_mod_dsss.block.yml"
-    "/home/haaken/github-projects/qradiolink/gr-qradiolink/grc/qradiolink_demod_2fsk.block.yml"
-    "/home/haaken/github-projects/qradiolink/gr-qradiolink/grc/qradiolink_demod_am.block.yml"
-    "/home/haaken/github-projects/qradiolink/gr-qradiolink/grc/qradiolink_demod_ssb.block.yml"
-    "/home/haaken/github-projects/qradiolink/gr-qradiolink/grc/qradiolink_demod_wbfm.block.yml"
-    "/home/haaken/github-projects/qradiolink/gr-qradiolink/grc/qradiolink_demod_nbfm.block.yml"
-    "/home/haaken/github-projects/qradiolink/gr-qradiolink/grc/qradiolink_demod_bpsk.block.yml"
-    "/home/haaken/github-projects/qradiolink/gr-qradiolink/grc/qradiolink_demod_qpsk.block.yml"
-    "/home/haaken/github-projects/qradiolink/gr-qradiolink/grc/qradiolink_demod_gmsk.block.yml"
-    "/home/haaken/github-projects/qradiolink/gr-qradiolink/grc/qradiolink_demod_4fsk.block.yml"
-    "/home/haaken/github-projects/qradiolink/gr-qradiolink/grc/qradiolink_demod_dsss.block.yml"
-    "/home/haaken/github-projects/qradiolink/gr-qradiolink/grc/qradiolink_demod_m17.block.yml"
-    "/home/haaken/github-projects/qradiolink/gr-qradiolink/grc/qradiolink.tree.yml"
+    "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_mod_2fsk.block.yml"
+    "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_mod_4fsk.block.yml"
+    "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_mod_am.block.yml"
+    "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_mod_gmsk.block.yml"
+    "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_mod_bpsk.block.yml"
+    "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_mod_ssb.block.yml"
+    "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_mod_qpsk.block.yml"
+    "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_mod_nbfm.block.yml"
+    "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_mod_dsss.block.yml"
+    "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_demod_2fsk.block.yml"
+    "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_demod_am.block.yml"
+    "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_demod_ssb.block.yml"
+    "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_demod_wbfm.block.yml"
+    "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_demod_nbfm.block.yml"
+    "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_demod_bpsk.block.yml"
+    "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_demod_qpsk.block.yml"
+    "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_demod_gmsk.block.yml"
+    "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_demod_4fsk.block.yml"
+    "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_demod_dsss.block.yml"
+    "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_demod_m17.block.yml"
+    "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_m17_deframer.block.yml"
+    "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink.tree.yml"
     )
 endif()
 

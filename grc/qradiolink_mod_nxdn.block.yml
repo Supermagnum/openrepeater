@@ -1,0 +1,49 @@
+id: qradiolink_mod_nxdn
+label: NXDN Mod
+category: '[QRadioLink]/Modulators'
+flags: [ python ]
+
+parameters:
+-   id: symbol_rate
+    label: Symbol Rate (baud)
+    dtype: int
+    default: '2400'
+    options: ['2400', '4800']
+    option_labels: ['NXDN48 (2400)', 'NXDN96 (4800)']
+-   id: sps
+    label: Samples per Symbol
+    dtype: int
+    default: '125'
+-   id: samp_rate
+    label: Sample Rate
+    dtype: int
+    default: '1000000'
+-   id: carrier_freq
+    label: Carrier Frequency (Hz)
+    dtype: int
+    default: '1700'
+-   id: filter_width
+    label: Filter Width (Hz)
+    dtype: int
+    default: '6000'
+
+inputs:
+-   domain: stream
+    dtype: byte
+
+outputs:
+-   domain: stream
+    dtype: complex
+
+templates:
+    imports: from gnuradio import qradiolink
+    make: |-
+        qradiolink.mod_nxdn(
+            symbol_rate=${symbol_rate},
+            sps=${sps},
+            samp_rate=${samp_rate},
+            carrier_freq=${carrier_freq},
+            filter_width=${filter_width})
+
+file_format: 1
+

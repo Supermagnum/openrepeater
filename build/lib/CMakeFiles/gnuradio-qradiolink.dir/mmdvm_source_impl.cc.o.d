@@ -1079,6 +1079,5 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/mmdvm_source_impl.cc.o: \
  /usr/include/x86_64-linux-gnu/bits/sigthread.h \
  /usr/include/x86_64-linux-gnu/bits/signal_ext.h \
  /usr/include/c++/13/iomanip /usr/include/c++/13/bits/quoted_string.h \
- /home/haaken/github-projects/gr-qradiolink/lib/../../qradiolink/src/gr/../../src/bursttimer.h \
- /home/haaken/github-projects/gr-qradiolink/lib/../../qradiolink/src/config_mmdvm.h \
- /home/haaken/github-projects/gr-qradiolink/lib/../../qradiolink/src/gr/../../src/config_mmdvm.h
+ /home/haaken/github-projects/gr-qradiolink/lib/../src/bursttimer.h \
+ /home/haaken/github-projects/gr-qradiolink/lib/../src/config_mmdvm.h

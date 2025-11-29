@@ -148,3 +148,43 @@ target_link_libraries(fuzz_dsss_encoder gnuradio-qradiolink
                                          ${GR_RUNTIME_LIBRARIES}
                                          ${GR_BLOCKS_LIBRARIES})
 
+# Fuzzer for m17_deframer (byte input -> byte output)
+add_executable(fuzz_m17_deframer fuzz_m17_deframer.cc)
+target_link_libraries(fuzz_m17_deframer gnuradio-qradiolink
+                                         gnuradio-runtime
+                                         gnuradio-blocks
+                                         ${GR_RUNTIME_LIBRARIES}
+                                         ${GR_BLOCKS_LIBRARIES})
+
+# Fuzzer for demod_gmsk (complex input -> byte output)
+add_executable(fuzz_demod_gmsk fuzz_demod_gmsk.cc)
+target_link_libraries(fuzz_demod_gmsk gnuradio-qradiolink
+                                      gnuradio-runtime
+                                      gnuradio-blocks
+                                      gnuradio-digital
+                                      gnuradio-filter
+                                      gnuradio-analog
+                                      gnuradio-fec
+                                      ${GR_RUNTIME_LIBRARIES}
+                                      ${GR_BLOCKS_LIBRARIES}
+                                      ${GR_DIGITAL_LIBRARIES}
+                                      ${GR_FILTER_LIBRARIES}
+                                      ${GR_ANALOG_LIBRARIES}
+                                      ${GR_FEC_LIBRARIES})
+
+# Fuzzer for demod_dsss (complex input -> byte output)
+add_executable(fuzz_demod_dsss fuzz_demod_dsss.cc)
+target_link_libraries(fuzz_demod_dsss gnuradio-qradiolink
+                                      gnuradio-runtime
+                                      gnuradio-blocks
+                                      gnuradio-digital
+                                      gnuradio-filter
+                                      gnuradio-analog
+                                      gnuradio-fec
+                                      ${GR_RUNTIME_LIBRARIES}
+                                      ${GR_BLOCKS_LIBRARIES}
+                                      ${GR_DIGITAL_LIBRARIES}
+                                      ${GR_FILTER_LIBRARIES}
+                                      ${GR_ANALOG_LIBRARIES}
+                                      ${GR_FEC_LIBRARIES})
+

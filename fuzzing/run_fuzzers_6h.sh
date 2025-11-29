@@ -24,7 +24,7 @@ AVAILABLE_CORES="${AVAILABLE_CORES:-15}"
 JOBS_PER_FUZZER="${JOBS_PER_FUZZER:-1}"  # Jobs per fuzzer (1 = no parallel workers within fuzzer)
 
 # Fuzzers that need longer timeout due to FFT filter initialization
-FUZZERS_LONG_TIMEOUT=("fuzz_demod_2fsk" "fuzz_demod_bpsk" "fuzz_demod_qpsk")
+FUZZERS_LONG_TIMEOUT=("fuzz_demod_2fsk" "fuzz_demod_bpsk" "fuzz_demod_qpsk" "fuzz_demod_gmsk" "fuzz_demod_dsss")
 LONG_TIMEOUT=30  # seconds
 STANDARD_TIMEOUT=10  # seconds
 
@@ -52,6 +52,9 @@ FUZZERS=(
     "fuzz_demod_qpsk"
     "fuzz_clipper_cc"
     "fuzz_dsss_encoder"
+    "fuzz_m17_deframer"
+    "fuzz_demod_gmsk"
+    "fuzz_demod_dsss"
 )
 
 # Create results directories

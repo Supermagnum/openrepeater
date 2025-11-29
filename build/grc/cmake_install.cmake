@@ -53,6 +53,8 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
     "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_mod_qpsk.block.yml"
     "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_mod_nbfm.block.yml"
     "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_mod_dsss.block.yml"
+    "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_mod_nxdn.block.yml"
+    "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_mod_dpmr.block.yml"
     "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_demod_2fsk.block.yml"
     "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_demod_am.block.yml"
     "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_demod_ssb.block.yml"
@@ -64,6 +66,9 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
     "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_demod_4fsk.block.yml"
     "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_demod_dsss.block.yml"
     "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_demod_m17.block.yml"
+    "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_demod_nxdn.block.yml"
+    "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_demod_dpmr.block.yml"
+    "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink_m17_deframer.block.yml"
     "/home/haaken/github-projects/gr-qradiolink/grc/qradiolink.tree.yml"
     )
 endif()

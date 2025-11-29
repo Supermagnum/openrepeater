@@ -19,30 +19,34 @@ set(gr_qradiolink_sources
     mod_bpsk_impl.cc
     mod_ssb_impl.cc
     mod_qpsk_impl.cc
-    mod_nbfm_impl.cc
-    mod_dsss_impl.cc
-    ../../qradiolink/src/gr/dsss_encoder_bb_impl.cc
+    # mod_nbfm_impl.cc  # Commented out - requires missing emphasis.h
+    # mod_dsss_impl.cc  # Commented out - requires missing dsss_encoder_bb_impl.h
+    # ../../qradiolink/src/gr/dsss_encoder_bb_impl.cc  # Commented out - file not in this repo
     mod_freedv_impl.cc
     mod_m17_impl.cc
     mod_dmr_impl.cc
+    mod_nxdn_impl.cc
+    mod_dpmr_impl.cc
     mod_mmdvm_impl.cc
     mod_mmdvm_multi2_impl.cc
     # demodulators
     demod_2fsk_impl.cc
     demod_am_impl.cc
     demod_ssb_impl.cc
-    demod_wbfm_impl.cc
-    demod_nbfm_impl.cc
+    # demod_wbfm_impl.cc  # Commented out - requires missing emphasis.h
+    # demod_nbfm_impl.cc  # Commented out - requires missing emphasis.h
     demod_bpsk_impl.cc
     demod_qpsk_impl.cc
     demod_gmsk_impl.cc
     demod_4fsk_impl.cc
-    demod_dsss_impl.cc
-    ../../qradiolink/src/gr/dsss_decoder_cc_impl.cc
-    ../../qradiolink/src/gr/emphasis.cpp
+    # demod_dsss_impl.cc  # Commented out - requires missing dsss_decoder_cc_impl.h
+    # ../../qradiolink/src/gr/dsss_decoder_cc_impl.cc  # Commented out - file not in this repo
+    # ../../qradiolink/src/gr/emphasis.cpp  # Commented out - file not in this repo
     demod_m17_impl.cc
     demod_freedv_impl.cc
     demod_dmr_impl.cc
+    demod_nxdn_impl.cc
+    demod_dpmr_impl.cc
     demod_mmdvm_multi_impl.cc
     demod_mmdvm_multi2_impl.cc
     # Supporting blocks
@@ -51,6 +55,7 @@ set(gr_qradiolink_sources
     mmdvm_source_impl.cc
     mmdvm_sink_impl.cc
     rssi_tag_block_impl.cc
+    m17_deframer_impl.cc
     # Supporting blocks (CESSB)
     clipper_cc_impl.cc
     stretcher_cc_impl.cc

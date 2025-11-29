@@ -1,0 +1,53 @@
+# Copyright 2024 QRadioLink Contributors
+#
+# This file is part of gr-qradiolink
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# CMake uninstall target
+#
+# This file is used to generate an uninstall target that removes all files
+# installed by the install target.
+
+if(NOT EXISTS "/home/haaken/github-projects/gr-qradiolink/build-fuzz/install_manifest.txt")
+    message(FATAL_ERROR "Cannot find install manifest: /home/haaken/github-projects/gr-qradiolink/build-fuzz/install_manifest.txt")
+endif()
+
+file(READ "/home/haaken/github-projects/gr-qradiolink/build-fuzz/install_manifest.txt" files)
+string(REGEX REPLACE "\n" ";" files "${files}")
+
+foreach(file ${files})
+    message(STATUS "Uninstalling: $ENV{DESTDIR}${file}")
+    if(EXISTS "$ENV{DESTDIR}${file}")
+        exec_program(
+            "/usr/bin/cmake" ARGS "-E remove \"$ENV{DESTDIR}${file}\""
+            OUTPUT_VARIABLE rm_out
+            RETURN_VALUE rm_retval
+        )
+        if(NOT "${rm_retval}" STREQUAL 0)
+            message(FATAL_ERROR "Problem when removing \"$ENV{DESTDIR}${file}\"")
+        endif()
+    else()
+        message(STATUS "File \"$ENV{DESTDIR}${file}\" does not exist.")
+    endif()
+endforeach(file)
+
+# Remove empty directories
+message(STATUS "Removing empty directories...")
+file(GLOB_RECURSE dirs "${CMAKE_INSTALL_PREFIX}/lib/gnuradio/qradiolink")
+file(GLOB_RECURSE dirs2 "${CMAKE_INSTALL_PREFIX}/include/gnuradio/qradiolink")
+file(GLOB_RECURSE dirs3 "${CMAKE_INSTALL_PREFIX}/share/gnuradio/grc/blocks/qradiolink*")
+list(APPEND dirs ${dirs2} ${dirs3})
+
+foreach(dir ${dirs})
+    if(IS_DIRECTORY "${dir}")
+        exec_program(
+            "/usr/bin/cmake" ARGS "-E remove_directory \"${dir}\""
+            OUTPUT_VARIABLE rm_out
+            RETURN_VALUE rm_retval
+        )
+    endif()
+endforeach(dir)
+
+message(STATUS "Uninstall completed.")
+
