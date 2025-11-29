@@ -167,10 +167,24 @@ python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_qpsk_python.cc.s
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/qradiolink_python.dir/mod_qpsk_python.cc.s"
 	cd /home/haaken/github-projects/gr-qradiolink/build/python/qradiolink/bindings && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/mod_qpsk_python.cc -o CMakeFiles/qradiolink_python.dir/mod_qpsk_python.cc.s
 
+python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_dsss_python.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/flags.make
+python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_dsss_python.cc.o: /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/mod_dsss_python.cc
+python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_dsss_python.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_dsss_python.cc.o"
+	cd /home/haaken/github-projects/gr-qradiolink/build/python/qradiolink/bindings && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_dsss_python.cc.o -MF CMakeFiles/qradiolink_python.dir/mod_dsss_python.cc.o.d -o CMakeFiles/qradiolink_python.dir/mod_dsss_python.cc.o -c /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/mod_dsss_python.cc
+
+python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_dsss_python.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/qradiolink_python.dir/mod_dsss_python.cc.i"
+	cd /home/haaken/github-projects/gr-qradiolink/build/python/qradiolink/bindings && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/mod_dsss_python.cc > CMakeFiles/qradiolink_python.dir/mod_dsss_python.cc.i
+
+python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_dsss_python.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/qradiolink_python.dir/mod_dsss_python.cc.s"
+	cd /home/haaken/github-projects/gr-qradiolink/build/python/qradiolink/bindings && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/mod_dsss_python.cc -o CMakeFiles/qradiolink_python.dir/mod_dsss_python.cc.s
+
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_m17_python.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/flags.make
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_m17_python.cc.o: /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/mod_m17_python.cc
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_m17_python.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_m17_python.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_m17_python.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/python/qradiolink/bindings && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_m17_python.cc.o -MF CMakeFiles/qradiolink_python.dir/mod_m17_python.cc.o.d -o CMakeFiles/qradiolink_python.dir/mod_m17_python.cc.o -c /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/mod_m17_python.cc
 
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_m17_python.cc.i: cmake_force
@@ -184,7 +198,7 @@ python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_m17_python.cc.s:
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_dmr_python.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/flags.make
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_dmr_python.cc.o: /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/mod_dmr_python.cc
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_dmr_python.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_dmr_python.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_dmr_python.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/python/qradiolink/bindings && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_dmr_python.cc.o -MF CMakeFiles/qradiolink_python.dir/mod_dmr_python.cc.o.d -o CMakeFiles/qradiolink_python.dir/mod_dmr_python.cc.o -c /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/mod_dmr_python.cc
 
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_dmr_python.cc.i: cmake_force
@@ -198,7 +212,7 @@ python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_dmr_python.cc.s:
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_2fsk_python.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/flags.make
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_2fsk_python.cc.o: /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/demod_2fsk_python.cc
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_2fsk_python.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_2fsk_python.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_2fsk_python.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/python/qradiolink/bindings && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_2fsk_python.cc.o -MF CMakeFiles/qradiolink_python.dir/demod_2fsk_python.cc.o.d -o CMakeFiles/qradiolink_python.dir/demod_2fsk_python.cc.o -c /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/demod_2fsk_python.cc
 
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_2fsk_python.cc.i: cmake_force
@@ -212,7 +226,7 @@ python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_2fsk_python.cc
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_am_python.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/flags.make
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_am_python.cc.o: /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/demod_am_python.cc
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_am_python.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_am_python.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_am_python.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/python/qradiolink/bindings && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_am_python.cc.o -MF CMakeFiles/qradiolink_python.dir/demod_am_python.cc.o.d -o CMakeFiles/qradiolink_python.dir/demod_am_python.cc.o -c /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/demod_am_python.cc
 
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_am_python.cc.i: cmake_force
@@ -226,7 +240,7 @@ python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_am_python.cc.s
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_ssb_python.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/flags.make
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_ssb_python.cc.o: /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/demod_ssb_python.cc
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_ssb_python.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_ssb_python.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_ssb_python.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/python/qradiolink/bindings && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_ssb_python.cc.o -MF CMakeFiles/qradiolink_python.dir/demod_ssb_python.cc.o.d -o CMakeFiles/qradiolink_python.dir/demod_ssb_python.cc.o -c /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/demod_ssb_python.cc
 
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_ssb_python.cc.i: cmake_force
@@ -240,7 +254,7 @@ python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_ssb_python.cc.
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_bpsk_python.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/flags.make
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_bpsk_python.cc.o: /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/demod_bpsk_python.cc
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_bpsk_python.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_bpsk_python.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_bpsk_python.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/python/qradiolink/bindings && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_bpsk_python.cc.o -MF CMakeFiles/qradiolink_python.dir/demod_bpsk_python.cc.o.d -o CMakeFiles/qradiolink_python.dir/demod_bpsk_python.cc.o -c /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/demod_bpsk_python.cc
 
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_bpsk_python.cc.i: cmake_force
@@ -254,7 +268,7 @@ python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_bpsk_python.cc
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_qpsk_python.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/flags.make
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_qpsk_python.cc.o: /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/demod_qpsk_python.cc
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_qpsk_python.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_qpsk_python.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_qpsk_python.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/python/qradiolink/bindings && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_qpsk_python.cc.o -MF CMakeFiles/qradiolink_python.dir/demod_qpsk_python.cc.o.d -o CMakeFiles/qradiolink_python.dir/demod_qpsk_python.cc.o -c /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/demod_qpsk_python.cc
 
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_qpsk_python.cc.i: cmake_force
@@ -268,7 +282,7 @@ python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_qpsk_python.cc
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_gmsk_python.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/flags.make
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_gmsk_python.cc.o: /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/demod_gmsk_python.cc
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_gmsk_python.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_gmsk_python.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_gmsk_python.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/python/qradiolink/bindings && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_gmsk_python.cc.o -MF CMakeFiles/qradiolink_python.dir/demod_gmsk_python.cc.o.d -o CMakeFiles/qradiolink_python.dir/demod_gmsk_python.cc.o -c /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/demod_gmsk_python.cc
 
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_gmsk_python.cc.i: cmake_force
@@ -282,7 +296,7 @@ python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_gmsk_python.cc
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_4fsk_python.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/flags.make
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_4fsk_python.cc.o: /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/demod_4fsk_python.cc
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_4fsk_python.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_4fsk_python.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_4fsk_python.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/python/qradiolink/bindings && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_4fsk_python.cc.o -MF CMakeFiles/qradiolink_python.dir/demod_4fsk_python.cc.o.d -o CMakeFiles/qradiolink_python.dir/demod_4fsk_python.cc.o -c /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/demod_4fsk_python.cc
 
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_4fsk_python.cc.i: cmake_force
@@ -293,10 +307,24 @@ python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_4fsk_python.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/qradiolink_python.dir/demod_4fsk_python.cc.s"
 	cd /home/haaken/github-projects/gr-qradiolink/build/python/qradiolink/bindings && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/demod_4fsk_python.cc -o CMakeFiles/qradiolink_python.dir/demod_4fsk_python.cc.s
 
+python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_dsss_python.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/flags.make
+python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_dsss_python.cc.o: /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/demod_dsss_python.cc
+python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_dsss_python.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_dsss_python.cc.o"
+	cd /home/haaken/github-projects/gr-qradiolink/build/python/qradiolink/bindings && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_dsss_python.cc.o -MF CMakeFiles/qradiolink_python.dir/demod_dsss_python.cc.o.d -o CMakeFiles/qradiolink_python.dir/demod_dsss_python.cc.o -c /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/demod_dsss_python.cc
+
+python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_dsss_python.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/qradiolink_python.dir/demod_dsss_python.cc.i"
+	cd /home/haaken/github-projects/gr-qradiolink/build/python/qradiolink/bindings && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/demod_dsss_python.cc > CMakeFiles/qradiolink_python.dir/demod_dsss_python.cc.i
+
+python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_dsss_python.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/qradiolink_python.dir/demod_dsss_python.cc.s"
+	cd /home/haaken/github-projects/gr-qradiolink/build/python/qradiolink/bindings && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/demod_dsss_python.cc -o CMakeFiles/qradiolink_python.dir/demod_dsss_python.cc.s
+
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_m17_python.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/flags.make
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_m17_python.cc.o: /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/demod_m17_python.cc
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_m17_python.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_m17_python.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_m17_python.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/python/qradiolink/bindings && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_m17_python.cc.o -MF CMakeFiles/qradiolink_python.dir/demod_m17_python.cc.o.d -o CMakeFiles/qradiolink_python.dir/demod_m17_python.cc.o -c /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/demod_m17_python.cc
 
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_m17_python.cc.i: cmake_force
@@ -310,7 +338,7 @@ python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_m17_python.cc.
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/m17_deframer_python.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/flags.make
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/m17_deframer_python.cc.o: /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/m17_deframer_python.cc
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/m17_deframer_python.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/m17_deframer_python.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/m17_deframer_python.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/python/qradiolink/bindings && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/m17_deframer_python.cc.o -MF CMakeFiles/qradiolink_python.dir/m17_deframer_python.cc.o.d -o CMakeFiles/qradiolink_python.dir/m17_deframer_python.cc.o -c /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/m17_deframer_python.cc
 
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/m17_deframer_python.cc.i: cmake_force
@@ -324,7 +352,7 @@ python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/m17_deframer_python.
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/python_bindings.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/flags.make
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/python_bindings.cc.o: /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/python_bindings.cc
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/python_bindings.cc.o: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/python_bindings.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/python_bindings.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/python/qradiolink/bindings && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/python_bindings.cc.o -MF CMakeFiles/qradiolink_python.dir/python_bindings.cc.o.d -o CMakeFiles/qradiolink_python.dir/python_bindings.cc.o -c /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/python_bindings.cc
 
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/python_bindings.cc.i: cmake_force
@@ -344,6 +372,7 @@ qradiolink_python_OBJECTS = \
 "CMakeFiles/qradiolink_python.dir/mod_bpsk_python.cc.o" \
 "CMakeFiles/qradiolink_python.dir/mod_ssb_python.cc.o" \
 "CMakeFiles/qradiolink_python.dir/mod_qpsk_python.cc.o" \
+"CMakeFiles/qradiolink_python.dir/mod_dsss_python.cc.o" \
 "CMakeFiles/qradiolink_python.dir/mod_m17_python.cc.o" \
 "CMakeFiles/qradiolink_python.dir/mod_dmr_python.cc.o" \
 "CMakeFiles/qradiolink_python.dir/demod_2fsk_python.cc.o" \
@@ -353,6 +382,7 @@ qradiolink_python_OBJECTS = \
 "CMakeFiles/qradiolink_python.dir/demod_qpsk_python.cc.o" \
 "CMakeFiles/qradiolink_python.dir/demod_gmsk_python.cc.o" \
 "CMakeFiles/qradiolink_python.dir/demod_4fsk_python.cc.o" \
+"CMakeFiles/qradiolink_python.dir/demod_dsss_python.cc.o" \
 "CMakeFiles/qradiolink_python.dir/demod_m17_python.cc.o" \
 "CMakeFiles/qradiolink_python.dir/m17_deframer_python.cc.o" \
 "CMakeFiles/qradiolink_python.dir/python_bindings.cc.o"
@@ -367,6 +397,7 @@ python/qradiolink/bindings/qradiolink_python.cpython-312-x86_64-linux-gnu.so: py
 python/qradiolink/bindings/qradiolink_python.cpython-312-x86_64-linux-gnu.so: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_bpsk_python.cc.o
 python/qradiolink/bindings/qradiolink_python.cpython-312-x86_64-linux-gnu.so: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_ssb_python.cc.o
 python/qradiolink/bindings/qradiolink_python.cpython-312-x86_64-linux-gnu.so: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_qpsk_python.cc.o
+python/qradiolink/bindings/qradiolink_python.cpython-312-x86_64-linux-gnu.so: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_dsss_python.cc.o
 python/qradiolink/bindings/qradiolink_python.cpython-312-x86_64-linux-gnu.so: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_m17_python.cc.o
 python/qradiolink/bindings/qradiolink_python.cpython-312-x86_64-linux-gnu.so: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_dmr_python.cc.o
 python/qradiolink/bindings/qradiolink_python.cpython-312-x86_64-linux-gnu.so: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_2fsk_python.cc.o
@@ -376,6 +407,7 @@ python/qradiolink/bindings/qradiolink_python.cpython-312-x86_64-linux-gnu.so: py
 python/qradiolink/bindings/qradiolink_python.cpython-312-x86_64-linux-gnu.so: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_qpsk_python.cc.o
 python/qradiolink/bindings/qradiolink_python.cpython-312-x86_64-linux-gnu.so: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_gmsk_python.cc.o
 python/qradiolink/bindings/qradiolink_python.cpython-312-x86_64-linux-gnu.so: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_4fsk_python.cc.o
+python/qradiolink/bindings/qradiolink_python.cpython-312-x86_64-linux-gnu.so: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_dsss_python.cc.o
 python/qradiolink/bindings/qradiolink_python.cpython-312-x86_64-linux-gnu.so: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_m17_python.cc.o
 python/qradiolink/bindings/qradiolink_python.cpython-312-x86_64-linux-gnu.so: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/m17_deframer_python.cc.o
 python/qradiolink/bindings/qradiolink_python.cpython-312-x86_64-linux-gnu.so: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/python_bindings.cc.o
@@ -383,7 +415,7 @@ python/qradiolink/bindings/qradiolink_python.cpython-312-x86_64-linux-gnu.so: py
 python/qradiolink/bindings/qradiolink_python.cpython-312-x86_64-linux-gnu.so: lib/libgnuradio-qradiolink.a
 python/qradiolink/bindings/qradiolink_python.cpython-312-x86_64-linux-gnu.so: /usr/lib/x86_64-linux-gnu/libvolk.so.3.1.2
 python/qradiolink/bindings/qradiolink_python.cpython-312-x86_64-linux-gnu.so: python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX shared module qradiolink_python.cpython-312-x86_64-linux-gnu.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking CXX shared module qradiolink_python.cpython-312-x86_64-linux-gnu.so"
 	cd /home/haaken/github-projects/gr-qradiolink/build/python/qradiolink/bindings && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/qradiolink_python.dir/link.txt --verbose=$(VERBOSE)
 	cd /home/haaken/github-projects/gr-qradiolink/build/python/qradiolink/bindings && /usr/bin/strip /home/haaken/github-projects/gr-qradiolink/build/python/qradiolink/bindings/qradiolink_python.cpython-312-x86_64-linux-gnu.so
 

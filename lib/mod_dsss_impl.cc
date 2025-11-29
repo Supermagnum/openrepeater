@@ -18,9 +18,8 @@
 #include "mod_dsss_impl.h"
 #include <gnuradio/io_signature.h>
 
-// DSSS encoder - using original location
-// TODO: Migrate DSSS blocks separately
-#include "../../src/gr/dsss_encoder_bb_impl.h"
+// DSSS encoder - Barker-13 spreading code
+#include "dsss_encoder_bb_impl.h"
 
 namespace gr {
 namespace qradiolink {
@@ -68,7 +67,7 @@ mod_dsss_impl::mod_dsss_impl(int sps, int samp_rate, int carrier_freq, int filte
         gr::filter::firdes::root_raised_cosine(
             d_samples_per_symbol, d_samples_per_symbol, 1.0, 0.35, 11 * d_samples_per_symbol));
 
-    // DSSS encoder - using original namespace
+    // DSSS encoder - Barker-13 spreading code
     gr::dsss::dsss_encoder_bb::sptr d_dsss_encoder = gr::dsss::dsss_encoder_bb::make(dsss_code);
     d_amplify = gr::blocks::multiply_const_cc::make(0.65, 1);
     d_bb_gain = gr::blocks::multiply_const_cc::make(1, 1);

@@ -23,7 +23,7 @@ void bind_mod_bpsk(py::module&);
 void bind_mod_ssb(py::module&);
 void bind_mod_qpsk(py::module&);
 // void bind_mod_nbfm(py::module&);  // Commented out - mod_nbfm_impl.cc requires missing emphasis.h
-// void bind_mod_dsss(py::module&);  // Commented out - mod_dsss_impl.cc requires missing dsss_encoder_bb_impl.h
+void bind_mod_dsss(py::module&);
 void bind_mod_m17(py::module&);
 void bind_mod_dmr(py::module&);
 void bind_demod_2fsk(py::module&);
@@ -35,7 +35,7 @@ void bind_demod_bpsk(py::module&);
 void bind_demod_qpsk(py::module&);
 void bind_demod_gmsk(py::module&);
 void bind_demod_4fsk(py::module&);
-// void bind_demod_dsss(py::module&);  // Commented out - demod_dsss_impl.cc requires missing dsss_decoder_cc_impl.h
+void bind_demod_dsss(py::module&);
 void bind_demod_m17(py::module&);
 void bind_m17_deframer(py::module&);
 
@@ -70,7 +70,7 @@ PYBIND11_MODULE(qradiolink_python, m)
     bind_mod_ssb(m);
     bind_mod_qpsk(m);
     // bind_mod_nbfm(m);  // Commented out - mod_nbfm_impl.cc requires missing emphasis.h
-    // bind_mod_dsss(m);  // Commented out - mod_dsss_impl.cc requires missing dsss_encoder_bb_impl.h
+    bind_mod_dsss(m);
     bind_mod_m17(m);
     bind_mod_dmr(m);
     bind_demod_2fsk(m);
@@ -82,7 +82,7 @@ PYBIND11_MODULE(qradiolink_python, m)
     bind_demod_qpsk(m);
     bind_demod_gmsk(m);
     bind_demod_4fsk(m);
-    // bind_demod_dsss(m);  // Commented out - demod_dsss_impl.cc requires missing dsss_decoder_cc_impl.h
+    bind_demod_dsss(m);
     bind_demod_m17(m);
     bind_m17_deframer(m);
 }

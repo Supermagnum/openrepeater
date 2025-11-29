@@ -635,7 +635,7 @@ python3 -X dev tests/test_memory_safety.py
 | SSB | ✓ 2 passed | Upper and lower sideband working |
 | **M17** | ✓ 1 passed | **NEW: Successfully tested** |
 | **DMR** | ✓ 1 passed | **NEW: Successfully tested** |
-| DSSS | ✗ 1 failed | Not available (implementation requires missing dependencies) |
+| DSSS | ✓ 1 passed | Working correctly (implementation fixed) |
 | NBFM | ✗ 1 failed | Not available (implementation requires missing emphasis.h) |
 | FreeDV | ✗ 1 failed | Validation not implemented |
 
@@ -678,9 +678,9 @@ python3 -X dev tests/test_memory_safety.py
 #### Failed Tests (Expected)
 
 **DSSS Modulation:**
-- ✗ DSSS Valid - Standard Frame: `module 'gnuradio.qradiolink' has no attribute 'mod_dsss'`
-  - **Reason:** Implementation requires missing `dsss_encoder_bb_impl.h` dependency
-  - **Status:** Expected failure - implementation commented out in CMakeLists.txt
+- ✓ DSSS Valid - Standard Frame: Generated samples successfully
+  - **Status:** DSSS implementation fixed - encoder and decoder blocks created
+  - **Implementation:** Uses Barker-13 spreading code for Direct Sequence Spread Spectrum
 
 **NBFM Modulation:**
 - ✗ NBFM Valid - Standard Audio Frame: `module 'gnuradio.qradiolink' has no attribute 'mod_nbfm'`
@@ -703,26 +703,34 @@ Edge cases were tested with default 2FSK modulation:
 ### Build and Installation Status
 
 **Build Status:** ✓ All build errors fixed
-- Commented out test targets for missing implementations (NBFM, DSSS, WBFM)
+- DSSS implementation: ✓ Fixed - encoder and decoder blocks created
+- Commented out test targets for missing implementations (NBFM, WBFM)
 - Build completes without errors
 
 **Python Bindings Status:** ✓ Successfully compiled and installed
 - M17 modulator bindings: ✓ Available and working
 - DMR modulator bindings: ✓ Available and working
-- DSSS bindings: Commented out (implementation missing)
+- DSSS bindings: ✓ Available and working (implementation fixed)
 - NBFM/WBFM bindings: Commented out (implementation missing)
 
 **Available Modulators in Python:**
-- mod_2fsk, mod_4fsk, mod_am, mod_bpsk, mod_dmr, mod_gmsk, mod_m17, mod_qpsk, mod_ssb
+- mod_2fsk, mod_4fsk, mod_am, mod_bpsk, mod_dmr, mod_dsss, mod_gmsk, mod_m17, mod_qpsk, mod_ssb
 
 ### Fixes Applied
 
-1. **DSSS Filter Parameter Fix:**
+1. **DSSS Implementation Fix:**
+   - Created missing `dsss_encoder_bb` and `dsss_decoder_cc` blocks
+   - Implemented Barker-13 spreading code for Direct Sequence Spread Spectrum
+   - Added DSSS headers to include directory and build system
+   - Enabled DSSS tests and Python bindings
+   - DSSS modulator and demodulator now fully functional
+
+2. **DSSS Filter Parameter Fix:**
    - Updated filter_width calculation to respect internal IF rate (5200 Hz)
    - Filter width now limited to < 2600 Hz (IF/2 - margin)
    - Default value set to 2000 Hz when bandwidth not specified
 
-2. **M17 and DMR Python Bindings:**
+3. **M17 and DMR Python Bindings:**
    - Created `mod_m17_python.cc` and `mod_dmr_python.cc`
    - Updated `python_bindings.cc` to register bindings
    - Updated `CMakeLists.txt` to include new files

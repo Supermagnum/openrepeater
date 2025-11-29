@@ -22,7 +22,7 @@ list(
     mod_ssb_python.cc
     mod_qpsk_python.cc
     # mod_nbfm_python.cc  # Commented out - mod_nbfm_impl.cc requires missing emphasis.h
-    # mod_dsss_python.cc  # Commented out - mod_dsss_impl.cc requires missing dsss_encoder_bb_impl.h
+    mod_dsss_python.cc
     mod_m17_python.cc
     mod_dmr_python.cc
     demod_2fsk_python.cc
@@ -34,7 +34,7 @@ list(
     demod_qpsk_python.cc
     demod_gmsk_python.cc
     demod_4fsk_python.cc
-    # demod_dsss_python.cc  # Commented out - demod_dsss_impl.cc requires missing dsss_decoder_cc_impl.h
+    demod_dsss_python.cc
     demod_m17_python.cc
     m17_deframer_python.cc
     python_bindings.cc)

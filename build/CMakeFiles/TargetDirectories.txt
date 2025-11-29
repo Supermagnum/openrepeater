@@ -13,6 +13,13 @@
 /home/haaken/github-projects/gr-qradiolink/build/include/gnuradio/qradiolink/CMakeFiles/install.dir
 /home/haaken/github-projects/gr-qradiolink/build/include/gnuradio/qradiolink/CMakeFiles/install/local.dir
 /home/haaken/github-projects/gr-qradiolink/build/include/gnuradio/qradiolink/CMakeFiles/install/strip.dir
+/home/haaken/github-projects/gr-qradiolink/build/include/gnuradio/dsss/CMakeFiles/test.dir
+/home/haaken/github-projects/gr-qradiolink/build/include/gnuradio/dsss/CMakeFiles/edit_cache.dir
+/home/haaken/github-projects/gr-qradiolink/build/include/gnuradio/dsss/CMakeFiles/rebuild_cache.dir
+/home/haaken/github-projects/gr-qradiolink/build/include/gnuradio/dsss/CMakeFiles/list_install_components.dir
+/home/haaken/github-projects/gr-qradiolink/build/include/gnuradio/dsss/CMakeFiles/install.dir
+/home/haaken/github-projects/gr-qradiolink/build/include/gnuradio/dsss/CMakeFiles/install/local.dir
+/home/haaken/github-projects/gr-qradiolink/build/include/gnuradio/dsss/CMakeFiles/install/strip.dir
 /home/haaken/github-projects/gr-qradiolink/build/lib/CMakeFiles/gnuradio-qradiolink.dir
 /home/haaken/github-projects/gr-qradiolink/build/lib/CMakeFiles/test.dir
 /home/haaken/github-projects/gr-qradiolink/build/lib/CMakeFiles/edit_cache.dir
@@ -93,6 +100,7 @@
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/test_mod_bpsk.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_mod_ssb.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_mod_qpsk.dir
+/home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_mod_dsss.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_demod_2fsk.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_demod_am.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_demod_ssb.dir
@@ -100,6 +108,7 @@
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_demod_qpsk.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_demod_gmsk.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_demod_4fsk.dir
+/home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_demod_dsss.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_demod_m17.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/test.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/edit_cache.dir

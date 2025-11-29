@@ -679,6 +679,19 @@ qradiolink_test_mod_qpsk/fast:
 .PHONY : qradiolink_test_mod_qpsk/fast
 
 #=============================================================================
+# Target rules for targets named qradiolink_test_mod_dsss
+
+# Build rule for target.
+qradiolink_test_mod_dsss: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 qradiolink_test_mod_dsss
+.PHONY : qradiolink_test_mod_dsss
+
+# fast build rule for target.
+qradiolink_test_mod_dsss/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_dsss.dir/build.make tests/CMakeFiles/qradiolink_test_mod_dsss.dir/build
+.PHONY : qradiolink_test_mod_dsss/fast
+
+#=============================================================================
 # Target rules for targets named qradiolink_test_demod_2fsk
 
 # Build rule for target.
@@ -770,6 +783,19 @@ qradiolink_test_demod_4fsk/fast:
 .PHONY : qradiolink_test_demod_4fsk/fast
 
 #=============================================================================
+# Target rules for targets named qradiolink_test_demod_dsss
+
+# Build rule for target.
+qradiolink_test_demod_dsss: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 qradiolink_test_demod_dsss
+.PHONY : qradiolink_test_demod_dsss
+
+# fast build rule for target.
+qradiolink_test_demod_dsss/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_dsss.dir/build.make tests/CMakeFiles/qradiolink_test_demod_dsss.dir/build
+.PHONY : qradiolink_test_demod_dsss/fast
+
+#=============================================================================
 # Target rules for targets named qradiolink_test_demod_m17
 
 # Build rule for target.
@@ -831,10 +857,12 @@ help:
 	@echo "... qradiolink_test_demod_4fsk"
 	@echo "... qradiolink_test_demod_am"
 	@echo "... qradiolink_test_demod_bpsk"
+	@echo "... qradiolink_test_demod_dsss"
 	@echo "... qradiolink_test_demod_gmsk"
 	@echo "... qradiolink_test_demod_m17"
 	@echo "... qradiolink_test_demod_qpsk"
 	@echo "... qradiolink_test_demod_ssb"
+	@echo "... qradiolink_test_mod_dsss"
 	@echo "... qradiolink_test_mod_qpsk"
 	@echo "... qradiolink_test_mod_ssb"
 	@echo "... test_mod_2fsk"

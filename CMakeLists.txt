@@ -90,6 +90,7 @@ if(ENABLE_GR_QRADIOLINK)
     # Add subdirectories
     ########################################################################
     add_subdirectory(include/gnuradio/qradiolink)
+    add_subdirectory(include/gnuradio/dsss)
     add_subdirectory(lib)
     add_subdirectory(docs)
     if(ENABLE_PYTHON)

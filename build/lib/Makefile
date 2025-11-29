@@ -353,6 +353,30 @@ demod_dpmr_impl.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dpmr_impl.cc.s
 .PHONY : demod_dpmr_impl.cc.s
 
+demod_dsss_impl.o: demod_dsss_impl.cc.o
+.PHONY : demod_dsss_impl.o
+
+# target to build an object file
+demod_dsss_impl.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dsss_impl.cc.o
+.PHONY : demod_dsss_impl.cc.o
+
+demod_dsss_impl.i: demod_dsss_impl.cc.i
+.PHONY : demod_dsss_impl.i
+
+# target to preprocess a source file
+demod_dsss_impl.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dsss_impl.cc.i
+.PHONY : demod_dsss_impl.cc.i
+
+demod_dsss_impl.s: demod_dsss_impl.cc.s
+.PHONY : demod_dsss_impl.s
+
+# target to generate assembly for a file
+demod_dsss_impl.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dsss_impl.cc.s
+.PHONY : demod_dsss_impl.cc.s
+
 demod_freedv_impl.o: demod_freedv_impl.cc.o
 .PHONY : demod_freedv_impl.o
 
@@ -544,6 +568,54 @@ demod_ssb_impl.s: demod_ssb_impl.cc.s
 demod_ssb_impl.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_ssb_impl.cc.s
 .PHONY : demod_ssb_impl.cc.s
+
+dsss_decoder_cc_impl.o: dsss_decoder_cc_impl.cc.o
+.PHONY : dsss_decoder_cc_impl.o
+
+# target to build an object file
+dsss_decoder_cc_impl.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_decoder_cc_impl.cc.o
+.PHONY : dsss_decoder_cc_impl.cc.o
+
+dsss_decoder_cc_impl.i: dsss_decoder_cc_impl.cc.i
+.PHONY : dsss_decoder_cc_impl.i
+
+# target to preprocess a source file
+dsss_decoder_cc_impl.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_decoder_cc_impl.cc.i
+.PHONY : dsss_decoder_cc_impl.cc.i
+
+dsss_decoder_cc_impl.s: dsss_decoder_cc_impl.cc.s
+.PHONY : dsss_decoder_cc_impl.s
+
+# target to generate assembly for a file
+dsss_decoder_cc_impl.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_decoder_cc_impl.cc.s
+.PHONY : dsss_decoder_cc_impl.cc.s
+
+dsss_encoder_bb_impl.o: dsss_encoder_bb_impl.cc.o
+.PHONY : dsss_encoder_bb_impl.o
+
+# target to build an object file
+dsss_encoder_bb_impl.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_encoder_bb_impl.cc.o
+.PHONY : dsss_encoder_bb_impl.cc.o
+
+dsss_encoder_bb_impl.i: dsss_encoder_bb_impl.cc.i
+.PHONY : dsss_encoder_bb_impl.i
+
+# target to preprocess a source file
+dsss_encoder_bb_impl.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_encoder_bb_impl.cc.i
+.PHONY : dsss_encoder_bb_impl.cc.i
+
+dsss_encoder_bb_impl.s: dsss_encoder_bb_impl.cc.s
+.PHONY : dsss_encoder_bb_impl.s
+
+# target to generate assembly for a file
+dsss_encoder_bb_impl.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_encoder_bb_impl.cc.s
+.PHONY : dsss_encoder_bb_impl.cc.s
 
 gr_4fsk_discriminator_impl.o: gr_4fsk_discriminator_impl.cc.o
 .PHONY : gr_4fsk_discriminator_impl.o
@@ -784,6 +856,30 @@ mod_dpmr_impl.s: mod_dpmr_impl.cc.s
 mod_dpmr_impl.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dpmr_impl.cc.s
 .PHONY : mod_dpmr_impl.cc.s
+
+mod_dsss_impl.o: mod_dsss_impl.cc.o
+.PHONY : mod_dsss_impl.o
+
+# target to build an object file
+mod_dsss_impl.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dsss_impl.cc.o
+.PHONY : mod_dsss_impl.cc.o
+
+mod_dsss_impl.i: mod_dsss_impl.cc.i
+.PHONY : mod_dsss_impl.i
+
+# target to preprocess a source file
+mod_dsss_impl.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dsss_impl.cc.i
+.PHONY : mod_dsss_impl.cc.i
+
+mod_dsss_impl.s: mod_dsss_impl.cc.s
+.PHONY : mod_dsss_impl.s
+
+# target to generate assembly for a file
+mod_dsss_impl.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dsss_impl.cc.s
+.PHONY : mod_dsss_impl.cc.s
 
 mod_freedv_impl.o: mod_freedv_impl.cc.o
 .PHONY : mod_freedv_impl.o
@@ -1084,6 +1180,9 @@ help:
 	@echo "... demod_dpmr_impl.o"
 	@echo "... demod_dpmr_impl.i"
 	@echo "... demod_dpmr_impl.s"
+	@echo "... demod_dsss_impl.o"
+	@echo "... demod_dsss_impl.i"
+	@echo "... demod_dsss_impl.s"
 	@echo "... demod_freedv_impl.o"
 	@echo "... demod_freedv_impl.i"
 	@echo "... demod_freedv_impl.s"
@@ -1108,6 +1207,12 @@ help:
 	@echo "... demod_ssb_impl.o"
 	@echo "... demod_ssb_impl.i"
 	@echo "... demod_ssb_impl.s"
+	@echo "... dsss_decoder_cc_impl.o"
+	@echo "... dsss_decoder_cc_impl.i"
+	@echo "... dsss_decoder_cc_impl.s"
+	@echo "... dsss_encoder_bb_impl.o"
+	@echo "... dsss_encoder_bb_impl.i"
+	@echo "... dsss_encoder_bb_impl.s"
 	@echo "... gr_4fsk_discriminator_impl.o"
 	@echo "... gr_4fsk_discriminator_impl.i"
 	@echo "... gr_4fsk_discriminator_impl.s"
@@ -1138,6 +1243,9 @@ help:
 	@echo "... mod_dpmr_impl.o"
 	@echo "... mod_dpmr_impl.i"
 	@echo "... mod_dpmr_impl.s"
+	@echo "... mod_dsss_impl.o"
+	@echo "... mod_dsss_impl.i"
+	@echo "... mod_dsss_impl.s"
 	@echo "... mod_freedv_impl.o"
 	@echo "... mod_freedv_impl.i"
 	@echo "... mod_freedv_impl.s"

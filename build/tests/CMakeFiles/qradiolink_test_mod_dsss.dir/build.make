@@ -94,7 +94,6 @@ tests/qradiolink_test_mod_dsss: tests/CMakeFiles/qradiolink_test_mod_dsss.dir/te
 tests/qradiolink_test_mod_dsss: tests/CMakeFiles/qradiolink_test_mod_dsss.dir/build.make
 tests/qradiolink_test_mod_dsss: lib/libgnuradio-qradiolink.a
 tests/qradiolink_test_mod_dsss: /usr/lib/x86_64-linux-gnu/libboost_unit_test_framework.so.1.83.0
-tests/qradiolink_test_mod_dsss: lib/libgnuradio-qradiolink.a
 tests/qradiolink_test_mod_dsss: /usr/lib/x86_64-linux-gnu/libvolk.so.3.1.2
 tests/qradiolink_test_mod_dsss: tests/CMakeFiles/qradiolink_test_mod_dsss.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable qradiolink_test_mod_dsss"

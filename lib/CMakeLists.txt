@@ -20,8 +20,8 @@ set(gr_qradiolink_sources
     mod_ssb_impl.cc
     mod_qpsk_impl.cc
     # mod_nbfm_impl.cc  # Commented out - requires missing emphasis.h
-    # mod_dsss_impl.cc  # Commented out - requires missing dsss_encoder_bb_impl.h
-    # ../../qradiolink/src/gr/dsss_encoder_bb_impl.cc  # Commented out - file not in this repo
+    mod_dsss_impl.cc
+    dsss_encoder_bb_impl.cc
     mod_freedv_impl.cc
     mod_m17_impl.cc
     mod_dmr_impl.cc
@@ -39,8 +39,8 @@ set(gr_qradiolink_sources
     demod_qpsk_impl.cc
     demod_gmsk_impl.cc
     demod_4fsk_impl.cc
-    # demod_dsss_impl.cc  # Commented out - requires missing dsss_decoder_cc_impl.h
-    # ../../qradiolink/src/gr/dsss_decoder_cc_impl.cc  # Commented out - file not in this repo
+    demod_dsss_impl.cc
+    dsss_decoder_cc_impl.cc
     # ../../qradiolink/src/gr/emphasis.cpp  # Commented out - file not in this repo
     demod_m17_impl.cc
     demod_freedv_impl.cc
@@ -112,8 +112,9 @@ target_include_directories(
     gnuradio-qradiolink
     PUBLIC $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
     PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../include>
+    PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../include/gnuradio/dsss> # For DSSS blocks
     PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../qradiolink/src/gr/cessb> # For CESSB blocks
-    PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../qradiolink/src/gr> # For DSSS blocks and zero_idle_bursts
+    PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../qradiolink/src/gr> # For zero_idle_bursts
     PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../qradiolink> # For src/bursttimer.h (project root)
 )
 

@@ -21,6 +21,7 @@
 #include <gnuradio/filter/rational_resampler.h>
 #include <gnuradio/filter/firdes.h>
 #include <gnuradio/blocks/multiply_const.h>
+#include <gnuradio/dsss/dsss_encoder_bb.h>
 
 namespace gr {
 namespace qradiolink {
@@ -35,8 +36,7 @@ private:
     gr::blocks::multiply_const_cc::sptr d_bb_gain;
     gr::fec::encoder::sptr d_encode_ccsds;
     gr::digital::scrambler_bb::sptr d_scrambler;
-    // DSSS encoder - using original namespace
-    // gr::dsss::dsss_encoder_bb::sptr d_dsss_encoder;
+    gr::dsss::dsss_encoder_bb::sptr d_dsss_encoder;
     gr::filter::fft_filter_ccf::sptr d_filter;
     gr::filter::rational_resampler_ccf::sptr d_resampler;
     gr::filter::rational_resampler_ccf::sptr d_resampler_if;

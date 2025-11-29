@@ -281,6 +281,30 @@ demod_bpsk_python.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_bpsk_python.cc.s
 .PHONY : demod_bpsk_python.cc.s
 
+demod_dsss_python.o: demod_dsss_python.cc.o
+.PHONY : demod_dsss_python.o
+
+# target to build an object file
+demod_dsss_python.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_dsss_python.cc.o
+.PHONY : demod_dsss_python.cc.o
+
+demod_dsss_python.i: demod_dsss_python.cc.i
+.PHONY : demod_dsss_python.i
+
+# target to preprocess a source file
+demod_dsss_python.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_dsss_python.cc.i
+.PHONY : demod_dsss_python.cc.i
+
+demod_dsss_python.s: demod_dsss_python.cc.s
+.PHONY : demod_dsss_python.s
+
+# target to generate assembly for a file
+demod_dsss_python.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_dsss_python.cc.s
+.PHONY : demod_dsss_python.cc.s
+
 demod_gmsk_python.o: demod_gmsk_python.cc.o
 .PHONY : demod_gmsk_python.o
 
@@ -521,6 +545,30 @@ mod_dmr_python.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_dmr_python.cc.s
 .PHONY : mod_dmr_python.cc.s
 
+mod_dsss_python.o: mod_dsss_python.cc.o
+.PHONY : mod_dsss_python.o
+
+# target to build an object file
+mod_dsss_python.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_dsss_python.cc.o
+.PHONY : mod_dsss_python.cc.o
+
+mod_dsss_python.i: mod_dsss_python.cc.i
+.PHONY : mod_dsss_python.i
+
+# target to preprocess a source file
+mod_dsss_python.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_dsss_python.cc.i
+.PHONY : mod_dsss_python.cc.i
+
+mod_dsss_python.s: mod_dsss_python.cc.s
+.PHONY : mod_dsss_python.s
+
+# target to generate assembly for a file
+mod_dsss_python.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_dsss_python.cc.s
+.PHONY : mod_dsss_python.cc.s
+
 mod_gmsk_python.o: mod_gmsk_python.cc.o
 .PHONY : mod_gmsk_python.o
 
@@ -667,6 +715,9 @@ help:
 	@echo "... demod_bpsk_python.o"
 	@echo "... demod_bpsk_python.i"
 	@echo "... demod_bpsk_python.s"
+	@echo "... demod_dsss_python.o"
+	@echo "... demod_dsss_python.i"
+	@echo "... demod_dsss_python.s"
 	@echo "... demod_gmsk_python.o"
 	@echo "... demod_gmsk_python.i"
 	@echo "... demod_gmsk_python.s"
@@ -697,6 +748,9 @@ help:
 	@echo "... mod_dmr_python.o"
 	@echo "... mod_dmr_python.i"
 	@echo "... mod_dmr_python.s"
+	@echo "... mod_dsss_python.o"
+	@echo "... mod_dsss_python.i"
+	@echo "... mod_dsss_python.s"
 	@echo "... mod_gmsk_python.o"
 	@echo "... mod_gmsk_python.i"
 	@echo "... mod_gmsk_python.s"

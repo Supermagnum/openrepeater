@@ -662,6 +662,20 @@ qradiolink_test_mod_qpsk/fast:
 .PHONY : qradiolink_test_mod_qpsk/fast
 
 # Convenience name for target.
+tests/CMakeFiles/qradiolink_test_mod_dsss.dir/rule:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_mod_dsss.dir/rule
+.PHONY : tests/CMakeFiles/qradiolink_test_mod_dsss.dir/rule
+
+# Convenience name for target.
+qradiolink_test_mod_dsss: tests/CMakeFiles/qradiolink_test_mod_dsss.dir/rule
+.PHONY : qradiolink_test_mod_dsss
+
+# fast build rule for target.
+qradiolink_test_mod_dsss/fast:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_dsss.dir/build.make tests/CMakeFiles/qradiolink_test_mod_dsss.dir/build
+.PHONY : qradiolink_test_mod_dsss/fast
+
+# Convenience name for target.
 tests/CMakeFiles/qradiolink_test_demod_2fsk.dir/rule:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_2fsk.dir/rule
 .PHONY : tests/CMakeFiles/qradiolink_test_demod_2fsk.dir/rule
@@ -758,6 +772,20 @@ qradiolink_test_demod_4fsk: tests/CMakeFiles/qradiolink_test_demod_4fsk.dir/rule
 qradiolink_test_demod_4fsk/fast:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_4fsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_4fsk.dir/build
 .PHONY : qradiolink_test_demod_4fsk/fast
+
+# Convenience name for target.
+tests/CMakeFiles/qradiolink_test_demod_dsss.dir/rule:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_dsss.dir/rule
+.PHONY : tests/CMakeFiles/qradiolink_test_demod_dsss.dir/rule
+
+# Convenience name for target.
+qradiolink_test_demod_dsss: tests/CMakeFiles/qradiolink_test_demod_dsss.dir/rule
+.PHONY : qradiolink_test_demod_dsss
+
+# fast build rule for target.
+qradiolink_test_demod_dsss/fast:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_dsss.dir/build.make tests/CMakeFiles/qradiolink_test_demod_dsss.dir/build
+.PHONY : qradiolink_test_demod_dsss/fast
 
 # Convenience name for target.
 tests/CMakeFiles/qradiolink_test_demod_m17.dir/rule:
@@ -868,6 +896,30 @@ test_demod_bpsk.s: test_demod_bpsk.cc.s
 test_demod_bpsk.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_bpsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_bpsk.dir/test_demod_bpsk.cc.s
 .PHONY : test_demod_bpsk.cc.s
+
+test_demod_dsss.o: test_demod_dsss.cc.o
+.PHONY : test_demod_dsss.o
+
+# target to build an object file
+test_demod_dsss.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_dsss.dir/build.make tests/CMakeFiles/qradiolink_test_demod_dsss.dir/test_demod_dsss.cc.o
+.PHONY : test_demod_dsss.cc.o
+
+test_demod_dsss.i: test_demod_dsss.cc.i
+.PHONY : test_demod_dsss.i
+
+# target to preprocess a source file
+test_demod_dsss.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_dsss.dir/build.make tests/CMakeFiles/qradiolink_test_demod_dsss.dir/test_demod_dsss.cc.i
+.PHONY : test_demod_dsss.cc.i
+
+test_demod_dsss.s: test_demod_dsss.cc.s
+.PHONY : test_demod_dsss.s
+
+# target to generate assembly for a file
+test_demod_dsss.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_dsss.dir/build.make tests/CMakeFiles/qradiolink_test_demod_dsss.dir/test_demod_dsss.cc.s
+.PHONY : test_demod_dsss.cc.s
 
 test_demod_gmsk.o: test_demod_gmsk.cc.o
 .PHONY : test_demod_gmsk.o
@@ -1061,6 +1113,30 @@ test_mod_bpsk.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_bpsk.dir/build.make tests/CMakeFiles/test_mod_bpsk.dir/test_mod_bpsk.cc.s
 .PHONY : test_mod_bpsk.cc.s
 
+test_mod_dsss.o: test_mod_dsss.cc.o
+.PHONY : test_mod_dsss.o
+
+# target to build an object file
+test_mod_dsss.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_dsss.dir/build.make tests/CMakeFiles/qradiolink_test_mod_dsss.dir/test_mod_dsss.cc.o
+.PHONY : test_mod_dsss.cc.o
+
+test_mod_dsss.i: test_mod_dsss.cc.i
+.PHONY : test_mod_dsss.i
+
+# target to preprocess a source file
+test_mod_dsss.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_dsss.dir/build.make tests/CMakeFiles/qradiolink_test_mod_dsss.dir/test_mod_dsss.cc.i
+.PHONY : test_mod_dsss.cc.i
+
+test_mod_dsss.s: test_mod_dsss.cc.s
+.PHONY : test_mod_dsss.s
+
+# target to generate assembly for a file
+test_mod_dsss.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_dsss.dir/build.make tests/CMakeFiles/qradiolink_test_mod_dsss.dir/test_mod_dsss.cc.s
+.PHONY : test_mod_dsss.cc.s
+
 test_mod_gmsk.o: test_mod_gmsk.cc.o
 .PHONY : test_mod_gmsk.o
 
@@ -1178,10 +1254,12 @@ help:
 	@echo "... qradiolink_test_demod_4fsk"
 	@echo "... qradiolink_test_demod_am"
 	@echo "... qradiolink_test_demod_bpsk"
+	@echo "... qradiolink_test_demod_dsss"
 	@echo "... qradiolink_test_demod_gmsk"
 	@echo "... qradiolink_test_demod_m17"
 	@echo "... qradiolink_test_demod_qpsk"
 	@echo "... qradiolink_test_demod_ssb"
+	@echo "... qradiolink_test_mod_dsss"
 	@echo "... qradiolink_test_mod_qpsk"
 	@echo "... qradiolink_test_mod_ssb"
 	@echo "... test_mod_2fsk"
@@ -1201,6 +1279,9 @@ help:
 	@echo "... test_demod_bpsk.o"
 	@echo "... test_demod_bpsk.i"
 	@echo "... test_demod_bpsk.s"
+	@echo "... test_demod_dsss.o"
+	@echo "... test_demod_dsss.i"
+	@echo "... test_demod_dsss.s"
 	@echo "... test_demod_gmsk.o"
 	@echo "... test_demod_gmsk.i"
 	@echo "... test_demod_gmsk.s"
@@ -1225,6 +1306,9 @@ help:
 	@echo "... test_mod_bpsk.o"
 	@echo "... test_mod_bpsk.i"
 	@echo "... test_mod_bpsk.s"
+	@echo "... test_mod_dsss.o"
+	@echo "... test_mod_dsss.i"
+	@echo "... test_mod_dsss.s"
 	@echo "... test_mod_gmsk.o"
 	@echo "... test_mod_gmsk.i"
 	@echo "... test_mod_gmsk.s"

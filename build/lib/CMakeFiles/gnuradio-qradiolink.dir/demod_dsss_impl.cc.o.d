@@ -1084,7 +1084,8 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dsss_impl.cc.o: \
  /usr/include/gnuradio/filter/api.h \
  /usr/include/gnuradio/filter/fft_filter_ccf.h \
  /usr/include/gnuradio/sync_decimator.h \
+ /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/dsss/dsss_decoder_cc.h \
+ /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/dsss/api.h \
  /usr/include/gnuradio/filter/firdes.h /usr/include/gnuradio/fft/window.h \
  /usr/include/gnuradio/fft/api.h \
- /home/haaken/github-projects/gr-qradiolink/lib/../../qradiolink/src/gr/../../src/gr/dsss_decoder_cc_impl.h \
- /usr/include/gnuradio/filter/fir_filter.h
+ /home/haaken/github-projects/gr-qradiolink/lib/dsss_decoder_cc_impl.h

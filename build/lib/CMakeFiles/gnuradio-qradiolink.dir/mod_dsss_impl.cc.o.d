@@ -1082,4 +1082,6 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dsss_impl.cc.o: \
  /usr/include/gnuradio/filter/firdes.h /usr/include/gnuradio/fft/window.h \
  /usr/include/gnuradio/fft/api.h \
  /usr/include/gnuradio/blocks/multiply_const.h \
- /home/haaken/github-projects/gr-qradiolink/lib/../../qradiolink/src/gr/../../src/gr/dsss_encoder_bb_impl.h
+ /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/dsss/dsss_encoder_bb.h \
+ /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/dsss/api.h \
+ /home/haaken/github-projects/gr-qradiolink/lib/dsss_encoder_bb_impl.h
