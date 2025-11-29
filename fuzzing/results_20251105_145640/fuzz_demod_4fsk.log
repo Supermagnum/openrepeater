@@ -1,0 +1,33 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 353955891
+INFO: Loaded 1 modules   (282 inline 8-bit counters): 282 [0x56d06ea58000, 0x56d06ea5811a), 
+INFO: Loaded 1 PC tables (282 PCs): 282 [0x56d06ea58120,0x56d06ea592c0), 
+INFO:        1 files found in /home/haaken/github-projects/qradiolink/gr-qradiolink/fuzzing/results_20251105_145640/fuzz_demod_4fsk_corpus/
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: seed corpus: files: 1 min: 6b max: 6b total: 6b rss: 48Mb
+#3	INITED cov: 9 ft: 10 corp: 1/6b exec/s: 0 rss: 50Mb
+#10	REDUCE cov: 9 ft: 10 corp: 1/3b lim: 6 exec/s: 0 rss: 51Mb L: 3/3 MS: 2 ChangeByte-EraseBytes-
+#14	REDUCE cov: 9 ft: 10 corp: 1/2b lim: 6 exec/s: 0 rss: 51Mb L: 2/2 MS: 4 CopyPart-CopyPart-ChangeByte-EraseBytes-
+#17	REDUCE cov: 9 ft: 10 corp: 1/1b lim: 6 exec/s: 0 rss: 51Mb L: 1/1 MS: 3 ChangeBit-ChangeByte-EraseBytes-
+#16384	pulse  cov: 9 ft: 10 corp: 1/1b lim: 163 exec/s: 5461 rss: 497Mb
+#32768	pulse  cov: 9 ft: 10 corp: 1/1b lim: 325 exec/s: 4096 rss: 497Mb
+#65536	pulse  cov: 9 ft: 10 corp: 1/1b lim: 652 exec/s: 3855 rss: 497Mb
+#131072	pulse  cov: 9 ft: 10 corp: 1/1b lim: 1300 exec/s: 3640 rss: 497Mb
+#262144	pulse  cov: 9 ft: 10 corp: 1/1b lim: 2611 exec/s: 3591 rss: 498Mb
+#524288	pulse  cov: 9 ft: 10 corp: 1/1b lim: 4096 exec/s: 3640 rss: 498Mb
+#1048576	pulse  cov: 9 ft: 10 corp: 1/1b lim: 4096 exec/s: 3666 rss: 498Mb
+#2097152	pulse  cov: 9 ft: 10 corp: 1/1b lim: 4096 exec/s: 3609 rss: 498Mb
+#4194304	pulse  cov: 9 ft: 10 corp: 1/1b lim: 4096 exec/s: 3659 rss: 498Mb
+#8388608	pulse  cov: 9 ft: 10 corp: 1/1b lim: 4096 exec/s: 3765 rss: 498Mb
+#16777216	pulse  cov: 9 ft: 10 corp: 1/1b lim: 4096 exec/s: 3808 rss: 498Mb
+#33554432	pulse  cov: 9 ft: 10 corp: 1/1b lim: 4096 exec/s: 3837 rss: 498Mb
+#67108864	pulse  cov: 9 ft: 10 corp: 1/1b lim: 4096 exec/s: 4294 rss: 498Mb
+==2350286== libFuzzer: run interrupted; exiting
+stat::number_of_executed_units: 97648251
+stat::average_exec_per_sec:     4520
+stat::new_units_added:          3
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              498
+==2350286== libFuzzer: run interrupted; exiting
+stat::number_of_executed_units: 97648251
+stat::average_exec_per_sec:     4520

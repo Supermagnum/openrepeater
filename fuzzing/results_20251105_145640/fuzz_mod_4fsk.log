@@ -1,0 +1,48 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 629645282
+INFO: Loaded 1 modules   (195 inline 8-bit counters): 195 [0x6055711fafa0, 0x6055711fb063), 
+INFO: Loaded 1 PC tables (195 PCs): 195 [0x6055711fb068,0x6055711fbc98), 
+INFO:        1 files found in /home/haaken/github-projects/qradiolink/gr-qradiolink/fuzzing/results_20251105_145640/fuzz_mod_4fsk_corpus/
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: seed corpus: files: 1 min: 9b max: 9b total: 9b rss: 48Mb
+#3	INITED cov: 42 ft: 43 corp: 1/9b exec/s: 0 rss: 58Mb
+#15	REDUCE cov: 42 ft: 43 corp: 1/2b lim: 9 exec/s: 0 rss: 82Mb L: 2/2 MS: 2 ShuffleBytes-CrossOver-
+#31	REDUCE cov: 43 ft: 44 corp: 2/3b lim: 9 exec/s: 0 rss: 110Mb L: 1/2 MS: 1 EraseBytes-
+#512	pulse  cov: 43 ft: 44 corp: 2/3b lim: 12 exec/s: 170 rss: 508Mb
+#1024	pulse  cov: 43 ft: 44 corp: 2/3b lim: 18 exec/s: 113 rss: 536Mb
+#2048	pulse  cov: 43 ft: 44 corp: 2/3b lim: 26 exec/s: 93 rss: 583Mb
+#4096	pulse  cov: 43 ft: 44 corp: 2/3b lim: 49 exec/s: 75 rss: 673Mb
+#8192	pulse  cov: 43 ft: 44 corp: 2/3b lim: 88 exec/s: 64 rss: 853Mb
+#16384	pulse  cov: 43 ft: 44 corp: 2/3b lim: 165 exec/s: 47 rss: 1054Mb
+#32768	pulse  cov: 43 ft: 44 corp: 2/3b lim: 328 exec/s: 34 rss: 1637Mb
+==2325479== ERROR: libFuzzer: out-of-memory (used: 2001Mb; limit: 2000Mb)
+   To change the out-of-memory limit use -rss_limit_mb=<N>
+
+Live Heap Allocations: 24890810 bytes in 3219 chunks; quarantined: 13959509 bytes in 222955 chunks; 3257630 other chunks; total chunks: 3483804; showing top 95% (at most 8 unique contexts)
+21233984 byte(s) (85%) in 1 allocation(s)
+    #0 0x6055711a75b1 in operator new(unsigned long) (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_mod_4fsk+0x1425b1) (BuildId: 1823d4b61be5baa6a54871e00ccc097fc4cd32e8)
+    #1 0x6055710a31ad in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_mod_4fsk+0x3e1ad) (BuildId: 1823d4b61be5baa6a54871e00ccc097fc4cd32e8)
+    #2 0x6055710ce226 in main (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_mod_4fsk+0x69226) (BuildId: 1823d4b61be5baa6a54871e00ccc097fc4cd32e8)
+    #3 0x783842c2a1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #4 0x783842c2a28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #5 0x605571098b84 in _start (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_mod_4fsk+0x33b84) (BuildId: 1823d4b61be5baa6a54871e00ccc097fc4cd32e8)
+
+3148000 byte(s) (12%) in 1 allocation(s)
+    #0 0x6055711a75b1 in operator new(unsigned long) (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_mod_4fsk+0x1425b1) (BuildId: 1823d4b61be5baa6a54871e00ccc097fc4cd32e8)
+    #1 0x6055710a318a in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_mod_4fsk+0x3e18a) (BuildId: 1823d4b61be5baa6a54871e00ccc097fc4cd32e8)
+    #2 0x6055710ce226 in main (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_mod_4fsk+0x69226) (BuildId: 1823d4b61be5baa6a54871e00ccc097fc4cd32e8)
+    #3 0x783842c2a1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #4 0x783842c2a28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #5 0x605571098b84 in _start (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_mod_4fsk+0x33b84) (BuildId: 1823d4b61be5baa6a54871e00ccc097fc4cd32e8)
+
+MS: 4 EraseBytes-CopyPart-CMP-CrossOver- DE: "\000\000\000\003"-; base unit: 3ffe0e5fe603f9526704dc411043fc5e006e324c
+0x0,0x0,0x65,0x0,0x3,0x54,0x54,
+\000\000e\000\003TT
+artifact_prefix='./'; Test unit written to ./oom-cbb06f05fe0b19c73110f383dca2126a524cba14
+Base64: AABlAANUVA==
+SUMMARY: libFuzzer: out-of-memory
+stat::number_of_executed_units: 45425
+stat::average_exec_per_sec:     31
+stat::new_units_added:          2
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              2001

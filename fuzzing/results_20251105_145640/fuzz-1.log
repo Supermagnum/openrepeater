@@ -1,0 +1,62 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 500307063
+INFO: Loaded 1 modules   (310 inline 8-bit counters): 310 [0x5f6aa424cfe0, 0x5f6aa424d116), 
+INFO: Loaded 1 PC tables (310 PCs): 310 [0x5f6aa424d118,0x5f6aa424e478), 
+INFO:        9 files found in fuzz_demod_2fsk_corpus/
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: seed corpus: files: 9 min: 1b max: 18b total: 76b rss: 47Mb
+#12	INITED cov: 81 ft: 94 corp: 8/65b exec/s: 0 rss: 111Mb
+#64	pulse  cov: 81 ft: 94 corp: 8/65b lim: 18 exec/s: 32 rss: 353Mb
+#128	pulse  cov: 81 ft: 94 corp: 8/65b lim: 18 exec/s: 25 rss: 440Mb
+#256	pulse  cov: 81 ft: 94 corp: 8/65b lim: 18 exec/s: 25 rss: 451Mb
+#512	pulse  cov: 81 ft: 94 corp: 8/65b lim: 22 exec/s: 25 rss: 453Mb
+#704	RELOAD cov: 81 ft: 96 corp: 9/99b lim: 22 exec/s: 25 rss: 453Mb
+#1024	pulse  cov: 81 ft: 96 corp: 9/99b lim: 26 exec/s: 24 rss: 457Mb
+#2048	pulse  cov: 81 ft: 96 corp: 9/99b lim: 34 exec/s: 25 rss: 464Mb
+#3804	RELOAD cov: 81 ft: 97 corp: 10/163b lim: 54 exec/s: 27 rss: 475Mb
+#4096	pulse  cov: 81 ft: 97 corp: 10/163b lim: 54 exec/s: 27 rss: 475Mb
+#4455	RELOAD cov: 81 ft: 98 corp: 11/229b lim: 59 exec/s: 27 rss: 480Mb
+	NEW_FUNC[1/1]: 0x5f6aa41faf70 in std::__shared_ptr<gr::top_block, (__gnu_cxx::_Lock_policy)2>::~__shared_ptr() /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr_base.h:1524
+#5179	NEW    cov: 85 ft: 103 corp: 12/292b lim: 64 exec/s: 27 rss: 481Mb L: 63/66 MS: 4 CMP-ChangeBinInt-CMP-CrossOver- DE: "\000\000\000\000\000\000\000\000"-"\377\377"-
+ALARM: working on the last Unit for 61 seconds
+       and the timeout value is 60 (use -timeout=N to change)
+MS: 1 CMP- DE: "quadrat"-; base unit: f05b82ef5151821e38b7536591ecd9f5d65bf117
+0x0,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x71,0x75,0x61,0x64,0x72,0x61,0x74,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x81,0xc5,0x2,0xc5,0x2,0x3,0x3,0x0,0x5,
+\000\213\213\213\213\213\213\213\213quadrat\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\201\305\002\305\002\003\003\000\005
+artifact_prefix='./'; Test unit written to ./timeout-0b6108a30e77c37b48971da0facaedc98a71b13f
+Base64: AIuLi4uLi4uLcXVhZHJhdIuLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLgcUCxQIDAwAF
+==2490655== ERROR: libFuzzer: timeout after 61 seconds
+    #0 0x5f6aa41bed95 in __sanitizer_print_stack_trace (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_demod_2fsk+0x10fd95) (BuildId: a8db5285b4b620f3163b3b39d1350eae2a515b31)
+    #1 0x5f6aa41188ac in fuzzer::PrintStackTrace() (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_demod_2fsk+0x698ac) (BuildId: a8db5285b4b620f3163b3b39d1350eae2a515b31)
+    #2 0x5f6aa40fe8ab in fuzzer::Fuzzer::AlarmCallback() (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_demod_2fsk+0x4f8ab) (BuildId: a8db5285b4b620f3163b3b39d1350eae2a515b31)
+    #3 0x7e414604532f  (/lib/x86_64-linux-gnu/libc.so.6+0x4532f) (BuildId: 274eec488d230825a136fa9c4d85370fed7a0a5e)
+    #4 0x7e4146098f6f in futex_wait nptl/../sysdeps/nptl/futex-internal.h:146:13
+    #5 0x7e4146098f6f in __GI___lll_lock_wait nptl/lowlevellock.c:49:7
+    #6 0x7e41460a0100 in lll_mutex_lock_optimized nptl/pthread_mutex_lock.c:48:5
+    #7 0x7e41460a0100 in __pthread_mutex_lock nptl/pthread_mutex_lock.c:93:7
+    #8 0x7e41466f035b  (/lib/x86_64-linux-gnu/libgnuradio-fft.so.3.10.9+0x1035b) (BuildId: 254e3d82ff9fef90c0d8e18f2d4cee73d496fd32)
+    #9 0x7e41466f177b in gr::fft::fft<std::complex<float>, true>::fft(int, int) (/lib/x86_64-linux-gnu/libgnuradio-fft.so.3.10.9+0x1177b) (BuildId: 254e3d82ff9fef90c0d8e18f2d4cee73d496fd32)
+    #10 0x7e4146a8444a in gr::filter::kernel::fft_filter_ccf::compute_sizes(int) (/lib/x86_64-linux-gnu/libgnuradio-filter.so.3.10.9+0x4644a) (BuildId: 308871ec317e1a96ffe5b5fafad8fd6a95454c1c)
+    #11 0x7e4146a84533 in gr::filter::kernel::fft_filter_ccf::set_taps(std::vector<float, std::allocator<float>> const&) (/lib/x86_64-linux-gnu/libgnuradio-filter.so.3.10.9+0x46533) (BuildId: 308871ec317e1a96ffe5b5fafad8fd6a95454c1c)
+    #12 0x7e4146a848dc in gr::filter::kernel::fft_filter_ccf::fft_filter_ccf(int, std::vector<float, std::allocator<float>> const&, int) (/lib/x86_64-linux-gnu/libgnuradio-filter.so.3.10.9+0x468dc) (BuildId: 308871ec317e1a96ffe5b5fafad8fd6a95454c1c)
+    #13 0x7e4146aafb7d in gr::filter::fft_filter_ccf_impl::fft_filter_ccf_impl(int, std::vector<float, std::allocator<float>> const&, int) (/lib/x86_64-linux-gnu/libgnuradio-filter.so.3.10.9+0x71b7d) (BuildId: 308871ec317e1a96ffe5b5fafad8fd6a95454c1c)
+    #14 0x7e4146aafc6d in gr::filter::fft_filter_ccf::make(int, std::vector<float, std::allocator<float>> const&, int) (/lib/x86_64-linux-gnu/libgnuradio-filter.so.3.10.9+0x71c6d) (BuildId: 308871ec317e1a96ffe5b5fafad8fd6a95454c1c)
+    #15 0x5f6aa41fc6c9 in gr::qradiolink::demod_2fsk_impl::demod_2fsk_impl(int, int, int, int, bool) (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_demod_2fsk+0x14d6c9) (BuildId: a8db5285b4b620f3163b3b39d1350eae2a515b31)
+    #16 0x5f6aa41fbdd7 in gr::qradiolink::demod_2fsk::make(int, int, int, int, bool) (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_demod_2fsk+0x14cdd7) (BuildId: a8db5285b4b620f3163b3b39d1350eae2a515b31)
+    #17 0x5f6aa41f4ca1 in LLVMFuzzerTestOneInput /home/haaken/github-projects/qradiolink/gr-qradiolink/fuzzing/harnesses/fuzz_demod_2fsk.cc:30:22
+    #18 0x5f6aa40fff04 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_demod_2fsk+0x50f04) (BuildId: a8db5285b4b620f3163b3b39d1350eae2a515b31)
+    #19 0x5f6aa40ff5f9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_demod_2fsk+0x505f9) (BuildId: a8db5285b4b620f3163b3b39d1350eae2a515b31)
+    #20 0x5f6aa4100de5 in fuzzer::Fuzzer::MutateAndTestOne() (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_demod_2fsk+0x51de5) (BuildId: a8db5285b4b620f3163b3b39d1350eae2a515b31)
+    #21 0x5f6aa4101945 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_demod_2fsk+0x52945) (BuildId: a8db5285b4b620f3163b3b39d1350eae2a515b31)
+    #22 0x5f6aa40eec1f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_demod_2fsk+0x3fc1f) (BuildId: a8db5285b4b620f3163b3b39d1350eae2a515b31)
+    #23 0x5f6aa41192a6 in main (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_demod_2fsk+0x6a2a6) (BuildId: a8db5285b4b620f3163b3b39d1350eae2a515b31)
+    #24 0x7e414602a1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #25 0x7e414602a28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #26 0x5f6aa40e3c04 in _start (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_demod_2fsk+0x34c04) (BuildId: a8db5285b4b620f3163b3b39d1350eae2a515b31)
+
+SUMMARY: libFuzzer: timeout
+stat::number_of_executed_units: 5180
+stat::average_exec_per_sec:     20
+stat::new_units_added:          1
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              481

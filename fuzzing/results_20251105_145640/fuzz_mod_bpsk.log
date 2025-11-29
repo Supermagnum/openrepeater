@@ -1,0 +1,55 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 1634874483
+INFO: Loaded 1 modules   (195 inline 8-bit counters): 195 [0x5bd27a3a7f70, 0x5bd27a3a8033), 
+INFO: Loaded 1 PC tables (195 PCs): 195 [0x5bd27a3a8038,0x5bd27a3a8c68), 
+INFO:        1 files found in /home/haaken/github-projects/qradiolink/gr-qradiolink/fuzzing/results_20251105_145640/fuzz_mod_bpsk_corpus/
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: seed corpus: files: 1 min: 9b max: 9b total: 9b rss: 48Mb
+#3	INITED cov: 42 ft: 43 corp: 1/9b exec/s: 0 rss: 56Mb
+#5	REDUCE cov: 42 ft: 43 corp: 1/5b lim: 9 exec/s: 0 rss: 59Mb L: 5/5 MS: 2 ChangeByte-EraseBytes-
+#26	REDUCE cov: 42 ft: 43 corp: 1/4b lim: 9 exec/s: 0 rss: 84Mb L: 4/4 MS: 1 EraseBytes-
+#39	REDUCE cov: 42 ft: 43 corp: 1/3b lim: 9 exec/s: 0 rss: 99Mb L: 3/3 MS: 3 ChangeBinInt-ShuffleBytes-EraseBytes-
+#56	REDUCE cov: 42 ft: 43 corp: 1/2b lim: 9 exec/s: 0 rss: 119Mb L: 2/2 MS: 2 ChangeBit-EraseBytes-
+#77	REDUCE cov: 43 ft: 44 corp: 2/3b lim: 9 exec/s: 0 rss: 143Mb L: 1/2 MS: 1 EraseBytes-
+#512	pulse  cov: 43 ft: 44 corp: 2/3b lim: 12 exec/s: 256 rss: 481Mb
+#1024	pulse  cov: 43 ft: 44 corp: 2/3b lim: 18 exec/s: 204 rss: 490Mb
+#2048	pulse  cov: 43 ft: 44 corp: 2/3b lim: 26 exec/s: 157 rss: 497Mb
+#4096	pulse  cov: 43 ft: 44 corp: 2/3b lim: 44 exec/s: 136 rss: 501Mb
+#8192	pulse  cov: 43 ft: 44 corp: 2/3b lim: 88 exec/s: 124 rss: 509Mb
+#16384	pulse  cov: 43 ft: 44 corp: 2/3b lim: 165 exec/s: 117 rss: 523Mb
+#32768	pulse  cov: 43 ft: 44 corp: 2/3b lim: 328 exec/s: 111 rss: 552Mb
+#65536	pulse  cov: 43 ft: 44 corp: 2/3b lim: 656 exec/s: 104 rss: 612Mb
+#131072	pulse  cov: 43 ft: 44 corp: 2/3b lim: 1305 exec/s: 104 rss: 730Mb
+#262144	pulse  cov: 43 ft: 44 corp: 2/3b lim: 2605 exec/s: 106 rss: 965Mb
+#524288	pulse  cov: 43 ft: 44 corp: 2/3b lim: 4096 exec/s: 92 rss: 1390Mb
+==2329311== ERROR: libFuzzer: out-of-memory (used: 2012Mb; limit: 2000Mb)
+   To change the out-of-memory limit use -rss_limit_mb=<N>
+
+Live Heap Allocations: 24807175 bytes in 2529 chunks; quarantined: 58216237 bytes in 980378 chunks; 2657898 other chunks; total chunks: 3640805; showing top 95% (at most 8 unique contexts)
+21233984 byte(s) (85%) in 1 allocation(s)
+    #0 0x5bd27a356541 in operator new(unsigned long) (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_mod_bpsk+0x142541) (BuildId: 40af5489dcef8ceadcf1a99a3f712d60c24dbcd1)
+    #1 0x5bd27a25213d in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_mod_bpsk+0x3e13d) (BuildId: 40af5489dcef8ceadcf1a99a3f712d60c24dbcd1)
+    #2 0x5bd27a27d1b6 in main (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_mod_bpsk+0x691b6) (BuildId: 40af5489dcef8ceadcf1a99a3f712d60c24dbcd1)
+    #3 0x714f9482a1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #4 0x714f9482a28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #5 0x5bd27a247b14 in _start (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_mod_bpsk+0x33b14) (BuildId: 40af5489dcef8ceadcf1a99a3f712d60c24dbcd1)
+
+3148000 byte(s) (12%) in 1 allocation(s)
+    #0 0x5bd27a356541 in operator new(unsigned long) (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_mod_bpsk+0x142541) (BuildId: 40af5489dcef8ceadcf1a99a3f712d60c24dbcd1)
+    #1 0x5bd27a25211a in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_mod_bpsk+0x3e11a) (BuildId: 40af5489dcef8ceadcf1a99a3f712d60c24dbcd1)
+    #2 0x5bd27a27d1b6 in main (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_mod_bpsk+0x691b6) (BuildId: 40af5489dcef8ceadcf1a99a3f712d60c24dbcd1)
+    #3 0x714f9482a1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #4 0x714f9482a28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #5 0x5bd27a247b14 in _start (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_mod_bpsk+0x33b14) (BuildId: 40af5489dcef8ceadcf1a99a3f712d60c24dbcd1)
+
+MS: 5 ChangeByte-InsertRepeatedBytes-InsertByte-ChangeBit-CopyPart-; base unit: 361a52996679445c4571c014b26c883135b052ff
+
+
+artifact_prefix='./'; Test unit written to ./oom-da39a3ee5e6b4b0d3255bfef95601890afd80709
+Base64: 
+SUMMARY: libFuzzer: out-of-memory
+stat::number_of_executed_units: 838882
+stat::average_exec_per_sec:     89
+stat::new_units_added:          5
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              2012

@@ -1,0 +1,12 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: gnuradio-qradiolink
+Description: GNU Radio blocks for QRadioLink - digital and analog modulations for amateur radio
+Requires: gnuradio-runtime gnuradio-blocks gnuradio-filter gnuradio-digital gnuradio-analog gnuradio-fec gnuradio-vocoder
+Version: @LIBVER@
+Libs: -L${libdir} -lgnuradio-qradiolink
+Cflags: -I${includedir}
+

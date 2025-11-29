@@ -1,0 +1,45 @@
+id: qradiolink_demod_nxdn
+label: NXDN Demod
+category: '[QRadioLink]'
+flags: [ python ]
+
+parameters:
+-   id: symbol_rate
+    label: Symbol Rate (baud)
+    dtype: int
+    default: '2400'
+    options: ['2400', '4800']
+    option_labels: ['NXDN48 (2400)', 'NXDN96 (4800)']
+-   id: sps
+    label: Samples/Symbol
+    dtype: int
+    default: '125'
+-   id: samp_rate
+    label: Sample Rate
+    dtype: int
+    default: '1000000'
+
+inputs:
+-   domain: stream
+    dtype: complex
+
+outputs:
+-   domain: stream
+    dtype: complex
+    label: Filtered
+-   domain: stream
+    dtype: complex
+    label: Constellation
+-   domain: stream
+    dtype: byte
+    label: Decoded
+-   domain: stream
+    dtype: float
+    label: Symbol Error Rate
+
+templates:
+    imports: from gnuradio import qradiolink
+    make: qradiolink.demod_nxdn(symbol_rate=${symbol_rate}, sps=${sps}, samp_rate=${samp_rate})
+
+file_format: 1
+

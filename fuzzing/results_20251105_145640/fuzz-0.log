@@ -1,0 +1,81 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 500473277
+INFO: Loaded 1 modules   (310 inline 8-bit counters): 310 [0x5bbb0765dfe0, 0x5bbb0765e116), 
+INFO: Loaded 1 PC tables (310 PCs): 310 [0x5bbb0765e118,0x5bbb0765f478), 
+INFO:        9 files found in fuzz_demod_2fsk_corpus/
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: seed corpus: files: 9 min: 1b max: 18b total: 76b rss: 47Mb
+#12	INITED cov: 81 ft: 94 corp: 8/65b exec/s: 0 rss: 111Mb
+#64	pulse  cov: 81 ft: 94 corp: 8/65b lim: 18 exec/s: 32 rss: 361Mb
+#128	pulse  cov: 81 ft: 94 corp: 8/65b lim: 18 exec/s: 25 rss: 438Mb
+#256	pulse  cov: 81 ft: 94 corp: 8/65b lim: 18 exec/s: 25 rss: 445Mb
+#512	pulse  cov: 81 ft: 94 corp: 8/65b lim: 22 exec/s: 25 rss: 448Mb
+#699	RELOAD cov: 81 ft: 96 corp: 9/99b lim: 22 exec/s: 24 rss: 458Mb
+#1024	pulse  cov: 81 ft: 96 corp: 9/99b lim: 26 exec/s: 24 rss: 458Mb
+	NEW_FUNC[1/1]: 0x5bbb0760bf70 in std::__shared_ptr<gr::top_block, (__gn#4096	pulse  cov: 81 ft: 96 corp: 9/99b lim: 54 exec/s: 26 rss: 473Mb
+#4676	NEW    cov: 81 ft: 97 corp: 10/163b lim: 64 exec/s: 26 rss: 477Mb L: 64/64 MS: 4 CopyPart-CrossOver-ChangeBinInt-InsertRepeatedBytes-
+#5299	NEW    cov: 81 ft: 98 corp: 11/229b lim: 70 exec/s: 27 rss: 478Mb L: 66/66 MS: 2 CopyPart-InsertRepeatedBytes-
+#8192	pulse  cov: 81 ft: 98 corp: 11/229b lim: 94 exec/s: 28 rss: 494Mb
+#16384	pulse  cov: 81 ft: 98 corp: 11/229b lim: 179 exec/s: 31 rss: 533Mb
+#25123	NEW    cov: 81 ft: 99 corp: 12/486b lim: 264 exec/s: 31 rss: 574Mb L: 257/257 MS: 3 InsertRepeatedBytes-InsertRepeatedBytes-InsertRepeatedBytes-
+#25190	NEW    cov: 81 ft: 100 corp: 13/744b lim: 264 exec/s: 31 rss: 574Mb L: 258/258 MS: 1 InsertByte-
+#32768	pulse  cov: 81 ft: 100 corp: 13/744b lim: 336 exec/s: 32 rss: 609Mb
+#35432	REDUCE cov: 81 ft: 100 corp: 13/743b lim: 360 exec/s: 32 rss: 622Mb L: 256/258 MS: 2 CrossOver-EraseBytes-
+#65536	pulse  cov: 81 ft: 100 corp: 13/743b lim: 656 exec/s: 33 rss: 767Mb
+#131072	pulse  cov: 81 ft: 100 corp: 13/743b lim: 1305 exec/s: 33 rss: 1001Mb
+#262144	pulse  cov: 81 ft: 100 corp: 13/743b lim: 2605 exec/s: 31 rss: 1616Mb
+==2212581== ERROR: libFuzzer: out-of-memory (used: 2001Mb; limit: 2000Mb)
+   To change the out-of-memory limit use -rss_limit_mb=<N>
+
+Live Heap Allocations: 26631609 bytes in 5397 chunks; quarantined: 3519204 bytes in 26765 chunks; 1816199 other chunks; total chunks: 1848361; showing top 95% (at most 8 unique contexts)
+21233984 byte(s) (79%) in 1 allocation(s)
+    #0 0x5a8dee185631 in operator new(unsigned long) (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_demod_2fsk+0x143631) (BuildId: a8db5285b4b620f3163b3b39d1350eae2a515b31)
+    #1 0x5a8dee08122d in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_demod_2fsk+0x3f22d) (BuildId: a8db5285b4b620f3163b3b39d1350eae2a515b31)
+    #2 0x5a8dee0ac2a6 in main (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_demod_2fsk+0x6a2a6) (BuildId: a8db5285b4b620f3163b3b39d1350eae2a515b31)
+    #3 0x7ac1ee82a1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #4 0x7ac1ee82a28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #5 0x5a8dee076c04 in _start (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_demod_2fsk+0x34c04) (BuildId: a8db5285b4b620f3163b3b39d1350eae2a515b31)
+
+3148000 byte(s) (11%) in 1 allocation(s)
+    #0 0x5a8dee185631 in operator new(unsigned long) (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_demod_2fsk+0x143631) (BuildId: a8db5285b4b620f3163b3b39d1350eae2a515b31)
+    #1 0x5a8dee08120a in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_demod_2fsk+0x3f20a) (BuildId: a8db5285b4b620f3163b3b39d1350eae2a515b31)
+    #2 0x5a8dee0ac2a6 in main (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_demod_2fsk+0x6a2a6) (BuildId: a8db5285b4b620f3163b3b39d1350eae2a515b31)
+    #3 0x7ac1ee82a1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #4 0x7ac1ee82a28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #5 0x5a8dee076c04 in _start (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_demod_2fsk+0x34c04) (BuildId: a8db5285b4b620f3163b3b39d1350eae2a515b31)
+
+665568 byte(s) (2%) in 2140 allocation(s)
+    #0 0x5a8dee1477a6 in memalign (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_demod_2fsk+0x1057a6) (BuildId: a8db5285b4b620f3163b3b39d1350eae2a515b31)
+    #1 0x7ac1ede233d8 in fftwf_malloc_plain (/lib/x86_64-linux-gnu/libfftw3f.so.3+0x233d8) (BuildId: c015972ebad7904fd946b12fa940fc2d740bf2db)
+
+262144 byte(s) (0%) in 1 allocation(s)
+    #0 0x5a8dee1479b6 in aligned_alloc (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_demod_2fsk+0x1059b6) (BuildId: a8db5285b4b620f3163b3b39d1350eae2a515b31)
+    #1 0x7ac1ef41e0af in gr::fft::fft<float, false>::fft(int, int) (/lib/x86_64-linux-gnu/libgnuradio-fft.so.3.10.9+0x120af) (BuildId: 254e3d82ff9fef90c0d8e18f2d4cee73d496fd32)
+    #2 0x7ac1ef08318c in gr::filter::kernel::fft_filter_fff::compute_sizes(int) (/lib/x86_64-linux-gnu/libgnuradio-filter.so.3.10.9+0x4518c) (BuildId: 308871ec317e1a96ffe5b5fafad8fd6a95454c1c)
+    #3 0x7ac1ef083257 in gr::filter::kernel::fft_filter_fff::set_taps(std::vector<float, std::allocator<float>> const&) (/lib/x86_64-linux-gnu/libgnuradio-filter.so.3.10.9+0x45257) (BuildId: 308871ec317e1a96ffe5b5fafad8fd6a95454c1c)
+    #4 0x7ac1ef08353c in gr::filter::kernel::fft_filter_fff::fft_filter_fff(int, std::vector<float, std::allocator<float>> const&, int) (/lib/x86_64-linux-gnu/libgnuradio-filter.so.3.10.9+0x4553c) (BuildId: 308871ec317e1a96ffe5b5fafad8fd6a95454c1c)
+    #5 0x7ac1ef0aff1d in gr::filter::fft_filter_fff_impl::fft_filter_fff_impl(int, std::vector<float, std::allocator<float>> const&, int) (/lib/x86_64-linux-gnu/libgnuradio-filter.so.3.10.9+0x71f1d) (BuildId: 308871ec317e1a96ffe5b5fafad8fd6a95454c1c)
+    #6 0x7ac1ef0b000d in gr::filter::fft_filter_fff::make(int, std::vector<float, std::allocator<float>> const&, int) (/lib/x86_64-linux-gnu/libgnuradio-filter.so.3.10.9+0x7200d) (BuildId: 308871ec317e1a96ffe5b5fafad8fd6a95454c1c)
+    #7 0x5a8dee1907eb in gr::qradiolink::demod_2fsk_impl::demod_2fsk_impl(int, int, int, int, bool) (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_demod_2fsk+0x14e7eb) (BuildId: a8db5285b4b620f3163b3b39d1350eae2a515b31)
+
+262144 byte(s) (0%) in 1 allocation(s)
+    #0 0x5a8dee1479b6 in aligned_alloc (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_demod_2fsk+0x1059b6) (BuildId: a8db5285b4b620f3163b3b39d1350eae2a515b31)
+    #1 0x7ac1ef41dd8b in gr::fft::fft<float, true>::fft(int, int) (/lib/x86_64-linux-gnu/libgnuradio-fft.so.3.10.9+0x11d8b) (BuildId: 254e3d82ff9fef90c0d8e18f2d4cee73d496fd32)
+    #2 0x7ac1ef08315c in gr::filter::kernel::fft_filter_fff::compute_sizes(int) (/lib/x86_64-linux-gnu/libgnuradio-filter.so.3.10.9+0x4515c) (BuildId: 308871ec317e1a96ffe5b5fafad8fd6a95454c1c)
+    #3 0x7ac1ef083257 in gr::filter::kernel::fft_filter_fff::set_taps(std::vector<float, std::allocator<float>> const&) (/lib/x86_64-linux-gnu/libgnuradio-filter.so.3.10.9+0x45257) (BuildId: 308871ec317e1a96ffe5b5fafad8fd6a95454c1c)
+    #4 0x7ac1ef08353c in gr::filter::kernel::fft_filter_fff::fft_filter_fff(int, std::vector<float, std::allocator<float>> const&, int) (/lib/x86_64-linux-gnu/libgnuradio-filter.so.3.10.9+0x4553c) (BuildId: 308871ec317e1a96ffe5b5fafad8fd6a95454c1c)
+    #5 0x7ac1ef0aff1d in gr::filter::fft_filter_fff_impl::fft_filter_fff_impl(int, std::vector<float, std::allocator<float>> const&, int) (/lib/x86_64-linux-gnu/libgnuradio-filter.so.3.10.9+0x71f1d) (BuildId: 308871ec317e1a96ffe5b5fafad8fd6a95454c1c)
+    #6 0x7ac1ef0b000d in gr::filter::fft_filter_fff::make(int, std::vector<float, std::allocator<float>> const&, int) (/lib/x86_64-linux-gnu/libgnuradio-filter.so.3.10.9+0x7200d) (BuildId: 308871ec317e1a96ffe5b5fafad8fd6a95454c1c)
+    #7 0x5a8dee1907eb in gr::qradiolink::demod_2fsk_impl::demod_2fsk_impl(int, int, int, int, bool) (/home/haaken/github-projects/qradiolink/gr-qradiolink/build-fuzz/fuzzing/harnesses/fuzz_demod_2fsk+0x14e7eb) (BuildId: a8db5285b4b620f3163b3b39d1350eae2a515b31)
+
+MS: 5 EraseBytes-ChangeBit-ShuffleBytes-CMP-CMP- DE: "\377\377\377\377\377\377\007\000"-"\000\000"-; base unit: 0343e6e5bc905a87ed92c173dd506785acbd1053
+0x0,0x1,0x2,0x3,0x84,0x5,0xf4,0xf4,0xa6,0xa6,0xa6,0xa6,0xa6,0xa6,0xa6,0xa6,0xa6,0xa6,0xa6,0xa6,0xa6,0xa6,0xa6,0xa6,0xa6,0xa6,0xa6,0xa6,0xa6,0xf4,0xf4,0xf4,0xf4,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0x0,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x8b,0x81,0xc5,0x2,0xc5,0x2,0x3,0x3,0x0,0x5,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0x0,0x0,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xcf,0xff,0xff,0xff,0xff,0xff,0xff,0x7,0x0,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xf4,0xf4,0xf4,0xf4,
+\000\001\002\003\204\005\364\364\246\246\246\246\246\246\246\246\246\246\246\246\246\246\246\246\246\246\246\246\246\364\364\364\364\377\377\377\377\377\377\377\377\377\377\377\377\377\000\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\213\201\305\002\305\002\003\003\000\005\317\317\317\317\317\317\317\317\317\317\317\000\000\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\317\377\377\377\377\377\377\007\000\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\364\364\364\364
+artifact_prefix='./'; Test unit written to ./oom-a8b6137bb5d0e87cbf1a353ca797af4d8243f48e
+Base64: AAECA4QF9PSmpqampqampqampqampqampqampqb09PT0/////////////////wCLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4HFAsUCAwMABc/Pz8/Pz8/Pz8/PAADPz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8////////8HAP////////////////////T09PQ=
+SUMMARY: libFuzzer: out-of-memory
+stat::number_of_executed_units: 341167
+stat::average_exec_per_sec:     32
+stat::new_units_added:          5
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              2001

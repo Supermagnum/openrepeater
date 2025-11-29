@@ -1,3 +1,13 @@
 __pycache__/
 mutants/
 .mutmut-cache/
+
+# Build directories
+build/
+*_build/
+
+# Fuzzing artifacts
+fuzzing/corpus/*.seed
+fuzzing/corpus/*/crash-*
+fuzzing/corpus/*/timeout-*
+fuzzing/corpus/*/leak-*

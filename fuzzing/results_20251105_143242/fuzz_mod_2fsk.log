@@ -1,0 +1,32 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 3878464339
+INFO: Loaded 1 modules   (195 inline 8-bit counters): 195 [0x5df5889e7f90, 0x5df5889e8053), 
+INFO: Loaded 1 PC tables (195 PCs): 195 [0x5df5889e8058,0x5df5889e8c88), 
+INFO:        1 files found in /home/haaken/github-projects/qradiolink/gr-qradiolink/fuzzing/results_20251105_143242/fuzz_mod_2fsk_corpus/
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: seed corpus: files: 1 min: 11b max: 11b total: 11b rss: 48Mb
+#3	INITED cov: 42 ft: 43 corp: 1/11b exec/s: 0 rss: 58Mb
+#11	REDUCE cov: 42 ft: 43 corp: 1/8b lim: 11 exec/s: 0 rss: 74Mb L: 8/8 MS: 3 CopyPart-ChangeBit-EraseBytes-
+#45	REDUCE cov: 42 ft: 43 corp: 1/4b lim: 11 exec/s: 0 rss: 134Mb L: 4/4 MS: 4 ShuffleBytes-CopyPart-ChangeByte-EraseBytes-
+#92	REDUCE cov: 42 ft: 43 corp: 1/3b lim: 11 exec/s: 0 rss: 218Mb L: 3/3 MS: 2 ChangeBinInt-EraseBytes-
+#93	REDUCE cov: 42 ft: 43 corp: 1/2b lim: 11 exec/s: 0 rss: 220Mb L: 2/2 MS: 1 EraseBytes-
+#149	REDUCE cov: 43 ft: 44 corp: 2/3b lim: 11 exec/s: 149 rss: 319Mb L: 1/2 MS: 1 EraseBytes-
+#512	pulse  cov: 43 ft: 44 corp: 2/3b lim: 14 exec/s: 170 rss: 495Mb
+#1024	pulse  cov: 43 ft: 44 corp: 2/3b lim: 17 exec/s: 146 rss: 502Mb
+#2048	pulse  cov: 43 ft: 44 corp: 2/3b lim: 29 exec/s: 107 rss: 506Mb
+#4096	pulse  cov: 43 ft: 44 corp: 2/3b lim: 48 exec/s: 91 rss: 511Mb
+#8192	pulse  cov: 43 ft: 44 corp: 2/3b lim: 86 exec/s: 81 rss: 521Mb
+#16384	pulse  cov: 43 ft: 44 corp: 2/3b lim: 170 exec/s: 67 rss: 539Mb
+#32768	pulse  cov: 43 ft: 44 corp: 2/3b lim: 333 exec/s: 59 rss: 578Mb
+==437472== libFuzzer: run interrupted; exiting
+stat::number_of_executed_units: 51769
+stat::average_exec_per_sec:     56
+stat::new_units_added:          5
+stat::slowest_unit_time_sec:    0
+==437472== libFuzzer: run interrupted; exiting
+stat::peak_rss_mb:              623
+stat::number_of_executed_units: 51769
+stat::average_exec_per_sec:     56
+stat::new_units_added:          5
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              623

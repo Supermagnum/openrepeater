@@ -1,0 +1,12 @@
+# Copyright 2024 QRadioLink Contributors
+#
+# This file is part of gr-qradiolink
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+
+########################################################################
+# Doxygen documentation will be configured here
+########################################################################
+# Documentation setup will be added as module is developed
+

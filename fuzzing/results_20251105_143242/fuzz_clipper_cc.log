@@ -1,0 +1,47 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 3316168791
+INFO: Loaded 1 modules   (230 inline 8-bit counters): 230 [0x61319ee19f40, 0x61319ee1a026), 
+INFO: Loaded 1 PC tables (230 PCs): 230 [0x61319ee1a028,0x61319ee1ae88), 
+INFO:        1 files found in /home/haaken/github-projects/qradiolink/gr-qradiolink/fuzzing/results_20251105_143242/fuzz_clipper_cc_corpus/
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: seed corpus: files: 1 min: 6b max: 6b total: 6b rss: 47Mb
+#3	INITED cov: 48 ft: 49 corp: 1/6b exec/s: 0 rss: 52Mb
+#5	NEW    cov: 48 ft: 50 corp: 2/8b lim: 6 exec/s: 0 rss: 54Mb L: 2/6 MS: 2 CrossOver-CrossOver-
+#8	NEW    cov: 48 ft: 52 corp: 3/13b lim: 6 exec/s: 0 rss: 55Mb L: 5/6 MS: 3 ChangeByte-ShuffleBytes-EraseBytes-
+#25	REDUCE cov: 48 ft: 52 corp: 3/12b lim: 6 exec/s: 0 rss: 61Mb L: 4/6 MS: 2 ChangeByte-EraseBytes-
+#35	REDUCE cov: 53 ft: 60 corp: 4/13b lim: 6 exec/s: 0 rss: 63Mb L: 1/6 MS: 5 ChangeByte-EraseBytes-CopyPart-ShuffleBytes-EraseBytes-
+#268	NEW    cov: 53 ft: 62 corp: 5/21b lim: 8 exec/s: 0 rss: 145Mb L: 8/8 MS: 3 InsertByte-ShuffleBytes-CopyPart-
+#580	REDUCE cov: 53 ft: 63 corp: 6/31b lim: 11 exec/s: 580 rss: 256Mb L: 10/10 MS: 2 InsertRepeatedBytes-CopyPart-
+#1222	NEW    cov: 53 ft: 64 corp: 7/47b lim: 17 exec/s: 611 rss: 445Mb L: 16/16 MS: 2 InsertRepeatedBytes-CrossOver-
+#1642	NEW    cov: 53 ft: 65 corp: 8/68b lim: 21 exec/s: 547 rss: 449Mb L: 21/21 MS: 5 ChangeByte-ChangeBit-CrossOver-InsertRepeatedBytes-InsertRepeatedBytes-
+#2020	REDUCE cov: 53 ft: 65 corp: 8/67b lim: 21 exec/s: 505 rss: 451Mb L: 20/20 MS: 3 EraseBytes-ShuffleBytes-CrossOver-
+#2048	pulse  cov: 53 ft: 65 corp: 8/67b lim: 21 exec/s: 512 rss: 451Mb
+#2097	REDUCE cov: 53 ft: 65 corp: 8/66b lim: 21 exec/s: 524 rss: 452Mb L: 19/19 MS: 2 CopyPart-EraseBytes-
+#3077	REDUCE cov: 53 ft: 65 corp: 8/65b lim: 29 exec/s: 512 rss: 456Mb L: 18/18 MS: 5 InsertByte-ChangeBinInt-ShuffleBytes-CrossOver-EraseBytes-
+#3495	NEW    cov: 53 ft: 66 corp: 9/98b lim: 33 exec/s: 499 rss: 457Mb L: 33/33 MS: 3 InsertRepeatedBytes-ChangeBit-InsertRepeatedBytes-
+#4015	NEW    cov: 53 ft: 67 corp: 10/132b lim: 38 exec/s: 501 rss: 459Mb L: 34/34 MS: 5 ChangeBit-ShuffleBytes-ShuffleBytes-ChangeByte-InsertByte-
+#4096	pulse  cov: 53 ft: 67 corp: 10/132b lim: 38 exec/s: 512 rss: 460Mb
+#6795	REDUCE cov: 53 ft: 67 corp: 10/131b lim: 63 exec/s: 485 rss: 465Mb L: 32/34 MS: 5 InsertByte-ChangeBinInt-EraseBytes-EraseBytes-InsertRepeatedBytes-
+#7369	NEW    cov: 53 ft: 69 corp: 11/198b lim: 68 exec/s: 460 rss: 465Mb L: 67/67 MS: 4 InsertRepeatedBytes-ChangeBit-ShuffleBytes-InsertRepeatedBytes-
+#8192	pulse  cov: 53 ft: 69 corp: 11/198b lim: 74 exec/s: 481 rss: 466Mb
+#8803	REDUCE cov: 53 ft: 69 corp: 11/197b lim: 80 exec/s: 463 rss: 467Mb L: 66/66 MS: 4 ChangeBinInt-InsertRepeatedBytes-EraseBytes-EraseBytes-
+#16384	pulse  cov: 53 ft: 69 corp: 11/197b lim: 149 exec/s: 442 rss: 473Mb
+#28693	NEW    cov: 53 ft: 71 corp: 12/469b lim: 277 exec/s: 441 rss: 483Mb L: 272/272 MS: 5 CrossOver-ChangeBit-InsertRepeatedBytes-CrossOver-InsertRepeatedBytes-
+#29302	REDUCE cov: 53 ft: 71 corp: 12/462b lim: 277 exec/s: 437 rss: 483Mb L: 265/265 MS: 4 CMP-CopyPart-ChangeByte-EraseBytes- DE: "\001\000"-
+#29962	REDUCE cov: 53 ft: 71 corp: 12/455b lim: 277 exec/s: 440 rss: 484Mb L: 258/258 MS: 5 ShuffleBytes-PersAutoDict-EraseBytes-CopyPart-InsertByte- DE: "\001\000"-
+#32768	pulse  cov: 53 ft: 71 corp: 12/455b lim: 301 exec/s: 436 rss: 485Mb
+#65536	pulse  cov: 53 ft: 71 corp: 12/455b lim: 625 exec/s: 417 rss: 509Mb
+#131072	pulse  cov: 53 ft: 71 corp: 12/455b lim: 1280 exec/s: 403 rss: 554Mb
+#262144	pulse  cov: 53 ft: 71 corp: 12/455b lim: 2578 exec/s: 391 rss: 647Mb
+==488520== libFuzzer: run interrupted; exiting
+stat::number_of_executed_units: 349636
+stat::average_exec_per_sec:     385
+stat::new_units_added:          19
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              709
+==488520== libFuzzer: run interrupted; exiting
+stat::number_of_executed_units: 349636
+stat::average_exec_per_sec:     385
+stat::new_units_added:          19
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              709
