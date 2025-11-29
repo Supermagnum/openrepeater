@@ -21,21 +21,26 @@ list(
     mod_bpsk_python.cc
     mod_ssb_python.cc
     mod_qpsk_python.cc
-    # mod_nbfm_python.cc  # Commented out - mod_nbfm_impl.cc requires missing emphasis.h
+    mod_nbfm_python.cc
     mod_dsss_python.cc
     mod_m17_python.cc
     mod_dmr_python.cc
+    mod_freedv_python.cc
+    mod_mmdvm_python.cc
     demod_2fsk_python.cc
     demod_am_python.cc
     demod_ssb_python.cc
-    # demod_wbfm_python.cc  # Commented out - demod_wbfm_impl.cc requires missing emphasis.h
-    # demod_nbfm_python.cc  # Commented out - demod_nbfm_impl.cc requires missing emphasis.h
+    demod_wbfm_python.cc
+    demod_nbfm_python.cc
     demod_bpsk_python.cc
     demod_qpsk_python.cc
     demod_gmsk_python.cc
     demod_4fsk_python.cc
     demod_dsss_python.cc
     demod_m17_python.cc
+    demod_dmr_python.cc
+    demod_freedv_python.cc
+    rssi_tag_block_python.cc
     m17_deframer_python.cc
     python_bindings.cc)
 
@@ -52,7 +57,9 @@ target_link_libraries(
     PRIVATE pybind11::pybind11
             Python::Module
             Python::NumPy
+            -Wl,--whole-archive
             gnuradio-qradiolink
+            -Wl,--no-whole-archive
             ${GR_RUNTIME_LIBRARIES}
             ${GR_BLOCKS_LIBRARIES}
             ${GR_FILTER_LIBRARIES}

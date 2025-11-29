@@ -20,7 +20,7 @@
 #include <gnuradio/filter/firdes.h>
 #include <gnuradio/fft/window.h>
 #include <cmath>
-#include "../../src/gr/emphasis.h"
+#include <gr/emphasis.h>
 
 namespace gr {
 namespace qradiolink {

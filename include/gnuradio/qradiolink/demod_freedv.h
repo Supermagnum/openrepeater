@@ -51,6 +51,8 @@ public:
     virtual void set_agc_decay(float value);
     virtual void set_squelch(int value);
 
+    virtual ~demod_freedv();
+
 protected:
     demod_freedv(const std::string& name,
                  gr::io_signature::sptr input_signature,

@@ -92,7 +92,7 @@ qradiolink_test_demod_wbfm_EXTERNAL_OBJECTS =
 
 tests/qradiolink_test_demod_wbfm: tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/test_demod_wbfm.cc.o
 tests/qradiolink_test_demod_wbfm: tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/build.make
-tests/qradiolink_test_demod_wbfm: lib/libgnuradio-qradiolink.a
+tests/qradiolink_test_demod_wbfm: lib/libgnuradio-qradiolink.so
 tests/qradiolink_test_demod_wbfm: /usr/lib/x86_64-linux-gnu/libboost_unit_test_framework.so.1.83.0
 tests/qradiolink_test_demod_wbfm: /usr/lib/x86_64-linux-gnu/libvolk.so.3.1.2
 tests/qradiolink_test_demod_wbfm: tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/link.txt

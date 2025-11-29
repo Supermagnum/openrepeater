@@ -679,6 +679,19 @@ qradiolink_test_mod_qpsk/fast:
 .PHONY : qradiolink_test_mod_qpsk/fast
 
 #=============================================================================
+# Target rules for targets named qradiolink_test_mod_nbfm
+
+# Build rule for target.
+qradiolink_test_mod_nbfm: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 qradiolink_test_mod_nbfm
+.PHONY : qradiolink_test_mod_nbfm
+
+# fast build rule for target.
+qradiolink_test_mod_nbfm/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/build.make tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/build
+.PHONY : qradiolink_test_mod_nbfm/fast
+
+#=============================================================================
 # Target rules for targets named qradiolink_test_mod_dsss
 
 # Build rule for target.
@@ -729,6 +742,32 @@ qradiolink_test_demod_ssb: cmake_check_build_system
 qradiolink_test_demod_ssb/fast:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_ssb.dir/build.make tests/CMakeFiles/qradiolink_test_demod_ssb.dir/build
 .PHONY : qradiolink_test_demod_ssb/fast
+
+#=============================================================================
+# Target rules for targets named qradiolink_test_demod_wbfm
+
+# Build rule for target.
+qradiolink_test_demod_wbfm: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 qradiolink_test_demod_wbfm
+.PHONY : qradiolink_test_demod_wbfm
+
+# fast build rule for target.
+qradiolink_test_demod_wbfm/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/build.make tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/build
+.PHONY : qradiolink_test_demod_wbfm/fast
+
+#=============================================================================
+# Target rules for targets named qradiolink_test_demod_nbfm
+
+# Build rule for target.
+qradiolink_test_demod_nbfm: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 qradiolink_test_demod_nbfm
+.PHONY : qradiolink_test_demod_nbfm
+
+# fast build rule for target.
+qradiolink_test_demod_nbfm/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/build.make tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/build
+.PHONY : qradiolink_test_demod_nbfm/fast
 
 #=============================================================================
 # Target rules for targets named qradiolink_test_demod_bpsk
@@ -860,9 +899,12 @@ help:
 	@echo "... qradiolink_test_demod_dsss"
 	@echo "... qradiolink_test_demod_gmsk"
 	@echo "... qradiolink_test_demod_m17"
+	@echo "... qradiolink_test_demod_nbfm"
 	@echo "... qradiolink_test_demod_qpsk"
 	@echo "... qradiolink_test_demod_ssb"
+	@echo "... qradiolink_test_demod_wbfm"
 	@echo "... qradiolink_test_mod_dsss"
+	@echo "... qradiolink_test_mod_nbfm"
 	@echo "... qradiolink_test_mod_qpsk"
 	@echo "... qradiolink_test_mod_ssb"
 	@echo "... test_mod_2fsk"

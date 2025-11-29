@@ -55,6 +55,8 @@ public:
     virtual void set_filter_width(int filter_width);
     virtual void calibrate_rssi(float level);
 
+    virtual ~demod_mmdvm_multi2();
+
 protected:
     demod_mmdvm_multi2(const std::string& name,
                       gr::io_signature::sptr input_signature,

@@ -167,10 +167,24 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/mod_qpsk_impl.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gnuradio-qradiolink.dir/mod_qpsk_impl.cc.s"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haaken/github-projects/gr-qradiolink/lib/mod_qpsk_impl.cc -o CMakeFiles/gnuradio-qradiolink.dir/mod_qpsk_impl.cc.s
 
+lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nbfm_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
+lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nbfm_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/mod_nbfm_impl.cc
+lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nbfm_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nbfm_impl.cc.o"
+	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nbfm_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/mod_nbfm_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/mod_nbfm_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/mod_nbfm_impl.cc
+
+lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nbfm_impl.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gnuradio-qradiolink.dir/mod_nbfm_impl.cc.i"
+	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/haaken/github-projects/gr-qradiolink/lib/mod_nbfm_impl.cc > CMakeFiles/gnuradio-qradiolink.dir/mod_nbfm_impl.cc.i
+
+lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nbfm_impl.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gnuradio-qradiolink.dir/mod_nbfm_impl.cc.s"
+	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haaken/github-projects/gr-qradiolink/lib/mod_nbfm_impl.cc -o CMakeFiles/gnuradio-qradiolink.dir/mod_nbfm_impl.cc.s
+
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dsss_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dsss_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/mod_dsss_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dsss_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dsss_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dsss_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dsss_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/mod_dsss_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/mod_dsss_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/mod_dsss_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dsss_impl.cc.i: cmake_force
@@ -184,7 +198,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dsss_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_encoder_bb_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_encoder_bb_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/dsss_encoder_bb_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_encoder_bb_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_encoder_bb_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_encoder_bb_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_encoder_bb_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/dsss_encoder_bb_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/dsss_encoder_bb_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/dsss_encoder_bb_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_encoder_bb_impl.cc.i: cmake_force
@@ -198,7 +212,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_encoder_bb_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_freedv_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_freedv_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/mod_freedv_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_freedv_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/mod_freedv_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/mod_freedv_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/mod_freedv_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/mod_freedv_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/mod_freedv_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/mod_freedv_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_freedv_impl.cc.i: cmake_force
@@ -212,7 +226,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/mod_freedv_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_m17_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_m17_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/mod_m17_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_m17_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/mod_m17_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/mod_m17_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/mod_m17_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/mod_m17_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/mod_m17_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/mod_m17_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_m17_impl.cc.i: cmake_force
@@ -226,7 +240,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/mod_m17_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dmr_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dmr_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/mod_dmr_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dmr_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dmr_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dmr_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dmr_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/mod_dmr_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/mod_dmr_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/mod_dmr_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dmr_impl.cc.i: cmake_force
@@ -240,7 +254,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dmr_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nxdn_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nxdn_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/mod_nxdn_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nxdn_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nxdn_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nxdn_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nxdn_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/mod_nxdn_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/mod_nxdn_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/mod_nxdn_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nxdn_impl.cc.i: cmake_force
@@ -254,7 +268,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nxdn_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dpmr_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dpmr_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/mod_dpmr_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dpmr_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dpmr_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dpmr_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dpmr_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/mod_dpmr_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/mod_dpmr_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/mod_dpmr_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dpmr_impl.cc.i: cmake_force
@@ -268,7 +282,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dpmr_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/mod_mmdvm_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/mod_mmdvm_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_impl.cc.i: cmake_force
@@ -282,7 +296,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_multi2_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_multi2_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/mod_mmdvm_multi2_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_multi2_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_multi2_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_multi2_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_multi2_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_multi2_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_multi2_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/mod_mmdvm_multi2_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_multi2_impl.cc.i: cmake_force
@@ -296,7 +310,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_multi2_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_2fsk_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_2fsk_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/demod_2fsk_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_2fsk_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_2fsk_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_2fsk_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/demod_2fsk_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/demod_2fsk_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/demod_2fsk_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/demod_2fsk_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_2fsk_impl.cc.i: cmake_force
@@ -310,7 +324,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/demod_2fsk_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_am_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_am_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/demod_am_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_am_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_am_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_am_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/demod_am_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/demod_am_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/demod_am_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/demod_am_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_am_impl.cc.i: cmake_force
@@ -324,7 +338,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/demod_am_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_ssb_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_ssb_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/demod_ssb_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_ssb_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_ssb_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_ssb_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/demod_ssb_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/demod_ssb_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/demod_ssb_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/demod_ssb_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_ssb_impl.cc.i: cmake_force
@@ -335,10 +349,38 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/demod_ssb_impl.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gnuradio-qradiolink.dir/demod_ssb_impl.cc.s"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haaken/github-projects/gr-qradiolink/lib/demod_ssb_impl.cc -o CMakeFiles/gnuradio-qradiolink.dir/demod_ssb_impl.cc.s
 
+lib/CMakeFiles/gnuradio-qradiolink.dir/demod_wbfm_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
+lib/CMakeFiles/gnuradio-qradiolink.dir/demod_wbfm_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/demod_wbfm_impl.cc
+lib/CMakeFiles/gnuradio-qradiolink.dir/demod_wbfm_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_wbfm_impl.cc.o"
+	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/demod_wbfm_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/demod_wbfm_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/demod_wbfm_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/demod_wbfm_impl.cc
+
+lib/CMakeFiles/gnuradio-qradiolink.dir/demod_wbfm_impl.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gnuradio-qradiolink.dir/demod_wbfm_impl.cc.i"
+	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/haaken/github-projects/gr-qradiolink/lib/demod_wbfm_impl.cc > CMakeFiles/gnuradio-qradiolink.dir/demod_wbfm_impl.cc.i
+
+lib/CMakeFiles/gnuradio-qradiolink.dir/demod_wbfm_impl.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gnuradio-qradiolink.dir/demod_wbfm_impl.cc.s"
+	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haaken/github-projects/gr-qradiolink/lib/demod_wbfm_impl.cc -o CMakeFiles/gnuradio-qradiolink.dir/demod_wbfm_impl.cc.s
+
+lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nbfm_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
+lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nbfm_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/demod_nbfm_impl.cc
+lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nbfm_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nbfm_impl.cc.o"
+	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nbfm_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/demod_nbfm_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/demod_nbfm_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/demod_nbfm_impl.cc
+
+lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nbfm_impl.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gnuradio-qradiolink.dir/demod_nbfm_impl.cc.i"
+	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/haaken/github-projects/gr-qradiolink/lib/demod_nbfm_impl.cc > CMakeFiles/gnuradio-qradiolink.dir/demod_nbfm_impl.cc.i
+
+lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nbfm_impl.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gnuradio-qradiolink.dir/demod_nbfm_impl.cc.s"
+	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haaken/github-projects/gr-qradiolink/lib/demod_nbfm_impl.cc -o CMakeFiles/gnuradio-qradiolink.dir/demod_nbfm_impl.cc.s
+
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_bpsk_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_bpsk_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/demod_bpsk_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_bpsk_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_bpsk_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_bpsk_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/demod_bpsk_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/demod_bpsk_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/demod_bpsk_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/demod_bpsk_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_bpsk_impl.cc.i: cmake_force
@@ -352,7 +394,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/demod_bpsk_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_qpsk_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_qpsk_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/demod_qpsk_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_qpsk_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_qpsk_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_qpsk_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/demod_qpsk_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/demod_qpsk_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/demod_qpsk_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/demod_qpsk_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_qpsk_impl.cc.i: cmake_force
@@ -366,7 +408,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/demod_qpsk_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_gmsk_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_gmsk_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/demod_gmsk_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_gmsk_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_gmsk_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_gmsk_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/demod_gmsk_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/demod_gmsk_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/demod_gmsk_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/demod_gmsk_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_gmsk_impl.cc.i: cmake_force
@@ -380,7 +422,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/demod_gmsk_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_4fsk_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_4fsk_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/demod_4fsk_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_4fsk_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_4fsk_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_4fsk_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/demod_4fsk_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/demod_4fsk_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/demod_4fsk_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/demod_4fsk_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_4fsk_impl.cc.i: cmake_force
@@ -394,7 +436,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/demod_4fsk_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dsss_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dsss_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/demod_dsss_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dsss_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dsss_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dsss_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dsss_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/demod_dsss_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/demod_dsss_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/demod_dsss_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dsss_impl.cc.i: cmake_force
@@ -408,7 +450,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dsss_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_decoder_cc_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_decoder_cc_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/dsss_decoder_cc_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_decoder_cc_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_decoder_cc_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_decoder_cc_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_decoder_cc_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/dsss_decoder_cc_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/dsss_decoder_cc_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/dsss_decoder_cc_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_decoder_cc_impl.cc.i: cmake_force
@@ -419,10 +461,24 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_decoder_cc_impl.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gnuradio-qradiolink.dir/dsss_decoder_cc_impl.cc.s"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haaken/github-projects/gr-qradiolink/lib/dsss_decoder_cc_impl.cc -o CMakeFiles/gnuradio-qradiolink.dir/dsss_decoder_cc_impl.cc.s
 
+lib/CMakeFiles/gnuradio-qradiolink.dir/__/src/gr/emphasis.cpp.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
+lib/CMakeFiles/gnuradio-qradiolink.dir/__/src/gr/emphasis.cpp.o: /home/haaken/github-projects/gr-qradiolink/src/gr/emphasis.cpp
+lib/CMakeFiles/gnuradio-qradiolink.dir/__/src/gr/emphasis.cpp.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/__/src/gr/emphasis.cpp.o"
+	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/__/src/gr/emphasis.cpp.o -MF CMakeFiles/gnuradio-qradiolink.dir/__/src/gr/emphasis.cpp.o.d -o CMakeFiles/gnuradio-qradiolink.dir/__/src/gr/emphasis.cpp.o -c /home/haaken/github-projects/gr-qradiolink/src/gr/emphasis.cpp
+
+lib/CMakeFiles/gnuradio-qradiolink.dir/__/src/gr/emphasis.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gnuradio-qradiolink.dir/__/src/gr/emphasis.cpp.i"
+	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/haaken/github-projects/gr-qradiolink/src/gr/emphasis.cpp > CMakeFiles/gnuradio-qradiolink.dir/__/src/gr/emphasis.cpp.i
+
+lib/CMakeFiles/gnuradio-qradiolink.dir/__/src/gr/emphasis.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gnuradio-qradiolink.dir/__/src/gr/emphasis.cpp.s"
+	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haaken/github-projects/gr-qradiolink/src/gr/emphasis.cpp -o CMakeFiles/gnuradio-qradiolink.dir/__/src/gr/emphasis.cpp.s
+
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_m17_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_m17_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/demod_m17_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_m17_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_m17_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_m17_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/demod_m17_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/demod_m17_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/demod_m17_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/demod_m17_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_m17_impl.cc.i: cmake_force
@@ -436,7 +492,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/demod_m17_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_freedv_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_freedv_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/demod_freedv_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_freedv_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_freedv_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_freedv_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/demod_freedv_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/demod_freedv_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/demod_freedv_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/demod_freedv_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_freedv_impl.cc.i: cmake_force
@@ -450,7 +506,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/demod_freedv_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dmr_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dmr_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/demod_dmr_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dmr_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dmr_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dmr_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dmr_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/demod_dmr_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/demod_dmr_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/demod_dmr_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dmr_impl.cc.i: cmake_force
@@ -464,7 +520,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dmr_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nxdn_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nxdn_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/demod_nxdn_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nxdn_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nxdn_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nxdn_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nxdn_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/demod_nxdn_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/demod_nxdn_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/demod_nxdn_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nxdn_impl.cc.i: cmake_force
@@ -478,7 +534,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nxdn_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dpmr_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dpmr_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/demod_dpmr_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dpmr_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dpmr_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dpmr_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dpmr_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/demod_dpmr_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/demod_dpmr_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/demod_dpmr_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dpmr_impl.cc.i: cmake_force
@@ -492,7 +548,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dpmr_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/demod_mmdvm_multi_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/demod_mmdvm_multi_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi_impl.cc.i: cmake_force
@@ -506,7 +562,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi2_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi2_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/demod_mmdvm_multi2_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi2_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi2_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi2_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi2_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi2_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi2_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/demod_mmdvm_multi2_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi2_impl.cc.i: cmake_force
@@ -520,7 +576,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi2_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/gr_4fsk_discriminator_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/gr_4fsk_discriminator_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/gr_4fsk_discriminator_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/gr_4fsk_discriminator_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/gr_4fsk_discriminator_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/gr_4fsk_discriminator_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/gr_4fsk_discriminator_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/gr_4fsk_discriminator_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/gr_4fsk_discriminator_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/gr_4fsk_discriminator_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/gr_4fsk_discriminator_impl.cc.i: cmake_force
@@ -534,7 +590,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/gr_4fsk_discriminator_impl.cc.s: cmake_fo
 lib/CMakeFiles/gnuradio-qradiolink.dir/zero_idle_bursts_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/zero_idle_bursts_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/zero_idle_bursts_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/zero_idle_bursts_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/zero_idle_bursts_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/zero_idle_bursts_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/zero_idle_bursts_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/zero_idle_bursts_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/zero_idle_bursts_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/zero_idle_bursts_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/zero_idle_bursts_impl.cc.i: cmake_force
@@ -548,7 +604,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/zero_idle_bursts_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/mmdvm_source_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/mmdvm_source_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/mmdvm_source_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/mmdvm_source_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/mmdvm_source_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/mmdvm_source_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/mmdvm_source_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/mmdvm_source_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/mmdvm_source_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/mmdvm_source_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/mmdvm_source_impl.cc.i: cmake_force
@@ -562,7 +618,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/mmdvm_source_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/mmdvm_sink_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/mmdvm_sink_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/mmdvm_sink_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/mmdvm_sink_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/mmdvm_sink_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/mmdvm_sink_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/mmdvm_sink_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/mmdvm_sink_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/mmdvm_sink_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/mmdvm_sink_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/mmdvm_sink_impl.cc.i: cmake_force
@@ -576,7 +632,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/mmdvm_sink_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/rssi_tag_block_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/rssi_tag_block_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/rssi_tag_block_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/rssi_tag_block_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/rssi_tag_block_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/rssi_tag_block_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/rssi_tag_block_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/rssi_tag_block_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/rssi_tag_block_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/rssi_tag_block_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/rssi_tag_block_impl.cc.i: cmake_force
@@ -590,7 +646,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/rssi_tag_block_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/m17_deframer_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/m17_deframer_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/m17_deframer_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/m17_deframer_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/m17_deframer_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/m17_deframer_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/m17_deframer_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/m17_deframer_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/m17_deframer_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/m17_deframer_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/m17_deframer_impl.cc.i: cmake_force
@@ -604,7 +660,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/m17_deframer_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/clipper_cc_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/clipper_cc_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/clipper_cc_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/clipper_cc_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/clipper_cc_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/clipper_cc_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/clipper_cc_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/clipper_cc_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/clipper_cc_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/clipper_cc_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/clipper_cc_impl.cc.i: cmake_force
@@ -618,7 +674,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/clipper_cc_impl.cc.s: cmake_force
 lib/CMakeFiles/gnuradio-qradiolink.dir/stretcher_cc_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/flags.make
 lib/CMakeFiles/gnuradio-qradiolink.dir/stretcher_cc_impl.cc.o: /home/haaken/github-projects/gr-qradiolink/lib/stretcher_cc_impl.cc
 lib/CMakeFiles/gnuradio-qradiolink.dir/stretcher_cc_impl.cc.o: lib/CMakeFiles/gnuradio-qradiolink.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/stretcher_cc_impl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object lib/CMakeFiles/gnuradio-qradiolink.dir/stretcher_cc_impl.cc.o"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/gnuradio-qradiolink.dir/stretcher_cc_impl.cc.o -MF CMakeFiles/gnuradio-qradiolink.dir/stretcher_cc_impl.cc.o.d -o CMakeFiles/gnuradio-qradiolink.dir/stretcher_cc_impl.cc.o -c /home/haaken/github-projects/gr-qradiolink/lib/stretcher_cc_impl.cc
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/stretcher_cc_impl.cc.i: cmake_force
@@ -638,6 +694,7 @@ gnuradio__qradiolink_OBJECTS = \
 "CMakeFiles/gnuradio-qradiolink.dir/mod_bpsk_impl.cc.o" \
 "CMakeFiles/gnuradio-qradiolink.dir/mod_ssb_impl.cc.o" \
 "CMakeFiles/gnuradio-qradiolink.dir/mod_qpsk_impl.cc.o" \
+"CMakeFiles/gnuradio-qradiolink.dir/mod_nbfm_impl.cc.o" \
 "CMakeFiles/gnuradio-qradiolink.dir/mod_dsss_impl.cc.o" \
 "CMakeFiles/gnuradio-qradiolink.dir/dsss_encoder_bb_impl.cc.o" \
 "CMakeFiles/gnuradio-qradiolink.dir/mod_freedv_impl.cc.o" \
@@ -650,12 +707,15 @@ gnuradio__qradiolink_OBJECTS = \
 "CMakeFiles/gnuradio-qradiolink.dir/demod_2fsk_impl.cc.o" \
 "CMakeFiles/gnuradio-qradiolink.dir/demod_am_impl.cc.o" \
 "CMakeFiles/gnuradio-qradiolink.dir/demod_ssb_impl.cc.o" \
+"CMakeFiles/gnuradio-qradiolink.dir/demod_wbfm_impl.cc.o" \
+"CMakeFiles/gnuradio-qradiolink.dir/demod_nbfm_impl.cc.o" \
 "CMakeFiles/gnuradio-qradiolink.dir/demod_bpsk_impl.cc.o" \
 "CMakeFiles/gnuradio-qradiolink.dir/demod_qpsk_impl.cc.o" \
 "CMakeFiles/gnuradio-qradiolink.dir/demod_gmsk_impl.cc.o" \
 "CMakeFiles/gnuradio-qradiolink.dir/demod_4fsk_impl.cc.o" \
 "CMakeFiles/gnuradio-qradiolink.dir/demod_dsss_impl.cc.o" \
 "CMakeFiles/gnuradio-qradiolink.dir/dsss_decoder_cc_impl.cc.o" \
+"CMakeFiles/gnuradio-qradiolink.dir/__/src/gr/emphasis.cpp.o" \
 "CMakeFiles/gnuradio-qradiolink.dir/demod_m17_impl.cc.o" \
 "CMakeFiles/gnuradio-qradiolink.dir/demod_freedv_impl.cc.o" \
 "CMakeFiles/gnuradio-qradiolink.dir/demod_dmr_impl.cc.o" \
@@ -675,54 +735,58 @@ gnuradio__qradiolink_OBJECTS = \
 # External object files for target gnuradio-qradiolink
 gnuradio__qradiolink_EXTERNAL_OBJECTS =
 
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_2fsk_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_4fsk_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_am_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_gmsk_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_bpsk_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_ssb_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_qpsk_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dsss_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_encoder_bb_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_freedv_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_m17_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dmr_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nxdn_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dpmr_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_multi2_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_2fsk_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_am_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_ssb_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_bpsk_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_qpsk_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_gmsk_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_4fsk_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dsss_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_decoder_cc_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_m17_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_freedv_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dmr_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nxdn_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dpmr_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi2_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/gr_4fsk_discriminator_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/zero_idle_bursts_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/mmdvm_source_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/mmdvm_sink_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/rssi_tag_block_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/m17_deframer_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/clipper_cc_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/stretcher_cc_impl.cc.o
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/build.make
-lib/libgnuradio-qradiolink.a: lib/CMakeFiles/gnuradio-qradiolink.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Linking CXX static library libgnuradio-qradiolink.a"
-	cd /home/haaken/github-projects/gr-qradiolink/build/lib && $(CMAKE_COMMAND) -P CMakeFiles/gnuradio-qradiolink.dir/cmake_clean_target.cmake
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_2fsk_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_4fsk_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_am_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_gmsk_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_bpsk_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_ssb_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_qpsk_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nbfm_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dsss_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_encoder_bb_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_freedv_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_m17_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dmr_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nxdn_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_dpmr_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_multi2_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_2fsk_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_am_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_ssb_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_wbfm_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nbfm_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_bpsk_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_qpsk_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_gmsk_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_4fsk_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dsss_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_decoder_cc_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/__/src/gr/emphasis.cpp.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_m17_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_freedv_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dmr_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nxdn_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dpmr_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi2_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/gr_4fsk_discriminator_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/zero_idle_bursts_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/mmdvm_source_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/mmdvm_sink_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/rssi_tag_block_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/m17_deframer_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/clipper_cc_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/stretcher_cc_impl.cc.o
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/build.make
+lib/libgnuradio-qradiolink.so: /usr/lib/x86_64-linux-gnu/libvolk.so.3.1.2
+lib/libgnuradio-qradiolink.so: lib/CMakeFiles/gnuradio-qradiolink.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Linking CXX shared library libgnuradio-qradiolink.so"
 	cd /home/haaken/github-projects/gr-qradiolink/build/lib && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gnuradio-qradiolink.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-lib/CMakeFiles/gnuradio-qradiolink.dir/build: lib/libgnuradio-qradiolink.a
+lib/CMakeFiles/gnuradio-qradiolink.dir/build: lib/libgnuradio-qradiolink.so
 .PHONY : lib/CMakeFiles/gnuradio-qradiolink.dir/build
 
 lib/CMakeFiles/gnuradio-qradiolink.dir/clean:

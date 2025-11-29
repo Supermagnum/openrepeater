@@ -53,6 +53,8 @@ public:
      */
     virtual void set_bb_gain(float value);
 
+    virtual ~mod_freedv();
+
 protected:
     mod_freedv(const std::string& name,
                gr::io_signature::sptr input_signature,
