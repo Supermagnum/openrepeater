@@ -29,6 +29,10 @@ set(gr_qradiolink_sources
     mod_dpmr_impl.cc
     mod_mmdvm_impl.cc
     mod_mmdvm_multi2_impl.cc
+    pocsag_encoder_impl.cc
+    dstar_encoder_impl.cc
+    ysf_encoder_impl.cc
+    p25_encoder_impl.cc
     # demodulators
     demod_2fsk_impl.cc
     demod_am_impl.cc
@@ -49,6 +53,10 @@ set(gr_qradiolink_sources
     demod_dpmr_impl.cc
     demod_mmdvm_multi_impl.cc
     demod_mmdvm_multi2_impl.cc
+    pocsag_decoder_impl.cc
+    dstar_decoder_impl.cc
+    ysf_decoder_impl.cc
+    p25_decoder_impl.cc
     # Supporting blocks
     gr_4fsk_discriminator_impl.cc
     zero_idle_bursts_impl.cc

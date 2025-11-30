@@ -1,0 +1,35 @@
+id: qradiolink_pocsag_decoder
+label: POCSAG Decoder
+category: '[QRadioLink]'
+flags: [ python ]
+
+parameters:
+-   id: baud_rate
+    label: Baud Rate
+    dtype: int
+    default: '1200'
+    options: [512, 1200, 2400]
+    option_labels: ['512 bps', '1200 bps', '2400 bps']
+
+-   id: sync_threshold
+    label: Sync Threshold
+    dtype: float
+    default: '0.8'
+    range: [0.0, 1.0]
+
+inputs:
+-   domain: stream
+    dtype: byte
+    label: POCSAG Bits
+
+outputs:
+-   domain: stream
+    dtype: byte
+    label: Decoded Message
+
+templates:
+    imports: from gnuradio import qradiolink
+    make: qradiolink.pocsag_decoder(baud_rate=${baud_rate}, sync_threshold=${sync_threshold})
+
+file_format: 1
+

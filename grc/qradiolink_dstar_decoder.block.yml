@@ -1,0 +1,28 @@
+id: qradiolink_dstar_decoder
+label: D-STAR Decoder
+category: '[QRadioLink]'
+flags: [ python ]
+
+parameters:
+-   id: sync_threshold
+    label: Sync Threshold
+    dtype: float
+    default: '0.9'
+    range: [0.0, 1.0]
+
+inputs:
+-   domain: stream
+    dtype: byte
+    label: D-STAR Frames
+
+outputs:
+-   domain: stream
+    dtype: byte
+    label: Decoded Voice
+
+templates:
+    imports: from gnuradio import qradiolink
+    make: qradiolink.dstar_decoder(sync_threshold=${sync_threshold})
+
+file_format: 1
+

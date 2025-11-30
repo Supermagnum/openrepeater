@@ -30,7 +30,7 @@ void bind_demod_freedv(py::module& m)
              py::arg("carrier_freq") = 1700,
              py::arg("filter_width") = 2000,
              py::arg("low_cutoff") = 200,
-             py::arg("mode") = gr::vocoder::freedv_api::MODE_1600,
+             py::arg("mode") = static_cast<int>(gr::vocoder::freedv_api::MODE_1600),
              py::arg("sb") = 0,
              "Make a FreeDV demodulator block")
 

@@ -62,6 +62,9 @@ mmdvm_source_impl::mmdvm_source_impl(BurstTimer* burst_timer,
       d_add_time_tag((cn == 0) || (cn == 1)),
       d_use_tdma(use_tdma)
 {
+    if (use_tdma && burst_timer == nullptr) {
+        std::cerr << "Warning: mmdvm_source: use_tdma=true but burst_timer is nullptr. TDMA timing will be disabled." << std::endl;
+    }
     for (int i = 0; i < d_num_channels; i++) {
         d_zmqcontext[i] = zmq::context_t(1);
         d_zmqsocket[i] = zmq::socket_t(d_zmqcontext[i], ZMQ_REQ);
@@ -125,7 +128,7 @@ void mmdvm_source_impl::handle_idle_time(short* out, int noutput_items, int whic
     add_zero_tag(0, ZERO_SAMPLES, which);
     for (int i = 0; i < noutput_items; i++) {
         out[i] = 0;
-        if (i == 710) {
+        if (i == 710 && d_burst_timer != nullptr) {
             uint64_t time = d_burst_timer->allocate_slot(d_sn, d_timing_correction, which);
             if (time > 0L && add_tag) {
                 add_time_tag(time, i, which);
@@ -148,14 +151,14 @@ int mmdvm_source_impl::handle_data_bursts(short* out, unsigned int n, int which,
         short sample = d_data_buf[which].at(i);
         uint8_t control = d_control_buf[which].at(i);
         out[i] = sample;
-        if (control == MARK_SLOT1) {
+        if (control == MARK_SLOT1 && d_burst_timer != nullptr) {
             d_sn = 1;
             uint64_t time = d_burst_timer->allocate_slot(1, d_timing_correction, which);
             if (time > 0L && add_tag) {
                 add_time_tag(time, i, which);
             }
         }
-        if (control == MARK_SLOT2) {
+        if (control == MARK_SLOT2 && d_burst_timer != nullptr) {
             d_sn = 2;
             uint64_t time = d_burst_timer->allocate_slot(2, d_timing_correction, which);
             if (time > 0 && add_tag) {
@@ -185,12 +188,14 @@ int mmdvm_source_impl::work(int noutput_items,
     }
 
     bool start = true;
-    for (int i = 0; i < d_num_channels; i++) {
-        if (!d_burst_timer->get_timing_initialized(i)) {
-            std::cout << "Waiting for RX samples to initialize timebase" << std::endl;
-            d_control_buf[i].clear();
-            d_data_buf[i].clear();
-            start = false;
+    if (d_burst_timer != nullptr) {
+        for (int i = 0; i < d_num_channels; i++) {
+            if (!d_burst_timer->get_timing_initialized(i)) {
+                std::cout << "Waiting for RX samples to initialize timebase" << std::endl;
+                d_control_buf[i].clear();
+                d_data_buf[i].clear();
+                start = false;
+            }
         }
     }
     if (!start && d_use_tdma)

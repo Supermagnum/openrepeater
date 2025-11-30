@@ -29,6 +29,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/haaken/github-projects/gr-qradiolink/lib/demod_wbfm_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/demod_wbfm_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/demod_wbfm_impl.cc.o.d"
   "/home/haaken/github-projects/gr-qradiolink/lib/dsss_decoder_cc_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_decoder_cc_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_decoder_cc_impl.cc.o.d"
   "/home/haaken/github-projects/gr-qradiolink/lib/dsss_encoder_bb_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_encoder_bb_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_encoder_bb_impl.cc.o.d"
+  "/home/haaken/github-projects/gr-qradiolink/lib/dstar_decoder_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/dstar_decoder_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/dstar_decoder_impl.cc.o.d"
+  "/home/haaken/github-projects/gr-qradiolink/lib/dstar_encoder_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/dstar_encoder_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/dstar_encoder_impl.cc.o.d"
   "/home/haaken/github-projects/gr-qradiolink/lib/gr_4fsk_discriminator_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/gr_4fsk_discriminator_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/gr_4fsk_discriminator_impl.cc.o.d"
   "/home/haaken/github-projects/gr-qradiolink/lib/m17_deframer_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/m17_deframer_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/m17_deframer_impl.cc.o.d"
   "/home/haaken/github-projects/gr-qradiolink/lib/mmdvm_sink_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/mmdvm_sink_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/mmdvm_sink_impl.cc.o.d"
@@ -49,8 +51,14 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/haaken/github-projects/gr-qradiolink/lib/mod_nxdn_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nxdn_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nxdn_impl.cc.o.d"
   "/home/haaken/github-projects/gr-qradiolink/lib/mod_qpsk_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/mod_qpsk_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/mod_qpsk_impl.cc.o.d"
   "/home/haaken/github-projects/gr-qradiolink/lib/mod_ssb_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/mod_ssb_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/mod_ssb_impl.cc.o.d"
+  "/home/haaken/github-projects/gr-qradiolink/lib/p25_decoder_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/p25_decoder_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/p25_decoder_impl.cc.o.d"
+  "/home/haaken/github-projects/gr-qradiolink/lib/p25_encoder_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/p25_encoder_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/p25_encoder_impl.cc.o.d"
+  "/home/haaken/github-projects/gr-qradiolink/lib/pocsag_decoder_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/pocsag_decoder_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/pocsag_decoder_impl.cc.o.d"
+  "/home/haaken/github-projects/gr-qradiolink/lib/pocsag_encoder_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/pocsag_encoder_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/pocsag_encoder_impl.cc.o.d"
   "/home/haaken/github-projects/gr-qradiolink/lib/rssi_tag_block_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/rssi_tag_block_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/rssi_tag_block_impl.cc.o.d"
   "/home/haaken/github-projects/gr-qradiolink/lib/stretcher_cc_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/stretcher_cc_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/stretcher_cc_impl.cc.o.d"
+  "/home/haaken/github-projects/gr-qradiolink/lib/ysf_decoder_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/ysf_decoder_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/ysf_decoder_impl.cc.o.d"
+  "/home/haaken/github-projects/gr-qradiolink/lib/ysf_encoder_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/ysf_encoder_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/ysf_encoder_impl.cc.o.d"
   "/home/haaken/github-projects/gr-qradiolink/lib/zero_idle_bursts_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/zero_idle_bursts_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/zero_idle_bursts_impl.cc.o.d"
   )
 

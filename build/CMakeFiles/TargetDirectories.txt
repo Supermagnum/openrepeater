@@ -98,6 +98,8 @@
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/test_mod_am.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/test_mod_gmsk.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/test_mod_bpsk.dir
+/home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/test_mod_mmdvm.dir
+/home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/test_mod_freedv.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_mod_ssb.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_mod_qpsk.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_mod_nbfm.dir
@@ -113,6 +115,11 @@
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_demod_4fsk.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_demod_dsss.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_demod_m17.dir
+/home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_demod_dmr.dir
+/home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_demod_freedv.dir
+/home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi.dir
+/home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi2.dir
+/home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_rssi_tag_block.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/test.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/edit_cache.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/rebuild_cache.dir

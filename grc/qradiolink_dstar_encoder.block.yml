@@ -1,0 +1,47 @@
+id: qradiolink_dstar_encoder
+label: D-STAR Encoder
+category: '[QRadioLink]'
+flags: [ python ]
+
+parameters:
+-   id: my_callsign
+    label: My Callsign
+    dtype: string
+    default: '"N0CALL "'
+
+-   id: your_callsign
+    label: Your Callsign
+    dtype: string
+    default: '"CQCQCQ  "'
+
+-   id: rpt1_callsign
+    label: Repeater 1 Callsign
+    dtype: string
+    default: '"        "'
+
+-   id: rpt2_callsign
+    label: Repeater 2 Callsign
+    dtype: string
+    default: '"        "'
+
+-   id: message_text
+    label: Message Text
+    dtype: string
+    default: '""'
+
+inputs:
+-   domain: stream
+    dtype: byte
+    label: Voice Data
+
+outputs:
+-   domain: stream
+    dtype: byte
+    label: D-STAR Frames
+
+templates:
+    imports: from gnuradio import qradiolink
+    make: qradiolink.dstar_encoder(my_callsign=${my_callsign}, your_callsign=${your_callsign}, rpt1_callsign=${rpt1_callsign}, rpt2_callsign=${rpt2_callsign}, message_text=${message_text})
+
+file_format: 1
+

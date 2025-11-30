@@ -22,6 +22,7 @@
 #include <zmq.hpp>
 #include <algorithm>
 #include <cmath>
+#include <iostream>
 
 namespace gr {
 namespace qradiolink {
@@ -52,6 +53,9 @@ mmdvm_sink_impl::mmdvm_sink_impl(BurstTimer* burst_timer,
       d_num_channels(cn),
       d_use_tdma(use_tdma)
 {
+    if (use_tdma && burst_timer == nullptr) {
+        std::cerr << "Warning: mmdvm_sink: use_tdma=true but burst_timer is nullptr. TDMA timing will be disabled." << std::endl;
+    }
     for (int i = 0; i < d_num_channels; i++) {
         d_zmqcontext[i] = zmq::context_t(1);
         d_zmqsocket[i] = zmq::socket_t(d_zmqcontext[i], ZMQ_PUSH);
@@ -103,10 +107,12 @@ int mmdvm_sink_impl::work(int noutput_items,
                     uint64_t intpart = pmt::to_uint64(pmt::tuple_ref(t_val, 0));
                     double fracpart = pmt::to_double(pmt::tuple_ref(t_val, 1));
                     uint64_t nsec = intpart * 1000000000L + (uint64_t)(fracpart * 1000000000.0);
-                    slot_no = d_burst_timer->check_time(chan);
-                    if (slot_no > 0) {
-                        d_burst_timer->set_timer(nsec, chan);
-                        d_slot_sample_counter[chan] = 0;
+                    if (d_burst_timer != nullptr) {
+                        slot_no = d_burst_timer->check_time(chan);
+                        if (slot_no > 0) {
+                            d_burst_timer->set_timer(nsec, chan);
+                            d_slot_sample_counter[chan] = 0;
+                        }
                     }
                     break;
                 }

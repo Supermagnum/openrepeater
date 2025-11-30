@@ -1,0 +1,28 @@
+id: qradiolink_p25_decoder
+label: P25 Phase 1 Decoder
+category: '[QRadioLink]'
+flags: [ python ]
+
+parameters:
+-   id: sync_threshold
+    label: Sync Threshold
+    dtype: float
+    default: '0.9'
+    range: [0.0, 1.0]
+
+inputs:
+-   domain: stream
+    dtype: byte
+    label: P25 Frames
+
+outputs:
+-   domain: stream
+    dtype: byte
+    label: Decoded Voice
+
+templates:
+    imports: from gnuradio import qradiolink
+    make: qradiolink.p25_decoder(sync_threshold=${sync_threshold})
+
+file_format: 1
+

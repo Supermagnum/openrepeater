@@ -1,0 +1,42 @@
+id: qradiolink_ysf_encoder
+label: YSF Encoder
+category: '[QRadioLink]'
+flags: [ python ]
+
+parameters:
+-   id: source_callsign
+    label: Source Callsign
+    dtype: string
+    default: '"N0CALL    "'
+
+-   id: destination_callsign
+    label: Destination Callsign
+    dtype: string
+    default: '"CQCQCQ    "'
+
+-   id: radio_id
+    label: Radio ID
+    dtype: int
+    default: '0'
+
+-   id: group_id
+    label: Group ID
+    dtype: int
+    default: '0'
+
+inputs:
+-   domain: stream
+    dtype: byte
+    label: Voice Data
+
+outputs:
+-   domain: stream
+    dtype: byte
+    label: YSF Frames
+
+templates:
+    imports: from gnuradio import qradiolink
+    make: qradiolink.ysf_encoder(source_callsign=${source_callsign}, destination_callsign=${destination_callsign}, radio_id=${radio_id}, group_id=${group_id})
+
+file_format: 1
+

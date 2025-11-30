@@ -52,10 +52,6 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "pythonapi" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.12/dist-packages/gnuradio/qradiolink" TYPE MODULE FILES "/home/haaken/github-projects/gr-qradiolink/build/python/qradiolink/bindings/qradiolink_python.cpython-312-x86_64-linux-gnu.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.12/dist-packages/gnuradio/qradiolink/qradiolink_python.cpython-312-x86_64-linux-gnu.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.12/dist-packages/gnuradio/qradiolink/qradiolink_python.cpython-312-x86_64-linux-gnu.so")
-    file(RPATH_CHANGE
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.12/dist-packages/gnuradio/qradiolink/qradiolink_python.cpython-312-x86_64-linux-gnu.so"
-         OLD_RPATH "/home/haaken/github-projects/gr-qradiolink/build/lib:"
-         NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.12/dist-packages/gnuradio/qradiolink/qradiolink_python.cpython-312-x86_64-linux-gnu.so")
     endif()
