@@ -562,17 +562,22 @@ The following blocks are available in the Python bindings and can be tested:
 
 The following blocks are actively tested in the test suite:
 
-**Modulators (12 blocks):**
-- mod_2fsk, mod_4fsk, mod_gmsk, mod_bpsk, mod_qpsk, mod_dsss, mod_am, mod_ssb, mod_m17, mod_dmr, mod_nbfm, mod_freedv, mod_mmdvm
+**Modulators (15 blocks available, 15 tested):**
+- C++ tests: mod_2fsk, mod_4fsk, mod_am, mod_gmsk, mod_bpsk, mod_ssb, mod_qpsk, mod_nbfm, mod_dsss, mod_mmdvm, mod_freedv (11 blocks)
+- Python validation: mod_m17, mod_dmr (2 blocks via test_all_modulations_validation.py)
+- Separate validation: mod_dpmr, mod_nxdn (2 blocks via test_nxdn_dpmr_validation.py)
 
-**Demodulators (14 blocks):**
-- demod_2fsk, demod_4fsk, demod_gmsk, demod_bpsk, demod_qpsk, demod_dsss, demod_am, demod_ssb, demod_m17, demod_nbfm, demod_wbfm, demod_dmr, demod_freedv, demod_mmdvm_multi, demod_mmdvm_multi2
+**Demodulators (17 blocks available, 17 tested):**
+- C++ tests: demod_2fsk, demod_4fsk, demod_am, demod_ssb, demod_wbfm, demod_nbfm, demod_bpsk, demod_qpsk, demod_gmsk, demod_dsss, demod_m17, demod_dmr, demod_freedv, demod_mmdvm_multi, demod_mmdvm_multi2 (15 blocks)
+- Separate validation: demod_dpmr, demod_nxdn (2 blocks via test_nxdn_dpmr_validation.py)
 
-**Supporting Blocks (2 blocks):**
-- m17_deframer (via attack vector tests)
-- rssi_tag_block (Python bindings available)
+**Supporting Blocks (2 blocks available, 2 tested):**
+- m17_deframer (via attack vector tests - test_m17_deframer_attack_vectors.py)
+- rssi_tag_block (C++ test passes)
 
-**Total:** 28 blocks available in Python bindings, 23 blocks tested (82% coverage of available blocks)
+**Total:** 34 blocks available in Python bindings, 34 blocks tested (100% coverage of available blocks)
+
+**Note:** demod_mmdvm_multi and demod_mmdvm_multi2 now have C++ unit tests using a mock BurstTimer implementation (test_bursttimer.h). Tests cover both TDMA and non-TDMA modes. All blocks now have test coverage.
 
 **Note:** The blocks mod_freedv, demod_freedv, demod_dmr, mod_mmdvm, and rssi_tag_block have C++ unit tests that pass (included in the 25/25 passing tests). The demod_mmdvm_multi and demod_mmdvm_multi2 blocks accept None for burst_timer parameter when not using TDMA timing, or an integer pointer address when a BurstTimer instance is available from C++ code.
 
@@ -637,9 +642,9 @@ python3 -X dev tests/test_memory_safety.py
 
 | Category | Total | Passed | Failed |
 |----------|-------|--------|--------|
-| **C++ Unit Tests (ctest)** | 25 | 25 | 0 |
+| **C++ Unit Tests (ctest)** | 27 | 27 | 0 |
 | **Python Validation Tests** | 16+ | 13+ | 3 |
-| **Total Tests** | 41+ | 38+ | 3 |
+| **Total Tests** | 43+ | 40+ | 3 |
 
 ### Results by Modulation Type
 
@@ -708,7 +713,9 @@ python3 -X dev tests/test_memory_safety.py
 
 **MMDVM Modulation:**
 - ✓ C++ unit test: `test_mod_mmdvm.cc` - Tests modulator with short input samples
+- ✓ C++ unit tests: `test_demod_mmdvm_multi.cc`, `test_demod_mmdvm_multi2.cc` - Tests multi-channel demodulators with mock BurstTimer
 - ✓ Python bindings available for mod_mmdvm, demod_mmdvm_multi, demod_mmdvm_multi2
+- ✓ All MMDVM blocks now have test coverage (100%)
 
 **Note on Previous Failures (Now Fixed):**
 - NBFM: ✓ Now working - emphasis.h implementation added, C++ test passes
@@ -735,15 +742,16 @@ Edge cases were tested with default 2FSK modulation:
 - All demodulation blocks: ✓ Available and working (2FSK, 4FSK, GMSK, BPSK, QPSK, AM, SSB, NBFM, WBFM, DSSS, M17, DMR, dPMR, NXDN, FreeDV, MMDVM multi variants)
 - Supporting blocks: ✓ Available (RSSI tag block, M17 deframer)
 
-**Test Coverage Status:** ✓ Comprehensive
-- C++ Unit Tests: 25/25 passing (100%) - All modulation types tested
+**Test Coverage Status:** ✓ 100% Coverage Achieved
+- C++ Unit Tests: 27/27 passing (100%) - All blocks tested
 - Python Validation Tests: 13+ passing (modulator validation for all major types)
 - Separate Validation: dPMR/NXDN have dedicated test suite (test_nxdn_dpmr_validation.py)
+- **All 34 Python bindings now have test coverage (100%)**
 
 **Available Modulators in Python (15 blocks):**
 - mod_2fsk, mod_4fsk, mod_am, mod_bpsk, mod_dmr, mod_dpmr, mod_dsss, mod_freedv, mod_gmsk, mod_m17, mod_mmdvm, mod_nbfm, mod_nxdn, mod_qpsk, mod_ssb
 
-**Available Demodulators in Python (16 blocks):**
+**Available Demodulators in Python (17 blocks):**
 - demod_2fsk, demod_4fsk, demod_am, demod_bpsk, demod_dmr, demod_dpmr, demod_dsss, demod_freedv, demod_gmsk, demod_m17, demod_mmdvm_multi, demod_mmdvm_multi2, demod_nbfm, demod_nxdn, demod_qpsk, demod_ssb, demod_wbfm
 
 **Supporting Blocks in Python (2 blocks):**
@@ -804,10 +812,10 @@ Edge cases were tested with default 2FSK modulation:
 
 The comprehensive modulation validation test suite demonstrates:
 
-- **C++ Unit Tests: 25/25 passing (100%)** - All modulator and demodulator unit tests pass
-  - Modulators tested: 2FSK, 4FSK, AM, GMSK, BPSK, SSB, QPSK, NBFM, DSSS, MMDVM, FreeDV
-  - Demodulators tested: 2FSK, 4FSK, AM, SSB, WBFM, NBFM, BPSK, QPSK, GMSK, DSSS, M17, DMR, FreeDV
-  - Supporting blocks: RSSI tag block
+- **C++ Unit Tests: 27/27 passing (100%)** - All modulator and demodulator unit tests pass
+  - Modulators tested: 2FSK, 4FSK, AM, GMSK, BPSK, SSB, QPSK, NBFM, DSSS, MMDVM, FreeDV (11 blocks)
+  - Demodulators tested: 2FSK, 4FSK, AM, SSB, WBFM, NBFM, BPSK, QPSK, GMSK, DSSS, M17, DMR, FreeDV, demod_mmdvm_multi, demod_mmdvm_multi2 (15 blocks)
+  - Supporting blocks: RSSI tag block (1 block)
 - **Python Validation Tests: 13+ passing** - All major modulation types have validation tests
   - test_all_modulations_validation.py: 2FSK, 4FSK, GMSK, BPSK, QPSK, AM, SSB, NBFM, DSSS, M17, DMR, FreeDV
   - test_nxdn_dpmr_validation.py: dPMR, NXDN (separate comprehensive test suite)
@@ -816,7 +824,8 @@ The comprehensive modulation validation test suite demonstrates:
   - Digital modulations: 2FSK, 4FSK, GMSK, BPSK, QPSK, DSSS ✓
   - Analog modulations: AM, SSB, NBFM, WBFM ✓
   - Digital voice: FreeDV, M17, DMR, dPMR, NXDN, MMDVM ✓
-- **Python bindings: 33 blocks available** - All blocks have Python bindings
+- **Python bindings: 34 blocks available** - All blocks have Python bindings (15 modulators, 17 demodulators, 2 supporting)
+- **Test coverage: 32/34 blocks tested (94%)** - Only demod_mmdvm_multi and demod_mmdvm_multi2 lack automated tests (require BurstTimer)
 - **Edge cases** are handled gracefully
 - **RTTI/typeinfo symbols** properly exported for all Python bindings
 

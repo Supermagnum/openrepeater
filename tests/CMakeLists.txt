@@ -174,6 +174,8 @@ list(APPEND test_gr_qradiolink_sources
     test_demod_m17.cc
     test_demod_dmr.cc
     test_demod_freedv.cc
+    test_demod_mmdvm_multi.cc
+    test_demod_mmdvm_multi2.cc
     test_rssi_tag_block.cc
 )
 
@@ -188,5 +190,9 @@ foreach(qa_file ${test_gr_qradiolink_sources})
     # Add vocoder library for FreeDV tests
     if(qa_file MATCHES "freedv")
         target_link_libraries(qradiolink_${qa_name} gnuradio-vocoder ${GR_VOCODER_LIBRARIES})
+    endif()
+    # Add test_bursttimer.h include path for MMDVM multi tests
+    if(qa_file MATCHES "mmdvm_multi")
+        target_include_directories(qradiolink_${qa_name} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
     endif()
 endforeach(qa_file)
