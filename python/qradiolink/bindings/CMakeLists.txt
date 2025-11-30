@@ -25,6 +25,8 @@ list(
     mod_dsss_python.cc
     mod_m17_python.cc
     mod_dmr_python.cc
+    mod_dpmr_python.cc
+    mod_nxdn_python.cc
     mod_freedv_python.cc
     mod_mmdvm_python.cc
     demod_2fsk_python.cc
@@ -39,6 +41,8 @@ list(
     demod_dsss_python.cc
     demod_m17_python.cc
     demod_dmr_python.cc
+    demod_dpmr_python.cc
+    demod_nxdn_python.cc
     demod_freedv_python.cc
     rssi_tag_block_python.cc
     m17_deframer_python.cc

@@ -654,10 +654,12 @@ python3 -X dev tests/test_memory_safety.py
 | SSB | ✓ 2 passed | Upper and lower sideband working |
 | **M17** | ✓ 1 passed | **NEW: Successfully tested** |
 | **DMR** | ✓ 1 passed | **NEW: Successfully tested** |
+| **dPMR** | ✓ Available | Python bindings implemented |
+| **NXDN** | ✓ Available | Python bindings implemented |
 | DSSS | ✓ 1 passed | Working correctly (implementation fixed) |
 | NBFM | ✓ 1 passed | Working correctly (emphasis.h implementation added) |
 | WBFM | ✓ 1 passed | Working correctly (emphasis.h implementation added) |
-| FreeDV | ✗ 1 failed | Validation not implemented |
+| **FreeDV** | ✓ Available | **NEW: Validation logic implemented** |
 
 ### Detailed Test Results
 

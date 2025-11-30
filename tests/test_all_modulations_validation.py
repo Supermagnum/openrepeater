@@ -13,6 +13,12 @@ from gnuradio import gr, blocks, qradiolink
 import sys
 import os
 
+# Try to import vocoder (required for FreeDV)
+try:
+    from gnuradio import vocoder
+except ImportError:
+    vocoder = None
+
 # Import test vectors
 sys.path.insert(0, os.path.dirname(__file__))
 from test_vectors_all_modulations import (
@@ -293,8 +299,66 @@ def generate_test_signal(test_vector, sample_rate=1000000):
                 byte_array = [0] * 100
                 
         elif mod_type == "FREEDV":
-            # FreeDV not implemented in validation yet
-            raise ValueError("FreeDV modulator validation not implemented")
+            if vocoder is None:
+                raise ValueError("FreeDV requires vocoder module (not available)")
+            try:
+                # Get FreeDV mode from test vector
+                audio_data = test_vector.get("audio_data", {})
+                mod_params = test_vector.get("modulation", {})
+                
+                # Map mode string to vocoder constant
+                mode_str = mod_params.get("mode", audio_data.get("mode", "MODE_1600"))
+                mode_map = {
+                    "MODE_1600": vocoder.freedv_api.MODE_1600,
+                    "MODE_700": vocoder.freedv_api.MODE_700,
+                    "MODE_700B": vocoder.freedv_api.MODE_700B,
+                    "MODE_700C": vocoder.freedv_api.MODE_700C,
+                    "MODE_700D": vocoder.freedv_api.MODE_700D,
+                    "MODE_800XA": vocoder.freedv_api.MODE_800XA,
+                    "MODE_2400A": vocoder.freedv_api.MODE_2400A,
+                    "MODE_2400B": vocoder.freedv_api.MODE_2400B,
+                }
+                freedv_mode = mode_map.get(mode_str, vocoder.freedv_api.MODE_1600)
+                
+                # Get audio sample rate (FreeDV typically uses 8000 Hz)
+                audio_sr = audio_data.get("sample_rate", 8000)
+                
+                # Generate audio samples if not already generated
+                if audio is None:
+                    audio_freq = audio_data.get("frequency", 1000)
+                    duration = audio_data.get("duration", 0.1)
+                    t = np.arange(0, duration, 1.0/audio_sr)
+                    audio = np.sin(2 * np.pi * audio_freq * t)
+                
+                # Create modulator with parameters from test vector
+                modulator = qradiolink.mod_freedv(
+                    sps=sps,
+                    samp_rate=audio_sr,
+                    carrier_freq=mod_params.get("carrier_freq", 1700),
+                    filter_width=mod_params.get("bandwidth", 2000),
+                    low_cutoff=mod_params.get("low_cutoff", 200),
+                    mode=freedv_mode,
+                    sb=mod_params.get("sb", 0)  # 0=USB, 1=LSB
+                )
+                
+                # FreeDV uses float audio samples
+                if audio is not None:
+                    float_array = audio.astype(np.float32).tolist()
+                    source = blocks.vector_source_f(float_array, False)
+                else:
+                    float_array = [0.0] * int(audio_sr * 0.1)  # 0.1 second of silence
+                    source = blocks.vector_source_f(float_array, False)
+                sink = blocks.vector_sink_c()
+                tb.connect(source, modulator, sink)
+                tb.start()
+                tb.wait()
+                tb.stop()
+                tb.wait()
+                return np.array(sink.data())
+            except AttributeError:
+                raise ValueError("FreeDV modulator not available in Python bindings (needs recompilation)")
+            except Exception as e:
+                raise ValueError(f"FreeDV modulator error: {e}")
                 
         else:
             raise ValueError(f"Unsupported modulation type: {mod_type}")

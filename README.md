@@ -16,8 +16,19 @@ The QRadioLink Codeberg page does not mention any crashes or other known issues.
 
 - **Digital Modulations**: 2FSK, 4FSK, GMSK, BPSK, QPSK, DSSS
 - **Analog Modulations**: AM, SSB (USB/LSB), NBFM
-- **Digital Voice**: FreeDV, M17, DMR (Tier I/II/III), MMDVM
+- **Digital Voice**: FreeDV, M17, DMR (Tier I/II/III), dPMR, NXDN, MMDVM
+  - **dPMR**: Digital Private Mobile Radio (ETSI TS 102 658), 2400 baud, 6.25 kHz channel spacing
+  - **NXDN**: Next Generation Digital Narrowband, supports NXDN48 (2400 baud) and NXDN96 (4800 baud) modes
 - **Supporting Blocks**: Audio source/sink, RSSI, FFT, deframer, CESSB
+
+### Python Bindings
+
+All blocks are available through Python bindings, including:
+- All modulation/demodulation blocks (2FSK, 4FSK, GMSK, BPSK, QPSK, DSSS, AM, SSB, NBFM)
+- All digital voice blocks (FreeDV, M17, DMR, **dPMR**, **NXDN**, MMDVM)
+- Supporting blocks (RSSI, M17 deframer, etc.)
+
+The Python bindings enable use in GNU Radio Companion flowgraphs and Python scripts.
 
 ## Directory Structure
 
@@ -72,8 +83,8 @@ Test Breakdown:
   demodulator tests
 
 Test Coverage:
-- Modulators: 2FSK, 4FSK, AM, GMSK, BPSK, SSB, QPSK, NBFM, DSSS
-- Demodulators: 2FSK, 4FSK, AM, GMSK, BPSK, SSB, QPSK, NBFM, DSSS, WBFM, M17
+- Modulators: 2FSK, 4FSK, AM, GMSK, BPSK, SSB, QPSK, NBFM, DSSS, M17, DMR, dPMR, NXDN
+- Demodulators: 2FSK, 4FSK, AM, GMSK, BPSK, SSB, QPSK, NBFM, DSSS, WBFM, M17, DMR, dPMR, NXDN
 ```
 
 ### Running Tests
@@ -95,6 +106,10 @@ The module includes comprehensive fuzzing coverage using libFuzzer. See [fuzzing
 - Execution metrics (104+ million executions)
 - Performance analysis
 - Security assessment (0 crashes, 0 memory leaks)
+
+### Python Validation Tests
+
+The module includes Python-based validation tests for all modulation types. See [fuzzing-results/results.md](fuzzing-results/results.md) for validation test results. All digital voice modes (FreeDV, M17, DMR, dPMR, NXDN) now have Python bindings and validation support.
 
 ## Documentation
 
