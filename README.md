@@ -76,7 +76,7 @@ The module includes comprehensive unit tests for all blocks. Tests are run using
 
 ### Test Results
 
-All tests pass successfully. See [results.md](results.md) for detailed test results.
+All tests pass successfully. See [fuzzing-results/results.md](fuzzing-results/results.md) for detailed test results including MMDVM protocol tests.
 
 **C++ Unit Tests:**
 ```
@@ -108,7 +108,7 @@ Test Coverage:
   - P25: 3 tests (encoder/decoder creation, output)
 ```
 
-See [results.md](results.md) for complete MMDVM protocol test results.
+See [fuzzing-results/results.md](fuzzing-results/results.md) for complete MMDVM protocol test results.
 
 ### Running Tests
 

@@ -583,6 +583,102 @@ The following blocks are actively tested in the test suite:
 
 ---
 
+## MMDVM Protocol Tests
+
+This section contains test results for MMDVM protocol implementations (POCSAG, D-STAR, YSF, P25).
+
+### Latest Test Run
+
+```
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/haaken/github-projects/gr-qradiolink
+collected 41 items
+
+tests/test_mmdvm_protocols.py ................................ [100%]
+
+============================== 41 passed in 1.20s ==============================
+```
+
+### Test Summary
+
+**Total Tests: 41 (28 protocol validation + 13 block integration)**
+**Passed: 41**
+**Skipped: 0**
+**Failed: 0**
+**Success Rate: 100%**
+
+**Test Coverage**:
+- Protocol validation tests (28): Validate protocol logic using Python helpers that match C++ implementation
+- Block integration tests (13): Exercise actual C++ code through GNU Radio flowgraphs (run when module is built)
+
+**Module Status**: RESOLVED - Module imports successfully and all integration tests pass.
+
+**Fixes Applied:**
+- Fixed `freedv_modes` enum registration issue by using `static_cast<int>()` for default arguments
+- Added `py::module::import("gnuradio.vocoder");` to register vocoder types before use
+- Added `PYBIND11_DETAILED_ERROR_MESSAGES` to build config for better debugging
+- Updated test code to remove build directory from Python path
+- Updated `__init__.py` to handle registration conflicts gracefully
+- Fixed test timing to allow encoder/decoder blocks sufficient time to process data
+
+**Current Status**: All tests passing - both protocol validation and block integration tests are working.
+The integration tests successfully exercise the C++ code through GNU Radio flowgraphs.
+
+### Detailed Test Results
+
+#### POCSAG Protocol Tests (10 tests)
+- test_preamble_generation - PASSED
+- test_sync_codeword_value - PASSED
+- test_idle_codeword - PASSED
+- test_baud_rates - PASSED
+- test_batch_structure - PASSED
+- test_bch_encoding - PASSED
+- test_bch_error_correction - PASSED
+- test_address_encoding - PASSED
+- test_message_encoding_alphanumeric - PASSED
+- test_message_encoding_numeric - PASSED
+
+#### D-STAR Protocol Tests (9 tests)
+- test_frame_sync_pattern - PASSED
+- test_end_pattern - PASSED
+- test_header_structure - PASSED
+- test_callsign_encoding - PASSED
+- test_voice_frame_structure - PASSED
+- test_slow_data_rate - PASSED
+- test_scrambler_pattern - PASSED
+- test_golay_24_12_encoding - PASSED
+- test_golay_error_correction - PASSED
+
+#### YSF Protocol Tests (4 tests)
+- test_frame_sync - PASSED
+- test_fich_structure - PASSED
+- test_callsign_encoding - PASSED
+- test_golay_20_8 - PASSED
+
+#### P25 Protocol Tests (5 tests)
+- test_frame_sync_pattern - PASSED
+- test_ldu_structure - PASSED
+- test_nac_encoding - PASSED
+- test_bch_63_16_encoding - PASSED
+- test_trellis_encoding - PASSED
+
+#### Block Integration Tests (13 tests)
+- POCSAG: 4 tests (encoder/decoder creation, output, roundtrip) - PASSED
+- D-STAR: 3 tests (encoder/decoder creation, output) - PASSED
+- YSF: 3 tests (encoder/decoder creation, output) - PASSED
+- P25: 3 tests (encoder/decoder creation, output) - PASSED
+
+### Implementation Status
+
+All MMDVM protocols have been fully implemented with:
+- **POCSAG**: Complete encoder/decoder with BCH(31,21) FEC, preamble, sync words, address/message codewords
+- **D-STAR**: Complete encoder/decoder with Golay(24,12) FEC, frame sync, header structure, voice frames
+- **YSF**: Complete encoder/decoder with Golay(20,8) and Golay(23,12) FEC, FICH structure
+- **P25**: Complete encoder/decoder with BCH(63,16) FEC, NID, LDU1/LDU2 structure, Trellis encoding
+
+---
+
 ## Modem/Modulation Blocks - Not Fuzzed
 
 The modulation/demodulation blocks (2FSK, 4FSK, GMSK, BPSK, QPSK, AM, SSB, NBFM, FreeDV, M17, DMR, MMDVM) have not undergone fuzzing due to:
