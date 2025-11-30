@@ -19,7 +19,7 @@ set(gr_qradiolink_sources
     mod_bpsk_impl.cc
     mod_ssb_impl.cc
     mod_qpsk_impl.cc
-    # mod_nbfm_impl.cc  # Commented out - requires missing emphasis.h
+    mod_nbfm_impl.cc
     mod_dsss_impl.cc
     dsss_encoder_bb_impl.cc
     mod_freedv_impl.cc
@@ -33,15 +33,15 @@ set(gr_qradiolink_sources
     demod_2fsk_impl.cc
     demod_am_impl.cc
     demod_ssb_impl.cc
-    # demod_wbfm_impl.cc  # Commented out - requires missing emphasis.h
-    # demod_nbfm_impl.cc  # Commented out - requires missing emphasis.h
+    demod_wbfm_impl.cc
+    demod_nbfm_impl.cc
     demod_bpsk_impl.cc
     demod_qpsk_impl.cc
     demod_gmsk_impl.cc
     demod_4fsk_impl.cc
     demod_dsss_impl.cc
     dsss_decoder_cc_impl.cc
-    # ../../qradiolink/src/gr/emphasis.cpp  # Commented out - file not in this repo
+    ../../src/gr/emphasis.cpp
     demod_m17_impl.cc
     demod_freedv_impl.cc
     demod_dmr_impl.cc
@@ -106,6 +106,7 @@ target_include_directories(
     ${GR_ANALOG_INCLUDE_DIRS}
     ${GR_FEC_INCLUDE_DIRS}
     ${GR_VOCODER_INCLUDE_DIRS}
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../src  # For src/gr/emphasis.h
 )
 
 target_include_directories(
@@ -115,12 +116,15 @@ target_include_directories(
     PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../include/gnuradio/dsss> # For DSSS blocks
     PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../qradiolink/src/gr/cessb> # For CESSB blocks
     PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../qradiolink/src/gr> # For zero_idle_bursts
-    PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../qradiolink> # For src/bursttimer.h (project root)
+        PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../qradiolink> # For src/bursttimer.h (project root)
+        PUBLIC $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/src> # For src/gr/emphasis.h
 )
 
-if(BUILD_SHARED_LIBS)
-    gr_library_foo(gnuradio-qradiolink)
-endif()
+# Note: gr_library_foo requires targetConfig.cmake.in template which is not present
+# For shared library builds, the library will still work without it
+# if(BUILD_SHARED_LIBS)
+#     gr_library_foo(gnuradio-qradiolink)
+# endif()
 
 ########################################################################
 # QA C++ Code (if needed)

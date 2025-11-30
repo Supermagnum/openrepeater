@@ -92,7 +92,7 @@ qradiolink_test_demod_dsss_EXTERNAL_OBJECTS =
 
 tests/qradiolink_test_demod_dsss: tests/CMakeFiles/qradiolink_test_demod_dsss.dir/test_demod_dsss.cc.o
 tests/qradiolink_test_demod_dsss: tests/CMakeFiles/qradiolink_test_demod_dsss.dir/build.make
-tests/qradiolink_test_demod_dsss: lib/libgnuradio-qradiolink.a
+tests/qradiolink_test_demod_dsss: lib/libgnuradio-qradiolink.so
 tests/qradiolink_test_demod_dsss: /usr/lib/x86_64-linux-gnu/libboost_unit_test_framework.so.1.83.0
 tests/qradiolink_test_demod_dsss: /usr/lib/x86_64-linux-gnu/libvolk.so.3.1.2
 tests/qradiolink_test_demod_dsss: tests/CMakeFiles/qradiolink_test_demod_dsss.dir/link.txt

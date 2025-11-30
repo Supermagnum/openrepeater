@@ -662,6 +662,20 @@ qradiolink_test_mod_qpsk/fast:
 .PHONY : qradiolink_test_mod_qpsk/fast
 
 # Convenience name for target.
+tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/rule:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/rule
+.PHONY : tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/rule
+
+# Convenience name for target.
+qradiolink_test_mod_nbfm: tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/rule
+.PHONY : qradiolink_test_mod_nbfm
+
+# fast build rule for target.
+qradiolink_test_mod_nbfm/fast:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/build.make tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/build
+.PHONY : qradiolink_test_mod_nbfm/fast
+
+# Convenience name for target.
 tests/CMakeFiles/qradiolink_test_mod_dsss.dir/rule:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_mod_dsss.dir/rule
 .PHONY : tests/CMakeFiles/qradiolink_test_mod_dsss.dir/rule
@@ -716,6 +730,34 @@ qradiolink_test_demod_ssb: tests/CMakeFiles/qradiolink_test_demod_ssb.dir/rule
 qradiolink_test_demod_ssb/fast:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_ssb.dir/build.make tests/CMakeFiles/qradiolink_test_demod_ssb.dir/build
 .PHONY : qradiolink_test_demod_ssb/fast
+
+# Convenience name for target.
+tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/rule:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/rule
+.PHONY : tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/rule
+
+# Convenience name for target.
+qradiolink_test_demod_wbfm: tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/rule
+.PHONY : qradiolink_test_demod_wbfm
+
+# fast build rule for target.
+qradiolink_test_demod_wbfm/fast:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/build.make tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/build
+.PHONY : qradiolink_test_demod_wbfm/fast
+
+# Convenience name for target.
+tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/rule:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/rule
+.PHONY : tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/rule
+
+# Convenience name for target.
+qradiolink_test_demod_nbfm: tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/rule
+.PHONY : qradiolink_test_demod_nbfm
+
+# fast build rule for target.
+qradiolink_test_demod_nbfm/fast:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/build.make tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/build
+.PHONY : qradiolink_test_demod_nbfm/fast
 
 # Convenience name for target.
 tests/CMakeFiles/qradiolink_test_demod_bpsk.dir/rule:
@@ -969,6 +1011,30 @@ test_demod_m17.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_m17.dir/build.make tests/CMakeFiles/qradiolink_test_demod_m17.dir/test_demod_m17.cc.s
 .PHONY : test_demod_m17.cc.s
 
+test_demod_nbfm.o: test_demod_nbfm.cc.o
+.PHONY : test_demod_nbfm.o
+
+# target to build an object file
+test_demod_nbfm.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/build.make tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/test_demod_nbfm.cc.o
+.PHONY : test_demod_nbfm.cc.o
+
+test_demod_nbfm.i: test_demod_nbfm.cc.i
+.PHONY : test_demod_nbfm.i
+
+# target to preprocess a source file
+test_demod_nbfm.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/build.make tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/test_demod_nbfm.cc.i
+.PHONY : test_demod_nbfm.cc.i
+
+test_demod_nbfm.s: test_demod_nbfm.cc.s
+.PHONY : test_demod_nbfm.s
+
+# target to generate assembly for a file
+test_demod_nbfm.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/build.make tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/test_demod_nbfm.cc.s
+.PHONY : test_demod_nbfm.cc.s
+
 test_demod_qpsk.o: test_demod_qpsk.cc.o
 .PHONY : test_demod_qpsk.o
 
@@ -1016,6 +1082,30 @@ test_demod_ssb.s: test_demod_ssb.cc.s
 test_demod_ssb.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_ssb.dir/build.make tests/CMakeFiles/qradiolink_test_demod_ssb.dir/test_demod_ssb.cc.s
 .PHONY : test_demod_ssb.cc.s
+
+test_demod_wbfm.o: test_demod_wbfm.cc.o
+.PHONY : test_demod_wbfm.o
+
+# target to build an object file
+test_demod_wbfm.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/build.make tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/test_demod_wbfm.cc.o
+.PHONY : test_demod_wbfm.cc.o
+
+test_demod_wbfm.i: test_demod_wbfm.cc.i
+.PHONY : test_demod_wbfm.i
+
+# target to preprocess a source file
+test_demod_wbfm.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/build.make tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/test_demod_wbfm.cc.i
+.PHONY : test_demod_wbfm.cc.i
+
+test_demod_wbfm.s: test_demod_wbfm.cc.s
+.PHONY : test_demod_wbfm.s
+
+# target to generate assembly for a file
+test_demod_wbfm.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/build.make tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/test_demod_wbfm.cc.s
+.PHONY : test_demod_wbfm.cc.s
 
 test_mod_2fsk.o: test_mod_2fsk.cc.o
 .PHONY : test_mod_2fsk.o
@@ -1161,6 +1251,30 @@ test_mod_gmsk.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_gmsk.dir/build.make tests/CMakeFiles/test_mod_gmsk.dir/test_mod_gmsk.cc.s
 .PHONY : test_mod_gmsk.cc.s
 
+test_mod_nbfm.o: test_mod_nbfm.cc.o
+.PHONY : test_mod_nbfm.o
+
+# target to build an object file
+test_mod_nbfm.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/build.make tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/test_mod_nbfm.cc.o
+.PHONY : test_mod_nbfm.cc.o
+
+test_mod_nbfm.i: test_mod_nbfm.cc.i
+.PHONY : test_mod_nbfm.i
+
+# target to preprocess a source file
+test_mod_nbfm.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/build.make tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/test_mod_nbfm.cc.i
+.PHONY : test_mod_nbfm.cc.i
+
+test_mod_nbfm.s: test_mod_nbfm.cc.s
+.PHONY : test_mod_nbfm.s
+
+# target to generate assembly for a file
+test_mod_nbfm.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/build.make tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/test_mod_nbfm.cc.s
+.PHONY : test_mod_nbfm.cc.s
+
 test_mod_qpsk.o: test_mod_qpsk.cc.o
 .PHONY : test_mod_qpsk.o
 
@@ -1257,9 +1371,12 @@ help:
 	@echo "... qradiolink_test_demod_dsss"
 	@echo "... qradiolink_test_demod_gmsk"
 	@echo "... qradiolink_test_demod_m17"
+	@echo "... qradiolink_test_demod_nbfm"
 	@echo "... qradiolink_test_demod_qpsk"
 	@echo "... qradiolink_test_demod_ssb"
+	@echo "... qradiolink_test_demod_wbfm"
 	@echo "... qradiolink_test_mod_dsss"
+	@echo "... qradiolink_test_mod_nbfm"
 	@echo "... qradiolink_test_mod_qpsk"
 	@echo "... qradiolink_test_mod_ssb"
 	@echo "... test_mod_2fsk"
@@ -1288,12 +1405,18 @@ help:
 	@echo "... test_demod_m17.o"
 	@echo "... test_demod_m17.i"
 	@echo "... test_demod_m17.s"
+	@echo "... test_demod_nbfm.o"
+	@echo "... test_demod_nbfm.i"
+	@echo "... test_demod_nbfm.s"
 	@echo "... test_demod_qpsk.o"
 	@echo "... test_demod_qpsk.i"
 	@echo "... test_demod_qpsk.s"
 	@echo "... test_demod_ssb.o"
 	@echo "... test_demod_ssb.i"
 	@echo "... test_demod_ssb.s"
+	@echo "... test_demod_wbfm.o"
+	@echo "... test_demod_wbfm.i"
+	@echo "... test_demod_wbfm.s"
 	@echo "... test_mod_2fsk.o"
 	@echo "... test_mod_2fsk.i"
 	@echo "... test_mod_2fsk.s"
@@ -1312,6 +1435,9 @@ help:
 	@echo "... test_mod_gmsk.o"
 	@echo "... test_mod_gmsk.i"
 	@echo "... test_mod_gmsk.s"
+	@echo "... test_mod_nbfm.o"
+	@echo "... test_mod_nbfm.i"
+	@echo "... test_mod_nbfm.s"
 	@echo "... test_mod_qpsk.o"
 	@echo "... test_mod_qpsk.i"
 	@echo "... test_mod_qpsk.s"

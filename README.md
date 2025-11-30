@@ -423,6 +423,10 @@ python3 -c "import yaml; yaml.safe_load(open('/etc/authenticated-repeater/config
 - [gr-qradiolink](https://github.com/Supermagnum/gr-qradiolink) - Radio link processing
 - [OpenRepeater](https://github.com/OpenRepeater/openrepeater) - Main OpenRepeater repository
 
+### Python Validation Tests
+
+The module includes Python-based validation tests for all modulation types. See [fuzzing-results/results.md](fuzzing-results/results.md) for validation test results. All digital voice modes (FreeDV, M17, DMR, dPMR, NXDN) now have Python bindings and validation support.
+
 ## Documentation
 
 ### Essential Documentation

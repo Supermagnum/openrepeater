@@ -125,12 +125,53 @@ int m17_deframer_impl::work(int noutput_items,
         while (in_idx < ninput_items && d_frame_bytes_received < d_frame_length && out_idx < noutput_items) {
             d_buffer.push_back(in[in_idx++]);
             d_frame_bytes_received++;
+        }
+        
+        // Check if frame is complete (either we got all required bytes, or input ended)
+        bool input_ended = (in_idx >= ninput_items);
+        bool frame_complete = (d_frame_bytes_received >= d_frame_length);
+        
+        // Only output if frame is complete AND valid
+        if (frame_complete || input_ended) {
+            // Validate frame length before outputting
+            bool frame_valid = false;
             
-            // Check if frame is complete
-            if (d_frame_bytes_received >= d_frame_length) {
+            if (d_sync_word == SYNC_LSF || d_sync_word == SYNC_STREAM) {
+                // LSF/Stream frames must be exactly 48 bytes (2 byte sync + 46 byte payload)
+                if (d_frame_bytes_received == 48) {
+                    frame_valid = true;
+                }
+            } else if (d_sync_word == SYNC_PACKET) {
+                // Packet frames: minimum reasonable size is 4 bytes (sync + 2 bytes payload)
+                // Reject frames that are too short (just sync word or sync + 1 byte)
+                // TODO: Parse packet length field if available for proper validation
+                if (d_frame_bytes_received >= 4 && d_frame_bytes_received <= d_max_frame_length) {
+                    frame_valid = true;
+                }
+            }
+            
+            // CRITICAL: Only output if frame is BOTH valid AND complete
+            // Never output truncated or invalid frames - reject them silently
+            if (!frame_valid || !frame_complete || d_frame_bytes_received != d_frame_length) {
+                // Invalid or incomplete frame - reject it, don't output anything
+                // Reset state and continue - ensure out_idx remains 0
+                d_buffer.clear();
+                d_state = STATE_SYNC_SEARCH;
+                d_frame_bytes_received = 0;
+                d_frame_length = 0;
+                // Explicitly ensure no output for invalid frames
+                out_idx = 0;
+            } else {
+                // Frame is valid and complete - output it
                 // Output the frame (excluding sync word, starting from byte 2)
                 int payload_start = 2;  // Skip sync word
-                int payload_length = d_frame_length - payload_start;
+                // Use actual received bytes, not expected frame length
+                int payload_length = d_frame_bytes_received - payload_start;
+                
+                // Ensure we don't output more than we actually have
+                if (payload_length < 0) {
+                    payload_length = 0;
+                }
                 
                 // Determine frame type
                 pmt::pmt_t frame_type;
@@ -161,12 +202,11 @@ int m17_deframer_impl::work(int noutput_items,
                 d_state = STATE_SYNC_SEARCH;
                 d_frame_bytes_received = 0;
                 d_frame_length = 0;
-                break;
             }
         }
         
         // If frame not complete yet, return 0 (consumed input but no output yet)
-        if (d_frame_bytes_received < d_frame_length) {
+        if (!frame_complete && !input_ended) {
             return 0;
         }
     }

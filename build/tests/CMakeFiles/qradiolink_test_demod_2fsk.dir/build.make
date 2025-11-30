@@ -92,7 +92,7 @@ qradiolink_test_demod_2fsk_EXTERNAL_OBJECTS =
 
 tests/qradiolink_test_demod_2fsk: tests/CMakeFiles/qradiolink_test_demod_2fsk.dir/test_demod_2fsk.cc.o
 tests/qradiolink_test_demod_2fsk: tests/CMakeFiles/qradiolink_test_demod_2fsk.dir/build.make
-tests/qradiolink_test_demod_2fsk: lib/libgnuradio-qradiolink.a
+tests/qradiolink_test_demod_2fsk: lib/libgnuradio-qradiolink.so
 tests/qradiolink_test_demod_2fsk: /usr/lib/x86_64-linux-gnu/libboost_unit_test_framework.so.1.83.0
 tests/qradiolink_test_demod_2fsk: /usr/lib/x86_64-linux-gnu/libvolk.so.3.1.2
 tests/qradiolink_test_demod_2fsk: tests/CMakeFiles/qradiolink_test_demod_2fsk.dir/link.txt

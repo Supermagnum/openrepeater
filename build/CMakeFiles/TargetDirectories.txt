@@ -100,10 +100,13 @@
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/test_mod_bpsk.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_mod_ssb.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_mod_qpsk.dir
+/home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_mod_nbfm.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_mod_dsss.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_demod_2fsk.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_demod_am.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_demod_ssb.dir
+/home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_demod_wbfm.dir
+/home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_demod_nbfm.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_demod_bpsk.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_demod_qpsk.dir
 /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/qradiolink_test_demod_gmsk.dir

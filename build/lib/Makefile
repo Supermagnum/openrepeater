@@ -185,6 +185,30 @@ gnuradio-qradiolink/fast:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/build
 .PHONY : gnuradio-qradiolink/fast
 
+__/src/gr/emphasis.o: __/src/gr/emphasis.cpp.o
+.PHONY : __/src/gr/emphasis.o
+
+# target to build an object file
+__/src/gr/emphasis.cpp.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/__/src/gr/emphasis.cpp.o
+.PHONY : __/src/gr/emphasis.cpp.o
+
+__/src/gr/emphasis.i: __/src/gr/emphasis.cpp.i
+.PHONY : __/src/gr/emphasis.i
+
+# target to preprocess a source file
+__/src/gr/emphasis.cpp.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/__/src/gr/emphasis.cpp.i
+.PHONY : __/src/gr/emphasis.cpp.i
+
+__/src/gr/emphasis.s: __/src/gr/emphasis.cpp.s
+.PHONY : __/src/gr/emphasis.s
+
+# target to generate assembly for a file
+__/src/gr/emphasis.cpp.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/__/src/gr/emphasis.cpp.s
+.PHONY : __/src/gr/emphasis.cpp.s
+
 clipper_cc_impl.o: clipper_cc_impl.cc.o
 .PHONY : clipper_cc_impl.o
 
@@ -497,6 +521,30 @@ demod_mmdvm_multi_impl.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi_impl.cc.s
 .PHONY : demod_mmdvm_multi_impl.cc.s
 
+demod_nbfm_impl.o: demod_nbfm_impl.cc.o
+.PHONY : demod_nbfm_impl.o
+
+# target to build an object file
+demod_nbfm_impl.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nbfm_impl.cc.o
+.PHONY : demod_nbfm_impl.cc.o
+
+demod_nbfm_impl.i: demod_nbfm_impl.cc.i
+.PHONY : demod_nbfm_impl.i
+
+# target to preprocess a source file
+demod_nbfm_impl.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nbfm_impl.cc.i
+.PHONY : demod_nbfm_impl.cc.i
+
+demod_nbfm_impl.s: demod_nbfm_impl.cc.s
+.PHONY : demod_nbfm_impl.s
+
+# target to generate assembly for a file
+demod_nbfm_impl.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nbfm_impl.cc.s
+.PHONY : demod_nbfm_impl.cc.s
+
 demod_nxdn_impl.o: demod_nxdn_impl.cc.o
 .PHONY : demod_nxdn_impl.o
 
@@ -568,6 +616,30 @@ demod_ssb_impl.s: demod_ssb_impl.cc.s
 demod_ssb_impl.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_ssb_impl.cc.s
 .PHONY : demod_ssb_impl.cc.s
+
+demod_wbfm_impl.o: demod_wbfm_impl.cc.o
+.PHONY : demod_wbfm_impl.o
+
+# target to build an object file
+demod_wbfm_impl.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_wbfm_impl.cc.o
+.PHONY : demod_wbfm_impl.cc.o
+
+demod_wbfm_impl.i: demod_wbfm_impl.cc.i
+.PHONY : demod_wbfm_impl.i
+
+# target to preprocess a source file
+demod_wbfm_impl.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_wbfm_impl.cc.i
+.PHONY : demod_wbfm_impl.cc.i
+
+demod_wbfm_impl.s: demod_wbfm_impl.cc.s
+.PHONY : demod_wbfm_impl.s
+
+# target to generate assembly for a file
+demod_wbfm_impl.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/demod_wbfm_impl.cc.s
+.PHONY : demod_wbfm_impl.cc.s
 
 dsss_decoder_cc_impl.o: dsss_decoder_cc_impl.cc.o
 .PHONY : dsss_decoder_cc_impl.o
@@ -1001,6 +1073,30 @@ mod_mmdvm_multi2_impl.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_multi2_impl.cc.s
 .PHONY : mod_mmdvm_multi2_impl.cc.s
 
+mod_nbfm_impl.o: mod_nbfm_impl.cc.o
+.PHONY : mod_nbfm_impl.o
+
+# target to build an object file
+mod_nbfm_impl.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nbfm_impl.cc.o
+.PHONY : mod_nbfm_impl.cc.o
+
+mod_nbfm_impl.i: mod_nbfm_impl.cc.i
+.PHONY : mod_nbfm_impl.i
+
+# target to preprocess a source file
+mod_nbfm_impl.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nbfm_impl.cc.i
+.PHONY : mod_nbfm_impl.cc.i
+
+mod_nbfm_impl.s: mod_nbfm_impl.cc.s
+.PHONY : mod_nbfm_impl.s
+
+# target to generate assembly for a file
+mod_nbfm_impl.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nbfm_impl.cc.s
+.PHONY : mod_nbfm_impl.cc.s
+
 mod_nxdn_impl.o: mod_nxdn_impl.cc.o
 .PHONY : mod_nxdn_impl.o
 
@@ -1159,6 +1255,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... gnuradio-qradiolink"
+	@echo "... __/src/gr/emphasis.o"
+	@echo "... __/src/gr/emphasis.i"
+	@echo "... __/src/gr/emphasis.s"
 	@echo "... clipper_cc_impl.o"
 	@echo "... clipper_cc_impl.i"
 	@echo "... clipper_cc_impl.s"
@@ -1198,6 +1297,9 @@ help:
 	@echo "... demod_mmdvm_multi_impl.o"
 	@echo "... demod_mmdvm_multi_impl.i"
 	@echo "... demod_mmdvm_multi_impl.s"
+	@echo "... demod_nbfm_impl.o"
+	@echo "... demod_nbfm_impl.i"
+	@echo "... demod_nbfm_impl.s"
 	@echo "... demod_nxdn_impl.o"
 	@echo "... demod_nxdn_impl.i"
 	@echo "... demod_nxdn_impl.s"
@@ -1207,6 +1309,9 @@ help:
 	@echo "... demod_ssb_impl.o"
 	@echo "... demod_ssb_impl.i"
 	@echo "... demod_ssb_impl.s"
+	@echo "... demod_wbfm_impl.o"
+	@echo "... demod_wbfm_impl.i"
+	@echo "... demod_wbfm_impl.s"
 	@echo "... dsss_decoder_cc_impl.o"
 	@echo "... dsss_decoder_cc_impl.i"
 	@echo "... dsss_decoder_cc_impl.s"
@@ -1261,6 +1366,9 @@ help:
 	@echo "... mod_mmdvm_multi2_impl.o"
 	@echo "... mod_mmdvm_multi2_impl.i"
 	@echo "... mod_mmdvm_multi2_impl.s"
+	@echo "... mod_nbfm_impl.o"
+	@echo "... mod_nbfm_impl.i"
+	@echo "... mod_nbfm_impl.s"
 	@echo "... mod_nxdn_impl.o"
 	@echo "... mod_nxdn_impl.i"
 	@echo "... mod_nxdn_impl.s"

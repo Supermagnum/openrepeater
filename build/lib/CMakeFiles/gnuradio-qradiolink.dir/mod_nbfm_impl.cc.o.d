@@ -1073,4 +1073,4 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nbfm_impl.cc.o: \
  /usr/include/gnuradio/blocks/multiply_const.h \
  /usr/include/gnuradio/blocks/multiply.h \
  /usr/include/gnuradio/analog/rail_ff.h \
- /home/haaken/github-projects/gr-qradiolink/lib/../../qradiolink/src/gr/../../src/gr/emphasis.h
+ /home/haaken/github-projects/gr-qradiolink/src/gr/emphasis.h

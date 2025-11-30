@@ -19,11 +19,14 @@
 #include <gnuradio/io_signature.h>
 #include <gnuradio/tags.h>
 #include <cmath>
+#include <typeinfo>
 
 namespace gr {
 namespace qradiolink {
 
 static const pmt::pmt_t RSSI_TAG = pmt::string_to_symbol("RSSI");
+
+rssi_tag_block::~rssi_tag_block() {}
 
 rssi_tag_block::sptr rssi_tag_block::make()
 {
@@ -73,11 +76,32 @@ void rssi_tag_block_impl::add_rssi_tag(float db, uint64_t sample)
     this->add_item_tag(0, nitems_written(0) + sample, RSSI_TAG, t_val);
 }
 
+void rssi_tag_block::calibrate_rssi(float level)
+{
+    // Base class implementation - should never be called
+    // Actual implementation is in rssi_tag_block_impl
+    (void)level; // Suppress unused parameter warning
+}
+
 void rssi_tag_block_impl::calibrate_rssi(float level)
 {
     d_calibration_level = level;
 }
 
+
+// Force vtable and typeinfo generation for RTTI
+namespace {
+    void force_rtti_symbols() {
+        const std::type_info& ti = typeid(gr::qradiolink::rssi_tag_block);
+        (void)ti;
+        auto make_func = &gr::qradiolink::rssi_tag_block::make;
+        (void)make_func;
+    }
+    __attribute__((used)) static void (*force_init)() = force_rtti_symbols;
+    
+    const std::type_info& g_rssi_tag_block_typeinfo = typeid(gr::qradiolink::rssi_tag_block);
+    __attribute__((used)) static const void* force_rssi_tag_block_typeinfo = &g_rssi_tag_block_typeinfo;
+}
 
 } // namespace qradiolink
 } // namespace gr

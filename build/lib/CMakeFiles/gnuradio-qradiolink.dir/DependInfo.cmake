@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/haaken/github-projects/gr-qradiolink/src/gr/emphasis.cpp" "lib/CMakeFiles/gnuradio-qradiolink.dir/__/src/gr/emphasis.cpp.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/__/src/gr/emphasis.cpp.o.d"
   "/home/haaken/github-projects/gr-qradiolink/lib/clipper_cc_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/clipper_cc_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/clipper_cc_impl.cc.o.d"
   "/home/haaken/github-projects/gr-qradiolink/lib/demod_2fsk_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/demod_2fsk_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/demod_2fsk_impl.cc.o.d"
   "/home/haaken/github-projects/gr-qradiolink/lib/demod_4fsk_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/demod_4fsk_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/demod_4fsk_impl.cc.o.d"
@@ -21,9 +22,11 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/haaken/github-projects/gr-qradiolink/lib/demod_m17_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/demod_m17_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/demod_m17_impl.cc.o.d"
   "/home/haaken/github-projects/gr-qradiolink/lib/demod_mmdvm_multi2_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi2_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi2_impl.cc.o.d"
   "/home/haaken/github-projects/gr-qradiolink/lib/demod_mmdvm_multi_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi_impl.cc.o.d"
+  "/home/haaken/github-projects/gr-qradiolink/lib/demod_nbfm_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nbfm_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nbfm_impl.cc.o.d"
   "/home/haaken/github-projects/gr-qradiolink/lib/demod_nxdn_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nxdn_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/demod_nxdn_impl.cc.o.d"
   "/home/haaken/github-projects/gr-qradiolink/lib/demod_qpsk_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/demod_qpsk_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/demod_qpsk_impl.cc.o.d"
   "/home/haaken/github-projects/gr-qradiolink/lib/demod_ssb_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/demod_ssb_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/demod_ssb_impl.cc.o.d"
+  "/home/haaken/github-projects/gr-qradiolink/lib/demod_wbfm_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/demod_wbfm_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/demod_wbfm_impl.cc.o.d"
   "/home/haaken/github-projects/gr-qradiolink/lib/dsss_decoder_cc_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_decoder_cc_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_decoder_cc_impl.cc.o.d"
   "/home/haaken/github-projects/gr-qradiolink/lib/dsss_encoder_bb_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_encoder_bb_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_encoder_bb_impl.cc.o.d"
   "/home/haaken/github-projects/gr-qradiolink/lib/gr_4fsk_discriminator_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/gr_4fsk_discriminator_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/gr_4fsk_discriminator_impl.cc.o.d"
@@ -42,6 +45,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/haaken/github-projects/gr-qradiolink/lib/mod_m17_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/mod_m17_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/mod_m17_impl.cc.o.d"
   "/home/haaken/github-projects/gr-qradiolink/lib/mod_mmdvm_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_impl.cc.o.d"
   "/home/haaken/github-projects/gr-qradiolink/lib/mod_mmdvm_multi2_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_multi2_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_multi2_impl.cc.o.d"
+  "/home/haaken/github-projects/gr-qradiolink/lib/mod_nbfm_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nbfm_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nbfm_impl.cc.o.d"
   "/home/haaken/github-projects/gr-qradiolink/lib/mod_nxdn_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nxdn_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/mod_nxdn_impl.cc.o.d"
   "/home/haaken/github-projects/gr-qradiolink/lib/mod_qpsk_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/mod_qpsk_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/mod_qpsk_impl.cc.o.d"
   "/home/haaken/github-projects/gr-qradiolink/lib/mod_ssb_impl.cc" "lib/CMakeFiles/gnuradio-qradiolink.dir/mod_ssb_impl.cc.o" "gcc" "lib/CMakeFiles/gnuradio-qradiolink.dir/mod_ssb_impl.cc.o.d"

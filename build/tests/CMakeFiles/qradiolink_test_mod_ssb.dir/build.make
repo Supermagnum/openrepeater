@@ -92,7 +92,7 @@ qradiolink_test_mod_ssb_EXTERNAL_OBJECTS =
 
 tests/qradiolink_test_mod_ssb: tests/CMakeFiles/qradiolink_test_mod_ssb.dir/test_mod_ssb.cc.o
 tests/qradiolink_test_mod_ssb: tests/CMakeFiles/qradiolink_test_mod_ssb.dir/build.make
-tests/qradiolink_test_mod_ssb: lib/libgnuradio-qradiolink.a
+tests/qradiolink_test_mod_ssb: lib/libgnuradio-qradiolink.so
 tests/qradiolink_test_mod_ssb: /usr/lib/x86_64-linux-gnu/libboost_unit_test_framework.so.1.83.0
 tests/qradiolink_test_mod_ssb: /usr/lib/x86_64-linux-gnu/libvolk.so.3.1.2
 tests/qradiolink_test_mod_ssb: tests/CMakeFiles/qradiolink_test_mod_ssb.dir/link.txt

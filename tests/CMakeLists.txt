@@ -119,13 +119,13 @@ list(APPEND GR_TEST_TARGET_DEPS gnuradio-qradiolink)
 list(APPEND test_gr_qradiolink_sources 
     test_mod_ssb.cc
     test_mod_qpsk.cc
-    # test_mod_nbfm.cc  # Commented out - mod_nbfm_impl.cc requires missing emphasis.h
+    test_mod_nbfm.cc
     test_mod_dsss.cc
     test_demod_2fsk.cc
     test_demod_am.cc
     test_demod_ssb.cc
-    # test_demod_wbfm.cc  # Commented out - demod_wbfm_impl.cc requires missing emphasis.h
-    # test_demod_nbfm.cc  # Commented out - demod_nbfm_impl.cc requires missing emphasis.h
+    test_demod_wbfm.cc
+    test_demod_nbfm.cc
     test_demod_bpsk.cc
     test_demod_qpsk.cc
     test_demod_gmsk.cc

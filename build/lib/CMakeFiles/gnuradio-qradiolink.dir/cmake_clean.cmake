@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/gnuradio-qradiolink.dir/__/src/gr/emphasis.cpp.o"
+  "CMakeFiles/gnuradio-qradiolink.dir/__/src/gr/emphasis.cpp.o.d"
   "CMakeFiles/gnuradio-qradiolink.dir/clipper_cc_impl.cc.o"
   "CMakeFiles/gnuradio-qradiolink.dir/clipper_cc_impl.cc.o.d"
   "CMakeFiles/gnuradio-qradiolink.dir/demod_2fsk_impl.cc.o"
@@ -25,12 +27,16 @@ file(REMOVE_RECURSE
   "CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi2_impl.cc.o.d"
   "CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi_impl.cc.o"
   "CMakeFiles/gnuradio-qradiolink.dir/demod_mmdvm_multi_impl.cc.o.d"
+  "CMakeFiles/gnuradio-qradiolink.dir/demod_nbfm_impl.cc.o"
+  "CMakeFiles/gnuradio-qradiolink.dir/demod_nbfm_impl.cc.o.d"
   "CMakeFiles/gnuradio-qradiolink.dir/demod_nxdn_impl.cc.o"
   "CMakeFiles/gnuradio-qradiolink.dir/demod_nxdn_impl.cc.o.d"
   "CMakeFiles/gnuradio-qradiolink.dir/demod_qpsk_impl.cc.o"
   "CMakeFiles/gnuradio-qradiolink.dir/demod_qpsk_impl.cc.o.d"
   "CMakeFiles/gnuradio-qradiolink.dir/demod_ssb_impl.cc.o"
   "CMakeFiles/gnuradio-qradiolink.dir/demod_ssb_impl.cc.o.d"
+  "CMakeFiles/gnuradio-qradiolink.dir/demod_wbfm_impl.cc.o"
+  "CMakeFiles/gnuradio-qradiolink.dir/demod_wbfm_impl.cc.o.d"
   "CMakeFiles/gnuradio-qradiolink.dir/dsss_decoder_cc_impl.cc.o"
   "CMakeFiles/gnuradio-qradiolink.dir/dsss_decoder_cc_impl.cc.o.d"
   "CMakeFiles/gnuradio-qradiolink.dir/dsss_encoder_bb_impl.cc.o"
@@ -67,6 +73,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_impl.cc.o.d"
   "CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_multi2_impl.cc.o"
   "CMakeFiles/gnuradio-qradiolink.dir/mod_mmdvm_multi2_impl.cc.o.d"
+  "CMakeFiles/gnuradio-qradiolink.dir/mod_nbfm_impl.cc.o"
+  "CMakeFiles/gnuradio-qradiolink.dir/mod_nbfm_impl.cc.o.d"
   "CMakeFiles/gnuradio-qradiolink.dir/mod_nxdn_impl.cc.o"
   "CMakeFiles/gnuradio-qradiolink.dir/mod_nxdn_impl.cc.o.d"
   "CMakeFiles/gnuradio-qradiolink.dir/mod_qpsk_impl.cc.o"
@@ -79,8 +87,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/gnuradio-qradiolink.dir/stretcher_cc_impl.cc.o.d"
   "CMakeFiles/gnuradio-qradiolink.dir/zero_idle_bursts_impl.cc.o"
   "CMakeFiles/gnuradio-qradiolink.dir/zero_idle_bursts_impl.cc.o.d"
-  "libgnuradio-qradiolink.a"
   "libgnuradio-qradiolink.pdb"
+  "libgnuradio-qradiolink.so"
 )
 
 # Per-language clean rules from dependency scanning.

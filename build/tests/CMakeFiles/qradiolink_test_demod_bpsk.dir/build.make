@@ -92,7 +92,7 @@ qradiolink_test_demod_bpsk_EXTERNAL_OBJECTS =
 
 tests/qradiolink_test_demod_bpsk: tests/CMakeFiles/qradiolink_test_demod_bpsk.dir/test_demod_bpsk.cc.o
 tests/qradiolink_test_demod_bpsk: tests/CMakeFiles/qradiolink_test_demod_bpsk.dir/build.make
-tests/qradiolink_test_demod_bpsk: lib/libgnuradio-qradiolink.a
+tests/qradiolink_test_demod_bpsk: lib/libgnuradio-qradiolink.so
 tests/qradiolink_test_demod_bpsk: /usr/lib/x86_64-linux-gnu/libboost_unit_test_framework.so.1.83.0
 tests/qradiolink_test_demod_bpsk: /usr/lib/x86_64-linux-gnu/libvolk.so.3.1.2
 tests/qradiolink_test_demod_bpsk: tests/CMakeFiles/qradiolink_test_demod_bpsk.dir/link.txt
