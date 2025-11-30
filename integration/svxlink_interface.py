@@ -339,3 +339,4 @@ class SVXLinkInterface:
                 f"{command} {' '.join(str(a) for a in args)}" if args else command
             )
             return self.execute_tcp_command(full_command)
+

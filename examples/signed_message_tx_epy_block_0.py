@@ -30,10 +30,10 @@ class blk(gr.sync_block):
         self._last_send = False
         self._pkcs11_lib = None
         self._use_pkcs11 = True  # Default to PKCS#11
-        
+
         if PKCS11_AVAILABLE:
             self._init_pkcs11()
-    
+
     def _init_pkcs11(self):
         lib_paths = [
             '/usr/lib/x86_64-linux-gnu/opensc-pkcs11.so',
@@ -50,7 +50,7 @@ class blk(gr.sync_block):
                 except Exception as e:
                     continue
         return False
-    
+
     def _get_token(self, pin=None):
         if not self._pkcs11_lib:
             return None
@@ -69,7 +69,7 @@ class blk(gr.sync_block):
             return token
         except:
             return None
-    
+
     def _sign_with_pkcs11(self, data, pin=None):
         if not PKCS11_AVAILABLE or not self._pkcs11_lib:
             return None
@@ -86,7 +86,7 @@ class blk(gr.sync_block):
         except Exception as e:
             print(f"PKCS#11 signing error: {e}")
             return None
-    
+
     def work(self, input_items, output_items):
         # Check configuration
         try:
@@ -95,14 +95,14 @@ class blk(gr.sync_block):
                 self._use_pkcs11 = getattr(__main__, 'use_pkcs11').value()
         except:
             pass
-        
+
         # Collect key data from kernel keyring (if not using PKCS#11)
         key_in = input_items[0]
         if len(key_in) > 0 and not self._use_pkcs11:
             self._key_buffer.extend(key_in.tolist())
             if len(self._key_buffer) > 32:
                 self._key_buffer = self._key_buffer[-32:]
-        
+
         try:
             import __main__
             if hasattr(__main__, 'send_button'):
@@ -113,24 +113,24 @@ class blk(gr.sync_block):
                         if msg:
                             msg_bytes = msg.encode('utf-8')
                             signature = None
-                            
+
                             # Use PKCS#11 if configured
                             if self._use_pkcs11:
                                 signature = self._sign_with_pkcs11(msg_bytes)
-                            
+
                             # Fallback to kernel keyring + nacl
                             if not signature and len(self._key_buffer) >= 32 and NACL_AVAILABLE:
                                 key = bytes(self._key_buffer[:32])
                                 signature = nacl.sign_ed25519(msg_bytes, key)
-                            
+
                             if signature:
                                 self._signed_msg = msg_bytes + b'\x00' + signature
                                 self._output_idx = 0
-                
+
                 self._last_send = btn.value()
         except Exception as e:
             pass
-        
+
         if self._signed_msg and self._output_idx < len(self._signed_msg):
             n = min(len(output_items[0]), len(self._signed_msg) - self._output_idx)
             if n > 0:
@@ -143,7 +143,7 @@ class blk(gr.sync_block):
                     self._signed_msg = None
                     self._output_idx = 0
                 return n
-        
+
         if len(output_items[0]) > 0:
             output_items[0][:len(output_items[0])] = 0
             return len(output_items[0])

@@ -41,3 +41,4 @@ ser.write(data)
   #print('CMD NG')
 
 ser.close()
+

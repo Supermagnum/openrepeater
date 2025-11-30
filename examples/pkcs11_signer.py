@@ -34,10 +34,10 @@ class blk(gr.sync_block):
         self._last_send = False
         self._pkcs11_lib = None
         self._token = None
-        
+
         if PKCS11_AVAILABLE:
             self._init_pkcs11()
-    
+
     def _init_pkcs11(self):
         """Initialize PKCS#11 library"""
         lib_paths = [
@@ -57,7 +57,7 @@ class blk(gr.sync_block):
                     continue
         print("PKCS#11: No suitable library found, will use software fallback")
         return False
-    
+
     def _get_token(self, pin=None):
         """Get PKCS#11 token"""
         if not self._pkcs11_lib:
@@ -78,7 +78,7 @@ class blk(gr.sync_block):
         except Exception as e:
             print(f"PKCS#11: Error getting token: {e}")
             return None
-    
+
     def _sign_with_pkcs11(self, data, pin=None):
         """Sign data using PKCS#11"""
         if not PKCS11_AVAILABLE or not self._pkcs11_lib:
@@ -96,14 +96,14 @@ class blk(gr.sync_block):
         except Exception as e:
             print(f"PKCS#11 signing error: {e}")
             return None
-    
+
     def work(self, input_items, output_items):
         key_in = input_items[0]
         if len(key_in) > 0:
             self._key_buffer.extend(key_in.tolist())
             if len(self._key_buffer) > 32:
                 self._key_buffer = self._key_buffer[-32:]
-        
+
         try:
             import __main__
             if hasattr(__main__, 'send_button'):
@@ -113,23 +113,23 @@ class blk(gr.sync_block):
                         msg = getattr(__main__, 'message_text').value()
                         if msg:
                             msg_bytes = msg.encode('utf-8')
-                            
+
                             # Try PKCS#11 first (preferred)
                             signature = self._sign_with_pkcs11(msg_bytes)
-                            
+
                             # Fallback to nacl if PKCS#11 fails
                             if not signature and len(self._key_buffer) >= 32 and NACL_AVAILABLE:
                                 key = bytes(self._key_buffer[:32])
                                 signature = nacl.sign_ed25519(msg_bytes, key)
-                            
+
                             if signature:
                                 self._signed_msg = msg_bytes + b'\x00' + signature
                                 self._output_idx = 0
-                
+
                 self._last_send = btn.value()
         except Exception as e:
             pass
-        
+
         if self._signed_msg and self._output_idx < len(self._signed_msg):
             n = min(len(output_items[0]), len(self._signed_msg) - self._output_idx)
             if n > 0:
@@ -142,7 +142,7 @@ class blk(gr.sync_block):
                     self._signed_msg = None
                     self._output_idx = 0
                 return n
-        
+
         if len(output_items[0]) > 0:
             output_items[0][:len(output_items[0])] = 0
             return len(output_items[0])

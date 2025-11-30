@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/haaken/github-projects/gr-qradiolink
+CMAKE_SOURCE_DIR = /home/haaken/github-projects/authenticated-repeater-control
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/haaken/github-projects/gr-qradiolink/build
+CMAKE_BINARY_DIR = /home/haaken/github-projects/authenticated-repeater-control/build
 
 # Utility rule file for ExperimentalBuild.
 
@@ -67,7 +67,7 @@ include tests/CMakeFiles/ExperimentalBuild.dir/compiler_depend.make
 include tests/CMakeFiles/ExperimentalBuild.dir/progress.make
 
 tests/CMakeFiles/ExperimentalBuild:
-	cd /home/haaken/github-projects/gr-qradiolink/build/tests && /usr/bin/ctest -D ExperimentalBuild
+	cd /home/haaken/github-projects/authenticated-repeater-control/build/tests && /usr/bin/ctest -D ExperimentalBuild
 
 ExperimentalBuild: tests/CMakeFiles/ExperimentalBuild
 ExperimentalBuild: tests/CMakeFiles/ExperimentalBuild.dir/build.make
@@ -78,10 +78,10 @@ tests/CMakeFiles/ExperimentalBuild.dir/build: ExperimentalBuild
 .PHONY : tests/CMakeFiles/ExperimentalBuild.dir/build
 
 tests/CMakeFiles/ExperimentalBuild.dir/clean:
-	cd /home/haaken/github-projects/gr-qradiolink/build/tests && $(CMAKE_COMMAND) -P CMakeFiles/ExperimentalBuild.dir/cmake_clean.cmake
+	cd /home/haaken/github-projects/authenticated-repeater-control/build/tests && $(CMAKE_COMMAND) -P CMakeFiles/ExperimentalBuild.dir/cmake_clean.cmake
 .PHONY : tests/CMakeFiles/ExperimentalBuild.dir/clean
 
 tests/CMakeFiles/ExperimentalBuild.dir/depend:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/haaken/github-projects/gr-qradiolink /home/haaken/github-projects/gr-qradiolink/tests /home/haaken/github-projects/gr-qradiolink/build /home/haaken/github-projects/gr-qradiolink/build/tests /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/ExperimentalBuild.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/haaken/github-projects/authenticated-repeater-control /home/haaken/github-projects/authenticated-repeater-control/tests /home/haaken/github-projects/authenticated-repeater-control/build /home/haaken/github-projects/authenticated-repeater-control/build/tests /home/haaken/github-projects/authenticated-repeater-control/build/tests/CMakeFiles/ExperimentalBuild.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : tests/CMakeFiles/ExperimentalBuild.dir/depend
 

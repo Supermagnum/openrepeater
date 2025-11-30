@@ -28,7 +28,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
       
       The CXX compiler identification is GNU, found in:
-        /home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/3.28.3/CompilerIdCXX/a.out
+        /home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/3.28.3/CompilerIdCXX/a.out
       
   -
     kind: "message-v1"
@@ -50,7 +50,7 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
       
       The C compiler identification is GNU, found in:
-        /home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/3.28.3/CompilerIdC/a.out
+        /home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/3.28.3/CompilerIdC/a.out
       
   -
     kind: "try_compile-v1"
@@ -61,8 +61,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-Ccf9kw"
-      binary: "/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-Ccf9kw"
+      source: "/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-TFa6pM"
+      binary: "/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-TFa6pM"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -71,13 +71,13 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-Ccf9kw'
+        Change Dir: '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-TFa6pM'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_4e0cf/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_4e0cf.dir/build.make CMakeFiles/cmTC_4e0cf.dir/build
-        gmake[1]: Entering directory '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-Ccf9kw'
-        Building CXX object CMakeFiles/cmTC_4e0cf.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -v -o CMakeFiles/cmTC_4e0cf.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ad12a/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ad12a.dir/build.make CMakeFiles/cmTC_ad12a.dir/build
+        gmake[1]: Entering directory '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-TFa6pM'
+        Building CXX object CMakeFiles/cmTC_ad12a.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_ad12a.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -87,8 +87,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4e0cf.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4e0cf.dir/'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_4e0cf.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccjWiVyP.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ad12a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ad12a.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_ad12a.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccl6zAMl.s
         GNU C++17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)
         	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
         
@@ -109,15 +109,15 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: c81c05345ce537099dafd5580045814a
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4e0cf.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4e0cf.dir/'
-         as -v --64 -o CMakeFiles/cmTC_4e0cf.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccjWiVyP.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ad12a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ad12a.dir/'
+         as -v --64 -o CMakeFiles/cmTC_ad12a.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccl6zAMl.s
         GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4e0cf.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4e0cf.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_4e0cf
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4e0cf.dir/link.txt --verbose=1
-        /usr/bin/c++  -v CMakeFiles/cmTC_4e0cf.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_4e0cf 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ad12a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ad12a.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_ad12a
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ad12a.dir/link.txt --verbose=1
+        /usr/bin/c++  -v CMakeFiles/cmTC_ad12a.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_ad12a 
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
@@ -130,10 +130,10 @@ events:
         gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4e0cf' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4e0cf.'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cckC7XV6.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_4e0cf /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_4e0cf.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4e0cf' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4e0cf.'
-        gmake[1]: Leaving directory '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-Ccf9kw'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ad12a' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ad12a.'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccUCOctZ.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ad12a /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_ad12a.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ad12a' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ad12a.'
+        gmake[1]: Leaving directory '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-TFa6pM'
         
       exitCode: 0
   -
@@ -173,13 +173,13 @@ events:
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-Ccf9kw']
+        ignore line: [Change Dir: '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-TFa6pM']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_4e0cf/fast]
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_4e0cf.dir/build.make CMakeFiles/cmTC_4e0cf.dir/build]
-        ignore line: [gmake[1]: Entering directory '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-Ccf9kw']
-        ignore line: [Building CXX object CMakeFiles/cmTC_4e0cf.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_4e0cf.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ad12a/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_ad12a.dir/build.make CMakeFiles/cmTC_ad12a.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-TFa6pM']
+        ignore line: [Building CXX object CMakeFiles/cmTC_ad12a.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_ad12a.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -189,8 +189,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4e0cf.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4e0cf.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_4e0cf.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccjWiVyP.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ad12a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ad12a.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_ad12a.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccl6zAMl.s]
         ignore line: [GNU C++17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
         ignore line: []
@@ -211,15 +211,15 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: c81c05345ce537099dafd5580045814a]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4e0cf.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4e0cf.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_4e0cf.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccjWiVyP.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ad12a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ad12a.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_ad12a.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccl6zAMl.s]
         ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4e0cf.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4e0cf.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_4e0cf]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4e0cf.dir/link.txt --verbose=1]
-        ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_4e0cf.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_4e0cf ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ad12a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ad12a.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_ad12a]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ad12a.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_ad12a.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_ad12a ]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper]
@@ -232,13 +232,13 @@ events:
         ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4e0cf' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4e0cf.']
-        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cckC7XV6.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_4e0cf /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_4e0cf.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ad12a' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ad12a.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccUCOctZ.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ad12a /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_ad12a.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/cckC7XV6.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccUCOctZ.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -256,7 +256,7 @@ events:
           arg [-znow] ==> ignore
           arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_4e0cf] ==> ignore
+          arg [cmTC_ad12a] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
@@ -268,7 +268,7 @@ events:
           arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
           arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
-          arg [CMakeFiles/cmTC_4e0cf.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_ad12a.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -304,8 +304,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-m8Bg41"
-      binary: "/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-m8Bg41"
+      source: "/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-6uFtYT"
+      binary: "/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-6uFtYT"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -314,13 +314,13 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-m8Bg41'
+        Change Dir: '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-6uFtYT'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e9786/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_e9786.dir/build.make CMakeFiles/cmTC_e9786.dir/build
-        gmake[1]: Entering directory '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-m8Bg41'
-        Building C object CMakeFiles/cmTC_e9786.dir/CMakeCCompilerABI.c.o
-        /usr/bin/cc   -v -o CMakeFiles/cmTC_e9786.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_53974/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_53974.dir/build.make CMakeFiles/cmTC_53974.dir/build
+        gmake[1]: Entering directory '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-6uFtYT'
+        Building C object CMakeFiles/cmTC_53974.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -o CMakeFiles/cmTC_53974.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -330,8 +330,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e9786.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_e9786.dir/'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_e9786.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccWOwals.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_53974.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_53974.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_53974.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccvWUpbr.s
         GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)
         	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
         
@@ -348,15 +348,15 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: 38987c28e967c64056a6454abdef726e
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e9786.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_e9786.dir/'
-         as -v --64 -o CMakeFiles/cmTC_e9786.dir/CMakeCCompilerABI.c.o /tmp/ccWOwals.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_53974.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_53974.dir/'
+         as -v --64 -o CMakeFiles/cmTC_53974.dir/CMakeCCompilerABI.c.o /tmp/ccvWUpbr.s
         GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e9786.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_e9786.dir/CMakeCCompilerABI.c.'
-        Linking C executable cmTC_e9786
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e9786.dir/link.txt --verbose=1
-        /usr/bin/cc  -v CMakeFiles/cmTC_e9786.dir/CMakeCCompilerABI.c.o -o cmTC_e9786 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_53974.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_53974.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_53974
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_53974.dir/link.txt --verbose=1
+        /usr/bin/cc  -v CMakeFiles/cmTC_53974.dir/CMakeCCompilerABI.c.o -o cmTC_53974 
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
@@ -369,10 +369,10 @@ events:
         gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e9786' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_e9786.'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cc0ivXAq.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_e9786 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_e9786.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e9786' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_e9786.'
-        gmake[1]: Leaving directory '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-m8Bg41'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_53974' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_53974.'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccVJmFbz.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_53974 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_53974.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_53974' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_53974.'
+        gmake[1]: Leaving directory '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-6uFtYT'
         
       exitCode: 0
   -
@@ -406,13 +406,13 @@ events:
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-m8Bg41']
+        ignore line: [Change Dir: '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-6uFtYT']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e9786/fast]
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_e9786.dir/build.make CMakeFiles/cmTC_e9786.dir/build]
-        ignore line: [gmake[1]: Entering directory '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-m8Bg41']
-        ignore line: [Building C object CMakeFiles/cmTC_e9786.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_e9786.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_53974/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_53974.dir/build.make CMakeFiles/cmTC_53974.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-6uFtYT']
+        ignore line: [Building C object CMakeFiles/cmTC_53974.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_53974.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -422,8 +422,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e9786.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_e9786.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_e9786.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccWOwals.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_53974.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_53974.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_53974.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccvWUpbr.s]
         ignore line: [GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
         ignore line: []
@@ -440,15 +440,15 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 38987c28e967c64056a6454abdef726e]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e9786.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_e9786.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_e9786.dir/CMakeCCompilerABI.c.o /tmp/ccWOwals.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_53974.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_53974.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_53974.dir/CMakeCCompilerABI.c.o /tmp/ccvWUpbr.s]
         ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e9786.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_e9786.dir/CMakeCCompilerABI.c.']
-        ignore line: [Linking C executable cmTC_e9786]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e9786.dir/link.txt --verbose=1]
-        ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_e9786.dir/CMakeCCompilerABI.c.o -o cmTC_e9786 ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_53974.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_53974.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_53974]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_53974.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_53974.dir/CMakeCCompilerABI.c.o -o cmTC_53974 ]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper]
@@ -461,13 +461,13 @@ events:
         ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e9786' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_e9786.']
-        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cc0ivXAq.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_e9786 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_e9786.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_53974' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_53974.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccVJmFbz.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_53974 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_53974.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/cc0ivXAq.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccVJmFbz.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -485,7 +485,7 @@ events:
           arg [-znow] ==> ignore
           arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_e9786] ==> ignore
+          arg [cmTC_53974] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
@@ -497,7 +497,7 @@ events:
           arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
           arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
-          arg [CMakeFiles/cmTC_e9786.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_53974.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [--push-state] ==> ignore
           arg [--as-needed] ==> ignore
@@ -542,28 +542,28 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-cV2WZS"
-      binary: "/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-cV2WZS"
+      source: "/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-itmgle"
+      binary: "/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-itmgle"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/gnuradio;/home/haaken/github-projects/gr-qradiolink/cmake/Modules"
+      CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/gnuradio;/home/haaken/github-projects/authenticated-repeater-control/cmake/Modules"
     buildResult:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-cV2WZS'
+        Change Dir: '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-itmgle'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3ddb4/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_3ddb4.dir/build.make CMakeFiles/cmTC_3ddb4.dir/build
-        gmake[1]: Entering directory '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-cV2WZS'
-        Building C object CMakeFiles/cmTC_3ddb4.dir/src.c.o
-        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_3ddb4.dir/src.c.o -c /home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-cV2WZS/src.c
-        Linking C executable cmTC_3ddb4
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3ddb4.dir/link.txt --verbose=1
-        /usr/bin/cc CMakeFiles/cmTC_3ddb4.dir/src.c.o -o cmTC_3ddb4 
-        gmake[1]: Leaving directory '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-cV2WZS'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_99a59/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_99a59.dir/build.make CMakeFiles/cmTC_99a59.dir/build
+        gmake[1]: Entering directory '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-itmgle'
+        Building C object CMakeFiles/cmTC_99a59.dir/src.c.o
+        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_99a59.dir/src.c.o -c /home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-itmgle/src.c
+        Linking C executable cmTC_99a59
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_99a59.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_99a59.dir/src.c.o -o cmTC_99a59 
+        gmake[1]: Leaving directory '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-itmgle'
         
       exitCode: 0
   -
@@ -578,28 +578,28 @@ events:
     checks:
       - "Performing Test HAVE_VISIBILITY_HIDDEN"
     directories:
-      source: "/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-arhPJa"
-      binary: "/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-arhPJa"
+      source: "/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-MXOot5"
+      binary: "/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-MXOot5"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g -O2"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/gnuradio;/home/haaken/github-projects/gr-qradiolink/cmake/Modules"
+      CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/gnuradio;/home/haaken/github-projects/authenticated-repeater-control/cmake/Modules"
     buildResult:
       variable: "HAVE_VISIBILITY_HIDDEN"
       cached: true
       stdout: |
-        Change Dir: '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-arhPJa'
+        Change Dir: '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-MXOot5'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b35e9/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_b35e9.dir/build.make CMakeFiles/cmTC_b35e9.dir/build
-        gmake[1]: Entering directory '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-arhPJa'
-        Building CXX object CMakeFiles/cmTC_b35e9.dir/src.cxx.o
-        /usr/bin/c++ -DHAVE_VISIBILITY_HIDDEN  -std=c++17   -fvisibility=hidden -o CMakeFiles/cmTC_b35e9.dir/src.cxx.o -c /home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-arhPJa/src.cxx
-        Linking CXX executable cmTC_b35e9
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b35e9.dir/link.txt --verbose=1
-        /usr/bin/c++ CMakeFiles/cmTC_b35e9.dir/src.cxx.o -o cmTC_b35e9 
-        gmake[1]: Leaving directory '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-arhPJa'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f32ee/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_f32ee.dir/build.make CMakeFiles/cmTC_f32ee.dir/build
+        gmake[1]: Entering directory '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-MXOot5'
+        Building CXX object CMakeFiles/cmTC_f32ee.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_VISIBILITY_HIDDEN  -std=c++17   -fvisibility=hidden -o CMakeFiles/cmTC_f32ee.dir/src.cxx.o -c /home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-MXOot5/src.cxx
+        Linking CXX executable cmTC_f32ee
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f32ee.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_f32ee.dir/src.cxx.o -o cmTC_f32ee 
+        gmake[1]: Leaving directory '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-MXOot5'
         
       exitCode: 0
   -
@@ -614,28 +614,28 @@ events:
     checks:
       - "Performing Test HAVE_WARN_SIGN_COMPARE"
     directories:
-      source: "/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-RvluIr"
-      binary: "/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-RvluIr"
+      source: "/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-b51IwU"
+      binary: "/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-b51IwU"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fvisibility=hidden"
       CMAKE_CXX_FLAGS_DEBUG: "-g -O2"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/gnuradio;/home/haaken/github-projects/gr-qradiolink/cmake/Modules"
+      CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/gnuradio;/home/haaken/github-projects/authenticated-repeater-control/cmake/Modules"
     buildResult:
       variable: "HAVE_WARN_SIGN_COMPARE"
       cached: true
       stdout: |
-        Change Dir: '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-RvluIr'
+        Change Dir: '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-b51IwU'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c2b1a/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_c2b1a.dir/build.make CMakeFiles/cmTC_c2b1a.dir/build
-        gmake[1]: Entering directory '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-RvluIr'
-        Building CXX object CMakeFiles/cmTC_c2b1a.dir/src.cxx.o
-        /usr/bin/c++ -DHAVE_WARN_SIGN_COMPARE  -fvisibility=hidden  -std=c++17   -Wsign-compare -o CMakeFiles/cmTC_c2b1a.dir/src.cxx.o -c /home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-RvluIr/src.cxx
-        Linking CXX executable cmTC_c2b1a
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c2b1a.dir/link.txt --verbose=1
-        /usr/bin/c++  -fvisibility=hidden  CMakeFiles/cmTC_c2b1a.dir/src.cxx.o -o cmTC_c2b1a 
-        gmake[1]: Leaving directory '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-RvluIr'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0030b/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_0030b.dir/build.make CMakeFiles/cmTC_0030b.dir/build
+        gmake[1]: Entering directory '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-b51IwU'
+        Building CXX object CMakeFiles/cmTC_0030b.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_WARN_SIGN_COMPARE  -fvisibility=hidden  -std=c++17   -Wsign-compare -o CMakeFiles/cmTC_0030b.dir/src.cxx.o -c /home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-b51IwU/src.cxx
+        Linking CXX executable cmTC_0030b
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0030b.dir/link.txt --verbose=1
+        /usr/bin/c++  -fvisibility=hidden  CMakeFiles/cmTC_0030b.dir/src.cxx.o -o cmTC_0030b 
+        gmake[1]: Leaving directory '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-b51IwU'
         
       exitCode: 0
   -
@@ -650,28 +650,28 @@ events:
     checks:
       - "Performing Test HAVE_WARN_ALL"
     directories:
-      source: "/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-Hdi0IU"
-      binary: "/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-Hdi0IU"
+      source: "/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-wizdGF"
+      binary: "/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-wizdGF"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fvisibility=hidden -Wsign-compare"
       CMAKE_CXX_FLAGS_DEBUG: "-g -O2"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/gnuradio;/home/haaken/github-projects/gr-qradiolink/cmake/Modules"
+      CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/gnuradio;/home/haaken/github-projects/authenticated-repeater-control/cmake/Modules"
     buildResult:
       variable: "HAVE_WARN_ALL"
       cached: true
       stdout: |
-        Change Dir: '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-Hdi0IU'
+        Change Dir: '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-wizdGF'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_cc8e5/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_cc8e5.dir/build.make CMakeFiles/cmTC_cc8e5.dir/build
-        gmake[1]: Entering directory '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-Hdi0IU'
-        Building CXX object CMakeFiles/cmTC_cc8e5.dir/src.cxx.o
-        /usr/bin/c++ -DHAVE_WARN_ALL  -fvisibility=hidden -Wsign-compare  -std=c++17   -Wall -o CMakeFiles/cmTC_cc8e5.dir/src.cxx.o -c /home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-Hdi0IU/src.cxx
-        Linking CXX executable cmTC_cc8e5
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cc8e5.dir/link.txt --verbose=1
-        /usr/bin/c++  -fvisibility=hidden -Wsign-compare  CMakeFiles/cmTC_cc8e5.dir/src.cxx.o -o cmTC_cc8e5 
-        gmake[1]: Leaving directory '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-Hdi0IU'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a6fdb/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_a6fdb.dir/build.make CMakeFiles/cmTC_a6fdb.dir/build
+        gmake[1]: Entering directory '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-wizdGF'
+        Building CXX object CMakeFiles/cmTC_a6fdb.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_WARN_ALL  -fvisibility=hidden -Wsign-compare  -std=c++17   -Wall -o CMakeFiles/cmTC_a6fdb.dir/src.cxx.o -c /home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-wizdGF/src.cxx
+        Linking CXX executable cmTC_a6fdb
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a6fdb.dir/link.txt --verbose=1
+        /usr/bin/c++  -fvisibility=hidden -Wsign-compare  CMakeFiles/cmTC_a6fdb.dir/src.cxx.o -o cmTC_a6fdb 
+        gmake[1]: Leaving directory '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-wizdGF'
         
       exitCode: 0
   -
@@ -686,28 +686,28 @@ events:
     checks:
       - "Performing Test HAVE_WARN_NO_UNINITIALIZED"
     directories:
-      source: "/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-F1umom"
-      binary: "/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-F1umom"
+      source: "/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-xrb9Zr"
+      binary: "/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-xrb9Zr"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fvisibility=hidden -Wsign-compare -Wall"
       CMAKE_CXX_FLAGS_DEBUG: "-g -O2"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/gnuradio;/home/haaken/github-projects/gr-qradiolink/cmake/Modules"
+      CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/gnuradio;/home/haaken/github-projects/authenticated-repeater-control/cmake/Modules"
     buildResult:
       variable: "HAVE_WARN_NO_UNINITIALIZED"
       cached: true
       stdout: |
-        Change Dir: '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-F1umom'
+        Change Dir: '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-xrb9Zr'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_667c9/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_667c9.dir/build.make CMakeFiles/cmTC_667c9.dir/build
-        gmake[1]: Entering directory '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-F1umom'
-        Building CXX object CMakeFiles/cmTC_667c9.dir/src.cxx.o
-        /usr/bin/c++ -DHAVE_WARN_NO_UNINITIALIZED  -fvisibility=hidden -Wsign-compare -Wall  -std=c++17   -Wno-uninitialized -o CMakeFiles/cmTC_667c9.dir/src.cxx.o -c /home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-F1umom/src.cxx
-        Linking CXX executable cmTC_667c9
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_667c9.dir/link.txt --verbose=1
-        /usr/bin/c++  -fvisibility=hidden -Wsign-compare -Wall  CMakeFiles/cmTC_667c9.dir/src.cxx.o -o cmTC_667c9 
-        gmake[1]: Leaving directory '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-F1umom'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_86433/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_86433.dir/build.make CMakeFiles/cmTC_86433.dir/build
+        gmake[1]: Entering directory '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-xrb9Zr'
+        Building CXX object CMakeFiles/cmTC_86433.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_WARN_NO_UNINITIALIZED  -fvisibility=hidden -Wsign-compare -Wall  -std=c++17   -Wno-uninitialized -o CMakeFiles/cmTC_86433.dir/src.cxx.o -c /home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-xrb9Zr/src.cxx
+        Linking CXX executable cmTC_86433
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_86433.dir/link.txt --verbose=1
+        /usr/bin/c++  -fvisibility=hidden -Wsign-compare -Wall  CMakeFiles/cmTC_86433.dir/src.cxx.o -o cmTC_86433 
+        gmake[1]: Leaving directory '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-xrb9Zr'
         
       exitCode: 0
   -
@@ -722,28 +722,28 @@ events:
     checks:
       - "Performing Test HAVE_WARN_IGNORED_QUALIFIERS"
     directories:
-      source: "/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-uedzUE"
-      binary: "/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-uedzUE"
+      source: "/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-0s2vbg"
+      binary: "/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-0s2vbg"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized"
       CMAKE_CXX_FLAGS_DEBUG: "-g -O2"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/gnuradio;/home/haaken/github-projects/gr-qradiolink/cmake/Modules"
+      CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/gnuradio;/home/haaken/github-projects/authenticated-repeater-control/cmake/Modules"
     buildResult:
       variable: "HAVE_WARN_IGNORED_QUALIFIERS"
       cached: true
       stdout: |
-        Change Dir: '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-uedzUE'
+        Change Dir: '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-0s2vbg'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_da9d6/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_da9d6.dir/build.make CMakeFiles/cmTC_da9d6.dir/build
-        gmake[1]: Entering directory '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-uedzUE'
-        Building CXX object CMakeFiles/cmTC_da9d6.dir/src.cxx.o
-        /usr/bin/c++ -DHAVE_WARN_IGNORED_QUALIFIERS  -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized  -std=c++17   -Wignored-qualifiers -o CMakeFiles/cmTC_da9d6.dir/src.cxx.o -c /home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-uedzUE/src.cxx
-        Linking CXX executable cmTC_da9d6
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_da9d6.dir/link.txt --verbose=1
-        /usr/bin/c++  -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized  CMakeFiles/cmTC_da9d6.dir/src.cxx.o -o cmTC_da9d6 
-        gmake[1]: Leaving directory '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-uedzUE'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_2f141/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_2f141.dir/build.make CMakeFiles/cmTC_2f141.dir/build
+        gmake[1]: Entering directory '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-0s2vbg'
+        Building CXX object CMakeFiles/cmTC_2f141.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_WARN_IGNORED_QUALIFIERS  -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized  -std=c++17   -Wignored-qualifiers -o CMakeFiles/cmTC_2f141.dir/src.cxx.o -c /home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-0s2vbg/src.cxx
+        Linking CXX executable cmTC_2f141
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2f141.dir/link.txt --verbose=1
+        /usr/bin/c++  -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized  CMakeFiles/cmTC_2f141.dir/src.cxx.o -o cmTC_2f141 
+        gmake[1]: Leaving directory '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-0s2vbg'
         
       exitCode: 0
   -
@@ -758,28 +758,28 @@ events:
     checks:
       - "Performing Test HAVE_WARN_CAST_QUAL"
     directories:
-      source: "/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-iBIK4V"
-      binary: "/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-iBIK4V"
+      source: "/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-b6vL2a"
+      binary: "/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-b6vL2a"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized -Wignored-qualifiers"
       CMAKE_CXX_FLAGS_DEBUG: "-g -O2"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/gnuradio;/home/haaken/github-projects/gr-qradiolink/cmake/Modules"
+      CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/gnuradio;/home/haaken/github-projects/authenticated-repeater-control/cmake/Modules"
     buildResult:
       variable: "HAVE_WARN_CAST_QUAL"
       cached: true
       stdout: |
-        Change Dir: '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-iBIK4V'
+        Change Dir: '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-b6vL2a'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_50c91/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_50c91.dir/build.make CMakeFiles/cmTC_50c91.dir/build
-        gmake[1]: Entering directory '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-iBIK4V'
-        Building CXX object CMakeFiles/cmTC_50c91.dir/src.cxx.o
-        /usr/bin/c++ -DHAVE_WARN_CAST_QUAL  -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized -Wignored-qualifiers  -std=c++17   -Wcast-qual -o CMakeFiles/cmTC_50c91.dir/src.cxx.o -c /home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-iBIK4V/src.cxx
-        Linking CXX executable cmTC_50c91
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_50c91.dir/link.txt --verbose=1
-        /usr/bin/c++  -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized -Wignored-qualifiers  CMakeFiles/cmTC_50c91.dir/src.cxx.o -o cmTC_50c91 
-        gmake[1]: Leaving directory '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-iBIK4V'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a6a75/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_a6a75.dir/build.make CMakeFiles/cmTC_a6a75.dir/build
+        gmake[1]: Entering directory '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-b6vL2a'
+        Building CXX object CMakeFiles/cmTC_a6a75.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_WARN_CAST_QUAL  -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized -Wignored-qualifiers  -std=c++17   -Wcast-qual -o CMakeFiles/cmTC_a6a75.dir/src.cxx.o -c /home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-b6vL2a/src.cxx
+        Linking CXX executable cmTC_a6a75
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a6a75.dir/link.txt --verbose=1
+        /usr/bin/c++  -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized -Wignored-qualifiers  CMakeFiles/cmTC_a6a75.dir/src.cxx.o -o cmTC_a6a75 
+        gmake[1]: Leaving directory '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-b6vL2a'
         
       exitCode: 0
   -
@@ -797,28 +797,28 @@ events:
     checks:
       - "Performing Test HAS_FLTO"
     directories:
-      source: "/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-hQ9duD"
-      binary: "/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-hQ9duD"
+      source: "/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-k0ZT39"
+      binary: "/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-k0ZT39"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized -Wignored-qualifiers -Wcast-qual"
       CMAKE_CXX_FLAGS_DEBUG: "-g -O2"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/gnuradio;/home/haaken/github-projects/gr-qradiolink/cmake/Modules"
+      CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/gnuradio;/home/haaken/github-projects/authenticated-repeater-control/cmake/Modules"
     buildResult:
       variable: "HAS_FLTO"
       cached: true
       stdout: |
-        Change Dir: '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-hQ9duD'
+        Change Dir: '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-k0ZT39'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_49d86/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_49d86.dir/build.make CMakeFiles/cmTC_49d86.dir/build
-        gmake[1]: Entering directory '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-hQ9duD'
-        Building CXX object CMakeFiles/cmTC_49d86.dir/src.cxx.o
-        /usr/bin/c++ -DHAS_FLTO  -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized -Wignored-qualifiers -Wcast-qual  -std=c++17   -flto -fno-fat-lto-objects -o CMakeFiles/cmTC_49d86.dir/src.cxx.o -c /home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-hQ9duD/src.cxx
-        Linking CXX executable cmTC_49d86
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_49d86.dir/link.txt --verbose=1
-        /usr/bin/c++  -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized -Wignored-qualifiers -Wcast-qual  CMakeFiles/cmTC_49d86.dir/src.cxx.o -o cmTC_49d86  -flto 
-        gmake[1]: Leaving directory '/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles/CMakeScratch/TryCompile-hQ9duD'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f427d/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_f427d.dir/build.make CMakeFiles/cmTC_f427d.dir/build
+        gmake[1]: Entering directory '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-k0ZT39'
+        Building CXX object CMakeFiles/cmTC_f427d.dir/src.cxx.o
+        /usr/bin/c++ -DHAS_FLTO  -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized -Wignored-qualifiers -Wcast-qual  -std=c++17   -flto -fno-fat-lto-objects -o CMakeFiles/cmTC_f427d.dir/src.cxx.o -c /home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-k0ZT39/src.cxx
+        Linking CXX executable cmTC_f427d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f427d.dir/link.txt --verbose=1
+        /usr/bin/c++  -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized -Wignored-qualifiers -Wcast-qual  CMakeFiles/cmTC_f427d.dir/src.cxx.o -o cmTC_f427d  -flto 
+        gmake[1]: Leaving directory '/home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles/CMakeScratch/TryCompile-k0ZT39'
         
       exitCode: 0
 ...

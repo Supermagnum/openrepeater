@@ -236,3 +236,4 @@ def main(top_block_cls=signed_message_tx, options=None):
 
 if __name__ == '__main__':
     main()
+

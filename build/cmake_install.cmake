@@ -1,4 +1,4 @@
-# Install script for directory: /home/haaken/github-projects/gr-qradiolink
+# Install script for directory: /home/haaken/github-projects/authenticated-repeater-control
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,41 +44,41 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/haaken/github-projects/gr-qradiolink/build/include/gnuradio/qradiolink/cmake_install.cmake")
+  include("/home/haaken/github-projects/authenticated-repeater-control/build/include/gnuradio/qradiolink/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/haaken/github-projects/gr-qradiolink/build/include/gnuradio/dsss/cmake_install.cmake")
+  include("/home/haaken/github-projects/authenticated-repeater-control/build/include/gnuradio/dsss/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/haaken/github-projects/gr-qradiolink/build/lib/cmake_install.cmake")
+  include("/home/haaken/github-projects/authenticated-repeater-control/build/lib/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/haaken/github-projects/gr-qradiolink/build/docs/cmake_install.cmake")
+  include("/home/haaken/github-projects/authenticated-repeater-control/build/docs/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/haaken/github-projects/gr-qradiolink/build/python/qradiolink/cmake_install.cmake")
+  include("/home/haaken/github-projects/authenticated-repeater-control/build/python/qradiolink/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/haaken/github-projects/gr-qradiolink/build/grc/cmake_install.cmake")
+  include("/home/haaken/github-projects/authenticated-repeater-control/build/grc/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/haaken/github-projects/gr-qradiolink/build/tests/cmake_install.cmake")
+  include("/home/haaken/github-projects/authenticated-repeater-control/build/tests/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/x86_64-linux-gnu/pkgconfig" TYPE FILE FILES "/home/haaken/github-projects/gr-qradiolink/build/gnuradio-qradiolink.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/x86_64-linux-gnu/pkgconfig" TYPE FILE FILES "/home/haaken/github-projects/authenticated-repeater-control/build/gnuradio-qradiolink.pc")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -89,5 +89,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/haaken/github-projects/gr-qradiolink/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/haaken/github-projects/authenticated-repeater-control/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

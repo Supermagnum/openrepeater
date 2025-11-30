@@ -19,7 +19,7 @@ class EcholinkChatModule(SvxlinkwrapperModule.SvxlinkwrapperModule):
         self.inChatMessage=False
         self.chatUser = ""
         return
-    
+
     def handleStdout(self,line):
         '''
         Every stdout message would call this function
@@ -29,7 +29,7 @@ class EcholinkChatModule(SvxlinkwrapperModule.SvxlinkwrapperModule):
         --- EchoLink chat message received from 4Z7GAI ---
         4Z7GAI>test
         '''
-        
+
         #Handle if we are already in a chat message
         if self.inChatMessage:
             self.SvxLink.debug(line)
@@ -40,17 +40,17 @@ class EcholinkChatModule(SvxlinkwrapperModule.SvxlinkwrapperModule):
             except:
                 pass
             self.inChatMessage = False
-        
+
         #Handle if we are not in a chat message
         if line.startswith("--- EchoLink chat message received from"):
             self.inChatMessage = True
-            self.chatUser = line.split("from ")[1]   
+            self.chatUser = line.split("from ")[1]
         return
-    
+
     def handleChatMessage(self,data):
         '''
         This function runs every time we get an echolink chat message
         Note you can check who sent the mesasge with self.chatUser
         '''
         return
-    
+

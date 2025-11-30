@@ -19,13 +19,14 @@ class AutoLinkLogics(SvxlinkwrapperModule.SvxlinkwrapperModule):
         self.CONNECT_COMMAND=self.getConfigVar("CONNECT_COMMAND")
         self.SECOND_LOGIC=self.getConfigVar("SECOND_LOGIC")
         return
-    
+
     def handleStdout(self,line):
         '''
         Every stdout message would call this function
         '''
-        
+
         if line.startswith("Starting logic: " + self.SECOND_LOGIC):
             self.SvxLink.sendToSvxLink(self.CONNECT_COMMAND)#Open echolink
-        
+
         return
+

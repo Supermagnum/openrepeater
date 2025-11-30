@@ -16,7 +16,7 @@ import sys
 
 # Import GNU Radio first to ensure hier_block2 and other base types are registered
 # This is required for pybind11 to recognize the base types when loading our bindings
-import gnuradio
+import gnuradio  # noqa: F401
 
 # Check if the bindings module is already loaded to avoid re-registration conflicts
 # This is critical: pybind11 types can only be registered once per Python process
@@ -48,7 +48,7 @@ elif _parent_loaded:
             _bindings_loaded = True
         else:
             # Try normal import
-            from .qradiolink_python import *
+            from .qradiolink_python import *  # noqa: F403  # noqa: F403, F405
 
             _bindings_loaded = True
     except (ImportError, RuntimeError, AttributeError):
@@ -56,7 +56,7 @@ elif _parent_loaded:
 else:
     # Module not loaded - try to load it
     try:
-        from .qradiolink_python import *
+        from .qradiolink_python import *  # noqa: F403
 
         _bindings_loaded = True
     except (ImportError, RuntimeError) as e:
@@ -76,10 +76,10 @@ else:
                 # Try fallback path
                 dirname, filename = os.path.split(os.path.abspath(__file__))
                 bindings_path = os.path.join(dirname, "bindings")
-                if bindings_path not in __path__:
-                    __path__.append(bindings_path)
+                if bindings_path not in __path__:  # noqa: F405
+                    __path__.append(bindings_path)  # noqa: F405
                 try:
-                    from .qradiolink_python import *
+                    from .qradiolink_python import *  # noqa: F403  # noqa: F403, F405
 
                     _bindings_loaded = True
                 except (ImportError, RuntimeError):
@@ -90,12 +90,13 @@ else:
             # Other ImportError - try fallback path
             dirname, filename = os.path.split(os.path.abspath(__file__))
             bindings_path = os.path.join(dirname, "bindings")
-            if bindings_path not in __path__:
-                __path__.append(bindings_path)
+            if bindings_path not in __path__:  # noqa: F405
+                __path__.append(bindings_path)  # noqa: F405
             try:
-                from .qradiolink_python import *
+                from .qradiolink_python import *  # noqa: F403  # noqa: F403, F405
 
                 _bindings_loaded = True
             except (ImportError, RuntimeError):
                 # If both fail, re-raise the original error
                 raise
+

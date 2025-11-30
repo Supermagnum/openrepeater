@@ -1,4 +1,4 @@
-# Install script for directory: /home/haaken/github-projects/gr-qradiolink/python/qradiolink
+# Install script for directory: /home/haaken/github-projects/authenticated-repeater-control/python/qradiolink
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -43,11 +43,11 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.12/dist-packages/gnuradio/qradiolink" TYPE FILE FILES "/home/haaken/github-projects/gr-qradiolink/python/qradiolink/__init__.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.12/dist-packages/gnuradio/qradiolink" TYPE FILE FILES "/home/haaken/github-projects/authenticated-repeater-control/python/qradiolink/__init__.py")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/haaken/github-projects/gr-qradiolink/build/python/qradiolink/bindings/cmake_install.cmake")
+  include("/home/haaken/github-projects/authenticated-repeater-control/build/python/qradiolink/bindings/cmake_install.cmake")
 endif()
 

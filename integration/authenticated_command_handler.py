@@ -416,7 +416,7 @@ def execute_svxlink_command_config(
     to parse and modify the SVXLink config file appropriately.
     """
     # config_file is reserved for future implementation
-    _config_file = config.get("svxlink_config", "/etc/svxlink/svxlink.conf")
+    _config_file = config.get("svxlink_config", "/etc/svxlink/svxlink.conf")  # noqa: F841
 
     try:
         # This is a placeholder - actual implementation would:
@@ -693,3 +693,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

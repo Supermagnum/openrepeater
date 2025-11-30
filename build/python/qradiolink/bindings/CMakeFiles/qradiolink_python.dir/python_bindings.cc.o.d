@@ -1,5 +1,5 @@
 python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/python_bindings.cc.o: \
- /home/haaken/github-projects/gr-qradiolink/python/qradiolink/bindings/python_bindings.cc \
+ /home/haaken/github-projects/authenticated-repeater-control/python/qradiolink/bindings/python_bindings.cc \
  /usr/include/stdc-predef.h /usr/include/pybind11/pybind11.h \
  /usr/include/pybind11/detail/class.h /usr/include/pybind11/attr.h \
  /usr/include/pybind11/detail/common.h /usr/include/python3.12/Python.h \

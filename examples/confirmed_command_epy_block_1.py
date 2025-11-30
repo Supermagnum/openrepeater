@@ -137,3 +137,4 @@ class blk(gr.sync_block):
             print(f"Nitrokey PIN Authenticator: Error: {e}")
             import traceback
             traceback.print_exc()
+

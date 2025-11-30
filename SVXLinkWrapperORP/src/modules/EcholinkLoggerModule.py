@@ -22,36 +22,36 @@ class dataControl:
         self.DATABASE_PATH=moduleConfigDict["database_path"]
         self.conn = sqlite3.connect(self.DATABASE_PATH)
         return
-        
+
     def insertQSO(self,ips,names,cs,state):
-        try:   
+        try:
             c = self.conn.cursor()
-            
+
             ip=""
             name=""
             if ips.has_key(cs):
                 ip =ips[cs]
             if names.has_key(cs):
                 name =names[cs]
-            
+
             # Insert a row of data
             sql = "insert into qso values (?,?,?,?,?,?)"
             variables = (cs,None,ip,buffer(name),state,str(time.time()))
-            
-            c.execute(sql,variables)    
+
+            c.execute(sql,variables)
             # Save (commit) the changes
             self.conn.commit()
         finally:
             c.close()
         return
-    
+
     def startQSO(self,cs,names,ips):
         #print (cs)
         #print(names)
         #print(ips)
         self.insertQSO(ips,names,cs,"enter")
         return
-    
+
     def endQSO(self,cs,names,ips):
         self.insertQSO(ips,names,cs,"exit")
         return
@@ -59,27 +59,27 @@ class dataControl:
 class EcholinkLoggerModule(SvxlinkwrapperModule):
     def __init__(self,SvxLink):
         SvxlinkwrapperModule.__init__(self,SvxLink)
-        
+
         #Dict of cs and the name from echolink
         self.csName={}
         self.csIP={}
         moduleConfigDict=self.getConfigFullDict()
         self.database = dataControl(moduleConfigDict)
         return
-    
+
     def handleStdout(self,line):
         '''
         Every stdout message would call this function
         '''
-        
+
         if line.endswith("EchoLink QSO state changed to CONNECTED\n"):
             station = line.split(QSO_CALLSIGN_SEPERATOR)[0]
             self.database.startQSO(station,self.csName,self.csIP)
-            
+
         if line.endswith("EchoLink QSO state changed to DISCONNECTED\n"):
             station = line.split(QSO_CALLSIGN_SEPERATOR)[0]
             self.database.endQSO(station,self.csName,self.csIP)
-        
+
         if line.startswith("Incoming EchoLink connection from"):
                 #Incoming EchoLink connection from 4Z7GAI (Guy) at 127.0.0.1
                 m = re.compile('Incoming EchoLink connection from (.*) \((.*)\) at (.*)\n').match(line)
@@ -90,3 +90,4 @@ class EcholinkLoggerModule(SvxlinkwrapperModule):
                 self.csIP[cs]=ip
                 return
         return
+

@@ -176,3 +176,4 @@ class ReplyFormatter:
             return "value", match.group(1)
 
         return "setting", "updated"
+

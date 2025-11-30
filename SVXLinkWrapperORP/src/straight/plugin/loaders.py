@@ -8,7 +8,7 @@ from importlib import import_module
 
 class ModuleLoader(object):
     """Performs the work of locating and loading straight plugins.
-    
+
     This looks for plugins in every location in the import path.
     """
 
@@ -28,13 +28,13 @@ class ModuleLoader(object):
                         pkg_init = os.path.join(namespace_path, possible, '__init__.py')
                         if not os.path.exists(pkg_init):
                             continue
-                        
+
                         base = possible
                     else:
                         base, ext = os.path.splitext(possible)
                         if base == '__init__' or ext != '.py':
                             continue
-                    
+
                     if base not in already_seen:
                         already_seen.add(base)
                         yield os.path.join(namespace, possible)
@@ -67,7 +67,7 @@ class ModuleLoader(object):
 class ObjectLoader(object):
     """Loads classes or objects out of modules in a namespace, based on a
     provided criteria.
-   
+
     The load() method returns all objects exported by the module.
     """
 
@@ -82,7 +82,7 @@ class ObjectLoader(object):
             for attr_name in dir(module):
                 if not attr_name.startswith('_'):
                     objects.append(getattr(module, attr_name))
-    
+
         return objects
 
 

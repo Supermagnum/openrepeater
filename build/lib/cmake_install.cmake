@@ -1,4 +1,4 @@
-# Install script for directory: /home/haaken/github-projects/gr-qradiolink/lib
+# Install script for directory: /home/haaken/github-projects/authenticated-repeater-control/lib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -17,7 +17,7 @@ import os
 import struct
 import sys
 import time
-from typing import Dict, List, Tuple
+# typing imports removed - unused
 
 try:
     from cryptography.hazmat.backends import default_backend
@@ -31,8 +31,8 @@ except ImportError:
     sys.exit(1)
 
 try:
-    from scapy.all import IP, UDP, Raw
-    from scapy.packet import Packet
+    from scapy.all import IP, UDP, Raw  # noqa: F401
+    from scapy.packet import Packet  # noqa: F401
 
     SCAPY_AVAILABLE = True
 except ImportError:
@@ -40,7 +40,7 @@ except ImportError:
     print("WARNING: Scapy not available. Install with: pip3 install scapy")
 
 try:
-    import zmq
+    import zmq  # noqa: F401
 
     ZMQ_AVAILABLE = True
 except ImportError:
@@ -577,9 +577,9 @@ def test_ax25_frames():
 
     # Test 9: Frame matching (timestamp matching for Frame 1 + Frame 2)
     try:
-        frame1 = create_command_frame(timestamp, callsign, command, valid_fcs=True)
+        _frame1 = create_command_frame(timestamp, callsign, command, valid_fcs=True)
         sig, _, _ = generate_valid_signature(b"TEST")
-        frame2 = create_signature_frame(timestamp, callsign, sig, valid_fcs=True)
+        _frame2 = create_signature_frame(timestamp, callsign, sig, valid_fcs=True)
         # Both frames should have same timestamp in info field
         test_result("AX.25 frame: timestamp matching", True, "Frames created with same timestamp")
     except Exception as e:
@@ -587,8 +587,8 @@ def test_ax25_frames():
 
     # Test 10: Frame with mismatched timestamp
     try:
-        frame1 = create_command_frame(timestamp, callsign, command, valid_fcs=True)
-        frame2 = create_signature_frame(timestamp + 1000, callsign, sig, valid_fcs=True)
+        _frame1 = create_command_frame(timestamp, callsign, command, valid_fcs=True)
+        _frame2 = create_signature_frame(timestamp + 1000, callsign, sig, valid_fcs=True)
         # Timestamps don't match
         test_result("AX.25 frame: mismatched timestamp", True, "Frames have different timestamps")
     except Exception as e:

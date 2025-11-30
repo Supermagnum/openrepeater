@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/haaken/github-projects/gr-qradiolink
+CMAKE_SOURCE_DIR = /home/haaken/github-projects/authenticated-repeater-control
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/haaken/github-projects/gr-qradiolink/build
+CMAKE_BINARY_DIR = /home/haaken/github-projects/authenticated-repeater-control/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,14 +142,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/haaken/github-projects/gr-qradiolink/build/CMakeFiles /home/haaken/github-projects/gr-qradiolink/build/tests//CMakeFiles/progress.marks
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/haaken/github-projects/gr-qradiolink/build/CMakeFiles 0
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles /home/haaken/github-projects/authenticated-repeater-control/build/tests//CMakeFiles/progress.marks
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/haaken/github-projects/authenticated-repeater-control/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/clean
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/clean
 .PHONY : clean
 
 # The main clean target
@@ -158,22 +158,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/preinstall
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/preinstall
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 tests/CMakeFiles/Experimental.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/Experimental.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/Experimental.dir/rule
 .PHONY : tests/CMakeFiles/Experimental.dir/rule
 
 # Convenience name for target.
@@ -182,12 +182,12 @@ Experimental: tests/CMakeFiles/Experimental.dir/rule
 
 # fast build rule for target.
 Experimental/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/Experimental.dir/build.make tests/CMakeFiles/Experimental.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/Experimental.dir/build.make tests/CMakeFiles/Experimental.dir/build
 .PHONY : Experimental/fast
 
 # Convenience name for target.
 tests/CMakeFiles/Nightly.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/Nightly.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/Nightly.dir/rule
 .PHONY : tests/CMakeFiles/Nightly.dir/rule
 
 # Convenience name for target.
@@ -196,12 +196,12 @@ Nightly: tests/CMakeFiles/Nightly.dir/rule
 
 # fast build rule for target.
 Nightly/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/Nightly.dir/build.make tests/CMakeFiles/Nightly.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/Nightly.dir/build.make tests/CMakeFiles/Nightly.dir/build
 .PHONY : Nightly/fast
 
 # Convenience name for target.
 tests/CMakeFiles/Continuous.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/Continuous.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/Continuous.dir/rule
 .PHONY : tests/CMakeFiles/Continuous.dir/rule
 
 # Convenience name for target.
@@ -210,12 +210,12 @@ Continuous: tests/CMakeFiles/Continuous.dir/rule
 
 # fast build rule for target.
 Continuous/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/Continuous.dir/build.make tests/CMakeFiles/Continuous.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/Continuous.dir/build.make tests/CMakeFiles/Continuous.dir/build
 .PHONY : Continuous/fast
 
 # Convenience name for target.
 tests/CMakeFiles/NightlyMemoryCheck.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/NightlyMemoryCheck.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/NightlyMemoryCheck.dir/rule
 .PHONY : tests/CMakeFiles/NightlyMemoryCheck.dir/rule
 
 # Convenience name for target.
@@ -224,12 +224,12 @@ NightlyMemoryCheck: tests/CMakeFiles/NightlyMemoryCheck.dir/rule
 
 # fast build rule for target.
 NightlyMemoryCheck/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyMemoryCheck.dir/build.make tests/CMakeFiles/NightlyMemoryCheck.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyMemoryCheck.dir/build.make tests/CMakeFiles/NightlyMemoryCheck.dir/build
 .PHONY : NightlyMemoryCheck/fast
 
 # Convenience name for target.
 tests/CMakeFiles/NightlyStart.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/NightlyStart.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/NightlyStart.dir/rule
 .PHONY : tests/CMakeFiles/NightlyStart.dir/rule
 
 # Convenience name for target.
@@ -238,12 +238,12 @@ NightlyStart: tests/CMakeFiles/NightlyStart.dir/rule
 
 # fast build rule for target.
 NightlyStart/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyStart.dir/build.make tests/CMakeFiles/NightlyStart.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyStart.dir/build.make tests/CMakeFiles/NightlyStart.dir/build
 .PHONY : NightlyStart/fast
 
 # Convenience name for target.
 tests/CMakeFiles/NightlyUpdate.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/NightlyUpdate.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/NightlyUpdate.dir/rule
 .PHONY : tests/CMakeFiles/NightlyUpdate.dir/rule
 
 # Convenience name for target.
@@ -252,12 +252,12 @@ NightlyUpdate: tests/CMakeFiles/NightlyUpdate.dir/rule
 
 # fast build rule for target.
 NightlyUpdate/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyUpdate.dir/build.make tests/CMakeFiles/NightlyUpdate.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyUpdate.dir/build.make tests/CMakeFiles/NightlyUpdate.dir/build
 .PHONY : NightlyUpdate/fast
 
 # Convenience name for target.
 tests/CMakeFiles/NightlyConfigure.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/NightlyConfigure.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/NightlyConfigure.dir/rule
 .PHONY : tests/CMakeFiles/NightlyConfigure.dir/rule
 
 # Convenience name for target.
@@ -266,12 +266,12 @@ NightlyConfigure: tests/CMakeFiles/NightlyConfigure.dir/rule
 
 # fast build rule for target.
 NightlyConfigure/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyConfigure.dir/build.make tests/CMakeFiles/NightlyConfigure.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyConfigure.dir/build.make tests/CMakeFiles/NightlyConfigure.dir/build
 .PHONY : NightlyConfigure/fast
 
 # Convenience name for target.
 tests/CMakeFiles/NightlyBuild.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/NightlyBuild.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/NightlyBuild.dir/rule
 .PHONY : tests/CMakeFiles/NightlyBuild.dir/rule
 
 # Convenience name for target.
@@ -280,12 +280,12 @@ NightlyBuild: tests/CMakeFiles/NightlyBuild.dir/rule
 
 # fast build rule for target.
 NightlyBuild/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyBuild.dir/build.make tests/CMakeFiles/NightlyBuild.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyBuild.dir/build.make tests/CMakeFiles/NightlyBuild.dir/build
 .PHONY : NightlyBuild/fast
 
 # Convenience name for target.
 tests/CMakeFiles/NightlyTest.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/NightlyTest.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/NightlyTest.dir/rule
 .PHONY : tests/CMakeFiles/NightlyTest.dir/rule
 
 # Convenience name for target.
@@ -294,12 +294,12 @@ NightlyTest: tests/CMakeFiles/NightlyTest.dir/rule
 
 # fast build rule for target.
 NightlyTest/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyTest.dir/build.make tests/CMakeFiles/NightlyTest.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyTest.dir/build.make tests/CMakeFiles/NightlyTest.dir/build
 .PHONY : NightlyTest/fast
 
 # Convenience name for target.
 tests/CMakeFiles/NightlyCoverage.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/NightlyCoverage.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/NightlyCoverage.dir/rule
 .PHONY : tests/CMakeFiles/NightlyCoverage.dir/rule
 
 # Convenience name for target.
@@ -308,12 +308,12 @@ NightlyCoverage: tests/CMakeFiles/NightlyCoverage.dir/rule
 
 # fast build rule for target.
 NightlyCoverage/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyCoverage.dir/build.make tests/CMakeFiles/NightlyCoverage.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyCoverage.dir/build.make tests/CMakeFiles/NightlyCoverage.dir/build
 .PHONY : NightlyCoverage/fast
 
 # Convenience name for target.
 tests/CMakeFiles/NightlyMemCheck.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/NightlyMemCheck.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/NightlyMemCheck.dir/rule
 .PHONY : tests/CMakeFiles/NightlyMemCheck.dir/rule
 
 # Convenience name for target.
@@ -322,12 +322,12 @@ NightlyMemCheck: tests/CMakeFiles/NightlyMemCheck.dir/rule
 
 # fast build rule for target.
 NightlyMemCheck/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyMemCheck.dir/build.make tests/CMakeFiles/NightlyMemCheck.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyMemCheck.dir/build.make tests/CMakeFiles/NightlyMemCheck.dir/build
 .PHONY : NightlyMemCheck/fast
 
 # Convenience name for target.
 tests/CMakeFiles/NightlySubmit.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/NightlySubmit.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/NightlySubmit.dir/rule
 .PHONY : tests/CMakeFiles/NightlySubmit.dir/rule
 
 # Convenience name for target.
@@ -336,12 +336,12 @@ NightlySubmit: tests/CMakeFiles/NightlySubmit.dir/rule
 
 # fast build rule for target.
 NightlySubmit/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlySubmit.dir/build.make tests/CMakeFiles/NightlySubmit.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlySubmit.dir/build.make tests/CMakeFiles/NightlySubmit.dir/build
 .PHONY : NightlySubmit/fast
 
 # Convenience name for target.
 tests/CMakeFiles/ExperimentalStart.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ExperimentalStart.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ExperimentalStart.dir/rule
 .PHONY : tests/CMakeFiles/ExperimentalStart.dir/rule
 
 # Convenience name for target.
@@ -350,12 +350,12 @@ ExperimentalStart: tests/CMakeFiles/ExperimentalStart.dir/rule
 
 # fast build rule for target.
 ExperimentalStart/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalStart.dir/build.make tests/CMakeFiles/ExperimentalStart.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalStart.dir/build.make tests/CMakeFiles/ExperimentalStart.dir/build
 .PHONY : ExperimentalStart/fast
 
 # Convenience name for target.
 tests/CMakeFiles/ExperimentalUpdate.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ExperimentalUpdate.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ExperimentalUpdate.dir/rule
 .PHONY : tests/CMakeFiles/ExperimentalUpdate.dir/rule
 
 # Convenience name for target.
@@ -364,12 +364,12 @@ ExperimentalUpdate: tests/CMakeFiles/ExperimentalUpdate.dir/rule
 
 # fast build rule for target.
 ExperimentalUpdate/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalUpdate.dir/build.make tests/CMakeFiles/ExperimentalUpdate.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalUpdate.dir/build.make tests/CMakeFiles/ExperimentalUpdate.dir/build
 .PHONY : ExperimentalUpdate/fast
 
 # Convenience name for target.
 tests/CMakeFiles/ExperimentalConfigure.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ExperimentalConfigure.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ExperimentalConfigure.dir/rule
 .PHONY : tests/CMakeFiles/ExperimentalConfigure.dir/rule
 
 # Convenience name for target.
@@ -378,12 +378,12 @@ ExperimentalConfigure: tests/CMakeFiles/ExperimentalConfigure.dir/rule
 
 # fast build rule for target.
 ExperimentalConfigure/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalConfigure.dir/build.make tests/CMakeFiles/ExperimentalConfigure.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalConfigure.dir/build.make tests/CMakeFiles/ExperimentalConfigure.dir/build
 .PHONY : ExperimentalConfigure/fast
 
 # Convenience name for target.
 tests/CMakeFiles/ExperimentalBuild.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ExperimentalBuild.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ExperimentalBuild.dir/rule
 .PHONY : tests/CMakeFiles/ExperimentalBuild.dir/rule
 
 # Convenience name for target.
@@ -392,12 +392,12 @@ ExperimentalBuild: tests/CMakeFiles/ExperimentalBuild.dir/rule
 
 # fast build rule for target.
 ExperimentalBuild/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalBuild.dir/build.make tests/CMakeFiles/ExperimentalBuild.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalBuild.dir/build.make tests/CMakeFiles/ExperimentalBuild.dir/build
 .PHONY : ExperimentalBuild/fast
 
 # Convenience name for target.
 tests/CMakeFiles/ExperimentalTest.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ExperimentalTest.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ExperimentalTest.dir/rule
 .PHONY : tests/CMakeFiles/ExperimentalTest.dir/rule
 
 # Convenience name for target.
@@ -406,12 +406,12 @@ ExperimentalTest: tests/CMakeFiles/ExperimentalTest.dir/rule
 
 # fast build rule for target.
 ExperimentalTest/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalTest.dir/build.make tests/CMakeFiles/ExperimentalTest.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalTest.dir/build.make tests/CMakeFiles/ExperimentalTest.dir/build
 .PHONY : ExperimentalTest/fast
 
 # Convenience name for target.
 tests/CMakeFiles/ExperimentalCoverage.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ExperimentalCoverage.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ExperimentalCoverage.dir/rule
 .PHONY : tests/CMakeFiles/ExperimentalCoverage.dir/rule
 
 # Convenience name for target.
@@ -420,12 +420,12 @@ ExperimentalCoverage: tests/CMakeFiles/ExperimentalCoverage.dir/rule
 
 # fast build rule for target.
 ExperimentalCoverage/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalCoverage.dir/build.make tests/CMakeFiles/ExperimentalCoverage.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalCoverage.dir/build.make tests/CMakeFiles/ExperimentalCoverage.dir/build
 .PHONY : ExperimentalCoverage/fast
 
 # Convenience name for target.
 tests/CMakeFiles/ExperimentalMemCheck.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ExperimentalMemCheck.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ExperimentalMemCheck.dir/rule
 .PHONY : tests/CMakeFiles/ExperimentalMemCheck.dir/rule
 
 # Convenience name for target.
@@ -434,12 +434,12 @@ ExperimentalMemCheck: tests/CMakeFiles/ExperimentalMemCheck.dir/rule
 
 # fast build rule for target.
 ExperimentalMemCheck/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalMemCheck.dir/build.make tests/CMakeFiles/ExperimentalMemCheck.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalMemCheck.dir/build.make tests/CMakeFiles/ExperimentalMemCheck.dir/build
 .PHONY : ExperimentalMemCheck/fast
 
 # Convenience name for target.
 tests/CMakeFiles/ExperimentalSubmit.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ExperimentalSubmit.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ExperimentalSubmit.dir/rule
 .PHONY : tests/CMakeFiles/ExperimentalSubmit.dir/rule
 
 # Convenience name for target.
@@ -448,12 +448,12 @@ ExperimentalSubmit: tests/CMakeFiles/ExperimentalSubmit.dir/rule
 
 # fast build rule for target.
 ExperimentalSubmit/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalSubmit.dir/build.make tests/CMakeFiles/ExperimentalSubmit.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalSubmit.dir/build.make tests/CMakeFiles/ExperimentalSubmit.dir/build
 .PHONY : ExperimentalSubmit/fast
 
 # Convenience name for target.
 tests/CMakeFiles/ContinuousStart.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ContinuousStart.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ContinuousStart.dir/rule
 .PHONY : tests/CMakeFiles/ContinuousStart.dir/rule
 
 # Convenience name for target.
@@ -462,12 +462,12 @@ ContinuousStart: tests/CMakeFiles/ContinuousStart.dir/rule
 
 # fast build rule for target.
 ContinuousStart/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousStart.dir/build.make tests/CMakeFiles/ContinuousStart.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousStart.dir/build.make tests/CMakeFiles/ContinuousStart.dir/build
 .PHONY : ContinuousStart/fast
 
 # Convenience name for target.
 tests/CMakeFiles/ContinuousUpdate.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ContinuousUpdate.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ContinuousUpdate.dir/rule
 .PHONY : tests/CMakeFiles/ContinuousUpdate.dir/rule
 
 # Convenience name for target.
@@ -476,12 +476,12 @@ ContinuousUpdate: tests/CMakeFiles/ContinuousUpdate.dir/rule
 
 # fast build rule for target.
 ContinuousUpdate/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousUpdate.dir/build.make tests/CMakeFiles/ContinuousUpdate.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousUpdate.dir/build.make tests/CMakeFiles/ContinuousUpdate.dir/build
 .PHONY : ContinuousUpdate/fast
 
 # Convenience name for target.
 tests/CMakeFiles/ContinuousConfigure.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ContinuousConfigure.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ContinuousConfigure.dir/rule
 .PHONY : tests/CMakeFiles/ContinuousConfigure.dir/rule
 
 # Convenience name for target.
@@ -490,12 +490,12 @@ ContinuousConfigure: tests/CMakeFiles/ContinuousConfigure.dir/rule
 
 # fast build rule for target.
 ContinuousConfigure/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousConfigure.dir/build.make tests/CMakeFiles/ContinuousConfigure.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousConfigure.dir/build.make tests/CMakeFiles/ContinuousConfigure.dir/build
 .PHONY : ContinuousConfigure/fast
 
 # Convenience name for target.
 tests/CMakeFiles/ContinuousBuild.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ContinuousBuild.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ContinuousBuild.dir/rule
 .PHONY : tests/CMakeFiles/ContinuousBuild.dir/rule
 
 # Convenience name for target.
@@ -504,12 +504,12 @@ ContinuousBuild: tests/CMakeFiles/ContinuousBuild.dir/rule
 
 # fast build rule for target.
 ContinuousBuild/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousBuild.dir/build.make tests/CMakeFiles/ContinuousBuild.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousBuild.dir/build.make tests/CMakeFiles/ContinuousBuild.dir/build
 .PHONY : ContinuousBuild/fast
 
 # Convenience name for target.
 tests/CMakeFiles/ContinuousTest.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ContinuousTest.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ContinuousTest.dir/rule
 .PHONY : tests/CMakeFiles/ContinuousTest.dir/rule
 
 # Convenience name for target.
@@ -518,12 +518,12 @@ ContinuousTest: tests/CMakeFiles/ContinuousTest.dir/rule
 
 # fast build rule for target.
 ContinuousTest/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousTest.dir/build.make tests/CMakeFiles/ContinuousTest.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousTest.dir/build.make tests/CMakeFiles/ContinuousTest.dir/build
 .PHONY : ContinuousTest/fast
 
 # Convenience name for target.
 tests/CMakeFiles/ContinuousCoverage.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ContinuousCoverage.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ContinuousCoverage.dir/rule
 .PHONY : tests/CMakeFiles/ContinuousCoverage.dir/rule
 
 # Convenience name for target.
@@ -532,12 +532,12 @@ ContinuousCoverage: tests/CMakeFiles/ContinuousCoverage.dir/rule
 
 # fast build rule for target.
 ContinuousCoverage/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousCoverage.dir/build.make tests/CMakeFiles/ContinuousCoverage.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousCoverage.dir/build.make tests/CMakeFiles/ContinuousCoverage.dir/build
 .PHONY : ContinuousCoverage/fast
 
 # Convenience name for target.
 tests/CMakeFiles/ContinuousMemCheck.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ContinuousMemCheck.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ContinuousMemCheck.dir/rule
 .PHONY : tests/CMakeFiles/ContinuousMemCheck.dir/rule
 
 # Convenience name for target.
@@ -546,12 +546,12 @@ ContinuousMemCheck: tests/CMakeFiles/ContinuousMemCheck.dir/rule
 
 # fast build rule for target.
 ContinuousMemCheck/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousMemCheck.dir/build.make tests/CMakeFiles/ContinuousMemCheck.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousMemCheck.dir/build.make tests/CMakeFiles/ContinuousMemCheck.dir/build
 .PHONY : ContinuousMemCheck/fast
 
 # Convenience name for target.
 tests/CMakeFiles/ContinuousSubmit.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ContinuousSubmit.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ContinuousSubmit.dir/rule
 .PHONY : tests/CMakeFiles/ContinuousSubmit.dir/rule
 
 # Convenience name for target.
@@ -560,12 +560,12 @@ ContinuousSubmit: tests/CMakeFiles/ContinuousSubmit.dir/rule
 
 # fast build rule for target.
 ContinuousSubmit/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousSubmit.dir/build.make tests/CMakeFiles/ContinuousSubmit.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousSubmit.dir/build.make tests/CMakeFiles/ContinuousSubmit.dir/build
 .PHONY : ContinuousSubmit/fast
 
 # Convenience name for target.
 tests/CMakeFiles/test_mod_2fsk.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_mod_2fsk.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_mod_2fsk.dir/rule
 .PHONY : tests/CMakeFiles/test_mod_2fsk.dir/rule
 
 # Convenience name for target.
@@ -574,12 +574,12 @@ test_mod_2fsk: tests/CMakeFiles/test_mod_2fsk.dir/rule
 
 # fast build rule for target.
 test_mod_2fsk/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_2fsk.dir/build.make tests/CMakeFiles/test_mod_2fsk.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_2fsk.dir/build.make tests/CMakeFiles/test_mod_2fsk.dir/build
 .PHONY : test_mod_2fsk/fast
 
 # Convenience name for target.
 tests/CMakeFiles/test_mod_4fsk.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_mod_4fsk.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_mod_4fsk.dir/rule
 .PHONY : tests/CMakeFiles/test_mod_4fsk.dir/rule
 
 # Convenience name for target.
@@ -588,12 +588,12 @@ test_mod_4fsk: tests/CMakeFiles/test_mod_4fsk.dir/rule
 
 # fast build rule for target.
 test_mod_4fsk/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_4fsk.dir/build.make tests/CMakeFiles/test_mod_4fsk.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_4fsk.dir/build.make tests/CMakeFiles/test_mod_4fsk.dir/build
 .PHONY : test_mod_4fsk/fast
 
 # Convenience name for target.
 tests/CMakeFiles/test_mod_am.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_mod_am.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_mod_am.dir/rule
 .PHONY : tests/CMakeFiles/test_mod_am.dir/rule
 
 # Convenience name for target.
@@ -602,12 +602,12 @@ test_mod_am: tests/CMakeFiles/test_mod_am.dir/rule
 
 # fast build rule for target.
 test_mod_am/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_am.dir/build.make tests/CMakeFiles/test_mod_am.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_am.dir/build.make tests/CMakeFiles/test_mod_am.dir/build
 .PHONY : test_mod_am/fast
 
 # Convenience name for target.
 tests/CMakeFiles/test_mod_gmsk.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_mod_gmsk.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_mod_gmsk.dir/rule
 .PHONY : tests/CMakeFiles/test_mod_gmsk.dir/rule
 
 # Convenience name for target.
@@ -616,12 +616,12 @@ test_mod_gmsk: tests/CMakeFiles/test_mod_gmsk.dir/rule
 
 # fast build rule for target.
 test_mod_gmsk/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_gmsk.dir/build.make tests/CMakeFiles/test_mod_gmsk.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_gmsk.dir/build.make tests/CMakeFiles/test_mod_gmsk.dir/build
 .PHONY : test_mod_gmsk/fast
 
 # Convenience name for target.
 tests/CMakeFiles/test_mod_bpsk.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_mod_bpsk.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_mod_bpsk.dir/rule
 .PHONY : tests/CMakeFiles/test_mod_bpsk.dir/rule
 
 # Convenience name for target.
@@ -630,12 +630,12 @@ test_mod_bpsk: tests/CMakeFiles/test_mod_bpsk.dir/rule
 
 # fast build rule for target.
 test_mod_bpsk/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_bpsk.dir/build.make tests/CMakeFiles/test_mod_bpsk.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_bpsk.dir/build.make tests/CMakeFiles/test_mod_bpsk.dir/build
 .PHONY : test_mod_bpsk/fast
 
 # Convenience name for target.
 tests/CMakeFiles/test_mod_mmdvm.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_mod_mmdvm.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_mod_mmdvm.dir/rule
 .PHONY : tests/CMakeFiles/test_mod_mmdvm.dir/rule
 
 # Convenience name for target.
@@ -644,12 +644,12 @@ test_mod_mmdvm: tests/CMakeFiles/test_mod_mmdvm.dir/rule
 
 # fast build rule for target.
 test_mod_mmdvm/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_mmdvm.dir/build.make tests/CMakeFiles/test_mod_mmdvm.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_mmdvm.dir/build.make tests/CMakeFiles/test_mod_mmdvm.dir/build
 .PHONY : test_mod_mmdvm/fast
 
 # Convenience name for target.
 tests/CMakeFiles/test_mod_freedv.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_mod_freedv.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_mod_freedv.dir/rule
 .PHONY : tests/CMakeFiles/test_mod_freedv.dir/rule
 
 # Convenience name for target.
@@ -658,12 +658,12 @@ test_mod_freedv: tests/CMakeFiles/test_mod_freedv.dir/rule
 
 # fast build rule for target.
 test_mod_freedv/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_freedv.dir/build.make tests/CMakeFiles/test_mod_freedv.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_freedv.dir/build.make tests/CMakeFiles/test_mod_freedv.dir/build
 .PHONY : test_mod_freedv/fast
 
 # Convenience name for target.
 tests/CMakeFiles/qradiolink_test_mod_ssb.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_mod_ssb.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_mod_ssb.dir/rule
 .PHONY : tests/CMakeFiles/qradiolink_test_mod_ssb.dir/rule
 
 # Convenience name for target.
@@ -672,12 +672,12 @@ qradiolink_test_mod_ssb: tests/CMakeFiles/qradiolink_test_mod_ssb.dir/rule
 
 # fast build rule for target.
 qradiolink_test_mod_ssb/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_ssb.dir/build.make tests/CMakeFiles/qradiolink_test_mod_ssb.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_ssb.dir/build.make tests/CMakeFiles/qradiolink_test_mod_ssb.dir/build
 .PHONY : qradiolink_test_mod_ssb/fast
 
 # Convenience name for target.
 tests/CMakeFiles/qradiolink_test_mod_qpsk.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_mod_qpsk.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_mod_qpsk.dir/rule
 .PHONY : tests/CMakeFiles/qradiolink_test_mod_qpsk.dir/rule
 
 # Convenience name for target.
@@ -686,12 +686,12 @@ qradiolink_test_mod_qpsk: tests/CMakeFiles/qradiolink_test_mod_qpsk.dir/rule
 
 # fast build rule for target.
 qradiolink_test_mod_qpsk/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_qpsk.dir/build.make tests/CMakeFiles/qradiolink_test_mod_qpsk.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_qpsk.dir/build.make tests/CMakeFiles/qradiolink_test_mod_qpsk.dir/build
 .PHONY : qradiolink_test_mod_qpsk/fast
 
 # Convenience name for target.
 tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/rule
 .PHONY : tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/rule
 
 # Convenience name for target.
@@ -700,12 +700,12 @@ qradiolink_test_mod_nbfm: tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/rule
 
 # fast build rule for target.
 qradiolink_test_mod_nbfm/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/build.make tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/build.make tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/build
 .PHONY : qradiolink_test_mod_nbfm/fast
 
 # Convenience name for target.
 tests/CMakeFiles/qradiolink_test_mod_dsss.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_mod_dsss.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_mod_dsss.dir/rule
 .PHONY : tests/CMakeFiles/qradiolink_test_mod_dsss.dir/rule
 
 # Convenience name for target.
@@ -714,12 +714,12 @@ qradiolink_test_mod_dsss: tests/CMakeFiles/qradiolink_test_mod_dsss.dir/rule
 
 # fast build rule for target.
 qradiolink_test_mod_dsss/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_dsss.dir/build.make tests/CMakeFiles/qradiolink_test_mod_dsss.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_dsss.dir/build.make tests/CMakeFiles/qradiolink_test_mod_dsss.dir/build
 .PHONY : qradiolink_test_mod_dsss/fast
 
 # Convenience name for target.
 tests/CMakeFiles/qradiolink_test_demod_2fsk.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_2fsk.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_2fsk.dir/rule
 .PHONY : tests/CMakeFiles/qradiolink_test_demod_2fsk.dir/rule
 
 # Convenience name for target.
@@ -728,12 +728,12 @@ qradiolink_test_demod_2fsk: tests/CMakeFiles/qradiolink_test_demod_2fsk.dir/rule
 
 # fast build rule for target.
 qradiolink_test_demod_2fsk/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_2fsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_2fsk.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_2fsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_2fsk.dir/build
 .PHONY : qradiolink_test_demod_2fsk/fast
 
 # Convenience name for target.
 tests/CMakeFiles/qradiolink_test_demod_am.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_am.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_am.dir/rule
 .PHONY : tests/CMakeFiles/qradiolink_test_demod_am.dir/rule
 
 # Convenience name for target.
@@ -742,12 +742,12 @@ qradiolink_test_demod_am: tests/CMakeFiles/qradiolink_test_demod_am.dir/rule
 
 # fast build rule for target.
 qradiolink_test_demod_am/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_am.dir/build.make tests/CMakeFiles/qradiolink_test_demod_am.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_am.dir/build.make tests/CMakeFiles/qradiolink_test_demod_am.dir/build
 .PHONY : qradiolink_test_demod_am/fast
 
 # Convenience name for target.
 tests/CMakeFiles/qradiolink_test_demod_ssb.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_ssb.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_ssb.dir/rule
 .PHONY : tests/CMakeFiles/qradiolink_test_demod_ssb.dir/rule
 
 # Convenience name for target.
@@ -756,12 +756,12 @@ qradiolink_test_demod_ssb: tests/CMakeFiles/qradiolink_test_demod_ssb.dir/rule
 
 # fast build rule for target.
 qradiolink_test_demod_ssb/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_ssb.dir/build.make tests/CMakeFiles/qradiolink_test_demod_ssb.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_ssb.dir/build.make tests/CMakeFiles/qradiolink_test_demod_ssb.dir/build
 .PHONY : qradiolink_test_demod_ssb/fast
 
 # Convenience name for target.
 tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/rule
 .PHONY : tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/rule
 
 # Convenience name for target.
@@ -770,12 +770,12 @@ qradiolink_test_demod_wbfm: tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/rule
 
 # fast build rule for target.
 qradiolink_test_demod_wbfm/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/build.make tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/build.make tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/build
 .PHONY : qradiolink_test_demod_wbfm/fast
 
 # Convenience name for target.
 tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/rule
 .PHONY : tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/rule
 
 # Convenience name for target.
@@ -784,12 +784,12 @@ qradiolink_test_demod_nbfm: tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/rule
 
 # fast build rule for target.
 qradiolink_test_demod_nbfm/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/build.make tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/build.make tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/build
 .PHONY : qradiolink_test_demod_nbfm/fast
 
 # Convenience name for target.
 tests/CMakeFiles/qradiolink_test_demod_bpsk.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_bpsk.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_bpsk.dir/rule
 .PHONY : tests/CMakeFiles/qradiolink_test_demod_bpsk.dir/rule
 
 # Convenience name for target.
@@ -798,12 +798,12 @@ qradiolink_test_demod_bpsk: tests/CMakeFiles/qradiolink_test_demod_bpsk.dir/rule
 
 # fast build rule for target.
 qradiolink_test_demod_bpsk/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_bpsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_bpsk.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_bpsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_bpsk.dir/build
 .PHONY : qradiolink_test_demod_bpsk/fast
 
 # Convenience name for target.
 tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/rule
 .PHONY : tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/rule
 
 # Convenience name for target.
@@ -812,12 +812,12 @@ qradiolink_test_demod_qpsk: tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/rule
 
 # fast build rule for target.
 qradiolink_test_demod_qpsk/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/build
 .PHONY : qradiolink_test_demod_qpsk/fast
 
 # Convenience name for target.
 tests/CMakeFiles/qradiolink_test_demod_gmsk.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_gmsk.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_gmsk.dir/rule
 .PHONY : tests/CMakeFiles/qradiolink_test_demod_gmsk.dir/rule
 
 # Convenience name for target.
@@ -826,12 +826,12 @@ qradiolink_test_demod_gmsk: tests/CMakeFiles/qradiolink_test_demod_gmsk.dir/rule
 
 # fast build rule for target.
 qradiolink_test_demod_gmsk/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_gmsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_gmsk.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_gmsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_gmsk.dir/build
 .PHONY : qradiolink_test_demod_gmsk/fast
 
 # Convenience name for target.
 tests/CMakeFiles/qradiolink_test_demod_4fsk.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_4fsk.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_4fsk.dir/rule
 .PHONY : tests/CMakeFiles/qradiolink_test_demod_4fsk.dir/rule
 
 # Convenience name for target.
@@ -840,12 +840,12 @@ qradiolink_test_demod_4fsk: tests/CMakeFiles/qradiolink_test_demod_4fsk.dir/rule
 
 # fast build rule for target.
 qradiolink_test_demod_4fsk/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_4fsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_4fsk.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_4fsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_4fsk.dir/build
 .PHONY : qradiolink_test_demod_4fsk/fast
 
 # Convenience name for target.
 tests/CMakeFiles/qradiolink_test_demod_dsss.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_dsss.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_dsss.dir/rule
 .PHONY : tests/CMakeFiles/qradiolink_test_demod_dsss.dir/rule
 
 # Convenience name for target.
@@ -854,12 +854,12 @@ qradiolink_test_demod_dsss: tests/CMakeFiles/qradiolink_test_demod_dsss.dir/rule
 
 # fast build rule for target.
 qradiolink_test_demod_dsss/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_dsss.dir/build.make tests/CMakeFiles/qradiolink_test_demod_dsss.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_dsss.dir/build.make tests/CMakeFiles/qradiolink_test_demod_dsss.dir/build
 .PHONY : qradiolink_test_demod_dsss/fast
 
 # Convenience name for target.
 tests/CMakeFiles/qradiolink_test_demod_m17.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_m17.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_m17.dir/rule
 .PHONY : tests/CMakeFiles/qradiolink_test_demod_m17.dir/rule
 
 # Convenience name for target.
@@ -868,12 +868,12 @@ qradiolink_test_demod_m17: tests/CMakeFiles/qradiolink_test_demod_m17.dir/rule
 
 # fast build rule for target.
 qradiolink_test_demod_m17/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_m17.dir/build.make tests/CMakeFiles/qradiolink_test_demod_m17.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_m17.dir/build.make tests/CMakeFiles/qradiolink_test_demod_m17.dir/build
 .PHONY : qradiolink_test_demod_m17/fast
 
 # Convenience name for target.
 tests/CMakeFiles/qradiolink_test_demod_dmr.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_dmr.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_dmr.dir/rule
 .PHONY : tests/CMakeFiles/qradiolink_test_demod_dmr.dir/rule
 
 # Convenience name for target.
@@ -882,12 +882,12 @@ qradiolink_test_demod_dmr: tests/CMakeFiles/qradiolink_test_demod_dmr.dir/rule
 
 # fast build rule for target.
 qradiolink_test_demod_dmr/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_dmr.dir/build.make tests/CMakeFiles/qradiolink_test_demod_dmr.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_dmr.dir/build.make tests/CMakeFiles/qradiolink_test_demod_dmr.dir/build
 .PHONY : qradiolink_test_demod_dmr/fast
 
 # Convenience name for target.
 tests/CMakeFiles/qradiolink_test_demod_freedv.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_freedv.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_freedv.dir/rule
 .PHONY : tests/CMakeFiles/qradiolink_test_demod_freedv.dir/rule
 
 # Convenience name for target.
@@ -896,12 +896,12 @@ qradiolink_test_demod_freedv: tests/CMakeFiles/qradiolink_test_demod_freedv.dir/
 
 # fast build rule for target.
 qradiolink_test_demod_freedv/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_freedv.dir/build.make tests/CMakeFiles/qradiolink_test_demod_freedv.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_freedv.dir/build.make tests/CMakeFiles/qradiolink_test_demod_freedv.dir/build
 .PHONY : qradiolink_test_demod_freedv/fast
 
 # Convenience name for target.
 tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi.dir/rule
 .PHONY : tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi.dir/rule
 
 # Convenience name for target.
@@ -910,12 +910,12 @@ qradiolink_test_demod_mmdvm_multi: tests/CMakeFiles/qradiolink_test_demod_mmdvm_
 
 # fast build rule for target.
 qradiolink_test_demod_mmdvm_multi/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi.dir/build.make tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi.dir/build.make tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi.dir/build
 .PHONY : qradiolink_test_demod_mmdvm_multi/fast
 
 # Convenience name for target.
 tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi2.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi2.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi2.dir/rule
 .PHONY : tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi2.dir/rule
 
 # Convenience name for target.
@@ -924,12 +924,12 @@ qradiolink_test_demod_mmdvm_multi2: tests/CMakeFiles/qradiolink_test_demod_mmdvm
 
 # fast build rule for target.
 qradiolink_test_demod_mmdvm_multi2/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi2.dir/build.make tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi2.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi2.dir/build.make tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi2.dir/build
 .PHONY : qradiolink_test_demod_mmdvm_multi2/fast
 
 # Convenience name for target.
 tests/CMakeFiles/qradiolink_test_rssi_tag_block.dir/rule:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_rssi_tag_block.dir/rule
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qradiolink_test_rssi_tag_block.dir/rule
 .PHONY : tests/CMakeFiles/qradiolink_test_rssi_tag_block.dir/rule
 
 # Convenience name for target.
@@ -938,7 +938,7 @@ qradiolink_test_rssi_tag_block: tests/CMakeFiles/qradiolink_test_rssi_tag_block.
 
 # fast build rule for target.
 qradiolink_test_rssi_tag_block/fast:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_rssi_tag_block.dir/build.make tests/CMakeFiles/qradiolink_test_rssi_tag_block.dir/build
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_rssi_tag_block.dir/build.make tests/CMakeFiles/qradiolink_test_rssi_tag_block.dir/build
 .PHONY : qradiolink_test_rssi_tag_block/fast
 
 test_demod_2fsk.o: test_demod_2fsk.cc.o
@@ -946,7 +946,7 @@ test_demod_2fsk.o: test_demod_2fsk.cc.o
 
 # target to build an object file
 test_demod_2fsk.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_2fsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_2fsk.dir/test_demod_2fsk.cc.o
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_2fsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_2fsk.dir/test_demod_2fsk.cc.o
 .PHONY : test_demod_2fsk.cc.o
 
 test_demod_2fsk.i: test_demod_2fsk.cc.i
@@ -954,7 +954,7 @@ test_demod_2fsk.i: test_demod_2fsk.cc.i
 
 # target to preprocess a source file
 test_demod_2fsk.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_2fsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_2fsk.dir/test_demod_2fsk.cc.i
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_2fsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_2fsk.dir/test_demod_2fsk.cc.i
 .PHONY : test_demod_2fsk.cc.i
 
 test_demod_2fsk.s: test_demod_2fsk.cc.s
@@ -962,7 +962,7 @@ test_demod_2fsk.s: test_demod_2fsk.cc.s
 
 # target to generate assembly for a file
 test_demod_2fsk.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_2fsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_2fsk.dir/test_demod_2fsk.cc.s
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_2fsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_2fsk.dir/test_demod_2fsk.cc.s
 .PHONY : test_demod_2fsk.cc.s
 
 test_demod_4fsk.o: test_demod_4fsk.cc.o
@@ -970,7 +970,7 @@ test_demod_4fsk.o: test_demod_4fsk.cc.o
 
 # target to build an object file
 test_demod_4fsk.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_4fsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_4fsk.dir/test_demod_4fsk.cc.o
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_4fsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_4fsk.dir/test_demod_4fsk.cc.o
 .PHONY : test_demod_4fsk.cc.o
 
 test_demod_4fsk.i: test_demod_4fsk.cc.i
@@ -978,7 +978,7 @@ test_demod_4fsk.i: test_demod_4fsk.cc.i
 
 # target to preprocess a source file
 test_demod_4fsk.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_4fsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_4fsk.dir/test_demod_4fsk.cc.i
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_4fsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_4fsk.dir/test_demod_4fsk.cc.i
 .PHONY : test_demod_4fsk.cc.i
 
 test_demod_4fsk.s: test_demod_4fsk.cc.s
@@ -986,7 +986,7 @@ test_demod_4fsk.s: test_demod_4fsk.cc.s
 
 # target to generate assembly for a file
 test_demod_4fsk.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_4fsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_4fsk.dir/test_demod_4fsk.cc.s
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_4fsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_4fsk.dir/test_demod_4fsk.cc.s
 .PHONY : test_demod_4fsk.cc.s
 
 test_demod_am.o: test_demod_am.cc.o
@@ -994,7 +994,7 @@ test_demod_am.o: test_demod_am.cc.o
 
 # target to build an object file
 test_demod_am.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_am.dir/build.make tests/CMakeFiles/qradiolink_test_demod_am.dir/test_demod_am.cc.o
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_am.dir/build.make tests/CMakeFiles/qradiolink_test_demod_am.dir/test_demod_am.cc.o
 .PHONY : test_demod_am.cc.o
 
 test_demod_am.i: test_demod_am.cc.i
@@ -1002,7 +1002,7 @@ test_demod_am.i: test_demod_am.cc.i
 
 # target to preprocess a source file
 test_demod_am.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_am.dir/build.make tests/CMakeFiles/qradiolink_test_demod_am.dir/test_demod_am.cc.i
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_am.dir/build.make tests/CMakeFiles/qradiolink_test_demod_am.dir/test_demod_am.cc.i
 .PHONY : test_demod_am.cc.i
 
 test_demod_am.s: test_demod_am.cc.s
@@ -1010,7 +1010,7 @@ test_demod_am.s: test_demod_am.cc.s
 
 # target to generate assembly for a file
 test_demod_am.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_am.dir/build.make tests/CMakeFiles/qradiolink_test_demod_am.dir/test_demod_am.cc.s
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_am.dir/build.make tests/CMakeFiles/qradiolink_test_demod_am.dir/test_demod_am.cc.s
 .PHONY : test_demod_am.cc.s
 
 test_demod_bpsk.o: test_demod_bpsk.cc.o
@@ -1018,7 +1018,7 @@ test_demod_bpsk.o: test_demod_bpsk.cc.o
 
 # target to build an object file
 test_demod_bpsk.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_bpsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_bpsk.dir/test_demod_bpsk.cc.o
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_bpsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_bpsk.dir/test_demod_bpsk.cc.o
 .PHONY : test_demod_bpsk.cc.o
 
 test_demod_bpsk.i: test_demod_bpsk.cc.i
@@ -1026,7 +1026,7 @@ test_demod_bpsk.i: test_demod_bpsk.cc.i
 
 # target to preprocess a source file
 test_demod_bpsk.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_bpsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_bpsk.dir/test_demod_bpsk.cc.i
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_bpsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_bpsk.dir/test_demod_bpsk.cc.i
 .PHONY : test_demod_bpsk.cc.i
 
 test_demod_bpsk.s: test_demod_bpsk.cc.s
@@ -1034,7 +1034,7 @@ test_demod_bpsk.s: test_demod_bpsk.cc.s
 
 # target to generate assembly for a file
 test_demod_bpsk.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_bpsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_bpsk.dir/test_demod_bpsk.cc.s
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_bpsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_bpsk.dir/test_demod_bpsk.cc.s
 .PHONY : test_demod_bpsk.cc.s
 
 test_demod_dmr.o: test_demod_dmr.cc.o
@@ -1042,7 +1042,7 @@ test_demod_dmr.o: test_demod_dmr.cc.o
 
 # target to build an object file
 test_demod_dmr.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_dmr.dir/build.make tests/CMakeFiles/qradiolink_test_demod_dmr.dir/test_demod_dmr.cc.o
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_dmr.dir/build.make tests/CMakeFiles/qradiolink_test_demod_dmr.dir/test_demod_dmr.cc.o
 .PHONY : test_demod_dmr.cc.o
 
 test_demod_dmr.i: test_demod_dmr.cc.i
@@ -1050,7 +1050,7 @@ test_demod_dmr.i: test_demod_dmr.cc.i
 
 # target to preprocess a source file
 test_demod_dmr.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_dmr.dir/build.make tests/CMakeFiles/qradiolink_test_demod_dmr.dir/test_demod_dmr.cc.i
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_dmr.dir/build.make tests/CMakeFiles/qradiolink_test_demod_dmr.dir/test_demod_dmr.cc.i
 .PHONY : test_demod_dmr.cc.i
 
 test_demod_dmr.s: test_demod_dmr.cc.s
@@ -1058,7 +1058,7 @@ test_demod_dmr.s: test_demod_dmr.cc.s
 
 # target to generate assembly for a file
 test_demod_dmr.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_dmr.dir/build.make tests/CMakeFiles/qradiolink_test_demod_dmr.dir/test_demod_dmr.cc.s
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_dmr.dir/build.make tests/CMakeFiles/qradiolink_test_demod_dmr.dir/test_demod_dmr.cc.s
 .PHONY : test_demod_dmr.cc.s
 
 test_demod_dsss.o: test_demod_dsss.cc.o
@@ -1066,7 +1066,7 @@ test_demod_dsss.o: test_demod_dsss.cc.o
 
 # target to build an object file
 test_demod_dsss.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_dsss.dir/build.make tests/CMakeFiles/qradiolink_test_demod_dsss.dir/test_demod_dsss.cc.o
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_dsss.dir/build.make tests/CMakeFiles/qradiolink_test_demod_dsss.dir/test_demod_dsss.cc.o
 .PHONY : test_demod_dsss.cc.o
 
 test_demod_dsss.i: test_demod_dsss.cc.i
@@ -1074,7 +1074,7 @@ test_demod_dsss.i: test_demod_dsss.cc.i
 
 # target to preprocess a source file
 test_demod_dsss.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_dsss.dir/build.make tests/CMakeFiles/qradiolink_test_demod_dsss.dir/test_demod_dsss.cc.i
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_dsss.dir/build.make tests/CMakeFiles/qradiolink_test_demod_dsss.dir/test_demod_dsss.cc.i
 .PHONY : test_demod_dsss.cc.i
 
 test_demod_dsss.s: test_demod_dsss.cc.s
@@ -1082,7 +1082,7 @@ test_demod_dsss.s: test_demod_dsss.cc.s
 
 # target to generate assembly for a file
 test_demod_dsss.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_dsss.dir/build.make tests/CMakeFiles/qradiolink_test_demod_dsss.dir/test_demod_dsss.cc.s
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_dsss.dir/build.make tests/CMakeFiles/qradiolink_test_demod_dsss.dir/test_demod_dsss.cc.s
 .PHONY : test_demod_dsss.cc.s
 
 test_demod_freedv.o: test_demod_freedv.cc.o
@@ -1090,7 +1090,7 @@ test_demod_freedv.o: test_demod_freedv.cc.o
 
 # target to build an object file
 test_demod_freedv.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_freedv.dir/build.make tests/CMakeFiles/qradiolink_test_demod_freedv.dir/test_demod_freedv.cc.o
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_freedv.dir/build.make tests/CMakeFiles/qradiolink_test_demod_freedv.dir/test_demod_freedv.cc.o
 .PHONY : test_demod_freedv.cc.o
 
 test_demod_freedv.i: test_demod_freedv.cc.i
@@ -1098,7 +1098,7 @@ test_demod_freedv.i: test_demod_freedv.cc.i
 
 # target to preprocess a source file
 test_demod_freedv.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_freedv.dir/build.make tests/CMakeFiles/qradiolink_test_demod_freedv.dir/test_demod_freedv.cc.i
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_freedv.dir/build.make tests/CMakeFiles/qradiolink_test_demod_freedv.dir/test_demod_freedv.cc.i
 .PHONY : test_demod_freedv.cc.i
 
 test_demod_freedv.s: test_demod_freedv.cc.s
@@ -1106,7 +1106,7 @@ test_demod_freedv.s: test_demod_freedv.cc.s
 
 # target to generate assembly for a file
 test_demod_freedv.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_freedv.dir/build.make tests/CMakeFiles/qradiolink_test_demod_freedv.dir/test_demod_freedv.cc.s
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_freedv.dir/build.make tests/CMakeFiles/qradiolink_test_demod_freedv.dir/test_demod_freedv.cc.s
 .PHONY : test_demod_freedv.cc.s
 
 test_demod_gmsk.o: test_demod_gmsk.cc.o
@@ -1114,7 +1114,7 @@ test_demod_gmsk.o: test_demod_gmsk.cc.o
 
 # target to build an object file
 test_demod_gmsk.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_gmsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_gmsk.dir/test_demod_gmsk.cc.o
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_gmsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_gmsk.dir/test_demod_gmsk.cc.o
 .PHONY : test_demod_gmsk.cc.o
 
 test_demod_gmsk.i: test_demod_gmsk.cc.i
@@ -1122,7 +1122,7 @@ test_demod_gmsk.i: test_demod_gmsk.cc.i
 
 # target to preprocess a source file
 test_demod_gmsk.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_gmsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_gmsk.dir/test_demod_gmsk.cc.i
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_gmsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_gmsk.dir/test_demod_gmsk.cc.i
 .PHONY : test_demod_gmsk.cc.i
 
 test_demod_gmsk.s: test_demod_gmsk.cc.s
@@ -1130,7 +1130,7 @@ test_demod_gmsk.s: test_demod_gmsk.cc.s
 
 # target to generate assembly for a file
 test_demod_gmsk.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_gmsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_gmsk.dir/test_demod_gmsk.cc.s
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_gmsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_gmsk.dir/test_demod_gmsk.cc.s
 .PHONY : test_demod_gmsk.cc.s
 
 test_demod_m17.o: test_demod_m17.cc.o
@@ -1138,7 +1138,7 @@ test_demod_m17.o: test_demod_m17.cc.o
 
 # target to build an object file
 test_demod_m17.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_m17.dir/build.make tests/CMakeFiles/qradiolink_test_demod_m17.dir/test_demod_m17.cc.o
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_m17.dir/build.make tests/CMakeFiles/qradiolink_test_demod_m17.dir/test_demod_m17.cc.o
 .PHONY : test_demod_m17.cc.o
 
 test_demod_m17.i: test_demod_m17.cc.i
@@ -1146,7 +1146,7 @@ test_demod_m17.i: test_demod_m17.cc.i
 
 # target to preprocess a source file
 test_demod_m17.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_m17.dir/build.make tests/CMakeFiles/qradiolink_test_demod_m17.dir/test_demod_m17.cc.i
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_m17.dir/build.make tests/CMakeFiles/qradiolink_test_demod_m17.dir/test_demod_m17.cc.i
 .PHONY : test_demod_m17.cc.i
 
 test_demod_m17.s: test_demod_m17.cc.s
@@ -1154,7 +1154,7 @@ test_demod_m17.s: test_demod_m17.cc.s
 
 # target to generate assembly for a file
 test_demod_m17.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_m17.dir/build.make tests/CMakeFiles/qradiolink_test_demod_m17.dir/test_demod_m17.cc.s
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_m17.dir/build.make tests/CMakeFiles/qradiolink_test_demod_m17.dir/test_demod_m17.cc.s
 .PHONY : test_demod_m17.cc.s
 
 test_demod_mmdvm_multi.o: test_demod_mmdvm_multi.cc.o
@@ -1162,7 +1162,7 @@ test_demod_mmdvm_multi.o: test_demod_mmdvm_multi.cc.o
 
 # target to build an object file
 test_demod_mmdvm_multi.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi.dir/build.make tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi.dir/test_demod_mmdvm_multi.cc.o
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi.dir/build.make tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi.dir/test_demod_mmdvm_multi.cc.o
 .PHONY : test_demod_mmdvm_multi.cc.o
 
 test_demod_mmdvm_multi.i: test_demod_mmdvm_multi.cc.i
@@ -1170,7 +1170,7 @@ test_demod_mmdvm_multi.i: test_demod_mmdvm_multi.cc.i
 
 # target to preprocess a source file
 test_demod_mmdvm_multi.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi.dir/build.make tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi.dir/test_demod_mmdvm_multi.cc.i
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi.dir/build.make tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi.dir/test_demod_mmdvm_multi.cc.i
 .PHONY : test_demod_mmdvm_multi.cc.i
 
 test_demod_mmdvm_multi.s: test_demod_mmdvm_multi.cc.s
@@ -1178,7 +1178,7 @@ test_demod_mmdvm_multi.s: test_demod_mmdvm_multi.cc.s
 
 # target to generate assembly for a file
 test_demod_mmdvm_multi.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi.dir/build.make tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi.dir/test_demod_mmdvm_multi.cc.s
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi.dir/build.make tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi.dir/test_demod_mmdvm_multi.cc.s
 .PHONY : test_demod_mmdvm_multi.cc.s
 
 test_demod_mmdvm_multi2.o: test_demod_mmdvm_multi2.cc.o
@@ -1186,7 +1186,7 @@ test_demod_mmdvm_multi2.o: test_demod_mmdvm_multi2.cc.o
 
 # target to build an object file
 test_demod_mmdvm_multi2.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi2.dir/build.make tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi2.dir/test_demod_mmdvm_multi2.cc.o
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi2.dir/build.make tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi2.dir/test_demod_mmdvm_multi2.cc.o
 .PHONY : test_demod_mmdvm_multi2.cc.o
 
 test_demod_mmdvm_multi2.i: test_demod_mmdvm_multi2.cc.i
@@ -1194,7 +1194,7 @@ test_demod_mmdvm_multi2.i: test_demod_mmdvm_multi2.cc.i
 
 # target to preprocess a source file
 test_demod_mmdvm_multi2.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi2.dir/build.make tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi2.dir/test_demod_mmdvm_multi2.cc.i
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi2.dir/build.make tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi2.dir/test_demod_mmdvm_multi2.cc.i
 .PHONY : test_demod_mmdvm_multi2.cc.i
 
 test_demod_mmdvm_multi2.s: test_demod_mmdvm_multi2.cc.s
@@ -1202,7 +1202,7 @@ test_demod_mmdvm_multi2.s: test_demod_mmdvm_multi2.cc.s
 
 # target to generate assembly for a file
 test_demod_mmdvm_multi2.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi2.dir/build.make tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi2.dir/test_demod_mmdvm_multi2.cc.s
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi2.dir/build.make tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi2.dir/test_demod_mmdvm_multi2.cc.s
 .PHONY : test_demod_mmdvm_multi2.cc.s
 
 test_demod_nbfm.o: test_demod_nbfm.cc.o
@@ -1210,7 +1210,7 @@ test_demod_nbfm.o: test_demod_nbfm.cc.o
 
 # target to build an object file
 test_demod_nbfm.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/build.make tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/test_demod_nbfm.cc.o
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/build.make tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/test_demod_nbfm.cc.o
 .PHONY : test_demod_nbfm.cc.o
 
 test_demod_nbfm.i: test_demod_nbfm.cc.i
@@ -1218,7 +1218,7 @@ test_demod_nbfm.i: test_demod_nbfm.cc.i
 
 # target to preprocess a source file
 test_demod_nbfm.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/build.make tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/test_demod_nbfm.cc.i
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/build.make tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/test_demod_nbfm.cc.i
 .PHONY : test_demod_nbfm.cc.i
 
 test_demod_nbfm.s: test_demod_nbfm.cc.s
@@ -1226,7 +1226,7 @@ test_demod_nbfm.s: test_demod_nbfm.cc.s
 
 # target to generate assembly for a file
 test_demod_nbfm.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/build.make tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/test_demod_nbfm.cc.s
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/build.make tests/CMakeFiles/qradiolink_test_demod_nbfm.dir/test_demod_nbfm.cc.s
 .PHONY : test_demod_nbfm.cc.s
 
 test_demod_qpsk.o: test_demod_qpsk.cc.o
@@ -1234,7 +1234,7 @@ test_demod_qpsk.o: test_demod_qpsk.cc.o
 
 # target to build an object file
 test_demod_qpsk.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/test_demod_qpsk.cc.o
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/test_demod_qpsk.cc.o
 .PHONY : test_demod_qpsk.cc.o
 
 test_demod_qpsk.i: test_demod_qpsk.cc.i
@@ -1242,7 +1242,7 @@ test_demod_qpsk.i: test_demod_qpsk.cc.i
 
 # target to preprocess a source file
 test_demod_qpsk.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/test_demod_qpsk.cc.i
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/test_demod_qpsk.cc.i
 .PHONY : test_demod_qpsk.cc.i
 
 test_demod_qpsk.s: test_demod_qpsk.cc.s
@@ -1250,7 +1250,7 @@ test_demod_qpsk.s: test_demod_qpsk.cc.s
 
 # target to generate assembly for a file
 test_demod_qpsk.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/test_demod_qpsk.cc.s
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/build.make tests/CMakeFiles/qradiolink_test_demod_qpsk.dir/test_demod_qpsk.cc.s
 .PHONY : test_demod_qpsk.cc.s
 
 test_demod_ssb.o: test_demod_ssb.cc.o
@@ -1258,7 +1258,7 @@ test_demod_ssb.o: test_demod_ssb.cc.o
 
 # target to build an object file
 test_demod_ssb.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_ssb.dir/build.make tests/CMakeFiles/qradiolink_test_demod_ssb.dir/test_demod_ssb.cc.o
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_ssb.dir/build.make tests/CMakeFiles/qradiolink_test_demod_ssb.dir/test_demod_ssb.cc.o
 .PHONY : test_demod_ssb.cc.o
 
 test_demod_ssb.i: test_demod_ssb.cc.i
@@ -1266,7 +1266,7 @@ test_demod_ssb.i: test_demod_ssb.cc.i
 
 # target to preprocess a source file
 test_demod_ssb.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_ssb.dir/build.make tests/CMakeFiles/qradiolink_test_demod_ssb.dir/test_demod_ssb.cc.i
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_ssb.dir/build.make tests/CMakeFiles/qradiolink_test_demod_ssb.dir/test_demod_ssb.cc.i
 .PHONY : test_demod_ssb.cc.i
 
 test_demod_ssb.s: test_demod_ssb.cc.s
@@ -1274,7 +1274,7 @@ test_demod_ssb.s: test_demod_ssb.cc.s
 
 # target to generate assembly for a file
 test_demod_ssb.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_ssb.dir/build.make tests/CMakeFiles/qradiolink_test_demod_ssb.dir/test_demod_ssb.cc.s
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_ssb.dir/build.make tests/CMakeFiles/qradiolink_test_demod_ssb.dir/test_demod_ssb.cc.s
 .PHONY : test_demod_ssb.cc.s
 
 test_demod_wbfm.o: test_demod_wbfm.cc.o
@@ -1282,7 +1282,7 @@ test_demod_wbfm.o: test_demod_wbfm.cc.o
 
 # target to build an object file
 test_demod_wbfm.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/build.make tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/test_demod_wbfm.cc.o
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/build.make tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/test_demod_wbfm.cc.o
 .PHONY : test_demod_wbfm.cc.o
 
 test_demod_wbfm.i: test_demod_wbfm.cc.i
@@ -1290,7 +1290,7 @@ test_demod_wbfm.i: test_demod_wbfm.cc.i
 
 # target to preprocess a source file
 test_demod_wbfm.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/build.make tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/test_demod_wbfm.cc.i
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/build.make tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/test_demod_wbfm.cc.i
 .PHONY : test_demod_wbfm.cc.i
 
 test_demod_wbfm.s: test_demod_wbfm.cc.s
@@ -1298,7 +1298,7 @@ test_demod_wbfm.s: test_demod_wbfm.cc.s
 
 # target to generate assembly for a file
 test_demod_wbfm.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/build.make tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/test_demod_wbfm.cc.s
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/build.make tests/CMakeFiles/qradiolink_test_demod_wbfm.dir/test_demod_wbfm.cc.s
 .PHONY : test_demod_wbfm.cc.s
 
 test_mod_2fsk.o: test_mod_2fsk.cc.o
@@ -1306,7 +1306,7 @@ test_mod_2fsk.o: test_mod_2fsk.cc.o
 
 # target to build an object file
 test_mod_2fsk.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_2fsk.dir/build.make tests/CMakeFiles/test_mod_2fsk.dir/test_mod_2fsk.cc.o
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_2fsk.dir/build.make tests/CMakeFiles/test_mod_2fsk.dir/test_mod_2fsk.cc.o
 .PHONY : test_mod_2fsk.cc.o
 
 test_mod_2fsk.i: test_mod_2fsk.cc.i
@@ -1314,7 +1314,7 @@ test_mod_2fsk.i: test_mod_2fsk.cc.i
 
 # target to preprocess a source file
 test_mod_2fsk.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_2fsk.dir/build.make tests/CMakeFiles/test_mod_2fsk.dir/test_mod_2fsk.cc.i
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_2fsk.dir/build.make tests/CMakeFiles/test_mod_2fsk.dir/test_mod_2fsk.cc.i
 .PHONY : test_mod_2fsk.cc.i
 
 test_mod_2fsk.s: test_mod_2fsk.cc.s
@@ -1322,7 +1322,7 @@ test_mod_2fsk.s: test_mod_2fsk.cc.s
 
 # target to generate assembly for a file
 test_mod_2fsk.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_2fsk.dir/build.make tests/CMakeFiles/test_mod_2fsk.dir/test_mod_2fsk.cc.s
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_2fsk.dir/build.make tests/CMakeFiles/test_mod_2fsk.dir/test_mod_2fsk.cc.s
 .PHONY : test_mod_2fsk.cc.s
 
 test_mod_4fsk.o: test_mod_4fsk.cc.o
@@ -1330,7 +1330,7 @@ test_mod_4fsk.o: test_mod_4fsk.cc.o
 
 # target to build an object file
 test_mod_4fsk.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_4fsk.dir/build.make tests/CMakeFiles/test_mod_4fsk.dir/test_mod_4fsk.cc.o
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_4fsk.dir/build.make tests/CMakeFiles/test_mod_4fsk.dir/test_mod_4fsk.cc.o
 .PHONY : test_mod_4fsk.cc.o
 
 test_mod_4fsk.i: test_mod_4fsk.cc.i
@@ -1338,7 +1338,7 @@ test_mod_4fsk.i: test_mod_4fsk.cc.i
 
 # target to preprocess a source file
 test_mod_4fsk.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_4fsk.dir/build.make tests/CMakeFiles/test_mod_4fsk.dir/test_mod_4fsk.cc.i
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_4fsk.dir/build.make tests/CMakeFiles/test_mod_4fsk.dir/test_mod_4fsk.cc.i
 .PHONY : test_mod_4fsk.cc.i
 
 test_mod_4fsk.s: test_mod_4fsk.cc.s
@@ -1346,7 +1346,7 @@ test_mod_4fsk.s: test_mod_4fsk.cc.s
 
 # target to generate assembly for a file
 test_mod_4fsk.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_4fsk.dir/build.make tests/CMakeFiles/test_mod_4fsk.dir/test_mod_4fsk.cc.s
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_4fsk.dir/build.make tests/CMakeFiles/test_mod_4fsk.dir/test_mod_4fsk.cc.s
 .PHONY : test_mod_4fsk.cc.s
 
 test_mod_am.o: test_mod_am.cc.o
@@ -1354,7 +1354,7 @@ test_mod_am.o: test_mod_am.cc.o
 
 # target to build an object file
 test_mod_am.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_am.dir/build.make tests/CMakeFiles/test_mod_am.dir/test_mod_am.cc.o
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_am.dir/build.make tests/CMakeFiles/test_mod_am.dir/test_mod_am.cc.o
 .PHONY : test_mod_am.cc.o
 
 test_mod_am.i: test_mod_am.cc.i
@@ -1362,7 +1362,7 @@ test_mod_am.i: test_mod_am.cc.i
 
 # target to preprocess a source file
 test_mod_am.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_am.dir/build.make tests/CMakeFiles/test_mod_am.dir/test_mod_am.cc.i
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_am.dir/build.make tests/CMakeFiles/test_mod_am.dir/test_mod_am.cc.i
 .PHONY : test_mod_am.cc.i
 
 test_mod_am.s: test_mod_am.cc.s
@@ -1370,7 +1370,7 @@ test_mod_am.s: test_mod_am.cc.s
 
 # target to generate assembly for a file
 test_mod_am.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_am.dir/build.make tests/CMakeFiles/test_mod_am.dir/test_mod_am.cc.s
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_am.dir/build.make tests/CMakeFiles/test_mod_am.dir/test_mod_am.cc.s
 .PHONY : test_mod_am.cc.s
 
 test_mod_bpsk.o: test_mod_bpsk.cc.o
@@ -1378,7 +1378,7 @@ test_mod_bpsk.o: test_mod_bpsk.cc.o
 
 # target to build an object file
 test_mod_bpsk.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_bpsk.dir/build.make tests/CMakeFiles/test_mod_bpsk.dir/test_mod_bpsk.cc.o
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_bpsk.dir/build.make tests/CMakeFiles/test_mod_bpsk.dir/test_mod_bpsk.cc.o
 .PHONY : test_mod_bpsk.cc.o
 
 test_mod_bpsk.i: test_mod_bpsk.cc.i
@@ -1386,7 +1386,7 @@ test_mod_bpsk.i: test_mod_bpsk.cc.i
 
 # target to preprocess a source file
 test_mod_bpsk.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_bpsk.dir/build.make tests/CMakeFiles/test_mod_bpsk.dir/test_mod_bpsk.cc.i
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_bpsk.dir/build.make tests/CMakeFiles/test_mod_bpsk.dir/test_mod_bpsk.cc.i
 .PHONY : test_mod_bpsk.cc.i
 
 test_mod_bpsk.s: test_mod_bpsk.cc.s
@@ -1394,7 +1394,7 @@ test_mod_bpsk.s: test_mod_bpsk.cc.s
 
 # target to generate assembly for a file
 test_mod_bpsk.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_bpsk.dir/build.make tests/CMakeFiles/test_mod_bpsk.dir/test_mod_bpsk.cc.s
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_bpsk.dir/build.make tests/CMakeFiles/test_mod_bpsk.dir/test_mod_bpsk.cc.s
 .PHONY : test_mod_bpsk.cc.s
 
 test_mod_dsss.o: test_mod_dsss.cc.o
@@ -1402,7 +1402,7 @@ test_mod_dsss.o: test_mod_dsss.cc.o
 
 # target to build an object file
 test_mod_dsss.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_dsss.dir/build.make tests/CMakeFiles/qradiolink_test_mod_dsss.dir/test_mod_dsss.cc.o
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_dsss.dir/build.make tests/CMakeFiles/qradiolink_test_mod_dsss.dir/test_mod_dsss.cc.o
 .PHONY : test_mod_dsss.cc.o
 
 test_mod_dsss.i: test_mod_dsss.cc.i
@@ -1410,7 +1410,7 @@ test_mod_dsss.i: test_mod_dsss.cc.i
 
 # target to preprocess a source file
 test_mod_dsss.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_dsss.dir/build.make tests/CMakeFiles/qradiolink_test_mod_dsss.dir/test_mod_dsss.cc.i
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_dsss.dir/build.make tests/CMakeFiles/qradiolink_test_mod_dsss.dir/test_mod_dsss.cc.i
 .PHONY : test_mod_dsss.cc.i
 
 test_mod_dsss.s: test_mod_dsss.cc.s
@@ -1418,7 +1418,7 @@ test_mod_dsss.s: test_mod_dsss.cc.s
 
 # target to generate assembly for a file
 test_mod_dsss.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_dsss.dir/build.make tests/CMakeFiles/qradiolink_test_mod_dsss.dir/test_mod_dsss.cc.s
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_dsss.dir/build.make tests/CMakeFiles/qradiolink_test_mod_dsss.dir/test_mod_dsss.cc.s
 .PHONY : test_mod_dsss.cc.s
 
 test_mod_freedv.o: test_mod_freedv.cc.o
@@ -1426,7 +1426,7 @@ test_mod_freedv.o: test_mod_freedv.cc.o
 
 # target to build an object file
 test_mod_freedv.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_freedv.dir/build.make tests/CMakeFiles/test_mod_freedv.dir/test_mod_freedv.cc.o
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_freedv.dir/build.make tests/CMakeFiles/test_mod_freedv.dir/test_mod_freedv.cc.o
 .PHONY : test_mod_freedv.cc.o
 
 test_mod_freedv.i: test_mod_freedv.cc.i
@@ -1434,7 +1434,7 @@ test_mod_freedv.i: test_mod_freedv.cc.i
 
 # target to preprocess a source file
 test_mod_freedv.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_freedv.dir/build.make tests/CMakeFiles/test_mod_freedv.dir/test_mod_freedv.cc.i
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_freedv.dir/build.make tests/CMakeFiles/test_mod_freedv.dir/test_mod_freedv.cc.i
 .PHONY : test_mod_freedv.cc.i
 
 test_mod_freedv.s: test_mod_freedv.cc.s
@@ -1442,7 +1442,7 @@ test_mod_freedv.s: test_mod_freedv.cc.s
 
 # target to generate assembly for a file
 test_mod_freedv.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_freedv.dir/build.make tests/CMakeFiles/test_mod_freedv.dir/test_mod_freedv.cc.s
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_freedv.dir/build.make tests/CMakeFiles/test_mod_freedv.dir/test_mod_freedv.cc.s
 .PHONY : test_mod_freedv.cc.s
 
 test_mod_gmsk.o: test_mod_gmsk.cc.o
@@ -1450,7 +1450,7 @@ test_mod_gmsk.o: test_mod_gmsk.cc.o
 
 # target to build an object file
 test_mod_gmsk.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_gmsk.dir/build.make tests/CMakeFiles/test_mod_gmsk.dir/test_mod_gmsk.cc.o
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_gmsk.dir/build.make tests/CMakeFiles/test_mod_gmsk.dir/test_mod_gmsk.cc.o
 .PHONY : test_mod_gmsk.cc.o
 
 test_mod_gmsk.i: test_mod_gmsk.cc.i
@@ -1458,7 +1458,7 @@ test_mod_gmsk.i: test_mod_gmsk.cc.i
 
 # target to preprocess a source file
 test_mod_gmsk.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_gmsk.dir/build.make tests/CMakeFiles/test_mod_gmsk.dir/test_mod_gmsk.cc.i
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_gmsk.dir/build.make tests/CMakeFiles/test_mod_gmsk.dir/test_mod_gmsk.cc.i
 .PHONY : test_mod_gmsk.cc.i
 
 test_mod_gmsk.s: test_mod_gmsk.cc.s
@@ -1466,7 +1466,7 @@ test_mod_gmsk.s: test_mod_gmsk.cc.s
 
 # target to generate assembly for a file
 test_mod_gmsk.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_gmsk.dir/build.make tests/CMakeFiles/test_mod_gmsk.dir/test_mod_gmsk.cc.s
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_gmsk.dir/build.make tests/CMakeFiles/test_mod_gmsk.dir/test_mod_gmsk.cc.s
 .PHONY : test_mod_gmsk.cc.s
 
 test_mod_mmdvm.o: test_mod_mmdvm.cc.o
@@ -1474,7 +1474,7 @@ test_mod_mmdvm.o: test_mod_mmdvm.cc.o
 
 # target to build an object file
 test_mod_mmdvm.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_mmdvm.dir/build.make tests/CMakeFiles/test_mod_mmdvm.dir/test_mod_mmdvm.cc.o
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_mmdvm.dir/build.make tests/CMakeFiles/test_mod_mmdvm.dir/test_mod_mmdvm.cc.o
 .PHONY : test_mod_mmdvm.cc.o
 
 test_mod_mmdvm.i: test_mod_mmdvm.cc.i
@@ -1482,7 +1482,7 @@ test_mod_mmdvm.i: test_mod_mmdvm.cc.i
 
 # target to preprocess a source file
 test_mod_mmdvm.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_mmdvm.dir/build.make tests/CMakeFiles/test_mod_mmdvm.dir/test_mod_mmdvm.cc.i
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_mmdvm.dir/build.make tests/CMakeFiles/test_mod_mmdvm.dir/test_mod_mmdvm.cc.i
 .PHONY : test_mod_mmdvm.cc.i
 
 test_mod_mmdvm.s: test_mod_mmdvm.cc.s
@@ -1490,7 +1490,7 @@ test_mod_mmdvm.s: test_mod_mmdvm.cc.s
 
 # target to generate assembly for a file
 test_mod_mmdvm.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_mmdvm.dir/build.make tests/CMakeFiles/test_mod_mmdvm.dir/test_mod_mmdvm.cc.s
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_mmdvm.dir/build.make tests/CMakeFiles/test_mod_mmdvm.dir/test_mod_mmdvm.cc.s
 .PHONY : test_mod_mmdvm.cc.s
 
 test_mod_nbfm.o: test_mod_nbfm.cc.o
@@ -1498,7 +1498,7 @@ test_mod_nbfm.o: test_mod_nbfm.cc.o
 
 # target to build an object file
 test_mod_nbfm.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/build.make tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/test_mod_nbfm.cc.o
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/build.make tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/test_mod_nbfm.cc.o
 .PHONY : test_mod_nbfm.cc.o
 
 test_mod_nbfm.i: test_mod_nbfm.cc.i
@@ -1506,7 +1506,7 @@ test_mod_nbfm.i: test_mod_nbfm.cc.i
 
 # target to preprocess a source file
 test_mod_nbfm.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/build.make tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/test_mod_nbfm.cc.i
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/build.make tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/test_mod_nbfm.cc.i
 .PHONY : test_mod_nbfm.cc.i
 
 test_mod_nbfm.s: test_mod_nbfm.cc.s
@@ -1514,7 +1514,7 @@ test_mod_nbfm.s: test_mod_nbfm.cc.s
 
 # target to generate assembly for a file
 test_mod_nbfm.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/build.make tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/test_mod_nbfm.cc.s
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/build.make tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/test_mod_nbfm.cc.s
 .PHONY : test_mod_nbfm.cc.s
 
 test_mod_qpsk.o: test_mod_qpsk.cc.o
@@ -1522,7 +1522,7 @@ test_mod_qpsk.o: test_mod_qpsk.cc.o
 
 # target to build an object file
 test_mod_qpsk.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_qpsk.dir/build.make tests/CMakeFiles/qradiolink_test_mod_qpsk.dir/test_mod_qpsk.cc.o
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_qpsk.dir/build.make tests/CMakeFiles/qradiolink_test_mod_qpsk.dir/test_mod_qpsk.cc.o
 .PHONY : test_mod_qpsk.cc.o
 
 test_mod_qpsk.i: test_mod_qpsk.cc.i
@@ -1530,7 +1530,7 @@ test_mod_qpsk.i: test_mod_qpsk.cc.i
 
 # target to preprocess a source file
 test_mod_qpsk.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_qpsk.dir/build.make tests/CMakeFiles/qradiolink_test_mod_qpsk.dir/test_mod_qpsk.cc.i
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_qpsk.dir/build.make tests/CMakeFiles/qradiolink_test_mod_qpsk.dir/test_mod_qpsk.cc.i
 .PHONY : test_mod_qpsk.cc.i
 
 test_mod_qpsk.s: test_mod_qpsk.cc.s
@@ -1538,7 +1538,7 @@ test_mod_qpsk.s: test_mod_qpsk.cc.s
 
 # target to generate assembly for a file
 test_mod_qpsk.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_qpsk.dir/build.make tests/CMakeFiles/qradiolink_test_mod_qpsk.dir/test_mod_qpsk.cc.s
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_qpsk.dir/build.make tests/CMakeFiles/qradiolink_test_mod_qpsk.dir/test_mod_qpsk.cc.s
 .PHONY : test_mod_qpsk.cc.s
 
 test_mod_ssb.o: test_mod_ssb.cc.o
@@ -1546,7 +1546,7 @@ test_mod_ssb.o: test_mod_ssb.cc.o
 
 # target to build an object file
 test_mod_ssb.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_ssb.dir/build.make tests/CMakeFiles/qradiolink_test_mod_ssb.dir/test_mod_ssb.cc.o
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_ssb.dir/build.make tests/CMakeFiles/qradiolink_test_mod_ssb.dir/test_mod_ssb.cc.o
 .PHONY : test_mod_ssb.cc.o
 
 test_mod_ssb.i: test_mod_ssb.cc.i
@@ -1554,7 +1554,7 @@ test_mod_ssb.i: test_mod_ssb.cc.i
 
 # target to preprocess a source file
 test_mod_ssb.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_ssb.dir/build.make tests/CMakeFiles/qradiolink_test_mod_ssb.dir/test_mod_ssb.cc.i
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_ssb.dir/build.make tests/CMakeFiles/qradiolink_test_mod_ssb.dir/test_mod_ssb.cc.i
 .PHONY : test_mod_ssb.cc.i
 
 test_mod_ssb.s: test_mod_ssb.cc.s
@@ -1562,7 +1562,7 @@ test_mod_ssb.s: test_mod_ssb.cc.s
 
 # target to generate assembly for a file
 test_mod_ssb.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_ssb.dir/build.make tests/CMakeFiles/qradiolink_test_mod_ssb.dir/test_mod_ssb.cc.s
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_mod_ssb.dir/build.make tests/CMakeFiles/qradiolink_test_mod_ssb.dir/test_mod_ssb.cc.s
 .PHONY : test_mod_ssb.cc.s
 
 test_rssi_tag_block.o: test_rssi_tag_block.cc.o
@@ -1570,7 +1570,7 @@ test_rssi_tag_block.o: test_rssi_tag_block.cc.o
 
 # target to build an object file
 test_rssi_tag_block.cc.o:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_rssi_tag_block.dir/build.make tests/CMakeFiles/qradiolink_test_rssi_tag_block.dir/test_rssi_tag_block.cc.o
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_rssi_tag_block.dir/build.make tests/CMakeFiles/qradiolink_test_rssi_tag_block.dir/test_rssi_tag_block.cc.o
 .PHONY : test_rssi_tag_block.cc.o
 
 test_rssi_tag_block.i: test_rssi_tag_block.cc.i
@@ -1578,7 +1578,7 @@ test_rssi_tag_block.i: test_rssi_tag_block.cc.i
 
 # target to preprocess a source file
 test_rssi_tag_block.cc.i:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_rssi_tag_block.dir/build.make tests/CMakeFiles/qradiolink_test_rssi_tag_block.dir/test_rssi_tag_block.cc.i
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_rssi_tag_block.dir/build.make tests/CMakeFiles/qradiolink_test_rssi_tag_block.dir/test_rssi_tag_block.cc.i
 .PHONY : test_rssi_tag_block.cc.i
 
 test_rssi_tag_block.s: test_rssi_tag_block.cc.s
@@ -1586,7 +1586,7 @@ test_rssi_tag_block.s: test_rssi_tag_block.cc.s
 
 # target to generate assembly for a file
 test_rssi_tag_block.cc.s:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_rssi_tag_block.dir/build.make tests/CMakeFiles/qradiolink_test_rssi_tag_block.dir/test_rssi_tag_block.cc.s
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_rssi_tag_block.dir/build.make tests/CMakeFiles/qradiolink_test_rssi_tag_block.dir/test_rssi_tag_block.cc.s
 .PHONY : test_rssi_tag_block.cc.s
 
 # Help Target
@@ -1749,6 +1749,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/haaken/github-projects/gr-qradiolink
+CMAKE_SOURCE_DIR = /home/haaken/github-projects/authenticated-repeater-control
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/haaken/github-projects/gr-qradiolink/build
+CMAKE_BINARY_DIR = /home/haaken/github-projects/authenticated-repeater-control/build
 
 # Utility rule file for NightlyTest.
 
@@ -67,7 +67,7 @@ include tests/CMakeFiles/NightlyTest.dir/compiler_depend.make
 include tests/CMakeFiles/NightlyTest.dir/progress.make
 
 tests/CMakeFiles/NightlyTest:
-	cd /home/haaken/github-projects/gr-qradiolink/build/tests && /usr/bin/ctest -D NightlyTest
+	cd /home/haaken/github-projects/authenticated-repeater-control/build/tests && /usr/bin/ctest -D NightlyTest
 
 NightlyTest: tests/CMakeFiles/NightlyTest
 NightlyTest: tests/CMakeFiles/NightlyTest.dir/build.make
@@ -78,10 +78,10 @@ tests/CMakeFiles/NightlyTest.dir/build: NightlyTest
 .PHONY : tests/CMakeFiles/NightlyTest.dir/build
 
 tests/CMakeFiles/NightlyTest.dir/clean:
-	cd /home/haaken/github-projects/gr-qradiolink/build/tests && $(CMAKE_COMMAND) -P CMakeFiles/NightlyTest.dir/cmake_clean.cmake
+	cd /home/haaken/github-projects/authenticated-repeater-control/build/tests && $(CMAKE_COMMAND) -P CMakeFiles/NightlyTest.dir/cmake_clean.cmake
 .PHONY : tests/CMakeFiles/NightlyTest.dir/clean
 
 tests/CMakeFiles/NightlyTest.dir/depend:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/haaken/github-projects/gr-qradiolink /home/haaken/github-projects/gr-qradiolink/tests /home/haaken/github-projects/gr-qradiolink/build /home/haaken/github-projects/gr-qradiolink/build/tests /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/NightlyTest.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/haaken/github-projects/authenticated-repeater-control /home/haaken/github-projects/authenticated-repeater-control/tests /home/haaken/github-projects/authenticated-repeater-control/build /home/haaken/github-projects/authenticated-repeater-control/build/tests /home/haaken/github-projects/authenticated-repeater-control/build/tests/CMakeFiles/NightlyTest.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : tests/CMakeFiles/NightlyTest.dir/depend
 

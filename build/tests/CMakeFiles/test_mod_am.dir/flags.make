@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/include/pgm-5.3 -I/usr/include/libxml2 -I/home/haaken/github-projects/gr-qradiolink/lib/../../src -I/home/haaken/github-projects/gr-qradiolink/lib/../include -I/home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/dsss -I/home/haaken/github-projects/gr-qradiolink/lib/../../qradiolink/src/gr/cessb -I/home/haaken/github-projects/gr-qradiolink/lib/../../qradiolink/src/gr -I/home/haaken/github-projects/gr-qradiolink/lib/../../qradiolink -I/home/haaken/github-projects/gr-qradiolink/src
+CXX_INCLUDES = -I/usr/include/pgm-5.3 -I/usr/include/libxml2 -I/usr/include/mit-krb5 -I/home/haaken/github-projects/authenticated-repeater-control/lib/../../src -I/home/haaken/github-projects/authenticated-repeater-control/lib/../include -I/home/haaken/github-projects/authenticated-repeater-control/lib/../include/gnuradio/dsss -I/home/haaken/github-projects/authenticated-repeater-control/lib/../../qradiolink/src/gr/cessb -I/home/haaken/github-projects/authenticated-repeater-control/lib/../../qradiolink/src/gr -I/home/haaken/github-projects/authenticated-repeater-control/lib/../../qradiolink -I/home/haaken/github-projects/authenticated-repeater-control/src
 
 CXX_FLAGS =  -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized -Wignored-qualifiers -Wcast-qual -O3 -DNDEBUG -std=c++17
 

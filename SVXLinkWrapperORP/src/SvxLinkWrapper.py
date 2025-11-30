@@ -9,7 +9,9 @@ Created on Dec 6, 2011
 import json
 
 import sys
-import os.path
+import os
+import signal
+import subprocess
 import modules.SvxlinkwrapperModule
 from subprocess import PIPE, Popen
 from straight.plugin import load
@@ -19,7 +21,7 @@ from ConfigParser import SafeConfigParser
 def appendProjectPath(path='.'):
     ''' Appends the project path to a relative path
     @param path: the internal path
-    @return: the relative path 
+    @return: the relative path
     '''
     return os.path.join(os.path.dirname(os.path.dirname(sys.argv[0])),path)
 
@@ -59,22 +61,22 @@ class SvxLinkWrapper:
         for plugin in plugins:
             if plugin.__name__ in pluginLoadList:
                 self.plugins.append(plugin(self))
-                
+
         try:
             self.p = Popen(SVXLINK_CMD, stdout=PIPE, stderr=PIPE,stdin=PIPE)
             for line in iter(self.p.stdout.readline, ''):
                 self.handleStdout(line)
-        
+
         except KeyboardInterrupt:
             self.debug("Got Key interrupt")
             for plugin in self.plugins:
                 plugin.shutdown()
             sys.exit(0)
-            
+
         return
-    
+
     def shutdown(self):
-        os.system("kill " + os.getpid())
+        os.kill(os.getpid(), signal.SIGTERM)
         return
 
     def handleStdout(self,line):
@@ -82,23 +84,23 @@ class SvxLinkWrapper:
         Handle messages SVXLink outputs to the screen
         '''
         print (line[:-1])
-        
-        #iterate over all plugins and run handleStdout 
+
+        #iterate over all plugins and run handleStdout
         for plugin in self.plugins:
             plugin.handleStdout(line)
         return
-    
-    def playsound(self,sound):
-                
-        command = PLAY_SOUND_COMMAND + " " + SOUNDS_PATH + sound
-        print (command)
-        os.system(command)
+
+    def playsound(self, sound):
+        sound_path = os.path.join(SOUNDS_PATH, sound)
+        cmd = [PLAY_SOUND_COMMAND, sound_path]
+        print(' '.join(cmd))
+        subprocess.run(cmd, check=False)
         return
-    
+
     def debug(self,message):
         print ("SVXLinkWrapper:" + message)
         return
-        
+
     def dtmfSTR(self,string):
         string = string.replace("*", "s")
         string = string.replace("#", "p")
@@ -106,7 +108,7 @@ class SvxLinkWrapper:
         for tone in string:
             returnValue+= " '" + os.path.join(TONES_PATH,tone + ".wav") + "' "
         return returnValue
-    
+
     def sendToSvxLink(self,message):
         self.p.stdin.write(message)
         return

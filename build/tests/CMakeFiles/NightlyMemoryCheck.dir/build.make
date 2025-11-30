@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/haaken/github-projects/gr-qradiolink
+CMAKE_SOURCE_DIR = /home/haaken/github-projects/authenticated-repeater-control
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/haaken/github-projects/gr-qradiolink/build
+CMAKE_BINARY_DIR = /home/haaken/github-projects/authenticated-repeater-control/build
 
 # Utility rule file for NightlyMemoryCheck.
 
@@ -67,7 +67,7 @@ include tests/CMakeFiles/NightlyMemoryCheck.dir/compiler_depend.make
 include tests/CMakeFiles/NightlyMemoryCheck.dir/progress.make
 
 tests/CMakeFiles/NightlyMemoryCheck:
-	cd /home/haaken/github-projects/gr-qradiolink/build/tests && /usr/bin/ctest -D NightlyMemoryCheck
+	cd /home/haaken/github-projects/authenticated-repeater-control/build/tests && /usr/bin/ctest -D NightlyMemoryCheck
 
 NightlyMemoryCheck: tests/CMakeFiles/NightlyMemoryCheck
 NightlyMemoryCheck: tests/CMakeFiles/NightlyMemoryCheck.dir/build.make
@@ -78,10 +78,10 @@ tests/CMakeFiles/NightlyMemoryCheck.dir/build: NightlyMemoryCheck
 .PHONY : tests/CMakeFiles/NightlyMemoryCheck.dir/build
 
 tests/CMakeFiles/NightlyMemoryCheck.dir/clean:
-	cd /home/haaken/github-projects/gr-qradiolink/build/tests && $(CMAKE_COMMAND) -P CMakeFiles/NightlyMemoryCheck.dir/cmake_clean.cmake
+	cd /home/haaken/github-projects/authenticated-repeater-control/build/tests && $(CMAKE_COMMAND) -P CMakeFiles/NightlyMemoryCheck.dir/cmake_clean.cmake
 .PHONY : tests/CMakeFiles/NightlyMemoryCheck.dir/clean
 
 tests/CMakeFiles/NightlyMemoryCheck.dir/depend:
-	cd /home/haaken/github-projects/gr-qradiolink/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/haaken/github-projects/gr-qradiolink /home/haaken/github-projects/gr-qradiolink/tests /home/haaken/github-projects/gr-qradiolink/build /home/haaken/github-projects/gr-qradiolink/build/tests /home/haaken/github-projects/gr-qradiolink/build/tests/CMakeFiles/NightlyMemoryCheck.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/haaken/github-projects/authenticated-repeater-control/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/haaken/github-projects/authenticated-repeater-control /home/haaken/github-projects/authenticated-repeater-control/tests /home/haaken/github-projects/authenticated-repeater-control/build /home/haaken/github-projects/authenticated-repeater-control/build/tests /home/haaken/github-projects/authenticated-repeater-control/build/tests/CMakeFiles/NightlyMemoryCheck.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : tests/CMakeFiles/NightlyMemoryCheck.dir/depend
 

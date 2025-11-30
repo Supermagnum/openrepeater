@@ -26,35 +26,36 @@ class SvxlinkwrapperModule(object):
     def __init__(self,SvxLink):
         self.SvxLink = SvxLink
         return
-    
+
     def handleStdout(self,line):
         '''
         Every stdout message would call this function
         '''
         return
-    
+
     def shutdown(self):
         '''
         Runs when we get ctrl-c to exit
         '''
         return
-    
+
     def getConfigVar(self,value):
         '''Get a value from the config ini for a module
         @param value - the value you wnat
-        @return: the value from config.ini 
+        @return: the value from config.ini
         '''
         return self.SvxLink.config.get("modules."+self.__class__.__name__, value)
-    
+
     def getConfigList(self,value):
         '''Get a value from the config ini for a module
         @param value - the value you wnat
-        @return: the value from config.ini 
+        @return: the value from config.ini
         '''
         return json.loads(self.SvxLink.config.get("modules."+self.__class__.__name__, value))
-    
+
     def getConfigFullDict(self):
         ''' Get the whole config as a dict, useful if you need to move it to other clases
         @return: a dict with all the config vars from config.ini
         '''
         return turpleList2Dict(self.SvxLink.config.items("modules."+self.__class__.__name__))
+

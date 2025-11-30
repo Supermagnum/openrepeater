@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/haaken/github-projects/gr-qradiolink/tests/test_demod_am.cc" "tests/CMakeFiles/qradiolink_test_demod_am.dir/test_demod_am.cc.o" "gcc" "tests/CMakeFiles/qradiolink_test_demod_am.dir/test_demod_am.cc.o.d"
+  "/home/haaken/github-projects/authenticated-repeater-control/tests/test_demod_am.cc" "tests/CMakeFiles/qradiolink_test_demod_am.dir/test_demod_am.cc.o" "gcc" "tests/CMakeFiles/qradiolink_test_demod_am.dir/test_demod_am.cc.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

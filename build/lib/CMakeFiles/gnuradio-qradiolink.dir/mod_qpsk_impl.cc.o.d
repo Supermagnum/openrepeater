@@ -1,5 +1,5 @@
 lib/CMakeFiles/gnuradio-qradiolink.dir/mod_qpsk_impl.cc.o: \
- /home/haaken/github-projects/gr-qradiolink/lib/mod_qpsk_impl.cc \
+ /home/haaken/github-projects/authenticated-repeater-control/lib/mod_qpsk_impl.cc \
  /usr/include/stdc-predef.h /usr/include/c++/13/climits \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -31,8 +31,8 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/mod_qpsk_impl.cc.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
- /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/mod_qpsk.h \
- /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/api.h \
+ /home/haaken/github-projects/authenticated-repeater-control/lib/../include/gnuradio/qradiolink/mod_qpsk.h \
+ /home/haaken/github-projects/authenticated-repeater-control/lib/../include/gnuradio/qradiolink/api.h \
  /usr/include/gnuradio/attributes.h /usr/include/gnuradio/hier_block2.h \
  /usr/include/gnuradio/api.h /usr/include/gnuradio/basic_block.h \
  /usr/include/gnuradio/io_signature.h /usr/include/spdlog/tweakme.h \
@@ -1052,7 +1052,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/mod_qpsk_impl.cc.o: \
  /usr/include/gnuradio/rpcserver_booter_base.h \
  /usr/include/gnuradio/rpcserver_selector.h \
  /usr/include/gnuradio/config.h /usr/include/gnuradio/block_registry.h \
- /home/haaken/github-projects/gr-qradiolink/lib/mod_qpsk_impl.h \
+ /home/haaken/github-projects/authenticated-repeater-control/lib/mod_qpsk_impl.h \
  /usr/include/gnuradio/blocks/packed_to_unpacked.h \
  /usr/include/gnuradio/block.h /usr/include/gmpxx.h \
  /usr/include/c++/13/cfloat \

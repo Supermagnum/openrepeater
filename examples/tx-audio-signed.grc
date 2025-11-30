@@ -1,0 +1,459 @@
+options:
+  parameters:
+    author: gr-packet-protocols
+    catch_exceptions: 'True'
+    category: Packet Protocols
+    cmake_opt: ''
+    comment: Audio File with Signed AX.25 Frames
+    copyright: ''
+    description: Transmit audio file with signed signature and ASCII message frames
+      in AX.25 at 2400 baud
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: tx_audio_signed
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'False'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Audio File with Signed Frames
+    window_size: (1280, 1024)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [24, 40.0]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: audio_file_path
+  id: variable_qtgui_entry
+  parameters:
+    comment: ''
+    entry_signal: editingFinished
+    gui_hint: ''
+    label: Audio File Path
+    type: string
+    value: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [240, 8.0]
+    rotation: 0
+    state: enabled
+- name: dest_callsign
+  id: variable_qtgui_entry
+  parameters:
+    comment: ''
+    entry_signal: editingFinished
+    gui_hint: ''
+    label: Dest Callsign
+    type: string
+    value: N0CALL
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [656, 8.0]
+    rotation: 0
+    state: enabled
+- name: message_text
+  id: variable_qtgui_entry
+  parameters:
+    comment: ''
+    entry_signal: editingFinished
+    gui_hint: 0,0,2,1
+    label: Message Text
+    type: string
+    value: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [856, 16.0]
+    rotation: 0
+    state: enabled
+- name: output_audio_file
+  id: variable_qtgui_entry
+  parameters:
+    comment: ''
+    entry_signal: editingFinished
+    gui_hint: ''
+    label: Output Audio File Path
+    type: string
+    value: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [216, 112.0]
+    rotation: 0
+    state: enabled
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '48000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [304, 488.0]
+    rotation: 0
+    state: enabled
+- name: src_callsign
+  id: variable_qtgui_entry
+  parameters:
+    comment: ''
+    entry_signal: editingFinished
+    gui_hint: ''
+    label: Src Callsign
+    type: string
+    value: N0CALL
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [440, 16.0]
+    rotation: 0
+    state: enabled
+- name: use_pkcs11
+  id: variable_qtgui_check_box
+  parameters:
+    comment: ''
+    'false': 'False'
+    gui_hint: ''
+    label: Use PKCS#11 (unchecked = Kernel Keyring)
+    'true': 'True'
+    type: bool
+    value: 'True'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1096, 24.0]
+    rotation: 0
+    state: enabled
+- name: start_button
+  id: variable_qtgui_push_button
+  parameters:
+    comment: Start processing the audio file
+    gui_hint: ''
+    label: Start Processing
+    pressed: '1'
+    released: '0'
+    type: int
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1296, 24.0]
+    rotation: 0
+    state: enabled
+- name: stop_button
+  id: variable_qtgui_push_button
+  parameters:
+    comment: Stop processing
+    gui_hint: ''
+    label: Stop
+    pressed: '1'
+    released: '0'
+    type: int
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1496, 24.0]
+    rotation: 0
+    state: enabled
+- name: blocks_add_xx_0
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: Combine audio and data frames (data muted during audio)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '2'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1272, 272.0]
+    rotation: 0
+    state: enabled
+- name: blocks_char_to_float_0
+  id: blocks_char_to_float
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    scale: 1.0/127.0
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [952, 416.0]
+    rotation: 0
+    state: enabled
+- name: blocks_repeat_0
+  id: blocks_repeat
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: Upsample data from 2400 to 48000 samples/sec
+    interp: '20'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1280, 416.0]
+    rotation: 0
+    state: enabled
+- name: blocks_throttle2_0
+  id: blocks_throttle2
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: 2400 baud rate limiter
+    ignoretag: 'True'
+    limit: auto
+    maximum: '0.1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: '2400'
+    type: byte
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [552, 408.0]
+    rotation: 0
+    state: enabled
+- name: blocks_wavfile_sink_0
+  id: blocks_wavfile_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    bits_per_sample1: FORMAT_PCM_16
+    bits_per_sample2: FORMAT_PCM_16
+    bits_per_sample3: FORMAT_VORBIS
+    bits_per_sample4: FORMAT_PCM_16
+    comment: Output Audio File (WAV format)
+    file: /home/haaken/Musikk/cq+ax25.wav
+    format: FORMAT_WAV
+    nchan: '1'
+    samp_rate: samp_rate
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1432, 304.0]
+    rotation: 0
+    state: enabled
+- name: blocks_wavfile_source_0
+  id: blocks_wavfile_source
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: Audio File Input (WAV format)
+    file: /home/haaken/Musikk/cq.wav
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nchan: '1'
+    repeat: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [56, 208.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_2
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport os\n\ntry:\n\
+      \    from pkcs11 import lib as pkcs11_lib\n    from pkcs11 import Token\n  \
+      \  from pkcs11.constants import UserType, ObjectClass, KeyType, Mechanism\n\
+      \    PKCS11_AVAILABLE = True\nexcept ImportError:\n    PKCS11_AVAILABLE = False\n\
+      \ntry:\n    from gnuradio import nacl\n    NACL_AVAILABLE = True\nexcept ImportError:\n\
+      \    NACL_AVAILABLE = False\n\nclass blk(gr.sync_block):\n    def __init__(self):\n\
+      \        gr.sync_block.__init__(\n            self,\n            name='Burst\
+      \ Trigger Audio + Signed Frames',\n            in_sig=[np.float32, np.uint8],\n\
+      \            out_sig=[np.float32, np.uint8]\n        )\n        self._key_buffer\
+      \ = bytearray()\n        self._pkcs11_lib = None\n        self._use_pkcs11 =\
+      \ True\n        self._audio_eof_detected = False\n        self._data_frames_bytes\
+      \ = None\n        self._data_output_idx = 0\n        self._silence_count = 0\n\
+      \        self._silence_threshold = 48000  # 1 second of silence\n        self._total_audio_samples\
+      \ = 0\n        self._min_audio_samples = 96000  # Require at least 2 seconds\
+      \ of audio\n        \n        if PKCS11_AVAILABLE:\n            self._init_pkcs11()\n\
+      \    \n    def _init_pkcs11(self):\n        lib_paths = [\n            '/usr/lib/x86_64-linux-gnu/opensc-pkcs11.so',\n\
+      \            '/usr/lib/opensc-pkcs11.so',\n            '/usr/lib/x86_64-linux-gnu/p11-kit-proxy.so',\n\
+      \            '/usr/lib/p11-kit-proxy.so',\n        ]\n        for path in lib_paths:\n\
+      \            if os.path.exists(path):\n                try:\n              \
+      \      self._pkcs11_lib = pkcs11_lib(path)\n                    print(f\"PKCS#11:\
+      \ Loaded {path}\")\n                    return True\n                except\
+      \ Exception as e:\n                    continue\n        return False\n    \n\
+      \    def _get_token(self, pin=None):\n        if not self._pkcs11_lib:\n   \
+      \         return None\n        try:\n            tokens = self._pkcs11_lib.get_tokens()\n\
+      \            if not tokens:\n                return None\n            token\
+      \ = tokens[0]\n            if pin:\n                token.open(UserType.USER,\
+      \ pin.encode())\n            else:\n                try:\n                 \
+      \   token.open(UserType.USER)\n                except:\n                   \
+      \ return None\n            return token\n        except:\n            return\
+      \ None\n    \n    def _sign_with_pkcs11(self, data, pin=None):\n        if not\
+      \ PKCS11_AVAILABLE or not self._pkcs11_lib:\n            return None\n     \
+      \   try:\n            token = self._get_token(pin)\n            if not token:\n\
+      \                return None\n            session = token.open(UserType.USER,\
+      \ pin.encode() if pin else None)\n            private_keys = session.get_objects({ObjectClass.PRIVATE_KEY,\
+      \ KeyType.EC})\n            if not private_keys:\n                return None\n\
+      \            signature = private_keys[0].sign(data, mechanism=Mechanism.ECDSA)\n\
+      \            return signature\n        except Exception as e:\n            print(f\"\
+      PKCS#11 signing error: {e}\")\n            return None\n    \n    def _generate_frames_bytes(self):\n\
+      \        try:\n            import __main__\n            if hasattr(__main__,\
+      \ 'message_text'):\n                msg = getattr(__main__, 'message_text').value()\n\
+      \                if msg:\n                    msg_bytes = msg.encode('utf-8')\n\
+      \                    signature = None\n                    \n              \
+      \      if self._use_pkcs11:\n                        signature = self._sign_with_pkcs11(msg_bytes)\n\
+      \                    \n                    if not signature and len(self._key_buffer)\
+      \ >= 32 and NACL_AVAILABLE:\n                        key = bytes(self._key_buffer[:32])\n\
+      \                        signature = nacl.sign_ed25519(msg_bytes, key)\n   \
+      \                 \n                    frames = bytearray()\n             \
+      \       \n                    if signature:\n                        frames.extend(b'SIG')\n\
+      \                        frames.extend(signature)\n                    \n  \
+      \                  frames.extend(msg_bytes)\n                    \n        \
+      \            return bytes(frames)\n        except Exception as e:\n        \
+      \    print(f\"Frame generation error: {e}\")\n            pass\n        return\
+      \ None\n    \n    def work(self, input_items, output_items):\n        try:\n\
+      \            import __main__\n            if hasattr(__main__, 'use_pkcs11'):\n\
+      \                self._use_pkcs11 = getattr(__main__, 'use_pkcs11').value()\n\
+      \        except:\n            pass\n        \n        audio_in = input_items[0]\n\
+      \        key_in = input_items[1]\n        audio_out = output_items[0]\n    \
+      \    data_out = output_items[1]\n        n = len(audio_in)\n        \n     \
+      \   if len(key_in) > 0 and not self._use_pkcs11:\n            self._key_buffer.extend(key_in.tolist())\n\
+      \            if len(self._key_buffer) > 32:\n                self._key_buffer\
+      \ = self._key_buffer[-32:]\n        \n        if not self._audio_eof_detected:\n\
+      \            # Always pass through audio while receiving it\n            self._total_audio_samples\
+      \ += n\n            audio_energy = np.sum(np.abs(audio_in))\n            \n\
+      \            # Detect file end: all zeros after processing significant audio\n\
+      \            # This handles files with silence at start and end\n          \
+      \  if n > 0:\n                if audio_energy < 1e-10 and self._total_audio_samples\
+      \ > 96000:\n                    # After 2 seconds of audio, check for file end\
+      \ (all zeros)\n                    self._silence_count += n\n              \
+      \      if self._silence_count >= 96000:  # 2 seconds of complete silence\n \
+      \                       self._audio_eof_detected = True\n                  \
+      \      frames_bytes = self._generate_frames_bytes()\n                      \
+      \  if frames_bytes:\n                            self._data_frames_bytes = bytearray(frames_bytes)\n\
+      \                            self._data_output_idx = 0\n                   \
+      \     print(f\"File end detected after {self._total_audio_samples} samples\"\
+      )\n                else:\n                    # Reset silence counter if we\
+      \ see any audio\n                    if audio_energy > 1e-6:\n             \
+      \           self._silence_count = 0\n            else:\n                # n\
+      \ == 0 means file source stopped\n                if self._total_audio_samples\
+      \ > 0:\n                    self._audio_eof_detected = True\n              \
+      \      frames_bytes = self._generate_frames_bytes()\n                    if\
+      \ frames_bytes:\n                        self._data_frames_bytes = bytearray(frames_bytes)\n\
+      \                        self._data_output_idx = 0\n                    print(f\"\
+      File source ended after {self._total_audio_samples} samples\")\n        \n \
+      \       if not self._audio_eof_detected:\n            audio_out[:n] = audio_in[:n]\n\
+      \            data_out[:n] = 0\n            return n\n        else:\n       \
+      \     audio_out[:n] = 0.0\n            if self._data_frames_bytes is not None\
+      \ and self._data_output_idx < len(self._data_frames_bytes):\n              \
+      \  remaining = len(self._data_frames_bytes) - self._data_output_idx\n      \
+      \          n_output = min(n, remaining)\n                if n_output > 0:\n\
+      \                    data_out[:n_output] = np.frombuffer(\n                \
+      \        self._data_frames_bytes[self._data_output_idx:self._data_output_idx+n_output],\n\
+      \                        dtype=np.uint8\n                    )\n           \
+      \         self._data_output_idx += n_output\n                    return n_output\n\
+      \            data_out[:n] = 0\n            return n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: ('Burst Trigger Audio + Signed Frames', 'blk', [], [('0', 'float',
+      1), ('1', 'byte', 1)], [('0', 'float', 1), ('1', 'byte', 1)], '', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [264, 360.0]
+    rotation: 0
+    state: enabled
+- name: linux_crypto_kernel_keyring_source_0
+  id: linux_crypto_kernel_keyring_source
+  parameters:
+    affinity: ''
+    alias: ''
+    auto_repeat: 'False'
+    comment: ''
+    key_id: '0'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [48, 376.0]
+    rotation: 0
+    state: enabled
+- name: packet_protocols_ax25_encoder_0
+  id: packet_protocols_ax25_encoder
+  parameters:
+    affinity: ''
+    alias: ''
+    command_response: 'False'
+    comment: AX.25 Encoder (2400 baud)
+    dest_callsign: dest_callsign
+    dest_ssid: '0'
+    digipeaters: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    poll_final: 'False'
+    src_callsign: src_callsign
+    src_ssid: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [720, 364.0]
+    rotation: 0
+    state: enabled
+
+connections:
+- [blocks_add_xx_0, '0', blocks_wavfile_sink_0, '0']
+- [blocks_char_to_float_0, '0', blocks_repeat_0, '0']
+- [blocks_repeat_0, '0', blocks_add_xx_0, '1']
+- [blocks_throttle2_0, '0', packet_protocols_ax25_encoder_0, '0']
+- [blocks_wavfile_source_0, '0', epy_block_2, '0']
+- [epy_block_2, '0', blocks_add_xx_0, '0']
+- [epy_block_2, '1', blocks_throttle2_0, '0']
+- [linux_crypto_kernel_keyring_source_0, '0', epy_block_2, '1']
+- [packet_protocols_ax25_encoder_0, '0', blocks_char_to_float_0, '0']
+
+
+metadata:
+  file_format: 1
+  grc_version: 3.10.12.0

@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/haaken/github-projects/gr-qradiolink/tests/test_mod_bpsk.cc" "tests/CMakeFiles/test_mod_bpsk.dir/test_mod_bpsk.cc.o" "gcc" "tests/CMakeFiles/test_mod_bpsk.dir/test_mod_bpsk.cc.o.d"
+  "/home/haaken/github-projects/authenticated-repeater-control/tests/test_mod_bpsk.cc" "tests/CMakeFiles/test_mod_bpsk.dir/test_mod_bpsk.cc.o" "gcc" "tests/CMakeFiles/test_mod_bpsk.dir/test_mod_bpsk.cc.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

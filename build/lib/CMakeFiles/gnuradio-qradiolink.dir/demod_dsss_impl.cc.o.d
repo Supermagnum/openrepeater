@@ -1,5 +1,5 @@
 lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dsss_impl.cc.o: \
- /home/haaken/github-projects/gr-qradiolink/lib/demod_dsss_impl.cc \
+ /home/haaken/github-projects/authenticated-repeater-control/lib/demod_dsss_impl.cc \
  /usr/include/stdc-predef.h /usr/include/c++/13/climits \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -31,8 +31,8 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dsss_impl.cc.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
- /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/demod_dsss.h \
- /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/qradiolink/api.h \
+ /home/haaken/github-projects/authenticated-repeater-control/lib/../include/gnuradio/qradiolink/demod_dsss.h \
+ /home/haaken/github-projects/authenticated-repeater-control/lib/../include/gnuradio/qradiolink/api.h \
  /usr/include/gnuradio/attributes.h /usr/include/gnuradio/hier_block2.h \
  /usr/include/gnuradio/api.h /usr/include/gnuradio/basic_block.h \
  /usr/include/gnuradio/io_signature.h /usr/include/spdlog/tweakme.h \
@@ -1052,7 +1052,7 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dsss_impl.cc.o: \
  /usr/include/gnuradio/rpcserver_booter_base.h \
  /usr/include/gnuradio/rpcserver_selector.h \
  /usr/include/gnuradio/config.h /usr/include/gnuradio/block_registry.h \
- /home/haaken/github-projects/gr-qradiolink/lib/demod_dsss_impl.h \
+ /home/haaken/github-projects/authenticated-repeater-control/lib/demod_dsss_impl.h \
  /usr/include/gnuradio/blocks/complex_to_real.h \
  /usr/include/gnuradio/blocks/api.h /usr/include/gnuradio/sync_block.h \
  /usr/include/gnuradio/block.h /usr/include/gmpxx.h \
@@ -1084,8 +1084,8 @@ lib/CMakeFiles/gnuradio-qradiolink.dir/demod_dsss_impl.cc.o: \
  /usr/include/gnuradio/filter/api.h \
  /usr/include/gnuradio/filter/fft_filter_ccf.h \
  /usr/include/gnuradio/sync_decimator.h \
- /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/dsss/dsss_decoder_cc.h \
- /home/haaken/github-projects/gr-qradiolink/lib/../include/gnuradio/dsss/api.h \
+ /home/haaken/github-projects/authenticated-repeater-control/lib/../include/gnuradio/dsss/dsss_decoder_cc.h \
+ /home/haaken/github-projects/authenticated-repeater-control/lib/../include/gnuradio/dsss/api.h \
  /usr/include/gnuradio/filter/firdes.h /usr/include/gnuradio/fft/window.h \
  /usr/include/gnuradio/fft/api.h \
- /home/haaken/github-projects/gr-qradiolink/lib/dsss_decoder_cc_impl.h
+ /home/haaken/github-projects/authenticated-repeater-control/lib/dsss_decoder_cc_impl.h
