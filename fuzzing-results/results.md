@@ -521,8 +521,8 @@ The following blocks are available in the Python bindings and can be tested:
 - ✓ mod_dsss (TESTED)
 - ✓ mod_m17 (TESTED)
 - ✓ mod_dmr (TESTED)
-- ✓ mod_freedv (AVAILABLE - Python bindings created)
-- ✓ mod_mmdvm (AVAILABLE - Python bindings created)
+- ✓ mod_freedv (TESTED - C++ test passes, Python bindings available)
+- ✓ mod_mmdvm (TESTED - C++ test passes, Python bindings available)
 
 **Demodulation Blocks:**
 - ✓ demod_2fsk (TESTED)
@@ -536,13 +536,13 @@ The following blocks are available in the Python bindings and can be tested:
 - ✓ demod_dsss (TESTED)
 - ✓ demod_m17 (TESTED)
 - ✓ demod_wbfm (TESTED)
-- ✓ demod_dmr (AVAILABLE - Python bindings created)
-- ✓ demod_freedv (AVAILABLE - Python bindings created)
+- ✓ demod_dmr (TESTED - C++ test passes, Python bindings available)
+- ✓ demod_freedv (TESTED - C++ test passes, Python bindings available)
 
 **Supporting Blocks:**
 
 - ✓ m17_deframer (TESTED via attack vector tests)
-- ✓ rssi_tag_block (AVAILABLE - Python bindings created)
+- ✓ rssi_tag_block (TESTED - C++ test passes, Python bindings available)
 
 **Python Bindings Status:**
 - ✓ mod_freedv (Python bindings created and compiled)
@@ -574,7 +574,7 @@ The following blocks are actively tested in the test suite:
 
 **Total:** 28 blocks available in Python bindings, 23 blocks tested (82% coverage of available blocks)
 
-**Note:** The newly bound blocks (mod_freedv, demod_freedv, demod_dmr, mod_mmdvm, rssi_tag_block, demod_mmdvm_multi, demod_mmdvm_multi2) are available but require runtime library path configuration for testing. The demod_mmdvm_multi and demod_mmdvm_multi2 blocks accept None for burst_timer parameter when not using TDMA timing, or an integer pointer address when a BurstTimer instance is available from C++ code.
+**Note:** The blocks mod_freedv, demod_freedv, demod_dmr, mod_mmdvm, and rssi_tag_block have C++ unit tests that pass (included in the 25/25 passing tests). The demod_mmdvm_multi and demod_mmdvm_multi2 blocks accept None for burst_timer parameter when not using TDMA timing, or an integer pointer address when a BurstTimer instance is available from C++ code.
 
 ---
 
