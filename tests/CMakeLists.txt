@@ -110,6 +110,46 @@ target_link_libraries(test_mod_bpsk gnuradio-qradiolink
 add_test(NAME test_mod_bpsk COMMAND test_mod_bpsk)
 
 ########################################################################
+# Test mod_mmdvm
+########################################################################
+add_executable(test_mod_mmdvm test_mod_mmdvm.cc)
+target_link_libraries(test_mod_mmdvm gnuradio-qradiolink
+                                 gnuradio-runtime
+                                 gnuradio-blocks
+                                 gnuradio-digital
+                                 gnuradio-filter
+                                 gnuradio-analog
+                                 gnuradio-fec
+                                 ${GR_RUNTIME_LIBRARIES}
+                                 ${GR_BLOCKS_LIBRARIES}
+                                 ${GR_DIGITAL_LIBRARIES}
+                                 ${GR_FILTER_LIBRARIES}
+                                 ${GR_ANALOG_LIBRARIES}
+                                 ${GR_FEC_LIBRARIES}
+                                 fmt)
+
+add_test(NAME test_mod_mmdvm COMMAND test_mod_mmdvm)
+
+########################################################################
+# Test mod_freedv
+########################################################################
+add_executable(test_mod_freedv test_mod_freedv.cc)
+target_link_libraries(test_mod_freedv gnuradio-qradiolink
+                                 gnuradio-runtime
+                                 gnuradio-blocks
+                                 gnuradio-filter
+                                 gnuradio-analog
+                                 gnuradio-vocoder
+                                 ${GR_RUNTIME_LIBRARIES}
+                                 ${GR_BLOCKS_LIBRARIES}
+                                 ${GR_FILTER_LIBRARIES}
+                                 ${GR_ANALOG_LIBRARIES}
+                                 ${GR_VOCODER_LIBRARIES}
+                                 fmt)
+
+add_test(NAME test_mod_freedv COMMAND test_mod_freedv)
+
+########################################################################
 # Boost.Test-based tests (using gr_add_cpp_test)
 ########################################################################
 include(GrTest)
@@ -132,6 +172,9 @@ list(APPEND test_gr_qradiolink_sources
     test_demod_4fsk.cc
     test_demod_dsss.cc
     test_demod_m17.cc
+    test_demod_dmr.cc
+    test_demod_freedv.cc
+    test_rssi_tag_block.cc
 )
 
 ########################################################################
@@ -142,4 +185,8 @@ foreach(qa_file ${test_gr_qradiolink_sources})
     gr_add_cpp_test("qradiolink_${qa_name}" ${CMAKE_CURRENT_SOURCE_DIR}/${qa_file})
     # Add fmt library to each test target
     target_link_libraries(qradiolink_${qa_name} fmt)
+    # Add vocoder library for FreeDV tests
+    if(qa_file MATCHES "freedv")
+        target_link_libraries(qradiolink_${qa_name} gnuradio-vocoder ${GR_VOCODER_LIBRARIES})
+    endif()
 endforeach(qa_file)

@@ -44,6 +44,8 @@ list(
     demod_dpmr_python.cc
     demod_nxdn_python.cc
     demod_freedv_python.cc
+    demod_mmdvm_multi_python.cc
+    demod_mmdvm_multi2_python.cc
     rssi_tag_block_python.cc
     m17_deframer_python.cc
     python_bindings.cc)

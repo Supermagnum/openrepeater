@@ -550,8 +550,8 @@ The following blocks are available in the Python bindings and can be tested:
 - ✓ demod_dmr (Python bindings created and compiled)
 - ✓ mod_mmdvm (Python bindings created and compiled)
 - ✓ rssi_tag_block (Python bindings created and compiled)
-- ✗ demod_mmdvm_multi (C++ only - requires application-level BurstTimer)
-- ✗ demod_mmdvm_multi2 (C++ only - requires application-level BurstTimer)
+- ✓ demod_mmdvm_multi (Python bindings created - accepts None or pointer address for BurstTimer)
+- ✓ demod_mmdvm_multi2 (Python bindings created - accepts None or pointer address for BurstTimer)
 
 **Notes:**
 - FFT is part of GNU Radio core, not qradiolink
@@ -565,16 +565,16 @@ The following blocks are actively tested in the test suite:
 **Modulators (12 blocks):**
 - mod_2fsk, mod_4fsk, mod_gmsk, mod_bpsk, mod_qpsk, mod_dsss, mod_am, mod_ssb, mod_m17, mod_dmr, mod_nbfm, mod_freedv, mod_mmdvm
 
-**Demodulators (12 blocks):**
-- demod_2fsk, demod_4fsk, demod_gmsk, demod_bpsk, demod_qpsk, demod_dsss, demod_am, demod_ssb, demod_m17, demod_nbfm, demod_wbfm, demod_dmr, demod_freedv
+**Demodulators (14 blocks):**
+- demod_2fsk, demod_4fsk, demod_gmsk, demod_bpsk, demod_qpsk, demod_dsss, demod_am, demod_ssb, demod_m17, demod_nbfm, demod_wbfm, demod_dmr, demod_freedv, demod_mmdvm_multi, demod_mmdvm_multi2
 
 **Supporting Blocks (2 blocks):**
 - m17_deframer (via attack vector tests)
 - rssi_tag_block (Python bindings available)
 
-**Total:** 26 blocks available in Python bindings, 23 blocks tested (88% coverage of available blocks)
+**Total:** 28 blocks available in Python bindings, 23 blocks tested (82% coverage of available blocks)
 
-**Note:** The 3 newly bound blocks (mod_freedv, demod_freedv, demod_dmr, mod_mmdvm, rssi_tag_block) are available but require runtime library path configuration for testing.
+**Note:** The newly bound blocks (mod_freedv, demod_freedv, demod_dmr, mod_mmdvm, rssi_tag_block, demod_mmdvm_multi, demod_mmdvm_multi2) are available but require runtime library path configuration for testing. The demod_mmdvm_multi and demod_mmdvm_multi2 blocks accept None for burst_timer parameter when not using TDMA timing, or an integer pointer address when a BurstTimer instance is available from C++ code.
 
 ---
 
