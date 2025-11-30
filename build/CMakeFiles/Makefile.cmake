@@ -205,6 +205,8 @@ set(CMAKE_DEPEND_INFO_FILES
   "tests/CMakeFiles/test_mod_am.dir/DependInfo.cmake"
   "tests/CMakeFiles/test_mod_gmsk.dir/DependInfo.cmake"
   "tests/CMakeFiles/test_mod_bpsk.dir/DependInfo.cmake"
+  "tests/CMakeFiles/test_mod_mmdvm.dir/DependInfo.cmake"
+  "tests/CMakeFiles/test_mod_freedv.dir/DependInfo.cmake"
   "tests/CMakeFiles/qradiolink_test_mod_ssb.dir/DependInfo.cmake"
   "tests/CMakeFiles/qradiolink_test_mod_qpsk.dir/DependInfo.cmake"
   "tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/DependInfo.cmake"
@@ -220,4 +222,9 @@ set(CMAKE_DEPEND_INFO_FILES
   "tests/CMakeFiles/qradiolink_test_demod_4fsk.dir/DependInfo.cmake"
   "tests/CMakeFiles/qradiolink_test_demod_dsss.dir/DependInfo.cmake"
   "tests/CMakeFiles/qradiolink_test_demod_m17.dir/DependInfo.cmake"
+  "tests/CMakeFiles/qradiolink_test_demod_dmr.dir/DependInfo.cmake"
+  "tests/CMakeFiles/qradiolink_test_demod_freedv.dir/DependInfo.cmake"
+  "tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi.dir/DependInfo.cmake"
+  "tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi2.dir/DependInfo.cmake"
+  "tests/CMakeFiles/qradiolink_test_rssi_tag_block.dir/DependInfo.cmake"
   )

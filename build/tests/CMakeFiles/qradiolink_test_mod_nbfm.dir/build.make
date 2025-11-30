@@ -92,7 +92,7 @@ qradiolink_test_mod_nbfm_EXTERNAL_OBJECTS =
 
 tests/qradiolink_test_mod_nbfm: tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/test_mod_nbfm.cc.o
 tests/qradiolink_test_mod_nbfm: tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/build.make
-tests/qradiolink_test_mod_nbfm: lib/libgnuradio-qradiolink.so
+tests/qradiolink_test_mod_nbfm: lib/libgnuradio-qradiolink.a
 tests/qradiolink_test_mod_nbfm: /usr/lib/x86_64-linux-gnu/libboost_unit_test_framework.so.1.83.0
 tests/qradiolink_test_mod_nbfm: /usr/lib/x86_64-linux-gnu/libvolk.so.3.1.2
 tests/qradiolink_test_mod_nbfm: tests/CMakeFiles/qradiolink_test_mod_nbfm.dir/link.txt

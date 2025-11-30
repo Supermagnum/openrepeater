@@ -26,6 +26,10 @@ install(
           mod_dpmr.h
           mod_mmdvm.h
           mod_mmdvm_multi2.h
+          pocsag_encoder.h
+          dstar_encoder.h
+          ysf_encoder.h
+          p25_encoder.h
           demod_2fsk.h
           demod_am.h
           demod_ssb.h
@@ -43,6 +47,10 @@ install(
           demod_dpmr.h
           demod_mmdvm_multi.h
           demod_mmdvm_multi2.h
+          pocsag_decoder.h
+          dstar_decoder.h
+          ysf_decoder.h
+          p25_decoder.h
           gr_4fsk_discriminator.h
           zero_idle_bursts.h
           mmdvm_source.h

@@ -29,6 +29,10 @@ list(
     mod_nxdn_python.cc
     mod_freedv_python.cc
     mod_mmdvm_python.cc
+    pocsag_encoder_python.cc
+    dstar_encoder_python.cc
+    ysf_encoder_python.cc
+    p25_encoder_python.cc
     demod_2fsk_python.cc
     demod_am_python.cc
     demod_ssb_python.cc
@@ -46,6 +50,10 @@ list(
     demod_freedv_python.cc
     demod_mmdvm_multi_python.cc
     demod_mmdvm_multi2_python.cc
+    pocsag_decoder_python.cc
+    dstar_decoder_python.cc
+    ysf_decoder_python.cc
+    p25_decoder_python.cc
     rssi_tag_block_python.cc
     m17_deframer_python.cc
     python_bindings.cc)
@@ -78,6 +86,10 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR CMAKE_CXX_COMPILER_ID STREQUAL "GNU"
     target_compile_options(qradiolink_python PRIVATE
         -Wno-unused-variable
         -Wno-error=deprecated-declarations
+    )
+    # Enable detailed pybind11 error messages for debugging registration conflicts
+    target_compile_definitions(qradiolink_python PRIVATE
+        PYBIND11_DETAILED_ERROR_MESSAGES
     )
 endif()
 

@@ -305,6 +305,30 @@ demod_dmr_python.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_dmr_python.cc.s
 .PHONY : demod_dmr_python.cc.s
 
+demod_dpmr_python.o: demod_dpmr_python.cc.o
+.PHONY : demod_dpmr_python.o
+
+# target to build an object file
+demod_dpmr_python.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_dpmr_python.cc.o
+.PHONY : demod_dpmr_python.cc.o
+
+demod_dpmr_python.i: demod_dpmr_python.cc.i
+.PHONY : demod_dpmr_python.i
+
+# target to preprocess a source file
+demod_dpmr_python.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_dpmr_python.cc.i
+.PHONY : demod_dpmr_python.cc.i
+
+demod_dpmr_python.s: demod_dpmr_python.cc.s
+.PHONY : demod_dpmr_python.s
+
+# target to generate assembly for a file
+demod_dpmr_python.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_dpmr_python.cc.s
+.PHONY : demod_dpmr_python.cc.s
+
 demod_dsss_python.o: demod_dsss_python.cc.o
 .PHONY : demod_dsss_python.o
 
@@ -401,6 +425,54 @@ demod_m17_python.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_m17_python.cc.s
 .PHONY : demod_m17_python.cc.s
 
+demod_mmdvm_multi2_python.o: demod_mmdvm_multi2_python.cc.o
+.PHONY : demod_mmdvm_multi2_python.o
+
+# target to build an object file
+demod_mmdvm_multi2_python.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_mmdvm_multi2_python.cc.o
+.PHONY : demod_mmdvm_multi2_python.cc.o
+
+demod_mmdvm_multi2_python.i: demod_mmdvm_multi2_python.cc.i
+.PHONY : demod_mmdvm_multi2_python.i
+
+# target to preprocess a source file
+demod_mmdvm_multi2_python.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_mmdvm_multi2_python.cc.i
+.PHONY : demod_mmdvm_multi2_python.cc.i
+
+demod_mmdvm_multi2_python.s: demod_mmdvm_multi2_python.cc.s
+.PHONY : demod_mmdvm_multi2_python.s
+
+# target to generate assembly for a file
+demod_mmdvm_multi2_python.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_mmdvm_multi2_python.cc.s
+.PHONY : demod_mmdvm_multi2_python.cc.s
+
+demod_mmdvm_multi_python.o: demod_mmdvm_multi_python.cc.o
+.PHONY : demod_mmdvm_multi_python.o
+
+# target to build an object file
+demod_mmdvm_multi_python.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_mmdvm_multi_python.cc.o
+.PHONY : demod_mmdvm_multi_python.cc.o
+
+demod_mmdvm_multi_python.i: demod_mmdvm_multi_python.cc.i
+.PHONY : demod_mmdvm_multi_python.i
+
+# target to preprocess a source file
+demod_mmdvm_multi_python.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_mmdvm_multi_python.cc.i
+.PHONY : demod_mmdvm_multi_python.cc.i
+
+demod_mmdvm_multi_python.s: demod_mmdvm_multi_python.cc.s
+.PHONY : demod_mmdvm_multi_python.s
+
+# target to generate assembly for a file
+demod_mmdvm_multi_python.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_mmdvm_multi_python.cc.s
+.PHONY : demod_mmdvm_multi_python.cc.s
+
 demod_nbfm_python.o: demod_nbfm_python.cc.o
 .PHONY : demod_nbfm_python.o
 
@@ -424,6 +496,30 @@ demod_nbfm_python.s: demod_nbfm_python.cc.s
 demod_nbfm_python.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_nbfm_python.cc.s
 .PHONY : demod_nbfm_python.cc.s
+
+demod_nxdn_python.o: demod_nxdn_python.cc.o
+.PHONY : demod_nxdn_python.o
+
+# target to build an object file
+demod_nxdn_python.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_nxdn_python.cc.o
+.PHONY : demod_nxdn_python.cc.o
+
+demod_nxdn_python.i: demod_nxdn_python.cc.i
+.PHONY : demod_nxdn_python.i
+
+# target to preprocess a source file
+demod_nxdn_python.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_nxdn_python.cc.i
+.PHONY : demod_nxdn_python.cc.i
+
+demod_nxdn_python.s: demod_nxdn_python.cc.s
+.PHONY : demod_nxdn_python.s
+
+# target to generate assembly for a file
+demod_nxdn_python.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_nxdn_python.cc.s
+.PHONY : demod_nxdn_python.cc.s
 
 demod_qpsk_python.o: demod_qpsk_python.cc.o
 .PHONY : demod_qpsk_python.o
@@ -496,6 +592,54 @@ demod_wbfm_python.s: demod_wbfm_python.cc.s
 demod_wbfm_python.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/demod_wbfm_python.cc.s
 .PHONY : demod_wbfm_python.cc.s
+
+dstar_decoder_python.o: dstar_decoder_python.cc.o
+.PHONY : dstar_decoder_python.o
+
+# target to build an object file
+dstar_decoder_python.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/dstar_decoder_python.cc.o
+.PHONY : dstar_decoder_python.cc.o
+
+dstar_decoder_python.i: dstar_decoder_python.cc.i
+.PHONY : dstar_decoder_python.i
+
+# target to preprocess a source file
+dstar_decoder_python.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/dstar_decoder_python.cc.i
+.PHONY : dstar_decoder_python.cc.i
+
+dstar_decoder_python.s: dstar_decoder_python.cc.s
+.PHONY : dstar_decoder_python.s
+
+# target to generate assembly for a file
+dstar_decoder_python.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/dstar_decoder_python.cc.s
+.PHONY : dstar_decoder_python.cc.s
+
+dstar_encoder_python.o: dstar_encoder_python.cc.o
+.PHONY : dstar_encoder_python.o
+
+# target to build an object file
+dstar_encoder_python.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/dstar_encoder_python.cc.o
+.PHONY : dstar_encoder_python.cc.o
+
+dstar_encoder_python.i: dstar_encoder_python.cc.i
+.PHONY : dstar_encoder_python.i
+
+# target to preprocess a source file
+dstar_encoder_python.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/dstar_encoder_python.cc.i
+.PHONY : dstar_encoder_python.cc.i
+
+dstar_encoder_python.s: dstar_encoder_python.cc.s
+.PHONY : dstar_encoder_python.s
+
+# target to generate assembly for a file
+dstar_encoder_python.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/dstar_encoder_python.cc.s
+.PHONY : dstar_encoder_python.cc.s
 
 m17_deframer_python.o: m17_deframer_python.cc.o
 .PHONY : m17_deframer_python.o
@@ -641,6 +785,30 @@ mod_dmr_python.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_dmr_python.cc.s
 .PHONY : mod_dmr_python.cc.s
 
+mod_dpmr_python.o: mod_dpmr_python.cc.o
+.PHONY : mod_dpmr_python.o
+
+# target to build an object file
+mod_dpmr_python.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_dpmr_python.cc.o
+.PHONY : mod_dpmr_python.cc.o
+
+mod_dpmr_python.i: mod_dpmr_python.cc.i
+.PHONY : mod_dpmr_python.i
+
+# target to preprocess a source file
+mod_dpmr_python.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_dpmr_python.cc.i
+.PHONY : mod_dpmr_python.cc.i
+
+mod_dpmr_python.s: mod_dpmr_python.cc.s
+.PHONY : mod_dpmr_python.s
+
+# target to generate assembly for a file
+mod_dpmr_python.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_dpmr_python.cc.s
+.PHONY : mod_dpmr_python.cc.s
+
 mod_dsss_python.o: mod_dsss_python.cc.o
 .PHONY : mod_dsss_python.o
 
@@ -785,6 +953,30 @@ mod_nbfm_python.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_nbfm_python.cc.s
 .PHONY : mod_nbfm_python.cc.s
 
+mod_nxdn_python.o: mod_nxdn_python.cc.o
+.PHONY : mod_nxdn_python.o
+
+# target to build an object file
+mod_nxdn_python.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_nxdn_python.cc.o
+.PHONY : mod_nxdn_python.cc.o
+
+mod_nxdn_python.i: mod_nxdn_python.cc.i
+.PHONY : mod_nxdn_python.i
+
+# target to preprocess a source file
+mod_nxdn_python.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_nxdn_python.cc.i
+.PHONY : mod_nxdn_python.cc.i
+
+mod_nxdn_python.s: mod_nxdn_python.cc.s
+.PHONY : mod_nxdn_python.s
+
+# target to generate assembly for a file
+mod_nxdn_python.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_nxdn_python.cc.s
+.PHONY : mod_nxdn_python.cc.s
+
 mod_qpsk_python.o: mod_qpsk_python.cc.o
 .PHONY : mod_qpsk_python.o
 
@@ -832,6 +1024,102 @@ mod_ssb_python.s: mod_ssb_python.cc.s
 mod_ssb_python.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/mod_ssb_python.cc.s
 .PHONY : mod_ssb_python.cc.s
+
+p25_decoder_python.o: p25_decoder_python.cc.o
+.PHONY : p25_decoder_python.o
+
+# target to build an object file
+p25_decoder_python.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/p25_decoder_python.cc.o
+.PHONY : p25_decoder_python.cc.o
+
+p25_decoder_python.i: p25_decoder_python.cc.i
+.PHONY : p25_decoder_python.i
+
+# target to preprocess a source file
+p25_decoder_python.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/p25_decoder_python.cc.i
+.PHONY : p25_decoder_python.cc.i
+
+p25_decoder_python.s: p25_decoder_python.cc.s
+.PHONY : p25_decoder_python.s
+
+# target to generate assembly for a file
+p25_decoder_python.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/p25_decoder_python.cc.s
+.PHONY : p25_decoder_python.cc.s
+
+p25_encoder_python.o: p25_encoder_python.cc.o
+.PHONY : p25_encoder_python.o
+
+# target to build an object file
+p25_encoder_python.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/p25_encoder_python.cc.o
+.PHONY : p25_encoder_python.cc.o
+
+p25_encoder_python.i: p25_encoder_python.cc.i
+.PHONY : p25_encoder_python.i
+
+# target to preprocess a source file
+p25_encoder_python.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/p25_encoder_python.cc.i
+.PHONY : p25_encoder_python.cc.i
+
+p25_encoder_python.s: p25_encoder_python.cc.s
+.PHONY : p25_encoder_python.s
+
+# target to generate assembly for a file
+p25_encoder_python.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/p25_encoder_python.cc.s
+.PHONY : p25_encoder_python.cc.s
+
+pocsag_decoder_python.o: pocsag_decoder_python.cc.o
+.PHONY : pocsag_decoder_python.o
+
+# target to build an object file
+pocsag_decoder_python.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/pocsag_decoder_python.cc.o
+.PHONY : pocsag_decoder_python.cc.o
+
+pocsag_decoder_python.i: pocsag_decoder_python.cc.i
+.PHONY : pocsag_decoder_python.i
+
+# target to preprocess a source file
+pocsag_decoder_python.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/pocsag_decoder_python.cc.i
+.PHONY : pocsag_decoder_python.cc.i
+
+pocsag_decoder_python.s: pocsag_decoder_python.cc.s
+.PHONY : pocsag_decoder_python.s
+
+# target to generate assembly for a file
+pocsag_decoder_python.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/pocsag_decoder_python.cc.s
+.PHONY : pocsag_decoder_python.cc.s
+
+pocsag_encoder_python.o: pocsag_encoder_python.cc.o
+.PHONY : pocsag_encoder_python.o
+
+# target to build an object file
+pocsag_encoder_python.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/pocsag_encoder_python.cc.o
+.PHONY : pocsag_encoder_python.cc.o
+
+pocsag_encoder_python.i: pocsag_encoder_python.cc.i
+.PHONY : pocsag_encoder_python.i
+
+# target to preprocess a source file
+pocsag_encoder_python.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/pocsag_encoder_python.cc.i
+.PHONY : pocsag_encoder_python.cc.i
+
+pocsag_encoder_python.s: pocsag_encoder_python.cc.s
+.PHONY : pocsag_encoder_python.s
+
+# target to generate assembly for a file
+pocsag_encoder_python.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/pocsag_encoder_python.cc.s
+.PHONY : pocsag_encoder_python.cc.s
 
 python_bindings.o: python_bindings.cc.o
 .PHONY : python_bindings.o
@@ -881,6 +1169,54 @@ rssi_tag_block_python.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/rssi_tag_block_python.cc.s
 .PHONY : rssi_tag_block_python.cc.s
 
+ysf_decoder_python.o: ysf_decoder_python.cc.o
+.PHONY : ysf_decoder_python.o
+
+# target to build an object file
+ysf_decoder_python.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/ysf_decoder_python.cc.o
+.PHONY : ysf_decoder_python.cc.o
+
+ysf_decoder_python.i: ysf_decoder_python.cc.i
+.PHONY : ysf_decoder_python.i
+
+# target to preprocess a source file
+ysf_decoder_python.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/ysf_decoder_python.cc.i
+.PHONY : ysf_decoder_python.cc.i
+
+ysf_decoder_python.s: ysf_decoder_python.cc.s
+.PHONY : ysf_decoder_python.s
+
+# target to generate assembly for a file
+ysf_decoder_python.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/ysf_decoder_python.cc.s
+.PHONY : ysf_decoder_python.cc.s
+
+ysf_encoder_python.o: ysf_encoder_python.cc.o
+.PHONY : ysf_encoder_python.o
+
+# target to build an object file
+ysf_encoder_python.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/ysf_encoder_python.cc.o
+.PHONY : ysf_encoder_python.cc.o
+
+ysf_encoder_python.i: ysf_encoder_python.cc.i
+.PHONY : ysf_encoder_python.i
+
+# target to preprocess a source file
+ysf_encoder_python.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/ysf_encoder_python.cc.i
+.PHONY : ysf_encoder_python.cc.i
+
+ysf_encoder_python.s: ysf_encoder_python.cc.s
+.PHONY : ysf_encoder_python.s
+
+# target to generate assembly for a file
+ysf_encoder_python.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/build.make python/qradiolink/bindings/CMakeFiles/qradiolink_python.dir/ysf_encoder_python.cc.s
+.PHONY : ysf_encoder_python.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -910,6 +1246,9 @@ help:
 	@echo "... demod_dmr_python.o"
 	@echo "... demod_dmr_python.i"
 	@echo "... demod_dmr_python.s"
+	@echo "... demod_dpmr_python.o"
+	@echo "... demod_dpmr_python.i"
+	@echo "... demod_dpmr_python.s"
 	@echo "... demod_dsss_python.o"
 	@echo "... demod_dsss_python.i"
 	@echo "... demod_dsss_python.s"
@@ -922,9 +1261,18 @@ help:
 	@echo "... demod_m17_python.o"
 	@echo "... demod_m17_python.i"
 	@echo "... demod_m17_python.s"
+	@echo "... demod_mmdvm_multi2_python.o"
+	@echo "... demod_mmdvm_multi2_python.i"
+	@echo "... demod_mmdvm_multi2_python.s"
+	@echo "... demod_mmdvm_multi_python.o"
+	@echo "... demod_mmdvm_multi_python.i"
+	@echo "... demod_mmdvm_multi_python.s"
 	@echo "... demod_nbfm_python.o"
 	@echo "... demod_nbfm_python.i"
 	@echo "... demod_nbfm_python.s"
+	@echo "... demod_nxdn_python.o"
+	@echo "... demod_nxdn_python.i"
+	@echo "... demod_nxdn_python.s"
 	@echo "... demod_qpsk_python.o"
 	@echo "... demod_qpsk_python.i"
 	@echo "... demod_qpsk_python.s"
@@ -934,6 +1282,12 @@ help:
 	@echo "... demod_wbfm_python.o"
 	@echo "... demod_wbfm_python.i"
 	@echo "... demod_wbfm_python.s"
+	@echo "... dstar_decoder_python.o"
+	@echo "... dstar_decoder_python.i"
+	@echo "... dstar_decoder_python.s"
+	@echo "... dstar_encoder_python.o"
+	@echo "... dstar_encoder_python.i"
+	@echo "... dstar_encoder_python.s"
 	@echo "... m17_deframer_python.o"
 	@echo "... m17_deframer_python.i"
 	@echo "... m17_deframer_python.s"
@@ -952,6 +1306,9 @@ help:
 	@echo "... mod_dmr_python.o"
 	@echo "... mod_dmr_python.i"
 	@echo "... mod_dmr_python.s"
+	@echo "... mod_dpmr_python.o"
+	@echo "... mod_dpmr_python.i"
+	@echo "... mod_dpmr_python.s"
 	@echo "... mod_dsss_python.o"
 	@echo "... mod_dsss_python.i"
 	@echo "... mod_dsss_python.s"
@@ -970,18 +1327,39 @@ help:
 	@echo "... mod_nbfm_python.o"
 	@echo "... mod_nbfm_python.i"
 	@echo "... mod_nbfm_python.s"
+	@echo "... mod_nxdn_python.o"
+	@echo "... mod_nxdn_python.i"
+	@echo "... mod_nxdn_python.s"
 	@echo "... mod_qpsk_python.o"
 	@echo "... mod_qpsk_python.i"
 	@echo "... mod_qpsk_python.s"
 	@echo "... mod_ssb_python.o"
 	@echo "... mod_ssb_python.i"
 	@echo "... mod_ssb_python.s"
+	@echo "... p25_decoder_python.o"
+	@echo "... p25_decoder_python.i"
+	@echo "... p25_decoder_python.s"
+	@echo "... p25_encoder_python.o"
+	@echo "... p25_encoder_python.i"
+	@echo "... p25_encoder_python.s"
+	@echo "... pocsag_decoder_python.o"
+	@echo "... pocsag_decoder_python.i"
+	@echo "... pocsag_decoder_python.s"
+	@echo "... pocsag_encoder_python.o"
+	@echo "... pocsag_encoder_python.i"
+	@echo "... pocsag_encoder_python.s"
 	@echo "... python_bindings.o"
 	@echo "... python_bindings.i"
 	@echo "... python_bindings.s"
 	@echo "... rssi_tag_block_python.o"
 	@echo "... rssi_tag_block_python.i"
 	@echo "... rssi_tag_block_python.s"
+	@echo "... ysf_decoder_python.o"
+	@echo "... ysf_decoder_python.i"
+	@echo "... ysf_decoder_python.s"
+	@echo "... ysf_encoder_python.o"
+	@echo "... ysf_encoder_python.i"
+	@echo "... ysf_encoder_python.s"
 .PHONY : help
 
 

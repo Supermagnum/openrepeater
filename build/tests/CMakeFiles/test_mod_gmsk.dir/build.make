@@ -92,7 +92,7 @@ test_mod_gmsk_EXTERNAL_OBJECTS =
 
 tests/test_mod_gmsk: tests/CMakeFiles/test_mod_gmsk.dir/test_mod_gmsk.cc.o
 tests/test_mod_gmsk: tests/CMakeFiles/test_mod_gmsk.dir/build.make
-tests/test_mod_gmsk: lib/libgnuradio-qradiolink.so
+tests/test_mod_gmsk: lib/libgnuradio-qradiolink.a
 tests/test_mod_gmsk: /usr/lib/x86_64-linux-gnu/libvolk.so.3.1.2
 tests/test_mod_gmsk: tests/CMakeFiles/test_mod_gmsk.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/haaken/github-projects/gr-qradiolink/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable test_mod_gmsk"

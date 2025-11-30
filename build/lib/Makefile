@@ -689,6 +689,54 @@ dsss_encoder_bb_impl.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/dsss_encoder_bb_impl.cc.s
 .PHONY : dsss_encoder_bb_impl.cc.s
 
+dstar_decoder_impl.o: dstar_decoder_impl.cc.o
+.PHONY : dstar_decoder_impl.o
+
+# target to build an object file
+dstar_decoder_impl.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/dstar_decoder_impl.cc.o
+.PHONY : dstar_decoder_impl.cc.o
+
+dstar_decoder_impl.i: dstar_decoder_impl.cc.i
+.PHONY : dstar_decoder_impl.i
+
+# target to preprocess a source file
+dstar_decoder_impl.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/dstar_decoder_impl.cc.i
+.PHONY : dstar_decoder_impl.cc.i
+
+dstar_decoder_impl.s: dstar_decoder_impl.cc.s
+.PHONY : dstar_decoder_impl.s
+
+# target to generate assembly for a file
+dstar_decoder_impl.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/dstar_decoder_impl.cc.s
+.PHONY : dstar_decoder_impl.cc.s
+
+dstar_encoder_impl.o: dstar_encoder_impl.cc.o
+.PHONY : dstar_encoder_impl.o
+
+# target to build an object file
+dstar_encoder_impl.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/dstar_encoder_impl.cc.o
+.PHONY : dstar_encoder_impl.cc.o
+
+dstar_encoder_impl.i: dstar_encoder_impl.cc.i
+.PHONY : dstar_encoder_impl.i
+
+# target to preprocess a source file
+dstar_encoder_impl.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/dstar_encoder_impl.cc.i
+.PHONY : dstar_encoder_impl.cc.i
+
+dstar_encoder_impl.s: dstar_encoder_impl.cc.s
+.PHONY : dstar_encoder_impl.s
+
+# target to generate assembly for a file
+dstar_encoder_impl.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/dstar_encoder_impl.cc.s
+.PHONY : dstar_encoder_impl.cc.s
+
 gr_4fsk_discriminator_impl.o: gr_4fsk_discriminator_impl.cc.o
 .PHONY : gr_4fsk_discriminator_impl.o
 
@@ -1169,6 +1217,102 @@ mod_ssb_impl.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/mod_ssb_impl.cc.s
 .PHONY : mod_ssb_impl.cc.s
 
+p25_decoder_impl.o: p25_decoder_impl.cc.o
+.PHONY : p25_decoder_impl.o
+
+# target to build an object file
+p25_decoder_impl.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/p25_decoder_impl.cc.o
+.PHONY : p25_decoder_impl.cc.o
+
+p25_decoder_impl.i: p25_decoder_impl.cc.i
+.PHONY : p25_decoder_impl.i
+
+# target to preprocess a source file
+p25_decoder_impl.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/p25_decoder_impl.cc.i
+.PHONY : p25_decoder_impl.cc.i
+
+p25_decoder_impl.s: p25_decoder_impl.cc.s
+.PHONY : p25_decoder_impl.s
+
+# target to generate assembly for a file
+p25_decoder_impl.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/p25_decoder_impl.cc.s
+.PHONY : p25_decoder_impl.cc.s
+
+p25_encoder_impl.o: p25_encoder_impl.cc.o
+.PHONY : p25_encoder_impl.o
+
+# target to build an object file
+p25_encoder_impl.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/p25_encoder_impl.cc.o
+.PHONY : p25_encoder_impl.cc.o
+
+p25_encoder_impl.i: p25_encoder_impl.cc.i
+.PHONY : p25_encoder_impl.i
+
+# target to preprocess a source file
+p25_encoder_impl.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/p25_encoder_impl.cc.i
+.PHONY : p25_encoder_impl.cc.i
+
+p25_encoder_impl.s: p25_encoder_impl.cc.s
+.PHONY : p25_encoder_impl.s
+
+# target to generate assembly for a file
+p25_encoder_impl.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/p25_encoder_impl.cc.s
+.PHONY : p25_encoder_impl.cc.s
+
+pocsag_decoder_impl.o: pocsag_decoder_impl.cc.o
+.PHONY : pocsag_decoder_impl.o
+
+# target to build an object file
+pocsag_decoder_impl.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/pocsag_decoder_impl.cc.o
+.PHONY : pocsag_decoder_impl.cc.o
+
+pocsag_decoder_impl.i: pocsag_decoder_impl.cc.i
+.PHONY : pocsag_decoder_impl.i
+
+# target to preprocess a source file
+pocsag_decoder_impl.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/pocsag_decoder_impl.cc.i
+.PHONY : pocsag_decoder_impl.cc.i
+
+pocsag_decoder_impl.s: pocsag_decoder_impl.cc.s
+.PHONY : pocsag_decoder_impl.s
+
+# target to generate assembly for a file
+pocsag_decoder_impl.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/pocsag_decoder_impl.cc.s
+.PHONY : pocsag_decoder_impl.cc.s
+
+pocsag_encoder_impl.o: pocsag_encoder_impl.cc.o
+.PHONY : pocsag_encoder_impl.o
+
+# target to build an object file
+pocsag_encoder_impl.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/pocsag_encoder_impl.cc.o
+.PHONY : pocsag_encoder_impl.cc.o
+
+pocsag_encoder_impl.i: pocsag_encoder_impl.cc.i
+.PHONY : pocsag_encoder_impl.i
+
+# target to preprocess a source file
+pocsag_encoder_impl.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/pocsag_encoder_impl.cc.i
+.PHONY : pocsag_encoder_impl.cc.i
+
+pocsag_encoder_impl.s: pocsag_encoder_impl.cc.s
+.PHONY : pocsag_encoder_impl.s
+
+# target to generate assembly for a file
+pocsag_encoder_impl.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/pocsag_encoder_impl.cc.s
+.PHONY : pocsag_encoder_impl.cc.s
+
 rssi_tag_block_impl.o: rssi_tag_block_impl.cc.o
 .PHONY : rssi_tag_block_impl.o
 
@@ -1216,6 +1360,54 @@ stretcher_cc_impl.s: stretcher_cc_impl.cc.s
 stretcher_cc_impl.cc.s:
 	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/stretcher_cc_impl.cc.s
 .PHONY : stretcher_cc_impl.cc.s
+
+ysf_decoder_impl.o: ysf_decoder_impl.cc.o
+.PHONY : ysf_decoder_impl.o
+
+# target to build an object file
+ysf_decoder_impl.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/ysf_decoder_impl.cc.o
+.PHONY : ysf_decoder_impl.cc.o
+
+ysf_decoder_impl.i: ysf_decoder_impl.cc.i
+.PHONY : ysf_decoder_impl.i
+
+# target to preprocess a source file
+ysf_decoder_impl.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/ysf_decoder_impl.cc.i
+.PHONY : ysf_decoder_impl.cc.i
+
+ysf_decoder_impl.s: ysf_decoder_impl.cc.s
+.PHONY : ysf_decoder_impl.s
+
+# target to generate assembly for a file
+ysf_decoder_impl.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/ysf_decoder_impl.cc.s
+.PHONY : ysf_decoder_impl.cc.s
+
+ysf_encoder_impl.o: ysf_encoder_impl.cc.o
+.PHONY : ysf_encoder_impl.o
+
+# target to build an object file
+ysf_encoder_impl.cc.o:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/ysf_encoder_impl.cc.o
+.PHONY : ysf_encoder_impl.cc.o
+
+ysf_encoder_impl.i: ysf_encoder_impl.cc.i
+.PHONY : ysf_encoder_impl.i
+
+# target to preprocess a source file
+ysf_encoder_impl.cc.i:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/ysf_encoder_impl.cc.i
+.PHONY : ysf_encoder_impl.cc.i
+
+ysf_encoder_impl.s: ysf_encoder_impl.cc.s
+.PHONY : ysf_encoder_impl.s
+
+# target to generate assembly for a file
+ysf_encoder_impl.cc.s:
+	cd /home/haaken/github-projects/gr-qradiolink/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-qradiolink.dir/build.make lib/CMakeFiles/gnuradio-qradiolink.dir/ysf_encoder_impl.cc.s
+.PHONY : ysf_encoder_impl.cc.s
 
 zero_idle_bursts_impl.o: zero_idle_bursts_impl.cc.o
 .PHONY : zero_idle_bursts_impl.o
@@ -1318,6 +1510,12 @@ help:
 	@echo "... dsss_encoder_bb_impl.o"
 	@echo "... dsss_encoder_bb_impl.i"
 	@echo "... dsss_encoder_bb_impl.s"
+	@echo "... dstar_decoder_impl.o"
+	@echo "... dstar_decoder_impl.i"
+	@echo "... dstar_decoder_impl.s"
+	@echo "... dstar_encoder_impl.o"
+	@echo "... dstar_encoder_impl.i"
+	@echo "... dstar_encoder_impl.s"
 	@echo "... gr_4fsk_discriminator_impl.o"
 	@echo "... gr_4fsk_discriminator_impl.i"
 	@echo "... gr_4fsk_discriminator_impl.s"
@@ -1378,12 +1576,30 @@ help:
 	@echo "... mod_ssb_impl.o"
 	@echo "... mod_ssb_impl.i"
 	@echo "... mod_ssb_impl.s"
+	@echo "... p25_decoder_impl.o"
+	@echo "... p25_decoder_impl.i"
+	@echo "... p25_decoder_impl.s"
+	@echo "... p25_encoder_impl.o"
+	@echo "... p25_encoder_impl.i"
+	@echo "... p25_encoder_impl.s"
+	@echo "... pocsag_decoder_impl.o"
+	@echo "... pocsag_decoder_impl.i"
+	@echo "... pocsag_decoder_impl.s"
+	@echo "... pocsag_encoder_impl.o"
+	@echo "... pocsag_encoder_impl.i"
+	@echo "... pocsag_encoder_impl.s"
 	@echo "... rssi_tag_block_impl.o"
 	@echo "... rssi_tag_block_impl.i"
 	@echo "... rssi_tag_block_impl.s"
 	@echo "... stretcher_cc_impl.o"
 	@echo "... stretcher_cc_impl.i"
 	@echo "... stretcher_cc_impl.s"
+	@echo "... ysf_decoder_impl.o"
+	@echo "... ysf_decoder_impl.i"
+	@echo "... ysf_decoder_impl.s"
+	@echo "... ysf_encoder_impl.o"
+	@echo "... ysf_encoder_impl.i"
+	@echo "... ysf_encoder_impl.s"
 	@echo "... zero_idle_bursts_impl.o"
 	@echo "... zero_idle_bursts_impl.i"
 	@echo "... zero_idle_bursts_impl.s"

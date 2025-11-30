@@ -653,6 +653,32 @@ test_mod_bpsk/fast:
 .PHONY : test_mod_bpsk/fast
 
 #=============================================================================
+# Target rules for targets named test_mod_mmdvm
+
+# Build rule for target.
+test_mod_mmdvm: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_mod_mmdvm
+.PHONY : test_mod_mmdvm
+
+# fast build rule for target.
+test_mod_mmdvm/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_mmdvm.dir/build.make tests/CMakeFiles/test_mod_mmdvm.dir/build
+.PHONY : test_mod_mmdvm/fast
+
+#=============================================================================
+# Target rules for targets named test_mod_freedv
+
+# Build rule for target.
+test_mod_freedv: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_mod_freedv
+.PHONY : test_mod_freedv
+
+# fast build rule for target.
+test_mod_freedv/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_mod_freedv.dir/build.make tests/CMakeFiles/test_mod_freedv.dir/build
+.PHONY : test_mod_freedv/fast
+
+#=============================================================================
 # Target rules for targets named qradiolink_test_mod_ssb
 
 # Build rule for target.
@@ -847,6 +873,71 @@ qradiolink_test_demod_m17/fast:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_m17.dir/build.make tests/CMakeFiles/qradiolink_test_demod_m17.dir/build
 .PHONY : qradiolink_test_demod_m17/fast
 
+#=============================================================================
+# Target rules for targets named qradiolink_test_demod_dmr
+
+# Build rule for target.
+qradiolink_test_demod_dmr: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 qradiolink_test_demod_dmr
+.PHONY : qradiolink_test_demod_dmr
+
+# fast build rule for target.
+qradiolink_test_demod_dmr/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_dmr.dir/build.make tests/CMakeFiles/qradiolink_test_demod_dmr.dir/build
+.PHONY : qradiolink_test_demod_dmr/fast
+
+#=============================================================================
+# Target rules for targets named qradiolink_test_demod_freedv
+
+# Build rule for target.
+qradiolink_test_demod_freedv: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 qradiolink_test_demod_freedv
+.PHONY : qradiolink_test_demod_freedv
+
+# fast build rule for target.
+qradiolink_test_demod_freedv/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_freedv.dir/build.make tests/CMakeFiles/qradiolink_test_demod_freedv.dir/build
+.PHONY : qradiolink_test_demod_freedv/fast
+
+#=============================================================================
+# Target rules for targets named qradiolink_test_demod_mmdvm_multi
+
+# Build rule for target.
+qradiolink_test_demod_mmdvm_multi: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 qradiolink_test_demod_mmdvm_multi
+.PHONY : qradiolink_test_demod_mmdvm_multi
+
+# fast build rule for target.
+qradiolink_test_demod_mmdvm_multi/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi.dir/build.make tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi.dir/build
+.PHONY : qradiolink_test_demod_mmdvm_multi/fast
+
+#=============================================================================
+# Target rules for targets named qradiolink_test_demod_mmdvm_multi2
+
+# Build rule for target.
+qradiolink_test_demod_mmdvm_multi2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 qradiolink_test_demod_mmdvm_multi2
+.PHONY : qradiolink_test_demod_mmdvm_multi2
+
+# fast build rule for target.
+qradiolink_test_demod_mmdvm_multi2/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi2.dir/build.make tests/CMakeFiles/qradiolink_test_demod_mmdvm_multi2.dir/build
+.PHONY : qradiolink_test_demod_mmdvm_multi2/fast
+
+#=============================================================================
+# Target rules for targets named qradiolink_test_rssi_tag_block
+
+# Build rule for target.
+qradiolink_test_rssi_tag_block: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 qradiolink_test_rssi_tag_block
+.PHONY : qradiolink_test_rssi_tag_block
+
+# fast build rule for target.
+qradiolink_test_rssi_tag_block/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qradiolink_test_rssi_tag_block.dir/build.make tests/CMakeFiles/qradiolink_test_rssi_tag_block.dir/build
+.PHONY : qradiolink_test_rssi_tag_block/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -896,9 +987,13 @@ help:
 	@echo "... qradiolink_test_demod_4fsk"
 	@echo "... qradiolink_test_demod_am"
 	@echo "... qradiolink_test_demod_bpsk"
+	@echo "... qradiolink_test_demod_dmr"
 	@echo "... qradiolink_test_demod_dsss"
+	@echo "... qradiolink_test_demod_freedv"
 	@echo "... qradiolink_test_demod_gmsk"
 	@echo "... qradiolink_test_demod_m17"
+	@echo "... qradiolink_test_demod_mmdvm_multi"
+	@echo "... qradiolink_test_demod_mmdvm_multi2"
 	@echo "... qradiolink_test_demod_nbfm"
 	@echo "... qradiolink_test_demod_qpsk"
 	@echo "... qradiolink_test_demod_ssb"
@@ -907,11 +1002,14 @@ help:
 	@echo "... qradiolink_test_mod_nbfm"
 	@echo "... qradiolink_test_mod_qpsk"
 	@echo "... qradiolink_test_mod_ssb"
+	@echo "... qradiolink_test_rssi_tag_block"
 	@echo "... test_mod_2fsk"
 	@echo "... test_mod_4fsk"
 	@echo "... test_mod_am"
 	@echo "... test_mod_bpsk"
+	@echo "... test_mod_freedv"
 	@echo "... test_mod_gmsk"
+	@echo "... test_mod_mmdvm"
 .PHONY : help
 
 
