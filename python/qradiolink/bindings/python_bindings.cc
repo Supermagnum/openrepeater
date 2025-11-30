@@ -45,6 +45,8 @@ void bind_demod_dmr(py::module&);
 void bind_demod_dpmr(py::module&);
 void bind_demod_nxdn(py::module&);
 void bind_demod_freedv(py::module&);
+void bind_demod_mmdvm_multi(py::module&);
+void bind_demod_mmdvm_multi2(py::module&);
 void bind_rssi_tag_block(py::module&);
 void bind_m17_deframer(py::module&);
 
@@ -101,6 +103,8 @@ PYBIND11_MODULE(qradiolink_python, m)
     bind_demod_dpmr(m);
     bind_demod_nxdn(m);
     bind_demod_freedv(m);
+    bind_demod_mmdvm_multi(m);
+    bind_demod_mmdvm_multi2(m);
     bind_rssi_tag_block(m);
     bind_m17_deframer(m);
 }
