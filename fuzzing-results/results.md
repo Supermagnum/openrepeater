@@ -571,13 +571,19 @@ The following blocks are actively tested in the test suite:
 - C++ tests: demod_2fsk, demod_4fsk, demod_am, demod_ssb, demod_wbfm, demod_nbfm, demod_bpsk, demod_qpsk, demod_gmsk, demod_dsss, demod_m17, demod_dmr, demod_freedv, demod_mmdvm_multi, demod_mmdvm_multi2 (15 blocks)
 - Separate validation: demod_dpmr, demod_nxdn (2 blocks via test_nxdn_dpmr_validation.py)
 
+**MMDVM Protocol Encoders/Decoders (8 blocks available, 8 tested):**
+- Python integration tests: pocsag_encoder, pocsag_decoder, dstar_encoder, dstar_decoder, ysf_encoder, ysf_decoder, p25_encoder, p25_decoder (8 blocks via test_mmdvm_protocols.py)
+
+**MMDVM Protocol Encoders/Decoders (8 blocks available, 8 tested):**
+- Python integration tests: pocsag_encoder, pocsag_decoder, dstar_encoder, dstar_decoder, ysf_encoder, ysf_decoder, p25_encoder, p25_decoder (8 blocks via test_mmdvm_protocols.py)
+
 **Supporting Blocks (2 blocks available, 2 tested):**
 - m17_deframer (via attack vector tests - test_m17_deframer_attack_vectors.py)
 - rssi_tag_block (C++ test passes)
 
-**Total:** 34 blocks available in Python bindings, 34 blocks tested (100% coverage of available blocks)
+**Total:** 42 blocks available in Python bindings (15 modulators, 17 demodulators, 4 encoders, 4 decoders, 2 supporting), 42 blocks tested (100% coverage of available blocks)
 
-**Note:** demod_mmdvm_multi and demod_mmdvm_multi2 now have C++ unit tests using a mock BurstTimer implementation (test_bursttimer.h). Tests cover both TDMA and non-TDMA modes. All blocks now have test coverage.
+**Note:** demod_mmdvm_multi and demod_mmdvm_multi2 have C++ unit tests using a mock BurstTimer implementation (test_bursttimer.h). Tests cover both TDMA and non-TDMA modes, instantiation, flowgraph connections, and method calls. All blocks now have test coverage.
 
 **Note:** The blocks mod_freedv, demod_freedv, demod_dmr, mod_mmdvm, and rssi_tag_block have C++ unit tests that pass (included in the 25/25 passing tests). The demod_mmdvm_multi and demod_mmdvm_multi2 blocks accept None for burst_timer parameter when not using TDMA timing, or an integer pointer address when a BurstTimer instance is available from C++ code.
 
@@ -920,8 +926,10 @@ The comprehensive modulation validation test suite demonstrates:
   - Digital modulations: 2FSK, 4FSK, GMSK, BPSK, QPSK, DSSS ✓
   - Analog modulations: AM, SSB, NBFM, WBFM ✓
   - Digital voice: FreeDV, M17, DMR, dPMR, NXDN, MMDVM ✓
-- **Python bindings: 34 blocks available** - All blocks have Python bindings (15 modulators, 17 demodulators, 2 supporting)
-- **Test coverage: 32/34 blocks tested (94%)** - Only demod_mmdvm_multi and demod_mmdvm_multi2 lack automated tests (require BurstTimer)
+- **Python bindings: 42 blocks available** - All blocks have Python bindings (15 modulators, 17 demodulators, 4 encoders, 4 decoders, 2 supporting)
+- **Test coverage: 42/42 blocks tested (100%)** - All blocks have automated tests:
+  - demod_mmdvm_multi and demod_mmdvm_multi2 have C++ unit tests with mock BurstTimer (test_demod_mmdvm_multi.cc, test_demod_mmdvm_multi2.cc)
+  - MMDVM protocol blocks (POCSAG, D-STAR, YSF, P25 encoders/decoders) have Python integration tests (test_mmdvm_protocols.py)
 - **Edge cases** are handled gracefully
 - **RTTI/typeinfo symbols** properly exported for all Python bindings
 
