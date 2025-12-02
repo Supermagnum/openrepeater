@@ -141,7 +141,7 @@ class blk(gr.sync_block):
         key_in = input_items[1]
         audio_out = output_items[0]
         data_out = output_items[1]
-        n = len(audio_in)
+        n = len(output_items[0])  # Use output buffer size, not input size
         
         if len(key_in) > 0 and not self._use_pkcs11:
             self._key_buffer.extend(key_in.tolist())
@@ -149,11 +149,12 @@ class blk(gr.sync_block):
                 self._key_buffer = self._key_buffer[-32:]
         
         # Track audio samples processed
-        if n > 0 and not self._audio_eof_detected:
-            self._total_audio_samples += n
+        if len(audio_in) > 0 and not self._audio_eof_detected:
+            self._total_audio_samples += len(audio_in)
         
-        # Detect EOF only when source actually stops (n == 0) AND we've processed audio
-        if n == 0 and not self._audio_eof_detected and self._total_audio_samples > 0:
+        # Detect EOF when source stops (len(audio_in) == 0) AND we've processed audio
+        # n comes from output buffer, so can be > 0 even when input is empty
+        if len(audio_in) == 0 and not self._audio_eof_detected and self._total_audio_samples > 0:
             self._audio_eof_detected = True
             frames_bytes = self._generate_frames_bytes()
             if frames_bytes:
@@ -168,8 +169,14 @@ class blk(gr.sync_block):
         # Process audio or data frames
         if not self._audio_eof_detected:
             # Pass through audio while receiving it
-            audio_out[:n] = audio_in[:n]
+            # Handle case where audio_in might be shorter than n
+            audio_len = min(n, len(audio_in)) if len(audio_in) > 0 else 0
+            if audio_len > 0:
+                audio_out[:audio_len] = audio_in[:audio_len]
+            # Zero-pad remaining audio output
+            audio_out[audio_len:n] = 0.0
             data_out[:n] = 0
+            # Always return n to keep flowgraph running
             return n
         else:
             # After EOF detected: flush buffers first, then output data frames
