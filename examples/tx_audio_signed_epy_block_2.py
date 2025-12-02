@@ -34,10 +34,10 @@ class blk(gr.sync_block):
         self._silence_threshold = 48000  # 1 second of silence
         self._total_audio_samples = 0
         self._min_audio_samples = 96000  # Require at least 2 seconds of audio
-
+        
         if PKCS11_AVAILABLE:
             self._init_pkcs11()
-
+    
     def _init_pkcs11(self):
         lib_paths = [
             '/usr/lib/x86_64-linux-gnu/opensc-pkcs11.so',
@@ -54,7 +54,7 @@ class blk(gr.sync_block):
                 except Exception as e:
                     continue
         return False
-
+    
     def _get_token(self, pin=None):
         if not self._pkcs11_lib:
             return None
@@ -73,7 +73,7 @@ class blk(gr.sync_block):
             return token
         except:
             return None
-
+    
     def _sign_with_pkcs11(self, data, pin=None):
         if not PKCS11_AVAILABLE or not self._pkcs11_lib:
             return None
@@ -90,7 +90,7 @@ class blk(gr.sync_block):
         except Exception as e:
             print(f"PKCS#11 signing error: {e}")
             return None
-
+    
     def _generate_frames_bytes(self):
         try:
             import __main__
@@ -99,28 +99,28 @@ class blk(gr.sync_block):
                 if msg:
                     msg_bytes = msg.encode('utf-8')
                     signature = None
-
+                    
                     if self._use_pkcs11:
                         signature = self._sign_with_pkcs11(msg_bytes)
-
+                    
                     if not signature and len(self._key_buffer) >= 32 and NACL_AVAILABLE:
                         key = bytes(self._key_buffer[:32])
                         signature = nacl.sign_ed25519(msg_bytes, key)
-
+                    
                     frames = bytearray()
-
+                    
                     if signature:
                         frames.extend(b'SIG')
                         frames.extend(signature)
-
+                    
                     frames.extend(msg_bytes)
-
+                    
                     return bytes(frames)
         except Exception as e:
             print(f"Frame generation error: {e}")
             pass
         return None
-
+    
     def work(self, input_items, output_items):
         try:
             import __main__
@@ -128,23 +128,23 @@ class blk(gr.sync_block):
                 self._use_pkcs11 = getattr(__main__, 'use_pkcs11').value()
         except:
             pass
-
+        
         audio_in = input_items[0]
         key_in = input_items[1]
         audio_out = output_items[0]
         data_out = output_items[1]
         n = len(audio_in)
-
+        
         if len(key_in) > 0 and not self._use_pkcs11:
             self._key_buffer.extend(key_in.tolist())
             if len(self._key_buffer) > 32:
                 self._key_buffer = self._key_buffer[-32:]
-
+        
         if not self._audio_eof_detected:
             # Always pass through audio while receiving it
             self._total_audio_samples += n
             audio_energy = np.sum(np.abs(audio_in))
-
+            
             # Detect file end: all zeros after processing significant audio
             # This handles files with silence at start and end
             if n > 0:
@@ -171,7 +171,7 @@ class blk(gr.sync_block):
                         self._data_frames_bytes = bytearray(frames_bytes)
                         self._data_output_idx = 0
                     print(f"File source ended after {self._total_audio_samples} samples")
-
+        
         if not self._audio_eof_detected:
             audio_out[:n] = audio_in[:n]
             data_out[:n] = 0

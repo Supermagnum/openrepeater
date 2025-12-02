@@ -266,4 +266,3 @@ def main(top_block_cls=tx_audio_signed, options=None):
 
 if __name__ == '__main__':
     main()
-
