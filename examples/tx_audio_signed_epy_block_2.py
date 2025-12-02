@@ -34,6 +34,9 @@ class blk(gr.sync_block):
         self._silence_threshold = 48000  # 1 second of silence
         self._total_audio_samples = 0
         self._min_audio_samples = 96000  # Require at least 2 seconds of audio
+        self._frames_complete = False  # Track when all frames have been output
+        self._eof_flush_samples = 0  # Count samples output after EOF to flush buffers
+        self._eof_flush_needed = 1000  # Flush a small amount to ensure audio is written
         
         if PKCS11_AVAILABLE:
             self._init_pkcs11()
@@ -115,7 +118,12 @@ class blk(gr.sync_block):
                     
                     frames.extend(msg_bytes)
                     
-                    return bytes(frames)
+                    # Generate TWO frames by duplicating the data
+                    # The AX.25 encoder will create a separate frame for each transmission
+                    frames_duplicated = bytearray(frames)
+                    frames_duplicated.extend(frames)  # Append second frame
+                    
+                    return bytes(frames_duplicated)
         except Exception as e:
             print(f"Frame generation error: {e}")
             pass
@@ -140,53 +148,79 @@ class blk(gr.sync_block):
             if len(self._key_buffer) > 32:
                 self._key_buffer = self._key_buffer[-32:]
         
-        if not self._audio_eof_detected:
-            # Always pass through audio while receiving it
+        # Track audio samples processed
+        if n > 0 and not self._audio_eof_detected:
             self._total_audio_samples += n
-            audio_energy = np.sum(np.abs(audio_in))
-            
-            # Detect file end: all zeros after processing significant audio
-            # This handles files with silence at start and end
-            if n > 0:
-                if audio_energy < 1e-10 and self._total_audio_samples > 96000:
-                    # After 2 seconds of audio, check for file end (all zeros)
-                    self._silence_count += n
-                    if self._silence_count >= 96000:  # 2 seconds of complete silence
-                        self._audio_eof_detected = True
-                        frames_bytes = self._generate_frames_bytes()
-                        if frames_bytes:
-                            self._data_frames_bytes = bytearray(frames_bytes)
-                            self._data_output_idx = 0
-                        print(f"File end detected after {self._total_audio_samples} samples")
-                else:
-                    # Reset silence counter if we see any audio
-                    if audio_energy > 1e-6:
-                        self._silence_count = 0
-            else:
-                # n == 0 means file source stopped
-                if self._total_audio_samples > 0:
-                    self._audio_eof_detected = True
-                    frames_bytes = self._generate_frames_bytes()
-                    if frames_bytes:
-                        self._data_frames_bytes = bytearray(frames_bytes)
-                        self._data_output_idx = 0
-                    print(f"File source ended after {self._total_audio_samples} samples")
         
+        # Detect EOF only when source actually stops (n == 0) AND we've processed audio
+        if n == 0 and not self._audio_eof_detected and self._total_audio_samples > 0:
+            self._audio_eof_detected = True
+            frames_bytes = self._generate_frames_bytes()
+            if frames_bytes:
+                self._data_frames_bytes = bytearray(frames_bytes)
+                self._data_output_idx = 0
+                self._frames_complete = False
+                print(f"File source ended after {self._total_audio_samples} samples, generating AX.25 frames ({len(frames_bytes)} bytes)")
+            else:
+                print(f"File source ended after {self._total_audio_samples} samples, but no frames generated")
+                self._frames_complete = True
+        
+        # Process audio or data frames
         if not self._audio_eof_detected:
+            # Pass through audio while receiving it
             audio_out[:n] = audio_in[:n]
             data_out[:n] = 0
             return n
         else:
+            # After EOF detected: flush buffers first, then output data frames
+            # Continue outputting zeros for a while to ensure all audio is flushed from buffers
+            if self._eof_flush_samples < self._eof_flush_needed:
+                audio_out[:n] = 0.0
+                data_out[:n] = 0
+                self._eof_flush_samples += n
+                return n
+            
+            # After flush period: output data frames
             audio_out[:n] = 0.0
-            if self._data_frames_bytes is not None and self._data_output_idx < len(self._data_frames_bytes):
-                remaining = len(self._data_frames_bytes) - self._data_output_idx
-                n_output = min(n, remaining)
-                if n_output > 0:
-                    data_out[:n_output] = np.frombuffer(
-                        self._data_frames_bytes[self._data_output_idx:self._data_output_idx+n_output],
-                        dtype=np.uint8
-                    )
-                    self._data_output_idx += n_output
-                    return n_output
-            data_out[:n] = 0
-            return n
+            
+            # Output data frames if available
+            if not self._frames_complete and self._data_frames_bytes is not None:
+                if self._data_output_idx < len(self._data_frames_bytes):
+                    remaining = len(self._data_frames_bytes) - self._data_output_idx
+                    n_output = min(n, remaining) if n > 0 else 0
+                    
+                    if n_output > 0:
+                        data_out[:n_output] = np.frombuffer(
+                            self._data_frames_bytes[self._data_output_idx:self._data_output_idx+n_output],
+                            dtype=np.uint8
+                        )
+                        self._data_output_idx += n_output
+                        
+                        # Check if all frames are output
+                        if self._data_output_idx >= len(self._data_frames_bytes):
+                            self._frames_complete = True
+                            print(f"All AX.25 frames output ({self._data_output_idx} bytes)")
+                        
+                        # Zero-pad remaining output
+                        if n_output < n:
+                            data_out[n_output:n] = 0
+                        
+                        # Return n to keep flowgraph running
+                        return n
+                    else:
+                        # n == 0 but we still have frames to output
+                        # Don't return 0 yet - wait for next call with n > 0
+                        # But if n is always 0, we need to handle this
+                        data_out[:n] = 0
+                        # Return 0 but frames aren't complete, so flowgraph should call us again
+                        # when other sources (like kernel_keyring) produce data
+                        return 0
+                else:
+                    # All frames output
+                    self._frames_complete = True
+                    data_out[:n] = 0
+                    return 0
+            else:
+                # No frames or frames complete
+                data_out[:n] = 0
+                return 0

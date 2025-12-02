@@ -126,23 +126,6 @@ blocks:
     coordinate: [440, 16.0]
     rotation: 0
     state: enabled
-- name: use_pkcs11
-  id: variable_qtgui_check_box
-  parameters:
-    comment: ''
-    'false': 'False'
-    gui_hint: ''
-    label: Use PKCS#11 (unchecked = Kernel Keyring)
-    'true': 'True'
-    type: bool
-    value: 'True'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1096, 24.0]
-    rotation: 0
-    state: enabled
 - name: start_button
   id: variable_qtgui_push_button
   parameters:
@@ -177,6 +160,23 @@ blocks:
     coordinate: [1496, 24.0]
     rotation: 0
     state: enabled
+- name: use_pkcs11
+  id: variable_qtgui_check_box
+  parameters:
+    comment: ''
+    'false': 'False'
+    gui_hint: ''
+    label: Use PKCS#11 (unchecked = Kernel Keyring)
+    'true': 'True'
+    type: bool
+    value: 'True'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1096, 24.0]
+    rotation: 0
+    state: enabled
 - name: blocks_add_xx_0
   id: blocks_add_xx
   parameters:
@@ -192,7 +192,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1272, 272.0]
+    coordinate: [1120, 296.0]
     rotation: 0
     state: enabled
 - name: blocks_char_to_float_0
@@ -209,7 +209,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [952, 416.0]
+    coordinate: [896, 424.0]
     rotation: 0
     state: enabled
 - name: blocks_repeat_0
@@ -227,7 +227,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1280, 416.0]
+    coordinate: [1056, 424.0]
     rotation: 0
     state: enabled
 - name: blocks_throttle2_0
@@ -248,7 +248,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [552, 408.0]
+    coordinate: [496, 416.0]
     rotation: 0
     state: enabled
 - name: blocks_wavfile_sink_0
@@ -262,7 +262,7 @@ blocks:
     bits_per_sample3: FORMAT_VORBIS
     bits_per_sample4: FORMAT_PCM_16
     comment: Output Audio File (WAV format)
-    file: /home/haaken/Musikk/cq+ax25.wav
+    file: /home/haaken/Musikk/ax25+cq.wav
     format: FORMAT_WAV
     nchan: '1'
     samp_rate: samp_rate
@@ -270,7 +270,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1432, 304.0]
+    coordinate: [1256, 216.0]
     rotation: 0
     state: enabled
 - name: blocks_wavfile_source_0
@@ -399,7 +399,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [264, 360.0]
+    coordinate: [224, 360.0]
     rotation: 0
     state: enabled
 - name: linux_crypto_kernel_keyring_source_0
@@ -438,7 +438,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [720, 364.0]
+    coordinate: [672, 372.0]
     rotation: 0
     state: enabled
 
@@ -452,7 +452,6 @@ connections:
 - [epy_block_2, '1', blocks_throttle2_0, '0']
 - [linux_crypto_kernel_keyring_source_0, '0', epy_block_2, '1']
 - [packet_protocols_ax25_encoder_0, '0', blocks_char_to_float_0, '0']
-
 
 metadata:
   file_format: 1
