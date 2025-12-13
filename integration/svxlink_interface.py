@@ -192,13 +192,9 @@ class SVXLinkInterface:
                 return True, "SVXLink service restarted"
             else:
                 # Fallback to killall and restart
-                subprocess.run(
-                    ["killall", "svxlink"], timeout=5, check=False
-                )  # nosec B607, B603
+                subprocess.run(["killall", "svxlink"], timeout=5, check=False)  # nosec B607, B603
                 time.sleep(1)
-                subprocess.Popen(
-                    ["svxlink"], start_new_session=True
-                )  # nosec B607, B603
+                subprocess.Popen(["svxlink"], start_new_session=True)  # nosec B607, B603
                 return True, "SVXLink process restarted"
 
         except subprocess.TimeoutExpired:
@@ -283,9 +279,7 @@ class SVXLinkInterface:
             logger.error(f"Failed to reload SVXLink config: {e}")
             return False
 
-    def execute_command(
-        self, command: str, args: Optional[list] = None
-    ) -> Tuple[bool, str]:
+    def execute_command(self, command: str, args: Optional[list] = None) -> Tuple[bool, str]:
         """
         Execute a command with arguments.
 
@@ -335,8 +329,5 @@ class SVXLinkInterface:
 
         else:
             # Try as raw TCP command
-            full_command = (
-                f"{command} {' '.join(str(a) for a in args)}" if args else command
-            )
+            full_command = f"{command} {' '.join(str(a) for a in args)}" if args else command
             return self.execute_tcp_command(full_command)
-

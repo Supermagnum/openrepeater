@@ -8,14 +8,16 @@ This script provides functions to:
 3. Run comprehensive test suites
 """
 
-import numpy as np
-from gnuradio import gr, blocks, qradiolink
-import sys
 import os
+import sys
+
+import numpy as np
+from gnuradio import blocks, gr, qradiolink
 
 # Import test vectors
 sys.path.insert(0, os.path.dirname(__file__))
-from test_vectors_nxdn_dpmr import get_test_vectors, ALL_TEST_VECTORS
+from test_vectors_nxdn_dpmr import ALL_TEST_VECTORS, get_test_vectors
+
 
 def bits_to_symbols(bits, symbol_map):
     """
@@ -30,10 +32,11 @@ def bits_to_symbols(bits, symbol_map):
     """
     symbols = []
     for i in range(0, len(bits) - 1, 2):
-        dibit = bits[i:i+2]
+        dibit = bits[i : i + 2]
         if len(dibit) == 2:
             symbols.append(symbol_map.get(dibit, 0.0))
     return symbols
+
 
 def concatenate_frame_bits(frame_bits):
     """
@@ -53,6 +56,7 @@ def concatenate_frame_bits(frame_bits):
             # Recursively concatenate nested dicts
             result += concatenate_frame_bits(value)
     return result
+
 
 def generate_test_signal(test_vector, sample_rate=1000000):
     """
@@ -83,25 +87,20 @@ def generate_test_signal(test_vector, sample_rate=1000000):
     # Create byte array from frame bits
     byte_array = []
     for i in range(0, len(frame_bits), 8):
-        byte_str = frame_bits[i:i+8]
+        byte_str = frame_bits[i : i + 8]
         if len(byte_str) == 8:
             byte_array.append(int(byte_str, 2))
 
     # Use appropriate modulator
     if "dpmr" in test_vector.get("name", "").lower():
-        modulator = qradiolink.mod_dpmr(
-            sps=sps,
-            samp_rate=sample_rate,
-            carrier_freq=1700,
-            filter_width=6000
-        )
+        modulator = qradiolink.mod_dpmr(sps=sps, samp_rate=sample_rate, carrier_freq=1700, filter_width=6000)
     elif "nxdn" in test_vector.get("name", "").lower():
         modulator = qradiolink.mod_nxdn(
             symbol_rate=symbol_rate,
             sps=sps,
             samp_rate=sample_rate,
             carrier_freq=1700,
-            filter_width=6000 if symbol_rate == 2400 else 12000
+            filter_width=6000 if symbol_rate == 2400 else 12000,
         )
     else:
         raise ValueError(f"Unknown protocol in test vector: {test_vector.get('name')}")
@@ -115,6 +114,7 @@ def generate_test_signal(test_vector, sample_rate=1000000):
     tb.stop()
 
     return np.array(sink.data())
+
 
 def check_sync(received_frame, expected_sync):
     """
@@ -133,12 +133,13 @@ def check_sync(received_frame, expected_sync):
     # Check with some tolerance (up to 2 bit errors)
     sync_len = len(expected_sync)
     for i in range(len(received_frame) - sync_len + 1):
-        window = received_frame[i:i+sync_len]
+        window = received_frame[i : i + sync_len]
         errors = sum(1 for a, b in zip(window, expected_sync) if a != b)
         if errors <= 2:
             return True
 
     return False
+
 
 def check_crc(received_frame, expected_crc):
     """
@@ -155,6 +156,7 @@ def check_crc(received_frame, expected_crc):
     # For test vectors, we check if the CRC matches expected
     frame_crc = received_frame[-16:] if len(received_frame) >= 16 else ""
     return frame_crc == expected_crc
+
 
 def calculate_ber(received_frame, expected_frame_bits):
     """
@@ -174,6 +176,7 @@ def calculate_ber(received_frame, expected_frame_bits):
 
     errors = sum(1 for a, b in zip(received_frame, expected) if a != b)
     return errors / len(expected) if len(expected) > 0 else 1.0
+
 
 def validate_receiver(received_frame, test_vector):
     """
@@ -200,9 +203,9 @@ def validate_receiver(received_frame, test_vector):
         results["ber_expected"] = validation.get("ber_expected", 0.0)
 
         results["passed"] = (
-            results["sync_detected"] == results["sync_expected"] and
-            results["crc_valid"] == results["crc_expected"] and
-            results["ber"] <= results["ber_expected"] + 0.01  # Allow small tolerance
+            results["sync_detected"] == results["sync_expected"]
+            and results["crc_valid"] == results["crc_expected"]
+            and results["ber"] <= results["ber_expected"] + 0.01  # Allow small tolerance
         )
 
     # For invalid test vectors
@@ -213,11 +216,11 @@ def validate_receiver(received_frame, test_vector):
         results["frame_accepted_expected"] = expected.get("frame_accepted", False)
 
         results["passed"] = (
-            results["sync_detected"] == results["sync_expected"] and
-            results["crc_valid"] == results["crc_expected"]
+            results["sync_detected"] == results["sync_expected"] and results["crc_valid"] == results["crc_expected"]
         )
 
     return results
+
 
 def test_modulator(test_vector, verbose=True):
     """
@@ -246,6 +249,7 @@ def test_modulator(test_vector, verbose=True):
             print(f"  ✗ Modulator test failed: {e}")
         return False
 
+
 def test_demodulator(test_vector, verbose=True):
     """
     Test demodulator with a test vector.
@@ -265,6 +269,7 @@ def test_demodulator(test_vector, verbose=True):
         print(f"  This would test sync detection, FEC decoding, descrambling")
 
     return True
+
 
 def run_test_suite(protocol=None, test_type="all", verbose=True):
     """
@@ -321,24 +326,27 @@ def run_test_suite(protocol=None, test_type="all", verbose=True):
         print(f"  Total: {results['total']}")
         print(f"  Passed: {results['passed']}")
         print(f"  Failed: {results['failed']}")
-        print(f"  Modulator: {results['modulator_tests']['passed']} passed, "
-              f"{results['modulator_tests']['failed']} failed")
-        print(f"  Demodulator: {results['demodulator_tests']['passed']} passed, "
-              f"{results['demodulator_tests']['failed']} failed")
+        print(
+            f"  Modulator: {results['modulator_tests']['passed']} passed, "
+            f"{results['modulator_tests']['failed']} failed"
+        )
+        print(
+            f"  Demodulator: {results['demodulator_tests']['passed']} passed, "
+            f"{results['demodulator_tests']['failed']} failed"
+        )
         print(f"{'='*60}\n")
 
     return results
+
 
 if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(description="Test NXDN and dPMR implementations")
     parser.add_argument("--protocol", choices=["dpmr", "nxdn"], help="Protocol to test")
-    parser.add_argument("--type", choices=["valid", "invalid", "all"], default="all",
-                       help="Test vector type")
+    parser.add_argument("--type", choices=["valid", "invalid", "all"], default="all", help="Test vector type")
     parser.add_argument("--verbose", "-v", action="store_true", help="Verbose output")
 
     args = parser.parse_args()
 
     run_test_suite(protocol=args.protocol, test_type=args.type, verbose=args.verbose)
-

@@ -24,7 +24,7 @@ except ImportError:
     sys.exit(1)
 
 try:
-    from scapy.all import IP, UDP, Raw, send
+    from scapy.all import IP, UDP, Raw
     from scapy.packet import Packet
 
     SCAPY_AVAILABLE = True
@@ -86,7 +86,7 @@ def generate_invalid_signatures(message: bytes, valid_sig1: bytes, valid_sig2: b
     invalid_sigs.append((b"\x00" * 64, "All zeros"))
 
     # 2. All ones
-    invalid_sigs.append((b"\xFF" * 64, "All ones"))
+    invalid_sigs.append((b"\xff" * 64, "All ones"))
 
     # 3. Truncated signature (first half)
     invalid_sigs.append((valid_sig1[:32], "Truncated (first 32 bytes)"))
@@ -143,14 +143,14 @@ def generate_invalid_signatures(message: bytes, valid_sig1: bytes, valid_sig2: b
         invalid_sigs.append((sig_wrong_curve, "Signature from wrong curve (SECP256R1)"))
     except Exception:
         # Fallback if curve not available
-        invalid_sigs.append((b"\xAA" * 64, "Wrong curve (fallback)"))
+        invalid_sigs.append((b"\xaa" * 64, "Wrong curve (fallback)"))
 
     # 17. Signature with wrong hash algorithm (if we had signed with SHA1)
     # Note: We can't easily create this without the private key, so we'll use a pattern
     invalid_sigs.append((b"SHA1_SIG" + b"\x00" * 56, "Wrong hash algorithm (simulated)"))
 
     # 18. Duplicate bytes pattern
-    invalid_sigs.append((b"\xAA\xBB" * 32, "Duplicate pattern"))
+    invalid_sigs.append((b"\xaa\xbb" * 32, "Duplicate pattern"))
 
     # 19. Incremental bytes
     invalid_sigs.append((bytes(range(64)), "Incremental bytes"))
@@ -381,4 +381,3 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
-

@@ -26,9 +26,7 @@ class ReplyFormatter:
         """
         self.repeater_callsign = repeater_callsign.upper()
 
-    def format_success_reply(
-        self, destination: str, command: str, parameter: str, value: str
-    ) -> Dict:
+    def format_success_reply(self, destination: str, command: str, parameter: str, value: str) -> Dict:
         """
         Format success reply message.
 
@@ -52,9 +50,7 @@ class ReplyFormatter:
             "status": "success",
         }
 
-    def format_failure_reply(
-        self, destination: str, command: str, error_message: str
-    ) -> Dict:
+    def format_failure_reply(self, destination: str, command: str, error_message: str) -> Dict:
         """
         Format failure reply message.
 
@@ -131,9 +127,7 @@ class ReplyFormatter:
         """
         return json.dumps(reply_dict).encode("utf-8")
 
-    def parse_command_result(
-        self, command: str, success: bool, result: str
-    ) -> Tuple[Optional[str], Optional[str]]:
+    def parse_command_result(self, command: str, success: bool, result: str) -> Tuple[Optional[str], Optional[str]]:
         """
         Parse command execution result to extract parameter and value.
 
@@ -176,4 +170,3 @@ class ReplyFormatter:
             return "value", match.group(1)
 
         return "setting", "updated"
-

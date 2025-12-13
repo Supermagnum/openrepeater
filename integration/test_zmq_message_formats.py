@@ -13,10 +13,8 @@ Tests all ZMQ message formats and edge cases:
 """
 
 import json
-import os
 import sys
 import time
-from typing import Dict, List, Tuple
 
 try:
     import zmq
@@ -29,7 +27,7 @@ except ImportError:
 
 try:
     from cryptography.hazmat.backends import default_backend
-    from cryptography.hazmat.primitives import hashes, serialization
+    from cryptography.hazmat.primitives import hashes
     from cryptography.hazmat.primitives.asymmetric import ec
 
     CRYPTO_AVAILABLE = True
@@ -78,9 +76,7 @@ def create_valid_json_command(operator: str, command: str, timestamp: float = No
     return json.dumps(cmd).encode("utf-8")
 
 
-def send_zmq_message(
-    socket: zmq.Socket, json_bytes: bytes, signature: bytes, description: str
-) -> bool:
+def send_zmq_message(socket: zmq.Socket, json_bytes: bytes, signature: bytes, description: str) -> bool:
     """
     Send ZMQ message and check if it was sent successfully.
 
@@ -234,16 +230,28 @@ def test_json_format_edge_cases():
             (b'{"operator":"LA1ABC","timestamp":1234567890.0}', "Missing: command", False),
             (b'{"command":"SET_SQUELCH -24","timestamp":1234567890.0}', "Missing: operator", False),
             # Wrong field types
-            (b'{"operator":123,"command":"SET_SQUELCH -24","timestamp":1234567890.0}', "Wrong type: operator is number", False),
+            (
+                b'{"operator":123,"command":"SET_SQUELCH -24","timestamp":1234567890.0}',
+                "Wrong type: operator is number",
+                False,
+            ),
             (b'{"operator":"LA1ABC","command":123,"timestamp":1234567890.0}', "Wrong type: command is number", False),
-            (b'{"operator":"LA1ABC","command":"SET_SQUELCH -24","timestamp":"invalid"}', "Wrong type: timestamp is string", False),
+            (
+                b'{"operator":"LA1ABC","command":"SET_SQUELCH -24","timestamp":"invalid"}',
+                "Wrong type: timestamp is string",
+                False,
+            ),
             # Empty values
             (b'{"operator":"","command":"SET_SQUELCH -24","timestamp":1234567890.0}', "Empty: operator", False),
             (b'{"operator":"LA1ABC","command":"","timestamp":1234567890.0}', "Empty: command", False),
             # Invalid JSON
             (b'{"operator":"LA1ABC"', "Invalid: incomplete JSON", False),
-            (b'operator:LA1ABC,command:SET_SQUELCH', "Invalid: not JSON", False),
-            (b'{"operator":"LA1ABC","command":"SET_SQUELCH -24","timestamp":}', "Invalid: missing timestamp value", False),
+            (b"operator:LA1ABC,command:SET_SQUELCH", "Invalid: not JSON", False),
+            (
+                b'{"operator":"LA1ABC","command":"SET_SQUELCH -24","timestamp":}',
+                "Invalid: missing timestamp value",
+                False,
+            ),
             # Extra fields (should be accepted but ignored)
             (
                 b'{"operator":"LA1ABC","command":"SET_SQUELCH -24","timestamp":1234567890.0,"extra":"field"}',
@@ -284,7 +292,11 @@ def test_json_format_edge_cases():
                 if send_zmq_message(socket, json_bytes, signature, description):
                     test_result(f"JSON format: {description}", True)
             else:
-                test_result(f"JSON format: {description}", False, f"Parse result mismatch: expected {should_parse}, got {can_parse}")
+                test_result(
+                    f"JSON format: {description}",
+                    False,
+                    f"Parse result mismatch: expected {should_parse}, got {can_parse}",
+                )
 
     except Exception as e:
         test_result("JSON format test setup", False, str(e))
@@ -396,7 +408,7 @@ def test_timestamp_edge_cases():
             (current_time + 3600, "1 hour in future (too far)", False),
         ]
 
-        for timestamp, description, should_accept in timestamp_cases:
+        for timestamp, description, _should_accept in timestamp_cases:
             json_bytes = create_valid_json_command("LA1ABC", "SET_SQUELCH -24", timestamp)
             signature = generate_test_signature(json_bytes)
 
@@ -475,17 +487,35 @@ def test_command_injection_in_json():
 
         injection_attempts = [
             # SQL injection
-            ('{"operator":"LA1ABC","command":"SET_SQUELCH -24","timestamp":1234567890.0,"extra":"\'; DROP TABLE--"}', "SQL injection in extra field"),
+            (
+                '{"operator":"LA1ABC","command":"SET_SQUELCH -24","timestamp":1234567890.0,"extra":"\'; DROP TABLE--"}',
+                "SQL injection in extra field",
+            ),
             # Script injection
-            ('{"operator":"LA1ABC","command":"SET_SQUELCH -24","timestamp":1234567890.0,"extra":"<script>alert(1)</script>"}', "Script injection"),
+            (
+                '{"operator":"LA1ABC","command":"SET_SQUELCH -24","timestamp":1234567890.0,"extra":"<script>alert(1)</script>"}',
+                "Script injection",
+            ),
             # Command injection in operator
-            ('{"operator":"LA1ABC;rm -rf /","command":"SET_SQUELCH -24","timestamp":1234567890.0}', "Command injection in operator"),
+            (
+                '{"operator":"LA1ABC;rm -rf /","command":"SET_SQUELCH -24","timestamp":1234567890.0}',
+                "Command injection in operator",
+            ),
             # Command injection in command
-            ('{"operator":"LA1ABC","command":"SET_SQUELCH -24; cat /etc/passwd","timestamp":1234567890.0}', "Command injection in command"),
+            (
+                '{"operator":"LA1ABC","command":"SET_SQUELCH -24; cat /etc/passwd","timestamp":1234567890.0}',
+                "Command injection in command",
+            ),
             # Path traversal
-            ('{"operator":"../../etc/passwd","command":"SET_SQUELCH -24","timestamp":1234567890.0}', "Path traversal in operator"),
+            (
+                '{"operator":"../../etc/passwd","command":"SET_SQUELCH -24","timestamp":1234567890.0}',
+                "Path traversal in operator",
+            ),
             # JSON injection
-            ('{"operator":"LA1ABC","command":"SET_SQUELCH -24","timestamp":1234567890.0,"malicious":{"nested":"injection"}}', "Nested JSON injection"),
+            (
+                '{"operator":"LA1ABC","command":"SET_SQUELCH -24","timestamp":1234567890.0,"malicious":{"nested":"injection"}}',
+                "Nested JSON injection",
+            ),
         ]
 
         for json_str, description in injection_attempts:
@@ -496,7 +526,9 @@ def test_command_injection_in_json():
                 signature = generate_test_signature(json_bytes)
 
                 if send_zmq_message(socket, json_bytes, signature, f"Injection: {description}"):
-                    test_result(f"Injection attempt: {description[:40]}", True, "Message sent (should be sanitized by handler)")
+                    test_result(
+                        f"Injection attempt: {description[:40]}", True, "Message sent (should be sanitized by handler)"
+                    )
             except json.JSONDecodeError:
                 test_result(f"Injection attempt: {description[:40]}", True, "Invalid JSON (correctly rejected)")
 
@@ -567,4 +599,3 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
-

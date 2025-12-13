@@ -1,0 +1,23 @@
+would reformat integration/.mutmut_config.py
+would reformat MODULE_Rig_Control/svxlink/python/set_pttlock_off.py
+would reformat MODULE_Rig_Control/svxlink/python/set_pttlock_on.py
+would reformat integration/zmq_send_test.py
+would reformat integration/reply_formatter.py
+would reformat run_tx_audio_signed.py
+would reformat tests/test_coverage_analysis.py
+would reformat test_tx_audio_fix.py
+would reformat tests/test_edge_cases.py
+would reformat integration/svxlink_interface.py
+would reformat tests/test_nxdn_dpmr_validation.py
+would reformat tests/test_m17_deframer_attack_vectors.py
+would reformat tests/test_vectors_nxdn_dpmr.py
+would reformat tx_audio_signed.py
+would reformat integration/test_signature_verification.py
+would reformat integration/authenticated_command_handler_zmq.py
+would reformat integration/test_zmq_message_formats.py
+would reformat integration/authenticated_command_handler.py
+would reformat integration/test_security_comprehensive.py
+would reformat tests/test_mmdvm_protocols.py
+
+Oh no! 💥 💔 💥
+20 files would be reformatted.

@@ -1,28 +1,32 @@
-import numpy as np
-from gnuradio import gr
 import os
 
+import numpy as np
+from gnuradio import gr
+
 try:
-    from pkcs11 import lib as pkcs11_lib
     from pkcs11 import Token
-    from pkcs11.constants import UserType, ObjectClass, KeyType, Mechanism
+    from pkcs11 import lib as pkcs11_lib
+    from pkcs11.constants import KeyType, Mechanism, ObjectClass, UserType
+
     PKCS11_AVAILABLE = True
 except ImportError:
     PKCS11_AVAILABLE = False
 
 try:
     from gnuradio import nacl
+
     NACL_AVAILABLE = True
 except ImportError:
     NACL_AVAILABLE = False
+
 
 class blk(gr.sync_block):
     def __init__(self):
         gr.sync_block.__init__(
             self,
-            name='Burst Trigger Audio + Signed Frames',
+            name="Burst Trigger Audio + Signed Frames",
             in_sig=[np.float32, np.uint8],
-            out_sig=[np.float32, np.uint8]
+            out_sig=[np.float32, np.uint8],
         )
         self._key_buffer = bytearray()
         self._pkcs11_lib = None
@@ -34,16 +38,16 @@ class blk(gr.sync_block):
         self._silence_threshold = 48000  # 1 second of silence
         self._total_audio_samples = 0
         self._min_audio_samples = 96000  # Require at least 2 seconds of audio
-        
+
         # Track padding samples needed after EOF to ensure frames are fully transmitted
         self._samples_output_after_eof = 0
         self._required_padding_samples = 0
         self._frames_complete = False
-        
+
         # Flush period: wait for audio to be completely flushed from pipeline before outputting data
         self._audio_flush_samples = 0
         self._audio_flush_needed = 5000  # Flush ~0.1 seconds to ensure all audio is out
-        
+
         # Configuration: 2 AX.25 frames at 2400 baud with 20x repeat factor at 48kHz sample rate
         # Each byte becomes 20 samples after repeat block
         # Add buffer for pipeline delay (AX.25 encoder overhead, etc.)
@@ -56,10 +60,10 @@ class blk(gr.sync_block):
 
     def _init_pkcs11(self):
         lib_paths = [
-            '/usr/lib/x86_64-linux-gnu/opensc-pkcs11.so',
-            '/usr/lib/opensc-pkcs11.so',
-            '/usr/lib/x86_64-linux-gnu/p11-kit-proxy.so',
-            '/usr/lib/p11-kit-proxy.so',
+            "/usr/lib/x86_64-linux-gnu/opensc-pkcs11.so",
+            "/usr/lib/opensc-pkcs11.so",
+            "/usr/lib/x86_64-linux-gnu/p11-kit-proxy.so",
+            "/usr/lib/p11-kit-proxy.so",
         ]
         for path in lib_paths:
             if os.path.exists(path):
@@ -110,10 +114,11 @@ class blk(gr.sync_block):
     def _generate_frames_bytes(self):
         try:
             import __main__
-            if hasattr(__main__, 'message_text'):
-                msg = getattr(__main__, 'message_text').value()
+
+            if hasattr(__main__, "message_text"):
+                msg = getattr(__main__, "message_text").value()
                 if msg:
-                    msg_bytes = msg.encode('utf-8')
+                    msg_bytes = msg.encode("utf-8")
                     signature = None
 
                     if self._use_pkcs11:
@@ -126,7 +131,7 @@ class blk(gr.sync_block):
                     frames = bytearray()
 
                     if signature:
-                        frames.extend(b'SIG')
+                        frames.extend(b"SIG")
                         frames.extend(signature)
 
                     frames.extend(msg_bytes)
@@ -145,8 +150,9 @@ class blk(gr.sync_block):
     def work(self, input_items, output_items):
         try:
             import __main__
-            if hasattr(__main__, 'use_pkcs11'):
-                self._use_pkcs11 = getattr(__main__, 'use_pkcs11').value()
+
+            if hasattr(__main__, "use_pkcs11"):
+                self._use_pkcs11 = getattr(__main__, "use_pkcs11").value()
         except:
             pass
 
@@ -175,7 +181,7 @@ class blk(gr.sync_block):
                 self._data_output_idx = 0
                 self._frames_complete = False
                 self._samples_output_after_eof = 0
-                
+
                 # Calculate required padding duration:
                 # 2 AX.25 frames at 2400 baud with 20x repeat factor at 48kHz sample rate
                 # Each byte becomes 20 samples after repeat block
@@ -185,12 +191,16 @@ class blk(gr.sync_block):
                 # For 2 frames, add ~36 bytes overhead
                 estimated_ax25_bytes = total_bytes + 36
                 # Calculate samples needed: bytes * repeat_factor + pipeline buffer
-                self._required_padding_samples = (estimated_ax25_bytes * self._repeat_factor) + self._pipeline_buffer_samples
-                
+                self._required_padding_samples = (
+                    estimated_ax25_bytes * self._repeat_factor
+                ) + self._pipeline_buffer_samples
+
                 print(f"File source ended after {self._total_audio_samples} samples")
                 print(f"Generated {len(frames_bytes)} bytes for 2 AX.25 frames")
                 print(f"Estimated {estimated_ax25_bytes} bytes after AX.25 encoding")
-                print(f"Required padding: {self._required_padding_samples} samples ({self._required_padding_samples/self._sample_rate:.2f} seconds)")
+                print(
+                    f"Required padding: {self._required_padding_samples} samples ({self._required_padding_samples/self._sample_rate:.2f} seconds)"
+                )
             else:
                 print(f"File source ended after {self._total_audio_samples} samples, but no frames generated")
                 self._frames_complete = True
@@ -211,39 +221,41 @@ class blk(gr.sync_block):
         else:
             # After EOF detected: flush audio first, then output ONLY data frames (no audio)
             # CRITICAL: audio_out must be zero when outputting data
-            
+
             # Flush period: wait for all audio to be flushed from pipeline
             if self._audio_flush_samples < self._audio_flush_needed:
                 audio_out[:n] = 0.0
                 data_out[:n] = 0  # CRITICAL: No data output during flush
                 self._audio_flush_samples += n
                 return n
-            
+
             # After flush period: output ONLY data frames (no audio)
             audio_out[:n] = 0.0
-            
+
             # First, output data frames if available
             if not self._frames_complete and self._data_frames_bytes is not None:
                 if self._data_output_idx < len(self._data_frames_bytes):
                     remaining = len(self._data_frames_bytes) - self._data_output_idx
                     n_output = min(n, remaining) if n > 0 else 0
-                    
+
                     if n_output > 0:
                         data_out[:n_output] = np.frombuffer(
-                            self._data_frames_bytes[self._data_output_idx:self._data_output_idx+n_output],
-                            dtype=np.uint8
+                            self._data_frames_bytes[self._data_output_idx : self._data_output_idx + n_output],
+                            dtype=np.uint8,
                         )
                         self._data_output_idx += n_output
                         self._samples_output_after_eof += n
-                        
+
                         # Check if all frames are output
                         if self._data_output_idx >= len(self._data_frames_bytes):
-                            print(f"All AX.25 frame data output ({self._data_output_idx} bytes), continuing with padding")
-                        
+                            print(
+                                f"All AX.25 frame data output ({self._data_output_idx} bytes), continuing with padding"
+                            )
+
                         # Zero-pad remaining output
                         if n_output < n:
                             data_out[n_output:n] = 0
-                        
+
                         # Continue outputting until padding is complete
                         return n
                     else:
@@ -255,7 +267,7 @@ class blk(gr.sync_block):
                     # All data frames output, now output silence padding
                     self._samples_output_after_eof += n
                     data_out[:n] = 0
-                    
+
                     # Check if we've output enough padding samples
                     if self._samples_output_after_eof >= self._required_padding_samples:
                         if not self._frames_complete:
@@ -271,7 +283,7 @@ class blk(gr.sync_block):
                 if self._samples_output_after_eof < self._required_padding_samples:
                     self._samples_output_after_eof += n
                     data_out[:n] = 0
-                    
+
                     if self._samples_output_after_eof >= self._required_padding_samples:
                         self._frames_complete = True
                         print(f"Padding complete: {self._samples_output_after_eof} samples output after EOF")

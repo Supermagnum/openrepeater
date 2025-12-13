@@ -79,9 +79,7 @@ def normalize_callsign(callsign: Optional[str]) -> Tuple[str, str]:
 def load_config(config_path: Optional[str] = None) -> Dict:
     """Load configuration from YAML file."""
     if config_path is None:
-        config_path = os.getenv(
-            "AUTHENTICATED_CONFIG", "/etc/authenticated-repeater/config.yaml"
-        )
+        config_path = os.getenv("AUTHENTICATED_CONFIG", "/etc/authenticated-repeater/config.yaml")
     try:
         with open(config_path, "r", encoding="utf-8") as f:
             config = yaml.safe_load(f)
@@ -99,9 +97,7 @@ def setup_logging(config: Dict):
     log_level = getattr(logging, config.get("log_level", "INFO").upper())
 
     # Service operation log
-    service_log_file = config.get(
-        "service_log_file", "/var/log/authenticated_repeater.log"
-    )
+    service_log_file = config.get("service_log_file", "/var/log/authenticated_repeater.log")
     service_log_dir = os.path.dirname(service_log_file)
     os.makedirs(service_log_dir, exist_ok=True)
 
@@ -111,12 +107,8 @@ def setup_logging(config: Dict):
     os.makedirs(command_log_dir, exist_ok=True)
 
     # Create formatters
-    service_formatter = logging.Formatter(
-        "%(asctime)s [%(levelname)s] %(message)s", datefmt="%Y-%m-%d %H:%M:%S"
-    )
-    command_formatter = logging.Formatter(
-        "[%(asctime)s] [%(message)s]", datefmt="%Y-%m-%d %H:%M:%S"
-    )
+    service_formatter = logging.Formatter("%(asctime)s [%(levelname)s] %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
+    command_formatter = logging.Formatter("[%(asctime)s] [%(message)s]", datefmt="%Y-%m-%d %H:%M:%S")
 
     # Service logger
     service_logger = logging.getLogger("service")
@@ -161,17 +153,13 @@ def load_authorized_keys(keys_dir: str) -> Dict[str, bytes]:
 def verify_signature(message: bytes, signature: bytes, public_key_data: bytes) -> bool:
     """Verify ECDSA signature using Brainpool curve."""
     try:
-        public_key = serialization.load_pem_public_key(
-            public_key_data, backend=default_backend()
-        )
+        public_key = serialization.load_pem_public_key(public_key_data, backend=default_backend())
 
         if isinstance(public_key, ec.EllipticCurvePublicKey):
             public_key.verify(signature, message, ec.ECDSA(hashes.SHA256()))
             return True
         else:
-            logging.error(
-                f"Unsupported key type: {type(public_key)}. Expected EllipticCurvePublicKey."
-            )
+            logging.error(f"Unsupported key type: {type(public_key)}. Expected EllipticCurvePublicKey.")
             return False
     except Exception as e:
         logging.error(f"Signature verification failed: {e}")
@@ -241,9 +229,7 @@ def check_replay_protection(command_data: Dict, config: Dict) -> bool:
     history = COMMAND_HISTORY[callsign]
     for entry in history:
         if entry["hash"] == command_hash:
-            logging.warning(
-                f"Replay detected: duplicate command from {command_data['callsign']}"
-            )
+            logging.warning(f"Replay detected: duplicate command from {command_data['callsign']}")
             return False
 
     # Add to history
@@ -305,9 +291,7 @@ def process_command(
     # Parse JSON command
     command_data = parse_json_command(json_command)
     if not command_data:
-        reply = reply_formatter.format_failure_reply(
-            "UNKNOWN", "PARSE_ERROR", "Failed to parse command"
-        )
+        reply = reply_formatter.format_failure_reply("UNKNOWN", "PARSE_ERROR", "Failed to parse command")
         return False, reply
 
     callsign = command_data["callsign"]
@@ -323,16 +307,12 @@ def process_command(
 
     if key_identifier is None:
         logging.warning(f"Unauthorized operator: {callsign} (base: {base_callsign})")
-        reply = reply_formatter.format_failure_reply(
-            callsign, "AUTH_ERROR", f"Operator {callsign} not authorized"
-        )
+        reply = reply_formatter.format_failure_reply(callsign, "AUTH_ERROR", f"Operator {callsign} not authorized")
         return False, reply
 
     # Check replay protection
     if not check_replay_protection(command_data, config):
-        reply = reply_formatter.format_failure_reply(
-            callsign, "REPLAY_ERROR", "Replay protection check failed"
-        )
+        reply = reply_formatter.format_failure_reply(callsign, "REPLAY_ERROR", "Replay protection check failed")
         return False, reply
 
     # Verify signature (skip if signature is empty for testing)
@@ -340,14 +320,10 @@ def process_command(
         public_key_data = authorized_keys[key_identifier]
         if not verify_signature(json_command, signature, public_key_data):
             logging.warning(f"Invalid signature from {callsign}")
-            reply = reply_formatter.format_failure_reply(
-                callsign, "SIGNATURE_ERROR", "Signature verification failed"
-            )
+            reply = reply_formatter.format_failure_reply(callsign, "SIGNATURE_ERROR", "Signature verification failed")
             return False, reply
     else:
-        logging.warning(
-            f"No signature provided for command from {callsign} (testing mode?)"
-        )
+        logging.warning(f"No signature provided for command from {callsign} (testing mode?)")
 
     # Parse command
     command_str = command_data["command"]
@@ -363,26 +339,16 @@ def process_command(
 
     # Format reply
     if success:
-        param, value = reply_formatter.parse_command_result(
-            command_str, success, result
-        )
+        param, value = reply_formatter.parse_command_result(command_str, success, result)
         if param and value:
-            reply = reply_formatter.format_success_reply(
-                callsign, command_str, param, value
-            )
+            reply = reply_formatter.format_success_reply(callsign, command_str, param, value)
         else:
-            reply = reply_formatter.format_success_reply(
-                callsign, command_str, "command", "executed"
-            )
+            reply = reply_formatter.format_success_reply(callsign, command_str, "command", "executed")
     else:
         reply = reply_formatter.format_failure_reply(callsign, command_str, result)
 
     # Log command execution
-    log_entry = (
-        f"[{callsign}] [{command_str}] "
-        f"[{'SUCCESS' if success else 'FAILURE'}] "
-        f"[{execution_time_ms}ms]"
-    )
+    log_entry = f"[{callsign}] [{command_str}] " f"[{'SUCCESS' if success else 'FAILURE'}] " f"[{execution_time_ms}ms]"
     command_logger.info(log_entry)
 
     logging.info(
@@ -467,9 +433,7 @@ def zmq_command_handler(
                         # Send reply to TX flowgraph (port 5557)
                         reply_json = reply_formatter.format_json_reply(reply)
                         reply_socket.send(reply_json)
-                        service_logger.debug(
-                            f"Sent reply to TX flowgraph: {reply['message']}"
-                        )
+                        service_logger.debug(f"Sent reply to TX flowgraph: {reply['message']}")
 
                         # Send parameter update to GNU Radio (port 5556) if command succeeded
                         if success:
@@ -500,16 +464,12 @@ def zmq_command_handler(
                         reply_socket.send(reply_json)
 
                     else:
-                        service_logger.warning(
-                            f"Received invalid message format: {len(frames)} frames"
-                        )
+                        service_logger.warning(f"Received invalid message format: {len(frames)} frames")
 
                 except zmq.Again:
                     pass  # No message available
                 except Exception as e:
-                    service_logger.error(
-                        f"Error processing command: {e}", exc_info=True
-                    )
+                    service_logger.error(f"Error processing command: {e}", exc_info=True)
 
         except KeyboardInterrupt:
             break
@@ -539,18 +499,14 @@ def main():
 
     # Setup logging
     service_logger, command_logger = setup_logging(config)
-    service_logger.info(
-        "Authenticated Repeater Control Command Handler (ZMQ) starting..."
-    )
+    service_logger.info("Authenticated Repeater Control Command Handler (ZMQ) starting...")
 
     # Setup signal handlers
     signal.signal(signal.SIGINT, signal_handler)
     signal.signal(signal.SIGTERM, signal_handler)
 
     # Load authorized keys
-    keys_dir = config.get(
-        "authorized_keys_dir", "/etc/authenticated-repeater/authorized_operators"
-    )
+    keys_dir = config.get("authorized_keys_dir", "/etc/authenticated-repeater/authorized_operators")
     authorized_keys = load_authorized_keys(keys_dir)
 
     if not authorized_keys:
@@ -571,4 +527,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

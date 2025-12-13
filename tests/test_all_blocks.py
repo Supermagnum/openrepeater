@@ -4,15 +4,13 @@ Comprehensive test for all qradiolink blocks
 Tests all modulation/demodulation blocks with edge cases
 """
 
-import sys
-import numpy as np
 import math
+import sys
+
+import numpy as np
 
 try:
-    from gnuradio import gr
-    from gnuradio import blocks
-    from gnuradio import qradiolink
-    from gnuradio import vocoder
+    from gnuradio import blocks, gr, qradiolink, vocoder
 except ImportError as e:
     print(f"ERROR: Cannot import GNU Radio modules: {e}")
     sys.exit(1)
@@ -76,7 +74,7 @@ def main():
     print()
 
     test_vector = generate_test_vector(1000)
-    results = {'passed': 0, 'failed': 0, 'skipped': 0}
+    results = {"passed": 0, "failed": 0, "skipped": 0}
 
     # List of all blocks to test
     blocks_to_test = [
@@ -93,7 +91,6 @@ def main():
         ("mod_m17", lambda: qradiolink.mod_m17(125, 250000, 1700, 8000)),
         ("mod_dmr", lambda: qradiolink.mod_dmr(125, 250000, 1700, 8000)),
         ("mod_mmdvm", lambda: qradiolink.mod_mmdvm(125, 250000, 1700, 8000)),
-
         # Demodulation blocks
         ("demod_2fsk", lambda: qradiolink.demod_2fsk(125, 250000, 1700, 8000, False)),
         ("demod_4fsk", lambda: qradiolink.demod_4fsk(125, 250000, 1700, 8000, True)),
@@ -110,8 +107,15 @@ def main():
 
     # FreeDV blocks (may require vocoder)
     try:
-        blocks_to_test.append(("mod_freedv", lambda: qradiolink.mod_freedv(125, 8000, 1700, 2000, 200, vocoder.freedv_api.MODE_1600, 0)))
-        blocks_to_test.append(("demod_freedv", lambda: qradiolink.demod_freedv(125, 8000, 1700, 2000, 200, vocoder.freedv_api.MODE_1600, 0)))
+        blocks_to_test.append(
+            ("mod_freedv", lambda: qradiolink.mod_freedv(125, 8000, 1700, 2000, 200, vocoder.freedv_api.MODE_1600, 0))
+        )
+        blocks_to_test.append(
+            (
+                "demod_freedv",
+                lambda: qradiolink.demod_freedv(125, 8000, 1700, 2000, 200, vocoder.freedv_api.MODE_1600, 0),
+            )
+        )
     except:
         print("Note: FreeDV blocks not available (vocoder not installed)")
 
@@ -139,9 +143,9 @@ def main():
 
     for block_name, block_maker in blocks_to_test:
         if test_block(block_maker, block_name, test_vector):
-            results['passed'] += 1
+            results["passed"] += 1
         else:
-            results['failed'] += 1
+            results["failed"] += 1
 
     # Summary
     print()
@@ -152,9 +156,8 @@ def main():
     print(f"Failed: {results['failed']}")
     print(f"Total: {results['passed'] + results['failed']}")
 
-    return 0 if results['failed'] == 0 else 1
+    return 0 if results["failed"] == 0 else 1
 
 
 if __name__ == "__main__":
     sys.exit(main())
-

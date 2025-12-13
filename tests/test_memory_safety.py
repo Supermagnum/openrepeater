@@ -4,14 +4,13 @@ Memory Safety Tests for GNU Radio Blocks
 Tests for buffer overflows, memory leaks, and invalid memory access
 """
 
-import sys
-import numpy as np
 import gc
+import sys
+
+import numpy as np
 
 try:
-    from gnuradio import gr
-    from gnuradio import blocks
-    from gnuradio import qradiolink
+    from gnuradio import blocks, gr, qradiolink
 except ImportError as e:
     print(f"ERROR: Cannot import GNU Radio modules: {e}")
     sys.exit(1)
@@ -173,22 +172,28 @@ def main():
     print("Memory Safety Tests for gr-qradiolink")
     print("=" * 70)
 
-    results = {'passed': 0, 'failed': 0}
+    results = {"passed": 0, "failed": 0}
 
     # Test demod_gmsk
     print("\n--- Testing demod_gmsk ---")
     tests = [
         (lambda: test_large_input(lambda: qradiolink.demod_gmsk(10, 250000, 1700, 8000), "demod_gmsk"), "Large input"),
-        (lambda: test_rapid_restart(lambda: qradiolink.demod_gmsk(10, 250000, 1700, 8000), "demod_gmsk"), "Rapid restart"),
+        (
+            lambda: test_rapid_restart(lambda: qradiolink.demod_gmsk(10, 250000, 1700, 8000), "demod_gmsk"),
+            "Rapid restart",
+        ),
         (lambda: test_empty_input(lambda: qradiolink.demod_gmsk(10, 250000, 1700, 8000), "demod_gmsk"), "Empty input"),
-        (lambda: test_single_sample(lambda: qradiolink.demod_gmsk(10, 250000, 1700, 8000), "demod_gmsk"), "Single sample"),
+        (
+            lambda: test_single_sample(lambda: qradiolink.demod_gmsk(10, 250000, 1700, 8000), "demod_gmsk"),
+            "Single sample",
+        ),
     ]
 
     for test_func, test_name in tests:
         if test_func():
-            results['passed'] += 1
+            results["passed"] += 1
         else:
-            results['failed'] += 1
+            results["failed"] += 1
 
     # Summary
     print("\n" + "=" * 70)
@@ -197,9 +202,8 @@ def main():
     print(f"Passed: {results['passed']}")
     print(f"Failed: {results['failed']}")
 
-    return 0 if results['failed'] == 0 else 1
+    return 0 if results["failed"] == 0 else 1
 
 
 if __name__ == "__main__":
     sys.exit(main())
-

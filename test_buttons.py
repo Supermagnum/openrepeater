@@ -1,13 +1,14 @@
-
 import sys
+
 from PyQt5 import Qt
+
 from tx_audio_signed import tx_audio_signed
 
 app = Qt.QApplication(sys.argv)
 tb = tx_audio_signed()
 
 # Try adding buttons as a menu bar instead
-menubar = tb.menuBar() if hasattr(tb, 'menuBar') else None
+menubar = tb.menuBar() if hasattr(tb, "menuBar") else None
 if menubar:
     print("Has menuBar")
 else:
@@ -35,4 +36,3 @@ print(f"Window visible: {tb.isVisible()}")
 
 tb.show()
 sys.exit(app.exec_())
-

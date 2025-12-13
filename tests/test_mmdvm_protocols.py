@@ -26,16 +26,14 @@ match the C++ implementation in:
 """
 
 
+import os
+import sys
 import unittest
-
 from typing import List
-
 
 # Try to import GNU Radio blocks for integration testing
 
-import os
 
-import sys
 
 GR_AVAILABLE = False
 
@@ -83,11 +81,7 @@ if project_root in sys.path and project_root != os.getcwd():
 
 # Clear any existing qradiolink imports that might cause conflicts
 
-modules_to_clear = [
-    m
-    for m in list(sys.modules.keys())
-    if "qradiolink" in m.lower() and "test" not in m.lower()
-]
+modules_to_clear = [m for m in list(sys.modules.keys()) if "qradiolink" in m.lower() and "test" not in m.lower()]
 
 for m in modules_to_clear:
 
@@ -98,10 +92,7 @@ for m in modules_to_clear:
 try:
 
     import gnuradio  # Import base module first
-
-    from gnuradio import gr
-
-    from gnuradio import blocks
+    from gnuradio import blocks, gr
 
     # Check if qradiolink is already loaded (might be from previous test runs)
 
@@ -137,9 +128,7 @@ try:
 
                 # Module not accessible - registration conflict prevents loading
 
-                raise ImportError(
-                    f"qradiolink module has registration conflict and is not accessible: {import_err}"
-                )
+                raise ImportError(f"qradiolink module has registration conflict and is not accessible: {import_err}")
 
         else:
 
@@ -179,9 +168,7 @@ except (ImportError, RuntimeError, AttributeError) as e:
 
     GR_AVAILABLE = False
 
-    print(
-        f"WARNING: GNU Radio qradiolink not available ({e}), skipping block integration tests"
-    )
+    print(f"WARNING: GNU Radio qradiolink not available ({e}), skipping block integration tests")
 
 
 class POCSAGValidator(unittest.TestCase):
@@ -562,9 +549,7 @@ class POCSAGValidator(unittest.TestCase):
 
             # So we extract bits 22-30 (9 bits) and compare with first 9 bits of expected
 
-            received_parity_9bits = (
-                codeword >> 22
-            ) & 0x1FF  # Extract bits 22-30 (9 bits)
+            received_parity_9bits = (codeword >> 22) & 0x1FF  # Extract bits 22-30 (9 bits)
 
             # Compute expected parity (10 bits) on the 21 data bits
 
@@ -1254,9 +1239,7 @@ class DSTARValidator(unittest.TestCase):
 
             test_data = data ^ (1 << i)
 
-            test_parity = (
-                test_data ^ ((test_data >> 6) & 0x3F) ^ ((test_data >> 8) & 0xF)
-            )
+            test_parity = test_data ^ ((test_data >> 6) & 0x3F) ^ ((test_data >> 8) & 0xF)
 
             test_parity = test_parity & 0xFFF
 
@@ -1274,9 +1257,7 @@ class DSTARValidator(unittest.TestCase):
 
                 test_parity = parity_received ^ (1 << j)
 
-                expected_test_parity = (
-                    test_data ^ ((test_data >> 6) & 0x3F) ^ ((test_data >> 8) & 0xF)
-                )
+                expected_test_parity = test_data ^ ((test_data >> 6) & 0x3F) ^ ((test_data >> 8) & 0xF)
 
                 expected_test_parity = expected_test_parity & 0xFFF
 
@@ -1292,9 +1273,7 @@ class DSTARValidator(unittest.TestCase):
 
                 test_data = data ^ (1 << i) ^ (1 << j)
 
-                test_parity = (
-                    test_data ^ ((test_data >> 6) & 0x3F) ^ ((test_data >> 8) & 0xF)
-                )
+                test_parity = test_data ^ ((test_data >> 6) & 0x3F) ^ ((test_data >> 8) & 0xF)
 
                 test_parity = test_parity & 0xFFF
 
@@ -1312,9 +1291,7 @@ class DSTARValidator(unittest.TestCase):
 
                     test_data = data ^ (1 << i) ^ (1 << j) ^ (1 << k)
 
-                    test_parity = (
-                        test_data ^ ((test_data >> 6) & 0x3F) ^ ((test_data >> 8) & 0xF)
-                    )
+                    test_parity = test_data ^ ((test_data >> 6) & 0x3F) ^ ((test_data >> 8) & 0xF)
 
                     test_parity = test_parity & 0xFFF
 
@@ -1496,9 +1473,7 @@ if GR_AVAILABLE:
         def test_pocsag_encoder_block_creation(self):
             """Test POCSAG encoder block can be instantiated"""
 
-            encoder = qradiolink.pocsag_encoder(
-                baud_rate=1200, address=0x123456, function_bits=0
-            )
+            encoder = qradiolink.pocsag_encoder(baud_rate=1200, address=0x123456, function_bits=0)
 
             self.assertIsNotNone(encoder)
 
@@ -1522,9 +1497,7 @@ if GR_AVAILABLE:
 
             # Create encoder
 
-            encoder = qradiolink.pocsag_encoder(
-                baud_rate=1200, address=0x123456, function_bits=0
-            )
+            encoder = qradiolink.pocsag_encoder(baud_rate=1200, address=0x123456, function_bits=0)
 
             # Create sink
 
@@ -1577,9 +1550,7 @@ if GR_AVAILABLE:
 
             # Create encoder and decoder
 
-            encoder = qradiolink.pocsag_encoder(
-                baud_rate=1200, address=0x123456, function_bits=0
-            )
+            encoder = qradiolink.pocsag_encoder(baud_rate=1200, address=0x123456, function_bits=0)
 
             decoder = qradiolink.pocsag_decoder(baud_rate=1200, sync_threshold=0.8)
 
@@ -1634,9 +1605,7 @@ if GR_AVAILABLE:
 
             encoder_output = encoder_sink.data()
 
-            self.assertGreater(
-                len(encoder_output), 0, "Encoder should produce output in round trip"
-            )
+            self.assertGreater(len(encoder_output), 0, "Encoder should produce output in round trip")
 
     class DSTARBlockIntegrationTests(unittest.TestCase):
         """Integration tests for D-STAR encoder/decoder blocks"""
@@ -1782,9 +1751,7 @@ if GR_AVAILABLE:
         def test_p25_encoder_block_creation(self):
             """Test P25 encoder block can be instantiated"""
 
-            encoder = qradiolink.p25_encoder(
-                nac=0x293, source_id=12345, destination_id=0, talkgroup_id=100
-            )
+            encoder = qradiolink.p25_encoder(nac=0x293, source_id=12345, destination_id=0, talkgroup_id=100)
 
             self.assertIsNotNone(encoder)
 
@@ -1808,9 +1775,7 @@ if GR_AVAILABLE:
 
             # Create encoder
 
-            encoder = qradiolink.p25_encoder(
-                nac=0x293, source_id=12345, destination_id=0, talkgroup_id=100
-            )
+            encoder = qradiolink.p25_encoder(nac=0x293, source_id=12345, destination_id=0, talkgroup_id=100)
 
             # Create sink
 
@@ -1908,4 +1873,3 @@ if __name__ == "__main__":
     # Run all validators
 
     unittest.main(verbosity=2)
-

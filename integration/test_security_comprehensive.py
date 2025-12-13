@@ -17,7 +17,7 @@ import os
 import struct
 import sys
 import time
-# typing imports removed - unused
+from typing import Tuple
 
 try:
     from cryptography.hazmat.backends import default_backend
@@ -381,8 +381,7 @@ def test_command_injection():
     for cmd in malicious_commands:
         # Check if command contains injection patterns
         has_injection = any(
-            pattern in cmd
-            for pattern in [";", "&&", "|", "$(", "`", "rm", "cat", "nc", "whoami", "id"]
+            pattern in cmd for pattern in [";", "&&", "|", "$(", "`", "rm", "cat", "nc", "whoami", "id"]
         )
         if has_injection:
             test_result(f"Command injection: {cmd[:30]}...", True, "Injection pattern detected")
@@ -400,8 +399,7 @@ def test_command_injection():
     # Test 4: Valid command (should pass)
     valid_cmd = "SET_SQUELCH -24"
     has_injection = any(
-        pattern in valid_cmd
-        for pattern in [";", "&&", "|", "$(", "`", "rm", "cat", "nc", "whoami", "id"]
+        pattern in valid_cmd for pattern in [";", "&&", "|", "$(", "`", "rm", "cat", "nc", "whoami", "id"]
     )
     if not has_injection:
         test_result("Command injection: valid command", True, "No injection patterns")
@@ -461,7 +459,9 @@ def test_authorization_bypass():
     # Test key spoofing attempt
     message = b"TEST_MESSAGE"
     valid_sig, valid_pubkey_pem, _ = generate_valid_signature(message)
-    _, other_pubkey_pem, _ = generate_valid_signature(message)
+    _, other_pubkey_pem, other_privkey = generate_valid_signature(message)
+    # Verify keys are different
+    assert valid_pubkey_pem != other_pubkey_pem, "Keys should be different"
 
     # Try to verify with wrong key
     try:
@@ -577,19 +577,21 @@ def test_ax25_frames():
 
     # Test 9: Frame matching (timestamp matching for Frame 1 + Frame 2)
     try:
-        _frame1 = create_command_frame(timestamp, callsign, command, valid_fcs=True)
+        frame1 = create_command_frame(timestamp, callsign, command, valid_fcs=True)
         sig, _, _ = generate_valid_signature(b"TEST")
-        _frame2 = create_signature_frame(timestamp, callsign, sig, valid_fcs=True)
+        frame2 = create_signature_frame(timestamp, callsign, sig, valid_fcs=True)
         # Both frames should have same timestamp in info field
+        assert frame1 is not None and frame2 is not None, "Frames should be created"
         test_result("AX.25 frame: timestamp matching", True, "Frames created with same timestamp")
     except Exception as e:
         test_result("AX.25 frame: timestamp matching", False, str(e))
 
     # Test 10: Frame with mismatched timestamp
     try:
-        _frame1 = create_command_frame(timestamp, callsign, command, valid_fcs=True)
-        _frame2 = create_signature_frame(timestamp + 1000, callsign, sig, valid_fcs=True)
+        frame1 = create_command_frame(timestamp, callsign, command, valid_fcs=True)
+        frame2 = create_signature_frame(timestamp + 1000, callsign, sig, valid_fcs=True)
         # Timestamps don't match
+        assert frame1 is not None and frame2 is not None, "Frames should be created"
         test_result("AX.25 frame: mismatched timestamp", True, "Frames have different timestamps")
     except Exception as e:
         test_result("AX.25 frame: mismatched timestamp", False, str(e))
@@ -647,4 +649,3 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
-

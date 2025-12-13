@@ -10,23 +10,18 @@
 # Description: Transmit audio file with signed signature and ASCII message frames in AX.25 at 2400 baud
 # GNU Radio version: 3.10.12.0
 
-from PyQt5 import Qt
-from gnuradio import qtgui
-from gnuradio import blocks
-from gnuradio import eng_notation
-from gnuradio import gr
-from gnuradio.filter import firdes
-from gnuradio.fft import window
-import sys
 import signal
-from PyQt5 import Qt
-from argparse import ArgumentParser
-from gnuradio.eng_arg import eng_float, intx
-from gnuradio import linux_crypto
-from gnuradio import packet_protocols
+import sys
 import threading
-import tx_audio_signed_epy_block_2 as epy_block_2  # embedded python block
+from argparse import ArgumentParser
 
+from gnuradio import blocks, eng_notation, gr, linux_crypto, packet_protocols, qtgui
+from gnuradio.eng_arg import eng_float, intx
+from gnuradio.fft import window
+from gnuradio.filter import firdes
+from PyQt5 import Qt
+
+import tx_audio_signed_epy_block_2 as epy_block_2  # embedded python block
 
 
 class tx_audio_signed(gr.top_block, Qt.QWidget):
@@ -37,7 +32,7 @@ class tx_audio_signed(gr.top_block, Qt.QWidget):
         self.setWindowTitle("Audio File with Signed Frames")
         qtgui.util.check_set_qss()
         try:
-            self.setWindowIcon(Qt.QIcon.fromTheme('gnuradio-grc'))
+            self.setWindowIcon(Qt.QIcon.fromTheme("gnuradio-grc"))
         except BaseException as exc:
             print(f"Qt GUI: Could not set Icon: {str(exc)}", file=sys.stderr)
         self.top_scroll_layout = Qt.QVBoxLayout()
@@ -68,12 +63,12 @@ class tx_audio_signed(gr.top_block, Qt.QWidget):
         self.use_pkcs11 = use_pkcs11 = True
         self.stop_button = stop_button = 0
         self.start_button = start_button = 0
-        self.src_callsign = src_callsign = 'N0CALL'
+        self.src_callsign = src_callsign = "N0CALL"
         self.samp_rate = samp_rate = 48000
-        self.output_audio_file = output_audio_file = ''
-        self.message_text = message_text = ''
-        self.dest_callsign = dest_callsign = 'N0CALL'
-        self.audio_file_path = audio_file_path = ''
+        self.output_audio_file = output_audio_file = ""
+        self.message_text = message_text = ""
+        self.dest_callsign = dest_callsign = "N0CALL"
+        self.audio_file_path = audio_file_path = ""
 
         ##################################################
         # Blocks
@@ -84,48 +79,58 @@ class tx_audio_signed(gr.top_block, Qt.QWidget):
         self._src_callsign_line_edit = Qt.QLineEdit(str(self.src_callsign))
         self._src_callsign_tool_bar.addWidget(self._src_callsign_line_edit)
         self._src_callsign_line_edit.editingFinished.connect(
-            lambda: self.set_src_callsign(str(str(self._src_callsign_line_edit.text()))))
+            lambda: self.set_src_callsign(str(str(self._src_callsign_line_edit.text())))
+        )
         self.top_layout.addWidget(self._src_callsign_tool_bar)
         self._dest_callsign_tool_bar = Qt.QToolBar(self)
         self._dest_callsign_tool_bar.addWidget(Qt.QLabel("Dest Callsign" + ": "))
         self._dest_callsign_line_edit = Qt.QLineEdit(str(self.dest_callsign))
         self._dest_callsign_tool_bar.addWidget(self._dest_callsign_line_edit)
         self._dest_callsign_line_edit.editingFinished.connect(
-            lambda: self.set_dest_callsign(str(str(self._dest_callsign_line_edit.text()))))
+            lambda: self.set_dest_callsign(str(str(self._dest_callsign_line_edit.text())))
+        )
         self.top_layout.addWidget(self._dest_callsign_tool_bar)
         _use_pkcs11_check_box = Qt.QCheckBox("Use PKCS#11 (unchecked = Kernel Keyring)")
         self._use_pkcs11_choices = {True: True, False: False}
-        self._use_pkcs11_choices_inv = dict((v,k) for k,v in self._use_pkcs11_choices.items())
-        self._use_pkcs11_callback = lambda i: Qt.QMetaObject.invokeMethod(_use_pkcs11_check_box, "setChecked", Qt.Q_ARG("bool", self._use_pkcs11_choices_inv[i]))
+        self._use_pkcs11_choices_inv = dict((v, k) for k, v in self._use_pkcs11_choices.items())
+        self._use_pkcs11_callback = lambda i: Qt.QMetaObject.invokeMethod(
+            _use_pkcs11_check_box, "setChecked", Qt.Q_ARG("bool", self._use_pkcs11_choices_inv[i])
+        )
         self._use_pkcs11_callback(self.use_pkcs11)
         _use_pkcs11_check_box.stateChanged.connect(lambda i: self.set_use_pkcs11(self._use_pkcs11_choices[bool(i)]))
         self.top_layout.addWidget(_use_pkcs11_check_box)
-        _stop_button_push_button = Qt.QPushButton('Stop')
-        _stop_button_push_button = Qt.QPushButton('Stop')
-        self._stop_button_choices = {'Pressed': 1, 'Released': 0}
-        _stop_button_push_button.pressed.connect(lambda: self.set_stop_button(self._stop_button_choices['Pressed']))
-        _stop_button_push_button.released.connect(lambda: self.set_stop_button(self._stop_button_choices['Released']))
+        _stop_button_push_button = Qt.QPushButton("Stop")
+        _stop_button_push_button = Qt.QPushButton("Stop")
+        self._stop_button_choices = {"Pressed": 1, "Released": 0}
+        _stop_button_push_button.pressed.connect(lambda: self.set_stop_button(self._stop_button_choices["Pressed"]))
+        _stop_button_push_button.released.connect(lambda: self.set_stop_button(self._stop_button_choices["Released"]))
         self.top_layout.addWidget(_stop_button_push_button)
-        _start_button_push_button = Qt.QPushButton('Start Processing')
-        _start_button_push_button = Qt.QPushButton('Start Processing')
-        self._start_button_choices = {'Pressed': 1, 'Released': 0}
-        _start_button_push_button.pressed.connect(lambda: self.set_start_button(self._start_button_choices['Pressed']))
-        _start_button_push_button.released.connect(lambda: self.set_start_button(self._start_button_choices['Released']))
+        _start_button_push_button = Qt.QPushButton("Start Processing")
+        _start_button_push_button = Qt.QPushButton("Start Processing")
+        self._start_button_choices = {"Pressed": 1, "Released": 0}
+        _start_button_push_button.pressed.connect(lambda: self.set_start_button(self._start_button_choices["Pressed"]))
+        _start_button_push_button.released.connect(
+            lambda: self.set_start_button(self._start_button_choices["Released"])
+        )
         self.top_layout.addWidget(_start_button_push_button)
-        self.packet_protocols_ax25_encoder_0 = packet_protocols.ax25_encoder(dest_callsign, '0', src_callsign, '0', '', False, False)
+        self.packet_protocols_ax25_encoder_0 = packet_protocols.ax25_encoder(
+            dest_callsign, "0", src_callsign, "0", "", False, False
+        )
         self._output_audio_file_tool_bar = Qt.QToolBar(self)
         self._output_audio_file_tool_bar.addWidget(Qt.QLabel("Output Audio File Path" + ": "))
         self._output_audio_file_line_edit = Qt.QLineEdit(str(self.output_audio_file))
         self._output_audio_file_tool_bar.addWidget(self._output_audio_file_line_edit)
         self._output_audio_file_line_edit.editingFinished.connect(
-            lambda: self.set_output_audio_file(str(str(self._output_audio_file_line_edit.text()))))
+            lambda: self.set_output_audio_file(str(str(self._output_audio_file_line_edit.text())))
+        )
         self.top_layout.addWidget(self._output_audio_file_tool_bar)
         self._message_text_tool_bar = Qt.QToolBar(self)
         self._message_text_tool_bar.addWidget(Qt.QLabel("Message Text" + ": "))
         self._message_text_line_edit = Qt.QLineEdit(str(self.message_text))
         self._message_text_tool_bar.addWidget(self._message_text_line_edit)
         self._message_text_line_edit.editingFinished.connect(
-            lambda: self.set_message_text(str(str(self._message_text_line_edit.text()))))
+            lambda: self.set_message_text(str(str(self._message_text_line_edit.text())))
+        )
         self.top_grid_layout.addWidget(self._message_text_tool_bar, 0, 0, 2, 1)
         for r in range(0, 2):
             self.top_grid_layout.setRowStretch(r, 1)
@@ -133,27 +138,27 @@ class tx_audio_signed(gr.top_block, Qt.QWidget):
             self.top_grid_layout.setColumnStretch(c, 1)
         self.linux_crypto_kernel_keyring_source_0 = linux_crypto.kernel_keyring_source(0, False)
         self.epy_block_2 = epy_block_2.blk()
-        self.blocks_wavfile_source_0 = blocks.wavfile_source('/home/haaken/Musikk/cq.wav', False)
+        self.blocks_wavfile_source_0 = blocks.wavfile_source("/home/haaken/Musikk/cq.wav", False)
         self.blocks_wavfile_sink_0 = blocks.wavfile_sink(
-            '/home/haaken/Musikk/cq+ax25.wav',
-            1,
-            samp_rate,
-            blocks.FORMAT_WAV,
-            blocks.FORMAT_PCM_16,
-            False
-            )
-        self.blocks_throttle2_0 = blocks.throttle( gr.sizeof_char*1, 2400, True, 0 if "auto" == "auto" else max( int(float(0.1) * 2400) if "auto" == "time" else int(0.1), 1) )
-        self.blocks_repeat_0 = blocks.repeat(gr.sizeof_float*1, 20)
-        self.blocks_char_to_float_0 = blocks.char_to_float(1, (1.0/127.0))
+            "/home/haaken/Musikk/cq+ax25.wav", 1, samp_rate, blocks.FORMAT_WAV, blocks.FORMAT_PCM_16, False
+        )
+        self.blocks_throttle2_0 = blocks.throttle(
+            gr.sizeof_char * 1,
+            2400,
+            True,
+            0 if "auto" == "auto" else max(int(float(0.1) * 2400) if "auto" == "time" else int(0.1), 1),
+        )
+        self.blocks_repeat_0 = blocks.repeat(gr.sizeof_float * 1, 20)
+        self.blocks_char_to_float_0 = blocks.char_to_float(1, (1.0 / 127.0))
         self.blocks_add_xx_0 = blocks.add_vff(1)
         self._audio_file_path_tool_bar = Qt.QToolBar(self)
         self._audio_file_path_tool_bar.addWidget(Qt.QLabel("Audio File Path" + ": "))
         self._audio_file_path_line_edit = Qt.QLineEdit(str(self.audio_file_path))
         self._audio_file_path_tool_bar.addWidget(self._audio_file_path_line_edit)
         self._audio_file_path_line_edit.editingFinished.connect(
-            lambda: self.set_audio_file_path(str(str(self._audio_file_path_line_edit.text()))))
+            lambda: self.set_audio_file_path(str(str(self._audio_file_path_line_edit.text())))
+        )
         self.top_layout.addWidget(self._audio_file_path_tool_bar)
-
 
         ##################################################
         # Connections
@@ -167,7 +172,6 @@ class tx_audio_signed(gr.top_block, Qt.QWidget):
         self.connect((self.epy_block_2, 1), (self.blocks_throttle2_0, 0))
         self.connect((self.linux_crypto_kernel_keyring_source_0, 0), (self.epy_block_2, 1))
         self.connect((self.packet_protocols_ax25_encoder_0, 0), (self.blocks_char_to_float_0, 0))
-
 
     def closeEvent(self, event):
         self.settings = Qt.QSettings("gnuradio/flowgraphs", "tx_audio_signed")
@@ -201,7 +205,9 @@ class tx_audio_signed(gr.top_block, Qt.QWidget):
 
     def set_src_callsign(self, src_callsign):
         self.src_callsign = src_callsign
-        Qt.QMetaObject.invokeMethod(self._src_callsign_line_edit, "setText", Qt.Q_ARG("QString", str(self.src_callsign)))
+        Qt.QMetaObject.invokeMethod(
+            self._src_callsign_line_edit, "setText", Qt.Q_ARG("QString", str(self.src_callsign))
+        )
 
     def get_samp_rate(self):
         return self.samp_rate
@@ -214,30 +220,36 @@ class tx_audio_signed(gr.top_block, Qt.QWidget):
 
     def set_output_audio_file(self, output_audio_file):
         self.output_audio_file = output_audio_file
-        Qt.QMetaObject.invokeMethod(self._output_audio_file_line_edit, "setText", Qt.Q_ARG("QString", str(self.output_audio_file)))
+        Qt.QMetaObject.invokeMethod(
+            self._output_audio_file_line_edit, "setText", Qt.Q_ARG("QString", str(self.output_audio_file))
+        )
 
     def get_message_text(self):
         return self.message_text
 
     def set_message_text(self, message_text):
         self.message_text = message_text
-        Qt.QMetaObject.invokeMethod(self._message_text_line_edit, "setText", Qt.Q_ARG("QString", str(self.message_text)))
+        Qt.QMetaObject.invokeMethod(
+            self._message_text_line_edit, "setText", Qt.Q_ARG("QString", str(self.message_text))
+        )
 
     def get_dest_callsign(self):
         return self.dest_callsign
 
     def set_dest_callsign(self, dest_callsign):
         self.dest_callsign = dest_callsign
-        Qt.QMetaObject.invokeMethod(self._dest_callsign_line_edit, "setText", Qt.Q_ARG("QString", str(self.dest_callsign)))
+        Qt.QMetaObject.invokeMethod(
+            self._dest_callsign_line_edit, "setText", Qt.Q_ARG("QString", str(self.dest_callsign))
+        )
 
     def get_audio_file_path(self):
         return self.audio_file_path
 
     def set_audio_file_path(self, audio_file_path):
         self.audio_file_path = audio_file_path
-        Qt.QMetaObject.invokeMethod(self._audio_file_path_line_edit, "setText", Qt.Q_ARG("QString", str(self.audio_file_path)))
-
-
+        Qt.QMetaObject.invokeMethod(
+            self._audio_file_path_line_edit, "setText", Qt.Q_ARG("QString", str(self.audio_file_path))
+        )
 
 
 def main(top_block_cls=tx_audio_signed, options=None):
@@ -245,7 +257,6 @@ def main(top_block_cls=tx_audio_signed, options=None):
     qapp = Qt.QApplication(sys.argv)
 
     tb = top_block_cls()
-
 
     tb.show()
 
@@ -264,6 +275,6 @@ def main(top_block_cls=tx_audio_signed, options=None):
 
     qapp.exec_()
 
-if __name__ == '__main__':
-    main()
 
+if __name__ == "__main__":
+    main()

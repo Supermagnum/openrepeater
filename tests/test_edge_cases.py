@@ -4,14 +4,13 @@ Edge Case Tests for GNU Radio Blocks
 Tests specific conditions like zero amplitude, NaN/infinity, extreme frequency offsets, phase discontinuities
 """
 
-import sys
-import numpy as np
 import math
+import sys
+
+import numpy as np
 
 try:
-    from gnuradio import gr
-    from gnuradio import blocks
-    from gnuradio import qradiolink
+    from gnuradio import blocks, gr, qradiolink
 except ImportError as e:
     print(f"ERROR: Cannot import GNU Radio modules: {e}")
     sys.exit(1)
@@ -65,7 +64,7 @@ def main():
     print("=" * 70)
     print()
 
-    results = {'passed': 0, 'failed': 0}
+    results = {"passed": 0, "failed": 0}
 
     # Test vectors
     test_cases = [
@@ -97,15 +96,10 @@ def main():
     # Test demod_gmsk
     print("Testing demod_gmsk:")
     for name, vector in test_cases:
-        if test_edge_case(
-            lambda: qradiolink.demod_gmsk(10, 250000, 1700, 8000),
-            "demod_gmsk",
-            name,
-            vector
-        ):
-            results['passed'] += 1
+        if test_edge_case(lambda: qradiolink.demod_gmsk(10, 250000, 1700, 8000), "demod_gmsk", name, vector):
+            results["passed"] += 1
         else:
-            results['failed'] += 1
+            results["failed"] += 1
 
     # Summary
     print()
@@ -116,9 +110,8 @@ def main():
     print(f"Failed: {results['failed']}")
     print(f"Total: {results['passed'] + results['failed']}")
 
-    return 0 if results['failed'] == 0 else 1
+    return 0 if results["failed"] == 0 else 1
 
 
 if __name__ == "__main__":
     sys.exit(main())
-

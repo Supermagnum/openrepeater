@@ -68,9 +68,7 @@ DEFAULT_SVXLINK_TRANSFORMS = {
 
 # Global state
 RUNNING: bool = True
-COMMAND_HISTORY: Dict[str, List[Dict[str, Any]]] = defaultdict(
-    list
-)  # Track commands for replay protection
+COMMAND_HISTORY: Dict[str, List[Dict[str, Any]]] = defaultdict(list)  # Track commands for replay protection
 
 
 def normalize_callsign(callsign: Optional[str]) -> Tuple[str, str]:
@@ -95,9 +93,7 @@ def load_config(config_path: Optional[str] = None) -> Dict:
     """Load configuration from YAML file."""
     # Allow config path to be overridden via environment variable
     if config_path is None:
-        config_path = os.getenv(
-            "AUTHENTICATED_CONFIG", "/etc/authenticated-repeater/config.yaml"
-        )
+        config_path = os.getenv("AUTHENTICATED_CONFIG", "/etc/authenticated-repeater/config.yaml")
     try:
         with open(config_path, "r") as f:
             config = yaml.safe_load(f)
@@ -181,9 +177,7 @@ def verify_signature(message: bytes, signature: bytes, public_key_data: bytes) -
     """
     try:
         # Load public key
-        public_key = serialization.load_pem_public_key(
-            public_key_data, backend=default_backend()
-        )
+        public_key = serialization.load_pem_public_key(public_key_data, backend=default_backend())
 
         # Verify signature - handle EllipticCurvePublicKey specifically
         # The cryptography library returns a union type, but we expect ECDSA keys
@@ -191,9 +185,7 @@ def verify_signature(message: bytes, signature: bytes, public_key_data: bytes) -
             public_key.verify(signature, message, ec.ECDSA(hashes.SHA256()))
             return True
         else:
-            logging.error(
-                f"Unsupported key type: {type(public_key)}. Expected EllipticCurvePublicKey."
-            )
+            logging.error(f"Unsupported key type: {type(public_key)}. Expected EllipticCurvePublicKey.")
             return False
     except Exception as e:
         logging.error(f"Signature verification failed: {e}")
@@ -274,9 +266,7 @@ def check_replay_protection(command_data: Dict, config: Dict) -> bool:
     history = COMMAND_HISTORY[callsign]
     for entry in history:
         if entry["hash"] == command_hash:
-            logging.warning(
-                f"Replay detected: duplicate command from {command_data['callsign']}"
-            )
+            logging.warning(f"Replay detected: duplicate command from {command_data['callsign']}")
             return False
 
     # Add to history
@@ -361,9 +351,7 @@ def parse_command_payload(command_text: str) -> Tuple[Optional[str], Optional[st
     return name.strip().upper(), value.strip()
 
 
-def translate_command_to_svxlink(
-    command_text: str, config: Dict
-) -> Tuple[bool, Optional[str], str]:
+def translate_command_to_svxlink(command_text: str, config: Dict) -> Tuple[bool, Optional[str], str]:
     """
     Convert a logical command string into an SVXLink command.
 
@@ -406,9 +394,7 @@ def translate_command_to_svxlink(
     return True, passthrough, "OK"
 
 
-def execute_svxlink_command_config(
-    command: str, config: Dict[str, Any]
-) -> Tuple[bool, str]:
+def execute_svxlink_command_config(command: str, config: Dict[str, Any]) -> Tuple[bool, str]:
     """
     Execute SVXLink command by modifying config file and sending SIGHUP.
 
@@ -515,9 +501,7 @@ def process_command(
     return success, result
 
 
-def zmq_receiver(
-    config: Dict, authorized_keys: Dict[str, bytes], logger: logging.Logger
-):
+def zmq_receiver(config: Dict, authorized_keys: Dict[str, bytes], logger: logging.Logger):
     """Receive commands via ZMQ socket."""
     if not ZMQ_AVAILABLE:
         logger.error("ZMQ not available, cannot use ZMQ receiver")
@@ -544,9 +528,7 @@ def zmq_receiver(
                 command_frame = frames[0]
                 signature_frame = frames[1]
 
-                success, result = process_command(
-                    command_frame, signature_frame, authorized_keys, config
-                )
+                success, result = process_command(command_frame, signature_frame, authorized_keys, config)
 
                 # Send acknowledgment back (if needed)
                 if config.get("zmq_tx_socket"):
@@ -584,9 +566,7 @@ def send_acknowledgment(config: Dict, success: bool, result: str):
     context.term()
 
 
-def fifo_receiver(
-    config: Dict, authorized_keys: Dict[str, bytes], logger: logging.Logger
-):
+def fifo_receiver(config: Dict, authorized_keys: Dict[str, bytes], logger: logging.Logger):
     """Receive commands via named pipe (FIFO)."""
     fifo_path = config.get("fifo_path", "/tmp/authenticated_commands.fifo")
 
@@ -624,9 +604,7 @@ def fifo_receiver(
                 if len(signature_frame) != sig_len:
                     continue
 
-                success, result = process_command(
-                    command_frame, signature_frame, authorized_keys, config
-                )
+                success, result = process_command(command_frame, signature_frame, authorized_keys, config)
 
         except KeyboardInterrupt:
             break
@@ -656,9 +634,7 @@ def main():
     signal.signal(signal.SIGTERM, signal_handler)
 
     # Load authorized keys
-    keys_dir = config.get(
-        "authorized_keys_dir", "/etc/authenticated-repeater/authorized_operators"
-    )
+    keys_dir = config.get("authorized_keys_dir", "/etc/authenticated-repeater/authorized_operators")
     authorized_keys = load_authorized_keys(keys_dir)
 
     if not authorized_keys:
@@ -693,4 +669,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

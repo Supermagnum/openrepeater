@@ -1,0 +1,173 @@
+./MODULE_Rig_Control/svxlink/python/set_pttlock_off.py:16:35: E231 missing whitespace after ','
+./MODULE_Rig_Control/svxlink/python/set_pttlock_off.py:16:49: E231 missing whitespace after ','
+./MODULE_Rig_Control/svxlink/python/set_pttlock_off.py:23:51: E261 at least two spaces before inline comment
+./MODULE_Rig_Control/svxlink/python/set_pttlock_off.py:27:1: E265 block comment should start with '# '
+./MODULE_Rig_Control/svxlink/python/set_pttlock_off.py:29:1: E265 block comment should start with '# '
+./MODULE_Rig_Control/svxlink/python/set_pttlock_off.py:30:1: E265 block comment should start with '# '
+./MODULE_Rig_Control/svxlink/python/set_pttlock_off.py:32:1: E265 block comment should start with '# '
+./MODULE_Rig_Control/svxlink/python/set_pttlock_off.py:33:1: E265 block comment should start with '# '
+./MODULE_Rig_Control/svxlink/python/set_pttlock_off.py:35:1: E265 block comment should start with '# '
+./MODULE_Rig_Control/svxlink/python/set_pttlock_off.py:37:1: E265 block comment should start with '# '
+./MODULE_Rig_Control/svxlink/python/set_pttlock_off.py:39:1: E265 block comment should start with '# '
+./MODULE_Rig_Control/svxlink/python/set_pttlock_off.py:43:1: W391 blank line at end of file
+./MODULE_Rig_Control/svxlink/python/set_pttlock_on.py:16:35: E231 missing whitespace after ','
+./MODULE_Rig_Control/svxlink/python/set_pttlock_on.py:16:49: E231 missing whitespace after ','
+./MODULE_Rig_Control/svxlink/python/set_pttlock_on.py:23:51: E261 at least two spaces before inline comment
+./MODULE_Rig_Control/svxlink/python/set_pttlock_on.py:29:1: E265 block comment should start with '# '
+./MODULE_Rig_Control/svxlink/python/set_pttlock_on.py:32:1: E265 block comment should start with '# '
+./MODULE_Rig_Control/svxlink/python/set_pttlock_on.py:33:1: E265 block comment should start with '# '
+./MODULE_Rig_Control/svxlink/python/set_pttlock_on.py:34:3: E114 indentation is not a multiple of 4 (comment)
+./MODULE_Rig_Control/svxlink/python/set_pttlock_on.py:34:3: E116 unexpected indentation (comment)
+./MODULE_Rig_Control/svxlink/python/set_pttlock_on.py:34:3: E265 block comment should start with '# '
+./MODULE_Rig_Control/svxlink/python/set_pttlock_on.py:35:3: E114 indentation is not a multiple of 4 (comment)
+./MODULE_Rig_Control/svxlink/python/set_pttlock_on.py:35:3: E116 unexpected indentation (comment)
+./MODULE_Rig_Control/svxlink/python/set_pttlock_on.py:35:3: E265 block comment should start with '# '
+./MODULE_Rig_Control/svxlink/python/set_pttlock_on.py:37:1: E265 block comment should start with '# '
+./MODULE_Rig_Control/svxlink/python/set_pttlock_on.py:38:3: E114 indentation is not a multiple of 4 (comment)
+./MODULE_Rig_Control/svxlink/python/set_pttlock_on.py:38:3: E116 unexpected indentation (comment)
+./MODULE_Rig_Control/svxlink/python/set_pttlock_on.py:38:3: E265 block comment should start with '# '
+./MODULE_Rig_Control/svxlink/python/set_pttlock_on.py:40:1: E265 block comment should start with '# '
+./MODULE_Rig_Control/svxlink/python/set_pttlock_on.py:41:3: E114 indentation is not a multiple of 4 (comment)
+./MODULE_Rig_Control/svxlink/python/set_pttlock_on.py:41:3: E116 unexpected indentation (comment)
+./MODULE_Rig_Control/svxlink/python/set_pttlock_on.py:41:3: E265 block comment should start with '# '
+./MODULE_Rig_Control/svxlink/python/set_pttlock_on.py:44:1: W391 blank line at end of file
+./integration/.mutmut_config.py:6:1: E302 expected 2 blank lines, found 1
+./integration/.mutmut_config.py:9:1: W391 blank line at end of file
+./integration/authenticated_command_handler.py:696:1: W391 blank line at end of file
+./integration/authenticated_command_handler_zmq.py:574:1: W391 blank line at end of file
+./integration/reply_formatter.py:179:1: W391 blank line at end of file
+./integration/svxlink_interface.py:342:1: W391 blank line at end of file
+./integration/test_security_comprehensive.py:167:42: F821 undefined name 'Tuple'
+./integration/test_security_comprehensive.py:590:9: F841 local variable '_frame1' is assigned to but never used
+./integration/test_security_comprehensive.py:591:9: F841 local variable '_frame2' is assigned to but never used
+./integration/test_security_comprehensive.py:650:1: W391 blank line at end of file
+./integration/test_signature_verification.py:27:5: F401 'scapy.all.send' imported but unused
+./integration/test_signature_verification.py:384:1: W391 blank line at end of file
+./integration/test_zmq_message_formats.py:16:1: F401 'os' imported but unused
+./integration/test_zmq_message_formats.py:19:1: F401 'typing.Dict' imported but unused
+./integration/test_zmq_message_formats.py:19:1: F401 'typing.List' imported but unused
+./integration/test_zmq_message_formats.py:19:1: F401 'typing.Tuple' imported but unused
+./integration/test_zmq_message_formats.py:32:5: F401 'cryptography.hazmat.primitives.serialization' imported but unused
+./integration/test_zmq_message_formats.py:237:121: E501 line too long (128 > 120 characters)
+./integration/test_zmq_message_formats.py:239:121: E501 line too long (131 > 120 characters)
+./integration/test_zmq_message_formats.py:246:121: E501 line too long (123 > 120 characters)
+./integration/test_zmq_message_formats.py:278:17: F841 local variable 'data' is assigned to but never used
+./integration/test_zmq_message_formats.py:287:121: E501 line too long (133 > 120 characters)
+./integration/test_zmq_message_formats.py:478:121: E501 line too long (150 > 120 characters)
+./integration/test_zmq_message_formats.py:480:121: E501 line too long (147 > 120 characters)
+./integration/test_zmq_message_formats.py:482:121: E501 line too long (133 > 120 characters)
+./integration/test_zmq_message_formats.py:484:121: E501 line too long (140 > 120 characters)
+./integration/test_zmq_message_formats.py:486:121: E501 line too long (131 > 120 characters)
+./integration/test_zmq_message_formats.py:488:121: E501 line too long (151 > 120 characters)
+./integration/test_zmq_message_formats.py:499:121: E501 line too long (128 > 120 characters)
+./integration/test_zmq_message_formats.py:570:1: W391 blank line at end of file
+./integration/zmq_send_test.py:98:1: W391 blank line at end of file
+./run_tx_audio_signed.py:7:1: E302 expected 2 blank lines, found 1
+./run_tx_audio_signed.py:13:121: E501 line too long (142 > 120 characters)
+./run_tx_audio_signed.py:15:121: E501 line too long (141 > 120 characters)
+./run_tx_audio_signed.py:59:1: W293 blank line contains whitespace
+./run_tx_audio_signed.py:63:1: W293 blank line contains whitespace
+./run_tx_audio_signed.py:78:17: E722 do not use bare 'except'
+./run_tx_audio_signed.py:81:19: F541 f-string is missing placeholders
+./run_tx_audio_signed.py:99:13: E722 do not use bare 'except'
+./run_tx_audio_signed.py:126:1: E305 expected 2 blank lines after class or function definition, found 1
+./run_tx_audio_signed.py:128:1: W391 blank line at end of file
+./test_tx_audio_fix.py:13:1: E302 expected 2 blank lines, found 1
+./test_tx_audio_fix.py:15:1: W293 blank line contains whitespace
+./test_tx_audio_fix.py:20:1: W293 blank line contains whitespace
+./test_tx_audio_fix.py:25:1: W293 blank line contains whitespace
+./test_tx_audio_fix.py:30:1: W293 blank line contains whitespace
+./test_tx_audio_fix.py:35:1: W293 blank line contains whitespace
+./test_tx_audio_fix.py:39:1: W293 blank line contains whitespace
+./test_tx_audio_fix.py:43:1: W293 blank line contains whitespace
+./test_tx_audio_fix.py:45:9: F841 local variable 'qapp' is assigned to but never used
+./test_tx_audio_fix.py:47:1: W293 blank line contains whitespace
+./test_tx_audio_fix.py:53:1: W293 blank line contains whitespace
+./test_tx_audio_fix.py:58:1: W293 blank line contains whitespace
+./test_tx_audio_fix.py:62:1: W293 blank line contains whitespace
+./test_tx_audio_fix.py:66:1: W293 blank line contains whitespace
+./test_tx_audio_fix.py:71:1: W293 blank line contains whitespace
+./test_tx_audio_fix.py:87:1: W293 blank line contains whitespace
+./test_tx_audio_fix.py:90:1: W293 blank line contains whitespace
+./test_tx_audio_fix.py:94:1: W293 blank line contains whitespace
+./test_tx_audio_fix.py:98:9: E722 do not use bare 'except'
+./test_tx_audio_fix.py:100:1: W293 blank line contains whitespace
+./test_tx_audio_fix.py:102:1: W293 blank line contains whitespace
+./test_tx_audio_fix.py:108:1: W293 blank line contains whitespace
+./test_tx_audio_fix.py:113:1: W293 blank line contains whitespace
+./test_tx_audio_fix.py:117:1: W293 blank line contains whitespace
+./test_tx_audio_fix.py:122:1: W293 blank line contains whitespace
+./test_tx_audio_fix.py:127:121: E501 line too long (126 > 120 characters)
+./test_tx_audio_fix.py:129:1: W293 blank line contains whitespace
+./test_tx_audio_fix.py:136:5: E722 do not use bare 'except'
+./test_tx_audio_fix.py:138:1: W293 blank line contains whitespace
+./test_tx_audio_fix.py:142:1: E305 expected 2 blank lines after class or function definition, found 1
+./test_tx_audio_fix.py:145:1: W391 blank line at end of file
+./tests/test_coverage_analysis.py:30:13: E722 do not use bare 'except'
+./tests/test_coverage_analysis.py:41:24: E128 continuation line under-indented for visual indent
+./tests/test_coverage_analysis.py:42:24: E128 continuation line under-indented for visual indent
+./tests/test_coverage_analysis.py:105:1: W391 blank line at end of file
+./tests/test_edge_cases.py:43:13: E722 do not use bare 'except'
+./tests/test_edge_cases.py:124:1: W391 blank line at end of file
+./tests/test_m17_deframer_attack_vectors.py:10:1: F401 'numpy as np' imported but unused
+./tests/test_m17_deframer_attack_vectors.py:214:25: E722 do not use bare 'except'
+./tests/test_m17_deframer_attack_vectors.py:293:1: W391 blank line at end of file
+./tests/test_mmdvm_protocols.py:1911:1: W391 blank line at end of file
+./tests/test_nxdn_dpmr_validation.py:18:1: F401 'test_vectors_nxdn_dpmr.ALL_TEST_VECTORS' imported but unused
+./tests/test_nxdn_dpmr_validation.py:18:1: E402 module level import not at top of file
+./tests/test_nxdn_dpmr_validation.py:20:1: E302 expected 2 blank lines, found 1
+./tests/test_nxdn_dpmr_validation.py:38:1: E302 expected 2 blank lines, found 1
+./tests/test_nxdn_dpmr_validation.py:57:1: E302 expected 2 blank lines, found 1
+./tests/test_nxdn_dpmr_validation.py:72:5: F841 local variable 'symbols' is assigned to but never used
+./tests/test_nxdn_dpmr_validation.py:119:1: E302 expected 2 blank lines, found 1
+./tests/test_nxdn_dpmr_validation.py:143:1: E302 expected 2 blank lines, found 1
+./tests/test_nxdn_dpmr_validation.py:159:1: E302 expected 2 blank lines, found 1
+./tests/test_nxdn_dpmr_validation.py:178:1: E302 expected 2 blank lines, found 1
+./tests/test_nxdn_dpmr_validation.py:222:1: E302 expected 2 blank lines, found 1
+./tests/test_nxdn_dpmr_validation.py:240:19: F541 f-string is missing placeholders
+./tests/test_nxdn_dpmr_validation.py:249:1: E302 expected 2 blank lines, found 1
+./tests/test_nxdn_dpmr_validation.py:264:15: F541 f-string is missing placeholders
+./tests/test_nxdn_dpmr_validation.py:265:15: F541 f-string is missing placeholders
+./tests/test_nxdn_dpmr_validation.py:269:1: E302 expected 2 blank lines, found 1
+./tests/test_nxdn_dpmr_validation.py:320:15: F541 f-string is missing placeholders
+./tests/test_nxdn_dpmr_validation.py:332:1: E305 expected 2 blank lines after class or function definition, found 1
+./tests/test_nxdn_dpmr_validation.py:338:24: E128 continuation line under-indented for visual indent
+./tests/test_nxdn_dpmr_validation.py:344:1: W391 blank line at end of file
+./tests/test_vectors_nxdn_dpmr.py:431:1: E302 expected 2 blank lines, found 1
+./tests/test_vectors_nxdn_dpmr.py:469:1: W391 blank line at end of file
+./tx_audio_signed.py:16:1: F401 'gnuradio.eng_notation' imported but unused
+./tx_audio_signed.py:18:1: F401 'gnuradio.filter.firdes' imported but unused
+./tx_audio_signed.py:19:1: F401 'gnuradio.fft.window' imported but unused
+./tx_audio_signed.py:22:1: F811 redefinition of unused 'Qt' from line 13
+./tx_audio_signed.py:23:1: F401 'argparse.ArgumentParser' imported but unused
+./tx_audio_signed.py:24:1: F401 'gnuradio.eng_arg.eng_float' imported but unused
+./tx_audio_signed.py:24:1: F401 'gnuradio.eng_arg.intx' imported but unused
+./tx_audio_signed.py:32:1: E303 too many blank lines (3)
+./tx_audio_signed.py:32:8: N801 class name 'tx_audio_signed' should use CapWords convention
+./tx_audio_signed.py:68:27: F841 local variable 'use_pkcs11' is assigned to but never used
+./tx_audio_signed.py:69:28: F841 local variable 'stop_button' is assigned to but never used
+./tx_audio_signed.py:70:29: F841 local variable 'start_button' is assigned to but never used
+./tx_audio_signed.py:73:34: F841 local variable 'output_audio_file' is assigned to but never used
+./tx_audio_signed.py:74:29: F841 local variable 'message_text' is assigned to but never used
+./tx_audio_signed.py:76:32: F841 local variable 'audio_file_path' is assigned to but never used
+./tx_audio_signed.py:98:47: E231 missing whitespace after ','
+./tx_audio_signed.py:98:56: E231 missing whitespace after ','
+./tx_audio_signed.py:99:121: E501 line too long (161 > 120 characters)
+./tx_audio_signed.py:113:121: E501 line too long (121 > 120 characters)
+./tx_audio_signed.py:115:121: E501 line too long (133 > 120 characters)
+./tx_audio_signed.py:145:51: E201 whitespace after '('
+./tx_audio_signed.py:145:113: E201 whitespace after '('
+./tx_audio_signed.py:145:121: E501 line too long (175 > 120 characters)
+./tx_audio_signed.py:145:174: E202 whitespace before ')'
+./tx_audio_signed.py:158:9: E303 too many blank lines (2)
+./tx_audio_signed.py:172:5: E303 too many blank lines (2)
+./tx_audio_signed.py:172:10: N802 function name 'closeEvent' should be lowercase
+./tx_audio_signed.py:204:121: E501 line too long (121 > 120 characters)
+./tx_audio_signed.py:217:121: E501 line too long (131 > 120 characters)
+./tx_audio_signed.py:224:121: E501 line too long (121 > 120 characters)
+./tx_audio_signed.py:231:121: E501 line too long (123 > 120 characters)
+./tx_audio_signed.py:238:121: E501 line too long (127 > 120 characters)
+./tx_audio_signed.py:243:1: E303 too many blank lines (4)
+./tx_audio_signed.py:250:5: E303 too many blank lines (2)
+./tx_audio_signed.py:267:1: E305 expected 2 blank lines after class or function definition, found 1
+./tx_audio_signed.py:269:1: W391 blank line at end of file
