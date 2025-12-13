@@ -34,6 +34,22 @@ class blk(gr.sync_block):
         self._silence_threshold = 48000  # 1 second of silence
         self._total_audio_samples = 0
         self._min_audio_samples = 96000  # Require at least 2 seconds of audio
+        
+        # Track padding samples needed after EOF to ensure frames are fully transmitted
+        self._samples_output_after_eof = 0
+        self._required_padding_samples = 0
+        self._frames_complete = False
+        
+        # Flush period: wait for audio to be completely flushed from pipeline before outputting data
+        self._audio_flush_samples = 0
+        self._audio_flush_needed = 5000  # Flush ~0.1 seconds to ensure all audio is out
+        
+        # Configuration: 2 AX.25 frames at 2400 baud with 20x repeat factor at 48kHz sample rate
+        # Each byte becomes 20 samples after repeat block
+        # Add buffer for pipeline delay (AX.25 encoder overhead, etc.)
+        self._repeat_factor = 20
+        self._sample_rate = 48000
+        self._pipeline_buffer_samples = 10000  # Extra samples for pipeline delay
 
         if PKCS11_AVAILABLE:
             self._init_pkcs11()
@@ -115,7 +131,12 @@ class blk(gr.sync_block):
 
                     frames.extend(msg_bytes)
 
-                    return bytes(frames)
+                    # Generate TWO frames by duplicating the data
+                    # The AX.25 encoder will create a separate frame for each transmission
+                    frames_duplicated = bytearray(frames)
+                    frames_duplicated.extend(frames)  # Append second frame
+
+                    return bytes(frames_duplicated)
         except Exception as e:
             print(f"Frame generation error: {e}")
             pass
@@ -133,60 +154,131 @@ class blk(gr.sync_block):
         key_in = input_items[1]
         audio_out = output_items[0]
         data_out = output_items[1]
-        n = len(audio_in)
+        n = len(output_items[0])  # Use output buffer size, not input size
 
         if len(key_in) > 0 and not self._use_pkcs11:
             self._key_buffer.extend(key_in.tolist())
             if len(self._key_buffer) > 32:
                 self._key_buffer = self._key_buffer[-32:]
 
-        if not self._audio_eof_detected:
-            # Always pass through audio while receiving it
-            self._total_audio_samples += n
-            audio_energy = np.sum(np.abs(audio_in))
+        # Track audio samples processed
+        if len(audio_in) > 0 and not self._audio_eof_detected:
+            self._total_audio_samples += len(audio_in)
 
-            # Detect file end: all zeros after processing significant audio
-            # This handles files with silence at start and end
-            if n > 0:
-                if audio_energy < 1e-10 and self._total_audio_samples > 96000:
-                    # After 2 seconds of audio, check for file end (all zeros)
-                    self._silence_count += n
-                    if self._silence_count >= 96000:  # 2 seconds of complete silence
-                        self._audio_eof_detected = True
-                        frames_bytes = self._generate_frames_bytes()
-                        if frames_bytes:
-                            self._data_frames_bytes = bytearray(frames_bytes)
-                            self._data_output_idx = 0
-                        print(f"File end detected after {self._total_audio_samples} samples")
-                else:
-                    # Reset silence counter if we see any audio
-                    if audio_energy > 1e-6:
-                        self._silence_count = 0
+        # Detect EOF when source stops (len(audio_in) == 0) AND we've processed audio
+        if len(audio_in) == 0 and not self._audio_eof_detected and self._total_audio_samples > 0:
+            self._audio_eof_detected = True
+            self._audio_flush_samples = 0  # Start flush period
+            frames_bytes = self._generate_frames_bytes()
+            if frames_bytes:
+                self._data_frames_bytes = bytearray(frames_bytes)
+                self._data_output_idx = 0
+                self._frames_complete = False
+                self._samples_output_after_eof = 0
+                
+                # Calculate required padding duration:
+                # 2 AX.25 frames at 2400 baud with 20x repeat factor at 48kHz sample rate
+                # Each byte becomes 20 samples after repeat block
+                # Add buffer for pipeline delay (AX.25 encoder adds overhead, etc.)
+                total_bytes = len(frames_bytes)
+                # Estimate AX.25 encoder overhead: ~18 bytes per frame (flags, address, control, FCS)
+                # For 2 frames, add ~36 bytes overhead
+                estimated_ax25_bytes = total_bytes + 36
+                # Calculate samples needed: bytes * repeat_factor + pipeline buffer
+                self._required_padding_samples = (estimated_ax25_bytes * self._repeat_factor) + self._pipeline_buffer_samples
+                
+                print(f"File source ended after {self._total_audio_samples} samples")
+                print(f"Generated {len(frames_bytes)} bytes for 2 AX.25 frames")
+                print(f"Estimated {estimated_ax25_bytes} bytes after AX.25 encoding")
+                print(f"Required padding: {self._required_padding_samples} samples ({self._required_padding_samples/self._sample_rate:.2f} seconds)")
             else:
-                # n == 0 means file source stopped
-                if self._total_audio_samples > 0:
-                    self._audio_eof_detected = True
-                    frames_bytes = self._generate_frames_bytes()
-                    if frames_bytes:
-                        self._data_frames_bytes = bytearray(frames_bytes)
-                        self._data_output_idx = 0
-                    print(f"File source ended after {self._total_audio_samples} samples")
+                print(f"File source ended after {self._total_audio_samples} samples, but no frames generated")
+                self._frames_complete = True
+                self._required_padding_samples = 0
 
+        # Process audio or data frames
         if not self._audio_eof_detected:
-            audio_out[:n] = audio_in[:n]
+            # Pass through audio while receiving it
+            # Handle case where audio_in might be shorter than n
+            audio_len = min(n, len(audio_in)) if len(audio_in) > 0 else 0
+            if audio_len > 0:
+                audio_out[:audio_len] = audio_in[:audio_len]
+            # Zero-pad remaining audio output
+            audio_out[audio_len:n] = 0.0
             data_out[:n] = 0
+            # Always return n to keep flowgraph running
             return n
         else:
+            # After EOF detected: flush audio first, then output ONLY data frames (no audio)
+            # CRITICAL: audio_out must be zero when outputting data
+            
+            # Flush period: wait for all audio to be flushed from pipeline
+            if self._audio_flush_samples < self._audio_flush_needed:
+                audio_out[:n] = 0.0
+                data_out[:n] = 0  # CRITICAL: No data output during flush
+                self._audio_flush_samples += n
+                return n
+            
+            # After flush period: output ONLY data frames (no audio)
             audio_out[:n] = 0.0
-            if self._data_frames_bytes is not None and self._data_output_idx < len(self._data_frames_bytes):
-                remaining = len(self._data_frames_bytes) - self._data_output_idx
-                n_output = min(n, remaining)
-                if n_output > 0:
-                    data_out[:n_output] = np.frombuffer(
-                        self._data_frames_bytes[self._data_output_idx:self._data_output_idx+n_output],
-                        dtype=np.uint8
-                    )
-                    self._data_output_idx += n_output
-                    return n_output
-            data_out[:n] = 0
-            return n
+            
+            # First, output data frames if available
+            if not self._frames_complete and self._data_frames_bytes is not None:
+                if self._data_output_idx < len(self._data_frames_bytes):
+                    remaining = len(self._data_frames_bytes) - self._data_output_idx
+                    n_output = min(n, remaining) if n > 0 else 0
+                    
+                    if n_output > 0:
+                        data_out[:n_output] = np.frombuffer(
+                            self._data_frames_bytes[self._data_output_idx:self._data_output_idx+n_output],
+                            dtype=np.uint8
+                        )
+                        self._data_output_idx += n_output
+                        self._samples_output_after_eof += n
+                        
+                        # Check if all frames are output
+                        if self._data_output_idx >= len(self._data_frames_bytes):
+                            print(f"All AX.25 frame data output ({self._data_output_idx} bytes), continuing with padding")
+                        
+                        # Zero-pad remaining output
+                        if n_output < n:
+                            data_out[n_output:n] = 0
+                        
+                        # Continue outputting until padding is complete
+                        return n
+                    else:
+                        # n == 0 but we still have frames to output
+                        data_out[:n] = 0
+                        self._samples_output_after_eof += n
+                        return n if n > 0 else 0
+                else:
+                    # All data frames output, now output silence padding
+                    self._samples_output_after_eof += n
+                    data_out[:n] = 0
+                    
+                    # Check if we've output enough padding samples
+                    if self._samples_output_after_eof >= self._required_padding_samples:
+                        if not self._frames_complete:
+                            self._frames_complete = True
+                            print(f"Padding complete: {self._samples_output_after_eof} samples output after EOF")
+                        # Return 0 to signal WORK_DONE only after all padding is complete
+                        return 0
+                    else:
+                        # Continue outputting silence padding
+                        return n
+            else:
+                # No frames or frames already complete, but check if padding is needed
+                if self._samples_output_after_eof < self._required_padding_samples:
+                    self._samples_output_after_eof += n
+                    data_out[:n] = 0
+                    
+                    if self._samples_output_after_eof >= self._required_padding_samples:
+                        self._frames_complete = True
+                        print(f"Padding complete: {self._samples_output_after_eof} samples output after EOF")
+                        return 0
+                    else:
+                        return n
+                else:
+                    # All padding complete, signal WORK_DONE
+                    data_out[:n] = 0
+                    return 0

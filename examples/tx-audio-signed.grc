@@ -18,9 +18,9 @@ options:
     placement: (0,0)
     qt_qss_theme: ''
     realtime_scheduling: ''
-    run: 'False'
+    run: 'True'
     run_command: '{python} -u {filename}'
-    run_options: prompt
+    run_options: run
     sizing_mode: fixed
     thread_safe_setters: ''
     title: Audio File with Signed Frames
@@ -58,7 +58,7 @@ blocks:
     gui_hint: ''
     label: Dest Callsign
     type: string
-    value: N0CALL
+    value: LA2TEST
   states:
     bus_sink: false
     bus_source: false
@@ -74,7 +74,7 @@ blocks:
     gui_hint: 0,0,2,1
     label: Message Text
     type: string
-    value: ''
+    value: TEST
   states:
     bus_sink: false
     bus_source: false
@@ -118,46 +118,12 @@ blocks:
     gui_hint: ''
     label: Src Callsign
     type: string
-    value: N0CALL
+    value: LA1TEST
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
     coordinate: [440, 16.0]
-    rotation: 0
-    state: enabled
-- name: start_button
-  id: variable_qtgui_push_button
-  parameters:
-    comment: Start processing the audio file
-    gui_hint: ''
-    label: Start Processing
-    pressed: '1'
-    released: '0'
-    type: int
-    value: '0'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1296, 24.0]
-    rotation: 0
-    state: enabled
-- name: stop_button
-  id: variable_qtgui_push_button
-  parameters:
-    comment: Stop processing
-    gui_hint: ''
-    label: Stop
-    pressed: '1'
-    released: '0'
-    type: int
-    value: '0'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1496, 24.0]
     rotation: 0
     state: enabled
 - name: use_pkcs11

@@ -133,22 +133,9 @@ class tx_audio_signed(gr.top_block, Qt.QWidget):
             self.top_grid_layout.setColumnStretch(c, 1)
         self.linux_crypto_kernel_keyring_source_0 = linux_crypto.kernel_keyring_source(0, False)
         self.epy_block_2 = epy_block_2.blk()
-        # Create placeholder - will be replaced when start_processing is called
-        # Use a dummy file that exists or create one
-        import tempfile
-        dummy_wav = tempfile.NamedTemporaryFile(delete=False, suffix='.wav')
-        dummy_wav.close()
-        # Create minimal valid WAV file
-        import wave
-        w = wave.open(dummy_wav.name, 'w')
-        w.setnchannels(1)
-        w.setsampwidth(2)
-        w.setframerate(48000)
-        w.writeframes(b'\x00' * 100)  # Minimal audio data
-        w.close()
-        self.blocks_wavfile_source_0 = blocks.wavfile_source(dummy_wav.name, False)
+        self.blocks_wavfile_source_0 = blocks.wavfile_source('/home/haaken/Musikk/cq.wav', False)
         self.blocks_wavfile_sink_0 = blocks.wavfile_sink(
-            output_audio_file if output_audio_file else '/tmp/output.wav',
+            '/home/haaken/Musikk/ax25+cq.wav',
             1,
             samp_rate,
             blocks.FORMAT_WAV,
