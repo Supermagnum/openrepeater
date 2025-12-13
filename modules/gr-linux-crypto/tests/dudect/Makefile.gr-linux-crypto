@@ -1,0 +1,29 @@
+# Makefile for gr-linux-crypto dudect tests
+
+CC = gcc
+CFLAGS = -std=c11 -O2 -Wall -Wextra
+LDFLAGS = -std=c11
+LIBS = -lm -lssl -lcrypto
+INCS = -Isrc/
+
+# Test targets
+dut_auth: dut_linux_crypto_auth.c
+	$(CC) $(LDFLAGS) $(CFLAGS) $(INCS) -o dudect_linux_crypto_auth dut_linux_crypto_auth.c $(LIBS)
+
+dut_encrypt: dut_linux_crypto_encrypt.c
+	$(CC) $(LDFLAGS) $(CFLAGS) $(INCS) -o dudect_linux_crypto_encrypt dut_linux_crypto_encrypt.c $(LIBS)
+
+all: dut_auth dut_encrypt
+
+clean:
+	rm -f dudect_linux_crypto_* *.o
+
+test: all
+	@echo "Running authentication tag comparison test..."
+	@timeout 300 ./dudect_linux_crypto_auth || true
+	@echo ""
+	@echo "Running encryption timing test..."
+	@timeout 300 ./dudect_linux_crypto_encrypt || true
+
+.PHONY: all clean test
+

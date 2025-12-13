@@ -34,6 +34,8 @@ public:
 
     virtual void calibrate_rssi(float level);
 
+    virtual ~rssi_tag_block();
+
 protected:
     rssi_tag_block(const std::string& name,
                    gr::io_signature::sptr input_signature,

@@ -1,0 +1,42 @@
+id: qradiolink_p25_encoder
+label: P25 Phase 1 Encoder
+category: '[QRadioLink]'
+flags: [ python ]
+
+parameters:
+-   id: nac
+    label: Network Access Code (NAC)
+    dtype: int
+    default: '0x293'
+
+-   id: source_id
+    label: Source ID
+    dtype: int
+    default: '0'
+
+-   id: destination_id
+    label: Destination ID
+    dtype: int
+    default: '0'
+
+-   id: talkgroup_id
+    label: Talkgroup ID
+    dtype: int
+    default: '0'
+
+inputs:
+-   domain: stream
+    dtype: byte
+    label: Voice Data
+
+outputs:
+-   domain: stream
+    dtype: byte
+    label: P25 Frames
+
+templates:
+    imports: from gnuradio import qradiolink
+    make: qradiolink.p25_encoder(nac=${nac}, source_id=${source_id}, destination_id=${destination_id}, talkgroup_id=${talkgroup_id})
+
+file_format: 1
+

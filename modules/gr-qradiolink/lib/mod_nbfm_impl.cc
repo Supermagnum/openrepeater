@@ -17,7 +17,7 @@
 #include <gnuradio/qradiolink/mod_nbfm.h>
 #include "mod_nbfm_impl.h"
 #include <gnuradio/io_signature.h>
-#include "../../src/gr/emphasis.h"
+#include <gr/emphasis.h>
 
 namespace gr {
 namespace qradiolink {

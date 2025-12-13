@@ -20,8 +20,8 @@
 #include <gnuradio/filter/firdes.h>
 #include <gnuradio/fft/window.h>
 #include <cmath>
-// dsss_decoder_cc - using original namespace from src/gr
-#include "../../src/gr/dsss_decoder_cc_impl.h"
+// DSSS decoder - Barker-13 spreading code correlation
+#include "dsss_decoder_cc_impl.h"
 using gr::dsss::dsss_decoder_cc;
 
 namespace gr {
@@ -70,7 +70,7 @@ demod_dsss_impl::demod_dsss_impl(int sps, int samp_rate, int carrier_freq, int f
             1, d_target_samp_rate, d_filter_width, 1200, gr::fft::window::WIN_BLACKMAN_HARRIS));
     d_costas_loop = gr::digital::costas_loop_cc::make(2 * M_PI / 100, 2);
     d_costas_freq = gr::digital::costas_loop_cc::make(M_PI / 200, 2, true);
-    // dsss_decoder_cc - using original namespace
+    // DSSS decoder - Barker-13 spreading code correlation
     gr::dsss::dsss_decoder_cc::sptr d_dsss_decoder = gr::dsss::dsss_decoder_cc::make(dsss_code, d_samples_per_symbol);
     d_complex_to_real = gr::blocks::complex_to_real::make();
     d_clock_recovery = gr::digital::clock_recovery_mm_cc::make(

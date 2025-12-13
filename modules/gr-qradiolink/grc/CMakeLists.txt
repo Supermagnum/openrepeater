@@ -18,6 +18,12 @@ install(FILES
     qradiolink_mod_qpsk.block.yml
     qradiolink_mod_nbfm.block.yml
     qradiolink_mod_dsss.block.yml
+    qradiolink_mod_nxdn.block.yml
+    qradiolink_mod_dpmr.block.yml
+    qradiolink_pocsag_encoder.block.yml
+    qradiolink_dstar_encoder.block.yml
+    qradiolink_ysf_encoder.block.yml
+    qradiolink_p25_encoder.block.yml
     qradiolink_demod_2fsk.block.yml
     qradiolink_demod_am.block.yml
     qradiolink_demod_ssb.block.yml
@@ -29,6 +35,13 @@ install(FILES
     qradiolink_demod_4fsk.block.yml
     qradiolink_demod_dsss.block.yml
     qradiolink_demod_m17.block.yml
+    qradiolink_demod_nxdn.block.yml
+    qradiolink_demod_dpmr.block.yml
+    qradiolink_pocsag_decoder.block.yml
+    qradiolink_dstar_decoder.block.yml
+    qradiolink_ysf_decoder.block.yml
+    qradiolink_p25_decoder.block.yml
+    qradiolink_m17_deframer.block.yml
     qradiolink.tree.yml
     DESTINATION ${GRC_BLOCKS_DIR})
 

@@ -1,0 +1,26 @@
+id: qradiolink_m17_deframer
+label: M17 Deframer
+category: '[QRadioLink]'
+flags: [ python ]
+
+parameters:
+-   id: max_frame_length
+    label: Max Frame Length
+    dtype: int
+    default: '330'
+
+inputs:
+-   domain: stream
+    dtype: byte
+
+outputs:
+-   domain: stream
+    dtype: byte
+    label: Frame Payload
+
+templates:
+    imports: from gnuradio import qradiolink
+    make: qradiolink.m17_deframer(max_frame_length=${max_frame_length})
+
+file_format: 1
+

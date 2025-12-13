@@ -18,9 +18,12 @@
 #include "demod_dmr_impl.h"
 #include <gnuradio/io_signature.h>
 #include <cmath>
+#include <typeinfo>
 
 namespace gr {
 namespace qradiolink {
+
+demod_dmr::~demod_dmr() {}
 
 demod_dmr::sptr demod_dmr::make(int sps, int samp_rate)
 {
@@ -99,6 +102,17 @@ demod_dmr_impl::demod_dmr_impl(int sps, int samp_rate)
 }
 
 demod_dmr_impl::~demod_dmr_impl() {}
+
+// Force vtable and typeinfo generation for RTTI
+namespace {
+    const std::type_info& g_demod_dmr_typeinfo = typeid(gr::qradiolink::demod_dmr);
+    __attribute__((used)) static const void* force_demod_dmr_typeinfo = &g_demod_dmr_typeinfo;
+    
+    void* force_vtable_generation() {
+        return const_cast<void*>(static_cast<const void*>(&g_demod_dmr_typeinfo));
+    }
+    __attribute__((used)) static void* vtable_force = force_vtable_generation();
+}
 
 } // namespace qradiolink
 } // namespace gr

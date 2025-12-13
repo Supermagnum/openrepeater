@@ -24,6 +24,7 @@
 #include <gnuradio/digital/descrambler_bb.h>
 #include <gnuradio/filter/rational_resampler.h>
 #include <gnuradio/filter/fft_filter_ccf.h>
+#include <gnuradio/dsss/dsss_decoder_cc.h>
 
 namespace gr {
 namespace qradiolink {
@@ -33,8 +34,7 @@ class demod_dsss_impl : public demod_dsss
 private:
     gr::blocks::complex_to_real::sptr d_complex_to_real;
     gr::analog::agc2_cc::sptr d_agc;
-    // dsss_decoder_cc - using original location
-    // gr::qradiolink::dsss_decoder_cc::sptr d_dsss_decoder;
+    gr::dsss::dsss_decoder_cc::sptr d_dsss_decoder;
     gr::digital::clock_recovery_mm_cc::sptr d_clock_recovery;
     gr::digital::costas_loop_cc::sptr d_costas_freq;
     gr::digital::costas_loop_cc::sptr d_costas_loop;

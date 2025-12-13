@@ -1,0 +1,44 @@
+dudect: Testing gr-linux-crypto encryption timing
+This tests whether encryption timing varies with input patterns
+
+Running encryption timing test...
+(This may take several minutes. Press Ctrl+C to stop early)
+
+meas:    0.49 M, max t:   +1.09, max tau: 1.55e-03, (5/tau)^2: 1.05e+07. For the moment, maybe constant time.
+meas:    1.00 M, max t:   +1.91, max tau: 1.91e-03, (5/tau)^2: 6.82e+06. For the moment, maybe constant time.
+meas:    1.49 M, max t:   +1.13, max tau: 9.30e-04, (5/tau)^2: 2.89e+07. For the moment, maybe constant time.
+meas:    1.99 M, max t:   +1.59, max tau: 1.13e-03, (5/tau)^2: 1.97e+07. For the moment, maybe constant time.
+meas:    2.48 M, max t:   +0.97, max tau: 6.14e-04, (5/tau)^2: 6.63e+07. For the moment, maybe constant time.
+meas:    3.00 M, max t:   +1.23, max tau: 7.10e-04, (5/tau)^2: 4.95e+07. For the moment, maybe constant time.
+meas:    3.48 M, max t:   +1.32, max tau: 7.09e-04, (5/tau)^2: 4.97e+07. For the moment, maybe constant time.
+meas:    3.98 M, max t:   +1.90, max tau: 9.50e-04, (5/tau)^2: 2.77e+07. For the moment, maybe constant time.
+meas:    4.50 M, max t:   +1.36, max tau: 6.43e-04, (5/tau)^2: 6.05e+07. For the moment, maybe constant time.
+Iteration 10: still testing...
+meas:    4.99 M, max t:   +1.63, max tau: 7.31e-04, (5/tau)^2: 4.68e+07. For the moment, maybe constant time.
+meas:    5.50 M, max t:   +2.24, max tau: 9.54e-04, (5/tau)^2: 2.75e+07. For the moment, maybe constant time.
+meas:    6.00 M, max t:   +2.26, max tau: 9.25e-04, (5/tau)^2: 2.92e+07. For the moment, maybe constant time.
+meas:    6.50 M, max t:   +2.30, max tau: 9.02e-04, (5/tau)^2: 3.07e+07. For the moment, maybe constant time.
+meas:    7.00 M, max t:   +1.95, max tau: 7.39e-04, (5/tau)^2: 4.58e+07. For the moment, maybe constant time.
+meas:    7.50 M, max t:   +2.08, max tau: 7.60e-04, (5/tau)^2: 4.33e+07. For the moment, maybe constant time.
+meas:    7.99 M, max t:   +2.05, max tau: 7.23e-04, (5/tau)^2: 4.78e+07. For the moment, maybe constant time.
+meas:    8.49 M, max t:   +1.96, max tau: 6.73e-04, (5/tau)^2: 5.52e+07. For the moment, maybe constant time.
+meas:    8.99 M, max t:   +1.64, max tau: 5.47e-04, (5/tau)^2: 8.34e+07. For the moment, maybe constant time.
+meas:    9.50 M, max t:   +1.69, max tau: 5.49e-04, (5/tau)^2: 8.29e+07. For the moment, maybe constant time.
+Iteration 20: still testing...
+meas:    9.99 M, max t:   +1.89, max tau: 5.97e-04, (5/tau)^2: 7.01e+07. For the moment, maybe constant time.
+meas:   10.49 M, max t:   +1.94, max tau: 5.99e-04, (5/tau)^2: 6.96e+07. For the moment, maybe constant time.
+meas:   10.99 M, max t:   +2.02, max tau: 6.08e-04, (5/tau)^2: 6.76e+07. For the moment, maybe constant time.
+meas:   11.49 M, max t:   +1.96, max tau: 5.79e-04, (5/tau)^2: 7.46e+07. For the moment, maybe constant time.
+meas:   11.99 M, max t:   +1.85, max tau: 5.33e-04, (5/tau)^2: 8.80e+07. For the moment, maybe constant time.
+meas:   12.49 M, max t:   +1.91, max tau: 5.40e-04, (5/tau)^2: 8.58e+07. For the moment, maybe constant time.
+meas:   12.99 M, max t:   +1.87, max tau: 5.20e-04, (5/tau)^2: 9.25e+07. For the moment, maybe constant time.
+meas:   13.49 M, max t:   +2.00, max tau: 5.45e-04, (5/tau)^2: 8.42e+07. For the moment, maybe constant time.
+meas:   13.99 M, max t:   +1.90, max tau: 5.08e-04, (5/tau)^2: 9.67e+07. For the moment, maybe constant time.
+meas:   14.49 M, max t:   +2.09, max tau: 5.50e-04, (5/tau)^2: 8.27e+07. For the moment, maybe constant time.
+Iteration 30: still testing...
+meas:   14.99 M, max t:   +2.01, max tau: 5.18e-04, (5/tau)^2: 9.31e+07. For the moment, maybe constant time.
+meas:   15.49 M, max t:   +1.93, max tau: 4.90e-04, (5/tau)^2: 1.04e+08. For the moment, maybe constant time.
+meas:   15.99 M, max t:   +1.97, max tau: 4.94e-04, (5/tau)^2: 1.03e+08. For the moment, maybe constant time.
+meas:   16.49 M, max t:   +1.92, max tau: 4.72e-04, (5/tau)^2: 1.12e+08. For the moment, maybe constant time.
+meas:   16.99 M, max t:   +2.01, max tau: 4.89e-04, (5/tau)^2: 1.05e+08. For the moment, maybe constant time.
+meas:   17.48 M, max t:   +1.95, max tau: 4.67e-04, (

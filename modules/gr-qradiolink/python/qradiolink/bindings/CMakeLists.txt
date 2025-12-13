@@ -23,6 +23,16 @@ list(
     mod_qpsk_python.cc
     mod_nbfm_python.cc
     mod_dsss_python.cc
+    mod_m17_python.cc
+    mod_dmr_python.cc
+    mod_dpmr_python.cc
+    mod_nxdn_python.cc
+    mod_freedv_python.cc
+    mod_mmdvm_python.cc
+    pocsag_encoder_python.cc
+    dstar_encoder_python.cc
+    ysf_encoder_python.cc
+    p25_encoder_python.cc
     demod_2fsk_python.cc
     demod_am_python.cc
     demod_ssb_python.cc
@@ -34,6 +44,18 @@ list(
     demod_4fsk_python.cc
     demod_dsss_python.cc
     demod_m17_python.cc
+    demod_dmr_python.cc
+    demod_dpmr_python.cc
+    demod_nxdn_python.cc
+    demod_freedv_python.cc
+    demod_mmdvm_multi_python.cc
+    demod_mmdvm_multi2_python.cc
+    pocsag_decoder_python.cc
+    dstar_decoder_python.cc
+    ysf_decoder_python.cc
+    p25_decoder_python.cc
+    rssi_tag_block_python.cc
+    m17_deframer_python.cc
     python_bindings.cc)
 
 pybind11_add_module(qradiolink_python ${qradiolink_python_files})
@@ -49,7 +71,9 @@ target_link_libraries(
     PRIVATE pybind11::pybind11
             Python::Module
             Python::NumPy
+            -Wl,--whole-archive
             gnuradio-qradiolink
+            -Wl,--no-whole-archive
             ${GR_RUNTIME_LIBRARIES}
             ${GR_BLOCKS_LIBRARIES}
             ${GR_FILTER_LIBRARIES}
@@ -62,6 +86,10 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR CMAKE_CXX_COMPILER_ID STREQUAL "GNU"
     target_compile_options(qradiolink_python PRIVATE
         -Wno-unused-variable
         -Wno-error=deprecated-declarations
+    )
+    # Enable detailed pybind11 error messages for debugging registration conflicts
+    target_compile_definitions(qradiolink_python PRIVATE
+        PYBIND11_DETAILED_ERROR_MESSAGES
     )
 endif()
 

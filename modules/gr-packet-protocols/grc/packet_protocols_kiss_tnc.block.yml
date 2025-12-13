@@ -16,6 +16,15 @@ parameters:
     label: Hardware Flow Control
     dtype: bool
     default: 'False'
+-   id: ptt_enabled
+    label: Enable PTT Control
+    dtype: bool
+    default: 'False'
+-   id: ptt_use_dtr
+    label: Use DTR for PTT
+    dtype: bool
+    default: 'False'
+    hide: ${ 'part' if ptt_enabled else 'all' }
 
 inputs:
 -   domain: stream
@@ -24,6 +33,12 @@ inputs:
 outputs:
 -   domain: stream
     dtype: byte
+
+message_ports:
+-   id: negotiation_out
+    label: Negotiation Out
+    direction: output
+    optional: 'True'
 
 templates:
     imports: |-

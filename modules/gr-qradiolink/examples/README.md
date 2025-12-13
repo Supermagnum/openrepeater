@@ -120,9 +120,28 @@ All examples require:
 
 Examples are installed to `${GR_DOC_DIR}/examples/qradiolink` when you build and install the module.
 
+## MMDVM Protocol Blocks
+
+The following MMDVM protocol encoder/decoder blocks are available with GRC block definitions:
+
+- **POCSAG**: `qradiolink_pocsag_encoder`, `qradiolink_pocsag_decoder`
+- **D-STAR**: `qradiolink_dstar_encoder`, `qradiolink_dstar_decoder`
+- **YSF**: `qradiolink_ysf_encoder`, `qradiolink_ysf_decoder`
+- **P25**: `qradiolink_p25_encoder`, `qradiolink_p25_decoder`
+
+These blocks can be used in GNU Radio Companion flowgraphs. See the GRC block definitions in `grc/` for parameter details.
+
+**Example Usage:**
+1. Open GNU Radio Companion
+2. Search for "qradiolink" in the block library
+3. Add the desired encoder or decoder block
+4. Configure parameters (baud rate, address, etc.) as needed
+5. Connect to appropriate sources/sinks (file, SDR, etc.)
+
 ## Notes
 
 - Some blocks (mod_m17, mod_freedv, demod_freedv) don't have GRC block definitions yet, so Python examples are provided for these.
+- MMDVM protocol blocks (POCSAG, D-STAR, YSF, P25) have complete GRC block definitions and can be used directly in flowgraphs.
 - Audio blocks may require proper audio device configuration on your system.
 - File paths in examples use `/tmp/` - adjust as needed for your system.
 - Test signal sources can be replaced with actual audio inputs or SDR sources.

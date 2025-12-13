@@ -16,8 +16,24 @@ The QRadioLink Codeberg page does not mention any crashes or other known issues.
 
 - **Digital Modulations**: 2FSK, 4FSK, GMSK, BPSK, QPSK, DSSS
 - **Analog Modulations**: AM, SSB (USB/LSB), NBFM
-- **Digital Voice**: FreeDV, M17, DMR (Tier I/II/III), MMDVM
+- **Digital Voice**: FreeDV, M17, DMR (Tier I/II/III), dPMR, NXDN, MMDVM
+  - **dPMR**: Digital Private Mobile Radio (ETSI TS 102 658), 2400 baud, 6.25 kHz channel spacing
+  - **NXDN**: Next Generation Digital Narrowband, supports NXDN48 (2400 baud) and NXDN96 (4800 baud) modes
+  - **MMDVM Protocols**: POCSAG, D-STAR, YSF (Yaesu System Fusion), P25 (Phase 1 C4FM)
+    - **POCSAG**: Paging protocol (ITU-R M.584-2) with BCH(31,21) FEC, supports 512/1200/2400 bps
+    - **D-STAR**: Digital Smart Technologies for Amateur Radio with Golay(24,12) FEC
+    - **YSF**: C4FM protocol with Golay(20,8) and Golay(23,12) FEC
+    - **P25**: Project 25 Phase 1 C4FM with BCH(63,16) and Trellis encoding
 - **Supporting Blocks**: Audio source/sink, RSSI, FFT, deframer, CESSB
+
+### Python Bindings
+
+All blocks are available through Python bindings, including:
+- All modulation/demodulation blocks (2FSK, 4FSK, GMSK, BPSK, QPSK, DSSS, AM, SSB, NBFM)
+- All digital voice blocks (FreeDV, M17, DMR, **dPMR**, **NXDN**, MMDVM)
+- Supporting blocks (RSSI, M17 deframer, etc.)
+
+The Python bindings enable use in GNU Radio Companion flowgraphs and Python scripts.
 
 ## Directory Structure
 
@@ -33,7 +49,8 @@ gr-qradiolink/
 │       └── bindings/
 ├── grc/                    # GNU Radio Companion block definitions
 ├── docs/                   # Documentation
-│   └── doxygen/
+│   ├── doxygen/
+│   └── PTT_CONTROL.md      # PTT control with gr-osmosdr
 ├── examples/               # Example flowgraphs
 ├── tests/                  # Unit tests
 └── cmake/                  # CMake modules
@@ -59,8 +76,9 @@ The module includes comprehensive unit tests for all blocks. Tests are run using
 
 ### Test Results
 
-All tests pass successfully:
+All tests pass successfully. See [fuzzing-results/results.md](fuzzing-results/results.md) for detailed test results including MMDVM protocol tests.
 
+**C++ Unit Tests:**
 ```
 100% tests passed, 0 tests failed out of 20
 
@@ -71,9 +89,26 @@ Test Breakdown:
   demodulator tests
 
 Test Coverage:
-- Modulators: 2FSK, 4FSK, AM, GMSK, BPSK, SSB, QPSK, NBFM, DSSS
-- Demodulators: 2FSK, 4FSK, AM, GMSK, BPSK, SSB, QPSK, NBFM, DSSS, WBFM, M17
+- Modulators: 2FSK, 4FSK, AM, GMSK, BPSK, SSB, QPSK, NBFM, DSSS, M17, DMR, dPMR, NXDN
+- Demodulators: 2FSK, 4FSK, AM, GMSK, BPSK, SSB, QPSK, NBFM, DSSS, WBFM, M17, DMR, dPMR, NXDN
 ```
+
+**MMDVM Protocol Tests (Python):**
+```
+41 tests passed, 0 tests failed
+- Protocol validation: 28 tests (all passed)
+  - POCSAG: 10 tests (all passed)
+  - D-STAR: 9 tests (all passed)
+  - YSF: 4 tests (all passed)
+  - P25: 5 tests (all passed)
+- Block integration: 13 tests (all passed)
+  - POCSAG: 4 tests (encoder/decoder creation, output, roundtrip)
+  - D-STAR: 3 tests (encoder/decoder creation, output)
+  - YSF: 3 tests (encoder/decoder creation, output)
+  - P25: 3 tests (encoder/decoder creation, output)
+```
+
+See [fuzzing-results/results.md](fuzzing-results/results.md) for complete MMDVM protocol test results.
 
 ### Running Tests
 
@@ -94,6 +129,14 @@ The module includes comprehensive fuzzing coverage using libFuzzer. See [fuzzing
 - Execution metrics (104+ million executions)
 - Performance analysis
 - Security assessment (0 crashes, 0 memory leaks)
+
+### Python Validation Tests
+
+The module includes Python-based validation tests for all modulation types. See [fuzzing-results/results.md](fuzzing-results/results.md) for validation test results. All digital voice modes (FreeDV, M17, DMR, dPMR, NXDN) now have Python bindings and validation support.
+
+## Documentation
+
+- **[PTT Control Guide](docs/PTT_CONTROL.md)**: Comprehensive guide on controlling PTT (Push-To-Talk) with gr-osmosdr and similar SDR hardware when using gr-qradiolink blocks.
 
 ## License
 

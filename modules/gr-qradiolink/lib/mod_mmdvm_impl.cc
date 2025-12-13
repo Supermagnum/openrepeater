@@ -18,9 +18,12 @@
 #include "mod_mmdvm_impl.h"
 #include <gnuradio/io_signature.h>
 #include <cmath>
+#include <typeinfo>
 
 namespace gr {
 namespace qradiolink {
+
+mod_mmdvm::~mod_mmdvm() {}
 
 mod_mmdvm::sptr mod_mmdvm::make(int sps, int samp_rate, int carrier_freq, int filter_width)
 {
@@ -67,11 +70,32 @@ mod_mmdvm_impl::mod_mmdvm_impl(int sps, int samp_rate, int carrier_freq, int fil
 
 mod_mmdvm_impl::~mod_mmdvm_impl() {}
 
+void mod_mmdvm::set_bb_gain(float value)
+{
+    // Base class implementation - should never be called
+    // Actual implementation is in mod_mmdvm_impl
+    (void)value; // Suppress unused parameter warning
+}
+
 void mod_mmdvm_impl::set_bb_gain(float value)
 {
     d_bb_gain->set_k(value);
 }
 
+
+// Force vtable and typeinfo generation for RTTI
+namespace {
+    void force_rtti_symbols() {
+        const std::type_info& ti = typeid(gr::qradiolink::mod_mmdvm);
+        (void)ti;
+        auto make_func = &gr::qradiolink::mod_mmdvm::make;
+        (void)make_func;
+    }
+    __attribute__((used)) static void (*force_init)() = force_rtti_symbols;
+    
+    const std::type_info& g_mod_mmdvm_typeinfo = typeid(gr::qradiolink::mod_mmdvm);
+    __attribute__((used)) static const void* force_mod_mmdvm_typeinfo = &g_mod_mmdvm_typeinfo;
+}
 
 } // namespace qradiolink
 } // namespace gr

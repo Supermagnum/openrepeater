@@ -22,8 +22,14 @@ install(
           mod_freedv.h
           mod_m17.h
           mod_dmr.h
+          mod_nxdn.h
+          mod_dpmr.h
           mod_mmdvm.h
           mod_mmdvm_multi2.h
+          pocsag_encoder.h
+          dstar_encoder.h
+          ysf_encoder.h
+          p25_encoder.h
           demod_2fsk.h
           demod_am.h
           demod_ssb.h
@@ -37,13 +43,20 @@ install(
           demod_m17.h
           demod_freedv.h
           demod_dmr.h
+          demod_nxdn.h
+          demod_dpmr.h
           demod_mmdvm_multi.h
           demod_mmdvm_multi2.h
+          pocsag_decoder.h
+          dstar_decoder.h
+          ysf_decoder.h
+          p25_decoder.h
           gr_4fsk_discriminator.h
           zero_idle_bursts.h
           mmdvm_source.h
           mmdvm_sink.h
           rssi_tag_block.h
+          m17_deframer.h
           clipper_cc.h
           stretcher_cc.h
     DESTINATION ${GR_INCLUDE_DIR}/gnuradio/qradiolink)

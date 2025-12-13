@@ -16,10 +16,13 @@
 #endif
 #include <gnuradio/qradiolink/mod_freedv.h>
 #include "mod_freedv_impl.h"
+#include <typeinfo>
 #include <gnuradio/io_signature.h>
 
 namespace gr {
 namespace qradiolink {
+
+mod_freedv::~mod_freedv() {}
 
 mod_freedv::sptr mod_freedv::make(int sps, int samp_rate, int carrier_freq, int filter_width, int low_cutoff, int mode, int sb)
 {
@@ -88,6 +91,17 @@ void mod_freedv::set_bb_gain(float value)
 {
     // This should never be called, as mod_freedv is only an interface
     // The actual implementation is in mod_freedv_impl
+}
+
+// Force vtable and typeinfo generation for RTTI
+namespace {
+    const std::type_info& g_mod_freedv_typeinfo = typeid(gr::qradiolink::mod_freedv);
+    __attribute__((used)) static const void* force_mod_freedv_typeinfo = &g_mod_freedv_typeinfo;
+    
+    void* force_vtable_generation() {
+        return const_cast<void*>(static_cast<const void*>(&g_mod_freedv_typeinfo));
+    }
+    __attribute__((used)) static void* vtable_force = force_vtable_generation();
 }
 
 } // namespace qradiolink

@@ -42,6 +42,8 @@ public:
 
     virtual void set_bb_gain(float value);
 
+    virtual ~mod_mmdvm();
+
 protected:
     mod_mmdvm(const std::string& name,
               gr::io_signature::sptr input_signature,

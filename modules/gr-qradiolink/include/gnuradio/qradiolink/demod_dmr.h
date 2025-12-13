@@ -35,6 +35,8 @@ public:
      */
     static sptr make(int sps = 125, int samp_rate = 1000000);
 
+    virtual ~demod_dmr();
+
 protected:
     demod_dmr(const std::string& name,
               gr::io_signature::sptr input_signature,

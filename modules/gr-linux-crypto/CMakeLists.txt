@@ -100,6 +100,12 @@ set(gr_linux_crypto_sources
 if(OPENSSL_FOUND)
     list(APPEND gr_linux_crypto_sources
         lib/brainpool_ec_impl.cc
+        lib/brainpool_ecies_encrypt_impl.cc
+        lib/brainpool_ecies_decrypt_impl.cc
+        lib/brainpool_ecies_multi_encrypt_impl.cc
+        lib/brainpool_ecies_multi_decrypt_impl.cc
+        lib/brainpool_ecdsa_sign_impl.cc
+        lib/brainpool_ecdsa_verify_impl.cc
     )
 endif()
 
@@ -108,6 +114,18 @@ set(gr_linux_crypto_headers
     lib/nitrokey_interface_impl.h
     lib/kernel_crypto_aes_impl.h
 )
+
+if(OPENSSL_FOUND)
+    list(APPEND gr_linux_crypto_headers
+        lib/brainpool_ec_impl.h
+        lib/brainpool_ecies_encrypt_impl.h
+        lib/brainpool_ecies_decrypt_impl.h
+        lib/brainpool_ecies_multi_encrypt_impl.h
+        lib/brainpool_ecies_multi_decrypt_impl.h
+        lib/brainpool_ecdsa_sign_impl.h
+        lib/brainpool_ecdsa_verify_impl.h
+    )
+endif()
 
 ########################################################################
 # Create library
@@ -176,7 +194,20 @@ if(ENABLE_PYTHON)
     
     target_link_libraries(linux_crypto_python PRIVATE
         gnuradio-linux-crypto
-        ${GNURADIO_LIBRARIES}
+        gnuradio-runtime
+        gnuradio-pmt
+    )
+    
+    # Add OpenSSL support to Python bindings if available
+    if(OPENSSL_FOUND)
+        target_link_libraries(linux_crypto_python PRIVATE ${OPENSSL_LIBRARIES})
+        target_compile_definitions(linux_crypto_python PRIVATE HAVE_OPENSSL)
+    endif()
+    
+    # Set RPATH so Python module can find the library
+    set_target_properties(linux_crypto_python PROPERTIES
+        INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib"
+        BUILD_WITH_INSTALL_RPATH TRUE
     )
     
     # Install Python module

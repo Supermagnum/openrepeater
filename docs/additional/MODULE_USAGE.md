@@ -179,12 +179,20 @@ FEC Mode: "RS_16_7"
 
 #### kiss_tnc
 
-**Purpose**: KISS (Keep It Simple, Stupid) TNC interface
+**Purpose**: KISS (Keep It Simple, Stupid) TNC interface with built-in PTT control
 
 **Parameters**:
 - `mode`: "encode" or "decode"
 - `port`: Serial port path (e.g., "/dev/ttyUSB0")
 - `baud_rate`: Serial port baud rate
+- `ptt_enabled`: Enable PTT control (default: false)
+- `ptt_use_dtr`: Use DTR line for PTT instead of RTS (default: false, uses RTS)
+
+**PTT Control Methods**:
+- `set_ptt_enabled(enabled)`: Enable or disable PTT control
+- `set_ptt_use_dtr(use_dtr)`: Use DTR line instead of RTS for PTT
+- `set_ptt(state)`: Manually control PTT (True = key transmitter, False = unkey)
+- `get_ptt()`: Get current PTT state
 
 **Usage Example**:
 ```
@@ -193,12 +201,73 @@ ID: kiss_tnc_0
 Mode: "encode"
 Port: "/dev/ttyUSB0"
 Baud Rate: 9600
+PTT Enabled: True
+PTT Use DTR: False
 ```
+
+**Python Example with PTT Control**:
+```python
+from gnuradio import packet_protocols as pp
+
+# Create KISS TNC with PTT control
+tnc = pp.kiss_tnc(
+    device="/dev/ttyUSB0",
+    baud_rate=9600
+)
+
+# Enable PTT control
+tnc.set_ptt_enabled(True)
+tnc.set_ptt_use_dtr(False)  # Use RTS (default)
+
+# PTT is automatically controlled during transmission
+# Or manually control PTT:
+tnc.set_ptt(True)   # Key transmitter
+tnc.set_ptt(False)  # Unkey transmitter
+```
+
+#### pluto_ptt_control
+
+**Purpose**: PlutoSDR PTT control via IIO GPIO pins
+
+**Parameters**:
+- `pluto_uri`: PlutoSDR URI (e.g., "ip:pluto.local" or "usb:1.2.5")
+- `gpio_pin`: GPIO pin number for PTT (default: 0)
+- `tx_delay_ms`: TX delay in milliseconds (default: 10)
+- `tx_tail_ms`: TX tail in milliseconds (default: 10)
+- `invert`: Invert GPIO logic (default: False)
+
+**Usage Example**:
+```python
+from gnuradio.packet_protocols import pluto_ptt_control
+
+ptt = pluto_ptt_control(
+    pluto_uri="ip:pluto.local",
+    gpio_pin=0,
+    tx_delay_ms=10,
+    tx_tail_ms=10
+)
+
+# Control PTT via message port
+ptt.set_ptt(True)   # Key transmitter
+ptt.set_ptt(False)  # Unkey transmitter
+```
+
+#### Adaptive Features
+
+**link_quality_monitor**: Monitors SNR, BER, and frame error rate in real-time
+
+**adaptive_rate_control**: Automatically adjusts modulation mode based on link quality
+
+**modulation_switch**: Switches between multiple modulation inputs based on control signal
+
+**adaptive_modulator**: Python hierarchical block that automatically switches between modulation modes
+
+See `modules/gr-packet-protocols/examples/` for complete adaptive modulation examples.
 
 ### Python API
 
 ```python
-from gnuradio.packet_protocols import ax25_encoder, ax25_decoder
+from gnuradio.packet_protocols import ax25_encoder, ax25_decoder, kiss_tnc
 
 # Create encoder
 encoder = ax25_encoder(
@@ -210,6 +279,13 @@ encoder = ax25_encoder(
 
 # Create decoder
 decoder = ax25_decoder(check_crc=True, verbose=False)
+
+# Create KISS TNC with PTT control
+tnc = kiss_tnc(
+    device="/dev/ttyUSB0",
+    baud_rate=9600
+)
+tnc.set_ptt_enabled(True)  # Enable automatic PTT control
 ```
 
 ## gr-qradiolink Module
@@ -217,9 +293,13 @@ decoder = ax25_decoder(check_crc=True, verbose=False)
 ### Purpose
 
 Provides digital and analog modulation blocks for radio links:
-- NFM (Narrowband FM) modulation/demodulation
-- Audio processing
-- Signal conditioning
+- **Digital Modulations**: 2FSK, 4FSK, GMSK, BPSK, QPSK, DSSS
+- **Analog Modulations**: AM, SSB (USB/LSB), NBFM
+- **Digital Voice**: FreeDV, M17, DMR (Tier I/II/III), **dPMR**, **NXDN**, MMDVM
+  - **dPMR**: Digital Private Mobile Radio (ETSI TS 102 658), 2400 baud, 6.25 kHz channel spacing
+  - **NXDN**: Next Generation Digital Narrowband, supports NXDN48 (2400 baud) and NXDN96 (4800 baud) modes
+  - **MMDVM Protocols**: POCSAG, D-STAR, YSF (Yaesu System Fusion), P25 (Phase 1 C4FM)
+- **Supporting Blocks**: Audio source/sink, RSSI, FFT, deframer, CESSB
 
 ### Key Blocks
 
@@ -258,6 +338,90 @@ Sample Rate: 48000
 Carrier Frequency: 1700
 Filter Width: 8000
 ```
+
+#### dPMR Modulator/Demodulator
+
+**Purpose**: Digital Private Mobile Radio (ETSI TS 102 658) modulation/demodulation
+
+**Parameters**:
+- `samp_rate`: Sample rate in Hz
+- `baud_rate`: Symbol rate (typically 2400 baud)
+- `channel_spacing`: Channel spacing (6.25 kHz)
+
+**Usage Example**:
+```python
+from gnuradio import qradiolink
+
+# dPMR modulator
+mod_dpmr = qradiolink.mod_dpmr(
+    samp_rate=48000,
+    baud_rate=2400
+)
+
+# dPMR demodulator
+demod_dpmr = qradiolink.demod_dpmr(
+    samp_rate=48000,
+    baud_rate=2400
+)
+```
+
+#### NXDN Modulator/Demodulator
+
+**Purpose**: Next Generation Digital Narrowband modulation/demodulation
+
+**Parameters**:
+- `samp_rate`: Sample rate in Hz
+- `mode`: "NXDN48" (2400 baud) or "NXDN96" (4800 baud)
+
+**Usage Example**:
+```python
+from gnuradio import qradiolink
+
+# NXDN modulator (NXDN48 mode)
+mod_nxdn = qradiolink.mod_nxdn(
+    samp_rate=48000,
+    mode="NXDN48"  # or "NXDN96"
+)
+
+# NXDN demodulator
+demod_nxdn = qradiolink.demod_nxdn(
+    samp_rate=48000,
+    mode="NXDN48"
+)
+```
+
+#### MMDVM Protocol Blocks
+
+**Purpose**: MMDVM (Multi-Mode Digital Voice Modem) protocol support
+
+**Available Protocols**:
+- **POCSAG**: Paging protocol (ITU-R M.584-2) with BCH(31,21) FEC, supports 512/1200/2400 bps
+- **D-STAR**: Digital Smart Technologies for Amateur Radio with Golay(24,12) FEC
+- **YSF**: Yaesu System Fusion (C4FM) with Golay(20,8) and Golay(23,12) FEC
+- **P25**: Project 25 Phase 1 C4FM with BCH(63,16) and Trellis encoding
+
+**Usage Example**:
+```python
+from gnuradio import qradiolink
+
+# POCSAG encoder/decoder
+pocsag_encoder = qradiolink.pocsag_encoder(baud_rate=1200)
+pocsag_decoder = qradiolink.pocsag_decoder(baud_rate=1200)
+
+# D-STAR encoder/decoder
+dstar_encoder = qradiolink.dstar_encoder()
+dstar_decoder = qradiolink.dstar_decoder()
+
+# YSF encoder/decoder
+ysf_encoder = qradiolink.ysf_encoder()
+ysf_decoder = qradiolink.ysf_decoder()
+
+# P25 encoder/decoder
+p25_encoder = qradiolink.p25_encoder()
+p25_decoder = qradiolink.p25_decoder()
+```
+
+**Note**: All MMDVM protocol blocks are available through Python bindings and can be used in GNU Radio Companion flowgraphs.
 
 ## Complete Flowgraph Example
 

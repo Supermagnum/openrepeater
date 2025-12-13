@@ -30,7 +30,8 @@ except ImportError:
     print("Error: gr-qradiolink module not found. Please install it first.")
     sys.exit(1)
 
-class m17_mod_example(gr.top_block, Qt.QWidget):
+
+class M17ModExample(gr.top_block, Qt.QWidget):
     def __init__(self):
         gr.top_block.__init__(self, "M17 Mod Example")
         Qt.QWidget.__init__(self)
@@ -38,7 +39,7 @@ class m17_mod_example(gr.top_block, Qt.QWidget):
         qtgui.util.check_set_qss()
         try:
             self.setWindowIcon(Qt.QIcon.fromTheme('gnuradio-grc'))
-        except:
+        except Exception:
             pass
         self.top_scroll_layout = Qt.QVBoxLayout()
         self.setLayout(self.top_scroll_layout)
@@ -62,7 +63,7 @@ class m17_mod_example(gr.top_block, Qt.QWidget):
         # Audio source (microphone input)
         try:
             self.audio_source = audio.source(audio_rate, '', True)
-        except:
+        except Exception:
             # Fallback to signal source if audio not available
             self.audio_source = analog.sig_source_f(
                 audio_rate, analog.GR_SIN_WAVE, 1000, 0.5, 0, 0)
@@ -114,7 +115,7 @@ class m17_mod_example(gr.top_block, Qt.QWidget):
         self.connect((self.throttle, 0), (self.file_sink, 0))
 
         # Qt GUI
-        self._qtgui_freq_sink_c_0_win = sip.wrapinstance(
+        self._qtgui_freq_sink_c_0_win = sip.wrapinstance(  # type: ignore
             self.qtgui_freq_sink_c_0.qwidget(), Qt.QWidget)
         self.top_grid_layout.addWidget(self._qtgui_freq_sink_c_0_win, 0, 0, 1, 1)
         for r in range(0, 1):
@@ -122,18 +123,18 @@ class m17_mod_example(gr.top_block, Qt.QWidget):
         for c in range(0, 1):
             self.top_grid_layout.setColumnStretch(c, 1)
 
-    def closeEvent(self, event):
+    def closeEvent(self, event):  # noqa: N802
         self.stop()
         self.wait()
         event.accept()
 
 
-def main(top_block_cls=m17_mod_example, options=None):
+def main(top_block_cls=M17ModExample, options=None):
     if sys.platform.startswith('linux'):
         try:
             import x11
             x11.XInitThreads()
-        except:
+        except Exception:
             pass
 
     if StrictVersion("4.5.0") <= StrictVersion(Qt.qVersion()) < StrictVersion("5.0.0"):
@@ -166,10 +167,8 @@ if __name__ == '__main__':
     try:
         from distutils.version import StrictVersion
     except ImportError:
-        from packaging.version import StrictVersion
+        from packaging.version import Version as StrictVersion  # type: ignore
     try:
         import sip
     except ImportError:
-        import PyQt5.sip as sip
-    main()
-
+        import PyQt5.sip as sip  # type: ignore  # noqa: N813

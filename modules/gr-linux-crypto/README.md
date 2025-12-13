@@ -42,6 +42,7 @@ A OOT ( out-of-tree) GNU Radio module that provides **Linux-specific cryptograph
    - [Kernel Keyring as Key Source for gr-openssl](#kernel-keyring-as-key-source-for-gr-openssl)
    - [Hardware Security Module with gr-nacl](#hardware-security-module-with-gr-nacl)
    - [Brainpool Elliptic Curve Cryptography](#brainpool-elliptic-curve-cryptography)
+   - [Multi-Recipient ECIES Encryption](#multi-recipient-ecies-encryption)
    - [How to add a signing frame at the end of a transmission](https://github.com/Supermagnum/gr-linux-crypto/blob/master/examples/SIGNING_VERIFICATION_README.md#adding-a-signature-frame-to-the-end-of-a-transmission)
 11. [Dependencies](#dependencies)
    - [Required](#required)
@@ -60,13 +61,14 @@ A OOT ( out-of-tree) GNU Radio module that provides **Linux-specific cryptograph
     - [Authentication Modes](#authentication-modes)
     - [Battery-Friendly Cryptography](#battery-friendly-cryptography)
 16. [Security & Testing](#security--testing)
-17. [What You Actually Need to Extract/Create](#what-you-actually-need-to-extractcreate)
+17. [Performance & Overhead](#performance--overhead)
+18. [What You Actually Need to Extract/Create](#what-you-actually-need-to-extractcreate)
     - [Native C++ Blocks (Implemented)](#1-native-c-blocks-implemented)
     - [Integration Helpers (Implemented)](#2-integration-helpers-implemented)
     - [GNU Radio Companion Blocks (Implemented)](#3-gnu-radio-companion-blocks-implemented)
-18. [Why This Approach?](#why-this-approach)
-19. [Comparison with Existing Modules](#comparison-with-existing-modules)
-20. [Cryptographic Algorithm Background](#cryptographic-algorithm-background)
+19. [Why This Approach?](#why-this-approach)
+20. [Comparison with Existing Modules](#comparison-with-existing-modules)
+21. [Cryptographic Algorithm Background](#cryptographic-algorithm-background)
     - [Cryptographic Ciphers Influenced by the NSA](#cryptographic-ciphers-influenced-by-the-nsa)
     - [Cryptographic Ciphers NOT Influenced by the NSA](#cryptographic-ciphers-not-influenced-by-the-nsa)
     - [Known Scandals Involving NSA and Cryptography](#known-scandals-involving-nsa-and-cryptography)
@@ -595,7 +597,9 @@ This combines the best of all worlds: proven key exchange (GnuPG), secure storag
 
 Think of it like this:
 - **gr-openssl** = Standard cryptographic operations (AES, RSA, SHA, etc.)
+  - GitHub: https://github.com/Supermagnum/gr-openssl
 - **gr-nacl** = Modern cryptography (X25519, Ed25519, ChaCha20-Poly1305)
+  - GitHub: https://github.com/Supermagnum/gr-nacl
 - **gr-linux-crypto** = Linux-only security infrastructure (kernel keyring, hardware keys, kernel crypto API)
 
 **gr-linux-crypto doesn't duplicate what gr-openssl and gr-nacl already do.** Instead, it provides the "glue" to use Linux-specific security features with those existing modules.
@@ -837,6 +841,8 @@ The `nitrokey_interface` block provides full Nitrokey hardware security module i
 
 ### **Basic OpenSSL Operations (Use gr-openssl)**
 
+**Repository:** https://github.com/Supermagnum/gr-openssl
+
 **What gr-openssl provides:**
 - **Symmetric Encryption**: AES (all key sizes and modes), DES, 3DES, Blowfish, Camellia
 - **Hashing**: SHA-1, SHA-256, SHA-384, SHA-512, MD5
@@ -874,6 +880,8 @@ tb.connect(keyring_src, encryptor)
 **gr-linux-crypto integration**: Provides kernel keyring as secure key source for gr-openssl blocks.
 
 ### **Modern Crypto (NaCl/libsodium) - Use gr-nacl**
+
+**Repository:** https://github.com/Supermagnum/gr-nacl
 
 **What gr-nacl provides:**
 - **Curve25519/X25519**: Elliptic curve Diffie-Hellman key exchange
@@ -1248,12 +1256,87 @@ loaded_private = crypto.load_brainpool_private_key(private_pem)
 
 
 
+**ECIES Encryption/Decryption:**
+
+The module supports ECIES (Elliptic Curve Integrated Encryption Scheme) for both single-recipient and multi-recipient (up to 25 recipients) encryption:
+
+**Python API:**
+```python
+from gr_linux_crypto.multi_recipient_ecies import MultiRecipientECIES
+from gr_linux_crypto.callsign_key_store import CallsignKeyStore
+
+# Single recipient
+ecies = MultiRecipientECIES(curve='brainpoolP256r1', symmetric_cipher='aes-gcm')
+encrypted = ecies.encrypt(b"Message", ['W1ABC'])
+decrypted = ecies.decrypt(encrypted, 'W1ABC', private_key_pem)
+
+# Or use ChaCha20-Poly1305 for battery-friendly encryption
+ecies_chacha = MultiRecipientECIES(curve='brainpoolP256r1', symmetric_cipher='chacha20-poly1305')
+encrypted = ecies_chacha.encrypt(b"Message", ['W1ABC'])
+decrypted = ecies_chacha.decrypt(encrypted, 'W1ABC', private_key_pem)
+
+# Multiple recipients (up to 25)
+recipients = ['W1ABC', 'K2XYZ', 'N3DEF']
+encrypted = ecies.encrypt(b"Message", recipients)
+# Each recipient decrypts with their own private key
+```
+
+**GNU Radio C++ Blocks:**
+```python
+from gnuradio import linux_crypto
+
+# Multi-recipient encrypt block (AES-GCM, default)
+encrypt_block = linux_crypto.brainpool_ecies_multi_encrypt(
+    curve='brainpoolP256r1',
+    callsigns=['W1ABC', 'K2XYZ', 'N3DEF'],
+    key_store_path='',
+    symmetric_cipher='aes-gcm'
+)
+
+# Or use ChaCha20-Poly1305 for battery-friendly encryption
+encrypt_block_chacha = linux_crypto.brainpool_ecies_multi_encrypt(
+    curve='brainpoolP256r1',
+    callsigns=['W1ABC', 'K2XYZ', 'N3DEF'],
+    key_store_path='',
+    symmetric_cipher='chacha20-poly1305'
+)
+
+# Multi-recipient decrypt block
+decrypt_block = linux_crypto.brainpool_ecies_multi_decrypt(
+    curve='brainpoolP256r1',
+    recipient_callsign='W1ABC',
+    recipient_private_key_pem=private_key_pem
+)
+```
+
+**ECDSA Signing/Verification:**
+
+The module provides GNU Radio blocks for ECDSA signing and verification:
+
+```python
+from gnuradio import linux_crypto
+
+# Create signing block
+sign_block = linux_crypto.brainpool_ecdsa_sign(
+    curve='brainpoolP256r1',
+    private_key_pem=private_key_pem,
+    hash_algorithm='sha256'  # sha256, sha384, or sha512
+)
+
+# Create verification block
+verify_block = linux_crypto.brainpool_ecdsa_verify(
+    curve='brainpoolP256r1',
+    public_key_pem=public_key_pem,
+    hash_algorithm='sha256'  # sha256, sha384, or sha512
+)
+```
+
 **OpenSSL Requirements:**
 - Brainpool support requires OpenSSL 1.0.2 or later
 - OpenSSL 3.x provides improved Brainpool support
 - Accessible via standard EVP API for maximum compatibility
 
-See `examples/brainpool_example.py` for a complete demonstration.
+See `examples/brainpool_example.py` for basic operations and `docs/examples.md` for ECIES examples.
 
 ## Dependencies
 
@@ -1275,7 +1358,9 @@ See `examples/brainpool_example.py` for a complete demonstration.
 
 ### Optional
 - **gr-openssl** (for OpenSSL integration)
+  - GitHub: https://github.com/Supermagnum/gr-openssl
 - **gr-nacl** (for modern crypto integration)
+  - GitHub: https://github.com/Supermagnum/gr-nacl
 - **libnitrokey** (for hardware security modules)
 - **TPM libraries** (for TPM support)
 - **OpenSSL development headers** (libssl-dev)
@@ -1470,13 +1555,19 @@ This module provides two distinct types of cryptographic operations:
 **Brainpool Elliptic Curves**
 - **brainpoolP256r1** (256-bit curve)
   - ECDH (Elliptic Curve Diffie-Hellman) key exchange
-  - ECDSA (Elliptic Curve Digital Signature Algorithm) signing/verification
+  - ECDSA (Elliptic Curve Digital Signature Algorithm) signing/verification (GNU Radio blocks available)
+  - ECIES (Elliptic Curve Integrated Encryption Scheme) encryption/decryption
+  - Multi-recipient ECIES (up to 25 recipients)
 - **brainpoolP384r1** (384-bit curve)
   - ECDH key exchange
-  - ECDSA signing/verification
+  - ECDSA signing/verification (GNU Radio blocks available)
+  - ECIES encryption/decryption
+  - Multi-recipient ECIES (up to 25 recipients)
 - **brainpoolP512r1** (512-bit curve)
   - ECDH key exchange
-  - ECDSA signing/verification
+  - ECDSA signing/verification (GNU Radio blocks available)
+  - ECIES encryption/decryption
+  - Multi-recipient ECIES (up to 25 recipients)
 
 ### Key Management
 - Kernel keyring integration (secure key storage)
@@ -1484,6 +1575,7 @@ This module provides two distinct types of cryptographic operations:
 - Key serialization (PEM format)
 - PKCS#7 padding for block ciphers
 - Key derivation: PBKDF2 (password-based), HKDF (RFC 5869 for shared secrets)
+- Callsign-based public key store for radio amateur use
 
 ### Authentication Modes
 - **GCM** (Galois/Counter Mode) - for AES
@@ -1631,15 +1723,377 @@ encryption_key = crypto.derive_key_hkdf(
 **[View Detailed Test Results](tests/TEST_RESULTS.md)**  
 **[View Detailed Fuzzing Results](security/fuzzing/fuzzing-results.md)**
 
+## Performance & Overhead
+
+Understanding the performance overhead of cryptographic operations is crucial for real-time applications. This section provides detailed overhead calculations and examples for common use cases.
+
+### Performance Benchmarks
+
+**Single-Operation Latency (16 bytes, 100,000 iterations):**
+
+| Algorithm | Mean (μs) | p50 (μs) | p95 (μs) | p99 (μs) | Status |
+|-----------|-----------|----------|----------|----------|--------|
+| AES-128-GCM | 8.837 | 8.8 | 9.3 | 12.7 | PASS (<100μs) |
+| AES-256-GCM | 9.279 | 9.0 | 9.3 | 12.8 | PASS (<100μs) |
+| ChaCha20-Poly1305 | 11.525 | 11.2 | 11.8 | 15.2 | PASS (<100μs) |
+
+**Target:** Mean < 100μs  
+**Result:** All algorithms exceed target (9-12μs mean)
+
+**Throughput (Large Data - 4096 bytes):**
+
+| Algorithm | Throughput (MB/s) | Status |
+|-----------|-------------------|--------|
+| AES-128-GCM | ~385 MB/s | PASS |
+| AES-256-GCM | ~385 MB/s | PASS |
+| ChaCha20-Poly1305 | ~200 MB/s | PASS |
+
+**Target:** >10 MB/s  
+**Result:** All algorithms significantly exceed target
+
+### Overhead Calculations
+
+#### Real-Time Voice Applications (M17 Protocol)
+
+**Scenario:** M17 voice frames (16 bytes every 40ms)
+
+**Baseline (No Encryption):**
+- Frame processing time: ~0.001 ms (estimated)
+- Frame time budget: 40 ms
+- Available headroom: 39.999 ms
+
+**With Encryption (AES-256-GCM):**
+- Encryption latency: 0.009 ms (mean)
+- Frame time budget: 40 ms
+- Available headroom: 39.991 ms
+- **Overhead:** 0.009 ms per frame
+- **Overhead percentage:** 0.0225% of frame time budget
+
+**Calculation:**
+```
+Overhead = Encryption latency / Frame time budget
+Overhead = 0.009 ms / 40 ms = 0.000225 = 0.0225%
+```
+
+**With Encryption (ChaCha20-Poly1305):**
+- Encryption latency: 0.012 ms (mean)
+- Frame time budget: 40 ms
+- Available headroom: 39.988 ms
+- **Overhead:** 0.012 ms per frame
+- **Overhead percentage:** 0.03% of frame time budget
+
+**Example: 1 minute of voice transmission**
+- Total frames: 60 seconds / 0.040 seconds = 1,500 frames
+- Total encryption overhead (AES-256-GCM): 1,500 × 0.009 ms = 13.5 ms
+- Total encryption overhead (ChaCha20-Poly1305): 1,500 × 0.012 ms = 18 ms
+- **Impact:** Negligible (< 0.02 seconds total overhead for 1 minute of audio)
+
+#### Bulk Data Transfer
+
+**Scenario:** Encrypting 1 MB of data
+
+**Baseline (No Encryption):**
+- Transfer time: Variable (depends on bandwidth)
+- Processing overhead: ~0 ms
+
+**With Encryption (AES-256-GCM):**
+- Data size: 1 MB = 1,048,576 bytes
+- Throughput: 385 MB/s
+- Encryption time: 1,048,576 bytes / (385 MB/s × 1,048,576 bytes/MB) = 0.0026 seconds = 2.6 ms
+- **Overhead:** 2.6 ms per MB
+
+**With Encryption (ChaCha20-Poly1305):**
+- Throughput: 200 MB/s
+- Encryption time: 1,048,576 bytes / (200 MB/s × 1,048,576 bytes/MB) = 0.005 seconds = 5 ms
+- **Overhead:** 5 ms per MB
+
+**Example: 100 MB file transfer**
+- AES-256-GCM overhead: 100 MB × 2.6 ms/MB = 260 ms = 0.26 seconds
+- ChaCha20-Poly1305 overhead: 100 MB × 5 ms/MB = 500 ms = 0.5 seconds
+- **Impact:** Minimal overhead for bulk transfers
+
+#### Frame Size Impact on Overhead
+
+**Small Frames (16 bytes - M17 voice):**
+- AES-256-GCM: 0.009 ms (0.0225% of 40ms budget)
+- ChaCha20-Poly1305: 0.012 ms (0.03% of 40ms budget)
+- **Conclusion:** Overhead is negligible for small frames
+
+**Medium Frames (256 bytes):**
+- AES-256-GCM: ~0.15 ms (estimated)
+- ChaCha20-Poly1305: ~0.20 ms (estimated)
+- **Conclusion:** Still minimal overhead for real-time applications
+
+**Large Frames (4096 bytes):**
+- AES-256-GCM: ~2.6 ms (for 4096 bytes at 385 MB/s)
+- ChaCha20-Poly1305: ~5 ms (for 4096 bytes at 200 MB/s)
+- **Conclusion:** Overhead increases with frame size but remains acceptable
+
+#### Digital Signature Overhead
+
+Digital signatures add bytes to your data but do not encrypt it. Understanding signature size is crucial for protocol design and bandwidth planning.
+
+**Signature Sizes by Algorithm:**
+
+| Algorithm | Curve/Type | Signature Size | Format |
+|-----------|------------|----------------|--------|
+| Ed25519 | Ed25519 | 64 bytes | Fixed size |
+| ECDSA | BrainpoolP256r1 | 70-72 bytes | DER encoded |
+| ECDSA | BrainpoolP384r1 | 104-106 bytes | DER encoded |
+| ECDSA | BrainpoolP512r1 | 136-138 bytes | DER encoded |
+
+**Note:** ECDSA signatures use DER encoding, which adds 6-8 bytes of overhead to the raw signature (r and s components). Actual size may vary slightly based on the values of r and s.
+
+**Example: M17 Voice Frame with Signature**
+
+**Scenario:** Signing M17 voice frames (16 bytes) with Ed25519
+
+**Without Signature:**
+- Frame size: 16 bytes
+- Total transmission: 16 bytes
+
+**With Ed25519 Signature:**
+- Frame size: 16 bytes
+- Signature size: 64 bytes
+- Total transmission: 80 bytes
+- **Overhead:** 64 bytes (400% increase in frame size)
+
+**Calculation:**
+```
+Overhead = Signature size / Original frame size
+Overhead = 64 bytes / 16 bytes = 4.0 = 400%
+```
+
+**Example: M17 Voice Frame with BrainpoolP256r1 ECDSA Signature**
+
+**Without Signature:**
+- Frame size: 16 bytes
+- Total transmission: 16 bytes
+
+**With BrainpoolP256r1 ECDSA Signature:**
+- Frame size: 16 bytes
+- Signature size: 72 bytes (typical DER encoded)
+- Total transmission: 88 bytes
+- **Overhead:** 72 bytes (450% increase in frame size)
+
+**Example: Larger Frame (256 bytes) with Ed25519 Signature**
+
+**Without Signature:**
+- Frame size: 256 bytes
+- Total transmission: 256 bytes
+
+**With Ed25519 Signature:**
+- Frame size: 256 bytes
+- Signature size: 64 bytes
+- Total transmission: 320 bytes
+- **Overhead:** 64 bytes (25% increase in frame size)
+
+**Calculation:**
+```
+Overhead percentage = (Signature size / Original frame size) × 100
+Overhead percentage = (64 / 256) × 100 = 25%
+```
+
+**Example: 1 Minute of M17 Voice with Signatures**
+
+**Given:**
+- Frame size: 16 bytes
+- Frame rate: 25 frames/second
+- Duration: 60 seconds
+- Signature algorithm: Ed25519 (64 bytes)
+
+**Without Signatures:**
+- Total frames: 60 × 25 = 1,500 frames
+- Total data: 1,500 × 16 = 24,000 bytes = 24 KB
+
+**With Signatures:**
+- Total frames: 1,500 frames
+- Data per frame: 16 bytes
+- Signature per frame: 64 bytes
+- Total data: 1,500 × (16 + 64) = 120,000 bytes = 120 KB
+- **Overhead:** 96 KB (400% increase)
+
+**Bandwidth Impact:**
+- Without signatures: 24 KB/minute = 400 bytes/second
+- With signatures: 120 KB/minute = 2,000 bytes/second
+- **Additional bandwidth:** 1,600 bytes/second
+
+**Example: Comparing Signature Algorithms for Protocol Design**
+
+**Scenario:** Choosing signature algorithm for a protocol with 32-byte frames
+
+| Algorithm | Signature Size | Total Frame Size | Overhead % |
+|-----------|----------------|------------------|------------|
+| Ed25519 | 64 bytes | 96 bytes | 200% |
+| BrainpoolP256r1 | 72 bytes | 104 bytes | 225% |
+| BrainpoolP384r1 | 106 bytes | 138 bytes | 331% |
+| BrainpoolP512r1 | 138 bytes | 170 bytes | 431% |
+
+**Recommendation:** For small frames, Ed25519 provides the smallest signature overhead. For larger frames (> 128 bytes), the difference becomes less significant.
+
+**Signature Overhead Summary:**
+
+| Original Frame Size | Ed25519 Overhead | BrainpoolP256r1 Overhead | Overhead % (Ed25519) | Overhead % (P256r1) |
+|---------------------|------------------|--------------------------|----------------------|---------------------|
+| 16 bytes | +64 bytes | +72 bytes | 400% | 450% |
+| 32 bytes | +64 bytes | +72 bytes | 200% | 225% |
+| 64 bytes | +64 bytes | +72 bytes | 100% | 112.5% |
+| 128 bytes | +64 bytes | +72 bytes | 50% | 56.25% |
+| 256 bytes | +64 bytes | +72 bytes | 25% | 28.125% |
+| 512 bytes | +64 bytes | +72 bytes | 12.5% | 14.06% |
+| 1024 bytes | +64 bytes | +72 bytes | 6.25% | 7.03% |
+
+**Key Takeaways:**
+- Signature overhead is **fixed size** (64-138 bytes depending on algorithm)
+- Overhead percentage **decreases** as frame size increases
+- For small frames (< 64 bytes), signature overhead is significant (100%+)
+- For larger frames (> 256 bytes), signature overhead becomes minimal (< 30%)
+- Ed25519 provides the smallest signature size (64 bytes) for most use cases
+
+**Best Practices:**
+- **Small frames (< 64 bytes):** Consider signing every N frames instead of every frame to reduce overhead
+- **Medium frames (64-256 bytes):** Signing every frame is acceptable (25-100% overhead)
+- **Large frames (> 256 bytes):** Signing every frame adds minimal overhead (< 30%)
+- **Protocol design:** Include signature size in frame format specifications
+
+### Overhead Calculation Examples
+
+#### Example 1: Calculating Overhead for Custom Frame Size
+
+**Given:**
+- Frame size: 128 bytes
+- Frame rate: 25 frames/second (40ms per frame)
+- Algorithm: AES-256-GCM
+
+**Step 1: Calculate encryption latency**
+```
+Throughput = 385 MB/s = 385 × 1,048,576 bytes/second
+Time per byte = 1 / (385 × 1,048,576) seconds
+Time for 128 bytes = 128 / (385 × 1,048,576) seconds
+                 = 0.000317 seconds = 0.317 ms
+```
+
+**Step 2: Calculate overhead percentage**
+```
+Frame time budget = 40 ms
+Overhead = 0.317 ms
+Overhead percentage = (0.317 / 40) × 100 = 0.79%
+```
+
+**Result:** 0.79% overhead per frame
+
+#### Example 2: Calculating Total Overhead for Transmission Session
+
+**Given:**
+- Transmission duration: 5 minutes = 300 seconds
+- Frame size: 16 bytes (M17 voice)
+- Frame rate: 25 frames/second
+- Algorithm: ChaCha20-Poly1305
+
+**Step 1: Calculate total frames**
+```
+Total frames = 300 seconds × 25 frames/second = 7,500 frames
+```
+
+**Step 2: Calculate total encryption overhead**
+```
+Overhead per frame = 0.012 ms
+Total overhead = 7,500 × 0.012 ms = 90 ms = 0.09 seconds
+```
+
+**Step 3: Calculate overhead percentage**
+```
+Total transmission time = 300 seconds
+Overhead percentage = (0.09 / 300) × 100 = 0.03%
+```
+
+**Result:** 0.09 seconds total overhead (0.03% of transmission time)
+
+#### Example 3: Comparing Algorithms for Battery-Powered Device
+
+**Given:**
+- Device: Battery-powered SDR device
+- Frame size: 16 bytes
+- Frame rate: 25 frames/second
+- Battery life target: 8 hours continuous operation
+
+**Calculate overhead for each algorithm:**
+
+**AES-256-GCM:**
+- Overhead per frame: 0.009 ms
+- Frames per hour: 25 × 3600 = 90,000 frames
+- Overhead per hour: 90,000 × 0.009 ms = 810 ms = 0.81 seconds
+- Overhead for 8 hours: 8 × 0.81 = 6.48 seconds
+
+**ChaCha20-Poly1305:**
+- Overhead per frame: 0.012 ms
+- Overhead per hour: 90,000 × 0.012 ms = 1,080 ms = 1.08 seconds
+- Overhead for 8 hours: 8 × 1.08 = 8.64 seconds
+
+**Difference:** 8.64 - 6.48 = 2.16 seconds over 8 hours
+
+**Conclusion:** Both algorithms have negligible impact on battery life. Choose based on other factors (algorithm diversity, hardware acceleration availability).
+
+### Performance Recommendations
+
+**For Real-Time Voice (M17, Codec2, etc.):**
+- **Recommended:** AES-256-GCM or ChaCha20-Poly1305
+- **Reason:** Both provide < 0.03% overhead per frame
+- **Frame size:** 16-32 bytes typical
+- **Latency impact:** Negligible (< 0.02 ms per frame)
+
+**For Bulk Data Transfer:**
+- **Recommended:** AES-256-GCM (higher throughput)
+- **Reason:** 385 MB/s vs 200 MB/s for ChaCha20-Poly1305
+- **Frame size:** 1024+ bytes typical
+- **Latency impact:** Minimal (2-5 ms per MB)
+
+**For Battery-Powered Devices:**
+- **Recommended:** ChaCha20-Poly1305 + BrainpoolP256r1
+- **Reason:** Software-optimized, no hardware acceleration required
+- **See:** [Battery-Friendly Cryptography](#battery-friendly-cryptography) section
+
+**For Maximum Performance:**
+- **Recommended:** AES-256-GCM with hardware acceleration (AES-NI)
+- **Reason:** Highest throughput when hardware acceleration available
+- **Note:** Requires CPU with AES-NI support (Intel/AMD x86_64)
+
+### Overhead Summary
+
+| Use Case | Frame Size | Algorithm | Overhead per Frame | Overhead % |
+|----------|------------|-----------|-------------------|------------|
+| M17 Voice | 16 bytes | AES-256-GCM | 0.009 ms | 0.0225% |
+| M17 Voice | 16 bytes | ChaCha20-Poly1305 | 0.012 ms | 0.03% |
+| Medium Data | 256 bytes | AES-256-GCM | ~0.15 ms | ~0.38% |
+| Medium Data | 256 bytes | ChaCha20-Poly1305 | ~0.20 ms | ~0.5% |
+| Bulk Data | 4096 bytes | AES-256-GCM | ~2.6 ms | ~6.5% |
+| Bulk Data | 4096 bytes | ChaCha20-Poly1305 | ~5 ms | ~12.5% |
+
+**Key Takeaways:**
+- Overhead is negligible for small frames (< 1% for frames < 256 bytes)
+- Overhead increases with frame size but remains acceptable
+- Real-time voice applications experience < 0.1% overhead
+- Bulk data transfers add minimal latency (< 5 ms per MB)
+- **Digital signatures add fixed-size overhead (64-138 bytes)** - see [Digital Signature Overhead](#digital-signature-overhead) section for details
+
+**Note:** The overhead table above shows **encryption latency overhead**. For **signature size overhead** (bytes added to frame), see the [Digital Signature Overhead](#digital-signature-overhead) section above.
+
+For detailed performance test results, see [TEST_RESULTS.md](tests/TEST_RESULTS.md#performance-benchmarks).
+
 ## What You Actually Need to Extract/Create
 
 ### 1. **Native C++ Blocks** (Implemented)
 ```
 Blocks implemented:
-- kernel_keyring_source    # Load key from kernel keyring (source only)
-- kernel_crypto_aes         # AES encryption via kernel crypto API
-- nitrokey_interface        # Access Nitrokey via libnitrokey
-- brainpool_ec              # Brainpool elliptic curve operations (ECDH, ECDSA)
+- kernel_keyring_source          # Load key from kernel keyring (source only)
+- kernel_crypto_aes              # AES encryption via kernel crypto API
+- nitrokey_interface             # Access Nitrokey via libnitrokey
+- brainpool_ecies_encrypt        # ECIES encryption (single recipient)
+- brainpool_ecies_decrypt        # ECIES decryption (single recipient)
+- brainpool_ecies_multi_encrypt  # ECIES encryption (multi-recipient, up to 25)
+- brainpool_ecies_multi_decrypt  # ECIES decryption (multi-recipient)
+- brainpool_ecdsa_sign           # ECDSA signing
+- brainpool_ecdsa_verify         # ECDSA verification
 ```
 
 **Note:** `keyring_key_sink` and `tpm_interface` are mentioned in design but not yet implemented.

@@ -27,6 +27,14 @@
 #include <gnuradio/linux_crypto/kernel_keyring_source.h>
 #include <gnuradio/linux_crypto/nitrokey_interface.h>
 #include <gnuradio/linux_crypto/kernel_crypto_aes.h>
+#ifdef HAVE_OPENSSL
+#include <gnuradio/linux_crypto/brainpool_ecies_encrypt.h>
+#include <gnuradio/linux_crypto/brainpool_ecies_decrypt.h>
+#include <gnuradio/linux_crypto/brainpool_ecies_multi_encrypt.h>
+#include <gnuradio/linux_crypto/brainpool_ecies_multi_decrypt.h>
+#include <gnuradio/linux_crypto/brainpool_ecdsa_sign.h>
+#include <gnuradio/linux_crypto/brainpool_ecdsa_verify.h>
+#endif
 
 namespace py = pybind11;
 
@@ -91,6 +99,122 @@ void bind_kernel_crypto_aes(py::module& m)
         .def("get_supported_key_sizes", &kernel_crypto_aes::get_supported_key_sizes);
 }
 
+#ifdef HAVE_OPENSSL
+void bind_brainpool_ecies_encrypt(py::module& m)
+{
+    using brainpool_ecies_encrypt = gr::linux_crypto::brainpool_ecies_encrypt;
+
+    py::class_<brainpool_ecies_encrypt, gr::sync_block, std::shared_ptr<brainpool_ecies_encrypt>>(
+        m, "brainpool_ecies_encrypt")
+        .def(py::init(&brainpool_ecies_encrypt::make),
+             py::arg("curve") = "brainpoolP256r1",
+             py::arg("recipient_public_key_pem") = "",
+             py::arg("kdf_info") = "gr-linux-crypto-ecies-v1")
+        .def("set_recipient_public_key", &brainpool_ecies_encrypt::set_recipient_public_key)
+        .def("get_recipient_public_key", &brainpool_ecies_encrypt::get_recipient_public_key)
+        .def("set_kdf_info", &brainpool_ecies_encrypt::set_kdf_info)
+        .def("get_kdf_info", &brainpool_ecies_encrypt::get_kdf_info)
+        .def("get_curve", &brainpool_ecies_encrypt::get_curve);
+}
+
+void bind_brainpool_ecies_decrypt(py::module& m)
+{
+    using brainpool_ecies_decrypt = gr::linux_crypto::brainpool_ecies_decrypt;
+
+    py::class_<brainpool_ecies_decrypt, gr::sync_block, std::shared_ptr<brainpool_ecies_decrypt>>(
+        m, "brainpool_ecies_decrypt")
+        .def(py::init(&brainpool_ecies_decrypt::make),
+             py::arg("curve") = "brainpoolP256r1",
+             py::arg("recipient_private_key_pem") = "",
+             py::arg("private_key_password") = "",
+             py::arg("kdf_info") = "gr-linux-crypto-ecies-v1")
+        .def("set_recipient_private_key", &brainpool_ecies_decrypt::set_recipient_private_key,
+             py::arg("private_key_pem"), py::arg("password") = "")
+        .def("is_private_key_loaded", &brainpool_ecies_decrypt::is_private_key_loaded)
+        .def("set_kdf_info", &brainpool_ecies_decrypt::set_kdf_info)
+        .def("get_kdf_info", &brainpool_ecies_decrypt::get_kdf_info)
+        .def("get_curve", &brainpool_ecies_decrypt::get_curve);
+}
+
+void bind_brainpool_ecies_multi_encrypt(py::module& m)
+{
+    using brainpool_ecies_multi_encrypt = gr::linux_crypto::brainpool_ecies_multi_encrypt;
+
+    py::class_<brainpool_ecies_multi_encrypt, gr::sync_block, std::shared_ptr<brainpool_ecies_multi_encrypt>>(
+        m, "brainpool_ecies_multi_encrypt")
+        .def(py::init(&brainpool_ecies_multi_encrypt::make),
+             py::arg("curve") = "brainpoolP256r1",
+             py::arg("callsigns") = std::vector<std::string>(),
+             py::arg("key_store_path") = "",
+             py::arg("kdf_info") = "gr-linux-crypto-ecies-v1",
+             py::arg("symmetric_cipher") = "aes-gcm")
+        .def("set_callsigns", &brainpool_ecies_multi_encrypt::set_callsigns)
+        .def("get_callsigns", &brainpool_ecies_multi_encrypt::get_callsigns)
+        .def("add_callsign", &brainpool_ecies_multi_encrypt::add_callsign)
+        .def("remove_callsign", &brainpool_ecies_multi_encrypt::remove_callsign)
+        .def("set_kdf_info", &brainpool_ecies_multi_encrypt::set_kdf_info)
+        .def("get_kdf_info", &brainpool_ecies_multi_encrypt::get_kdf_info)
+        .def("get_curve", &brainpool_ecies_multi_encrypt::get_curve)
+        .def_readonly_static("MAX_RECIPIENTS", &brainpool_ecies_multi_encrypt::MAX_RECIPIENTS);
+}
+
+void bind_brainpool_ecies_multi_decrypt(py::module& m)
+{
+    using brainpool_ecies_multi_decrypt = gr::linux_crypto::brainpool_ecies_multi_decrypt;
+
+    py::class_<brainpool_ecies_multi_decrypt, gr::sync_block, std::shared_ptr<brainpool_ecies_multi_decrypt>>(
+        m, "brainpool_ecies_multi_decrypt")
+        .def(py::init(&brainpool_ecies_multi_decrypt::make),
+             py::arg("curve") = "brainpoolP256r1",
+             py::arg("recipient_callsign") = "",
+             py::arg("recipient_private_key_pem") = "",
+             py::arg("private_key_password") = "",
+             py::arg("kdf_info") = "gr-linux-crypto-ecies-v1")
+        .def("set_recipient_callsign", &brainpool_ecies_multi_decrypt::set_recipient_callsign)
+        .def("get_recipient_callsign", &brainpool_ecies_multi_decrypt::get_recipient_callsign)
+        .def("set_recipient_private_key", &brainpool_ecies_multi_decrypt::set_recipient_private_key,
+             py::arg("private_key_pem"), py::arg("password") = "")
+        .def("is_private_key_loaded", &brainpool_ecies_multi_decrypt::is_private_key_loaded)
+        .def("set_kdf_info", &brainpool_ecies_multi_decrypt::set_kdf_info)
+        .def("get_kdf_info", &brainpool_ecies_multi_decrypt::get_kdf_info)
+        .def("get_curve", &brainpool_ecies_multi_decrypt::get_curve);
+}
+
+void bind_brainpool_ecdsa_sign(py::module& m)
+{
+    using brainpool_ecdsa_sign = gr::linux_crypto::brainpool_ecdsa_sign;
+
+    py::class_<brainpool_ecdsa_sign, gr::sync_block, std::shared_ptr<brainpool_ecdsa_sign>>(
+        m, "brainpool_ecdsa_sign")
+        .def(py::init(&brainpool_ecdsa_sign::make),
+             py::arg("curve") = "brainpoolP256r1",
+             py::arg("private_key_pem") = "",
+             py::arg("hash_algorithm") = "sha256")
+        .def("set_private_key", &brainpool_ecdsa_sign::set_private_key)
+        .def("get_private_key", &brainpool_ecdsa_sign::get_private_key)
+        .def("set_hash_algorithm", &brainpool_ecdsa_sign::set_hash_algorithm)
+        .def("get_hash_algorithm", &brainpool_ecdsa_sign::get_hash_algorithm)
+        .def("get_curve", &brainpool_ecdsa_sign::get_curve);
+}
+
+void bind_brainpool_ecdsa_verify(py::module& m)
+{
+    using brainpool_ecdsa_verify = gr::linux_crypto::brainpool_ecdsa_verify;
+
+    py::class_<brainpool_ecdsa_verify, gr::sync_block, std::shared_ptr<brainpool_ecdsa_verify>>(
+        m, "brainpool_ecdsa_verify")
+        .def(py::init(&brainpool_ecdsa_verify::make),
+             py::arg("curve") = "brainpoolP256r1",
+             py::arg("public_key_pem") = "",
+             py::arg("hash_algorithm") = "sha256")
+        .def("set_public_key", &brainpool_ecdsa_verify::set_public_key)
+        .def("get_public_key", &brainpool_ecdsa_verify::get_public_key)
+        .def("set_hash_algorithm", &brainpool_ecdsa_verify::set_hash_algorithm)
+        .def("get_hash_algorithm", &brainpool_ecdsa_verify::get_hash_algorithm)
+        .def("get_curve", &brainpool_ecdsa_verify::get_curve);
+}
+#endif
+
 PYBIND11_MODULE(linux_crypto_python, m)
 {
     m.doc() = "GNU Radio Linux Crypto Python bindings";
@@ -99,6 +223,14 @@ PYBIND11_MODULE(linux_crypto_python, m)
     bind_kernel_keyring_source(m);
     bind_nitrokey_interface(m);
     bind_kernel_crypto_aes(m);
+#ifdef HAVE_OPENSSL
+    bind_brainpool_ecies_encrypt(m);
+    bind_brainpool_ecies_decrypt(m);
+    bind_brainpool_ecies_multi_encrypt(m);
+    bind_brainpool_ecies_multi_decrypt(m);
+    bind_brainpool_ecdsa_sign(m);
+    bind_brainpool_ecdsa_verify(m);
+#endif
 
     // Add module-level functions
     m.def("get_integration_status", []() {

@@ -10,7 +10,6 @@ set -e
 FUZZ_DURATION=21600  # 6 hours in seconds
 BUILD_DIR="${BUILD_DIR:-build-fuzz}"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-HARNESSES_DIR="${SCRIPT_DIR}/harnesses"
 CORPUS_BASE_DIR="${SCRIPT_DIR}/corpus"
 RESULTS_DIR="${SCRIPT_DIR}/results_$(date +%Y%m%d_%H%M%S)"
 FUZZER_BIN_DIR="${SCRIPT_DIR}/../${BUILD_DIR}/fuzzing/harnesses"
@@ -24,7 +23,7 @@ AVAILABLE_CORES="${AVAILABLE_CORES:-15}"
 JOBS_PER_FUZZER="${JOBS_PER_FUZZER:-1}"  # Jobs per fuzzer (1 = no parallel workers within fuzzer)
 
 # Fuzzers that need longer timeout due to FFT filter initialization
-FUZZERS_LONG_TIMEOUT=("fuzz_demod_2fsk" "fuzz_demod_bpsk" "fuzz_demod_qpsk")
+FUZZERS_LONG_TIMEOUT=("fuzz_demod_2fsk" "fuzz_demod_bpsk" "fuzz_demod_qpsk" "fuzz_demod_gmsk" "fuzz_demod_dsss")
 LONG_TIMEOUT=30  # seconds
 STANDARD_TIMEOUT=10  # seconds
 
@@ -52,6 +51,9 @@ FUZZERS=(
     "fuzz_demod_qpsk"
     "fuzz_clipper_cc"
     "fuzz_dsss_encoder"
+    "fuzz_m17_deframer"
+    "fuzz_demod_gmsk"
+    "fuzz_demod_dsss"
 )
 
 # Create results directories

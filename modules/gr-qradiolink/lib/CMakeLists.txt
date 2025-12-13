@@ -21,12 +21,18 @@ set(gr_qradiolink_sources
     mod_qpsk_impl.cc
     mod_nbfm_impl.cc
     mod_dsss_impl.cc
-    ../../qradiolink/src/gr/dsss_encoder_bb_impl.cc
+    dsss_encoder_bb_impl.cc
     mod_freedv_impl.cc
     mod_m17_impl.cc
     mod_dmr_impl.cc
+    mod_nxdn_impl.cc
+    mod_dpmr_impl.cc
     mod_mmdvm_impl.cc
     mod_mmdvm_multi2_impl.cc
+    pocsag_encoder_impl.cc
+    dstar_encoder_impl.cc
+    ysf_encoder_impl.cc
+    p25_encoder_impl.cc
     # demodulators
     demod_2fsk_impl.cc
     demod_am_impl.cc
@@ -38,19 +44,26 @@ set(gr_qradiolink_sources
     demod_gmsk_impl.cc
     demod_4fsk_impl.cc
     demod_dsss_impl.cc
-    ../../qradiolink/src/gr/dsss_decoder_cc_impl.cc
-    ../../qradiolink/src/gr/emphasis.cpp
+    dsss_decoder_cc_impl.cc
+    ../../src/gr/emphasis.cpp
     demod_m17_impl.cc
     demod_freedv_impl.cc
     demod_dmr_impl.cc
+    demod_nxdn_impl.cc
+    demod_dpmr_impl.cc
     demod_mmdvm_multi_impl.cc
     demod_mmdvm_multi2_impl.cc
+    pocsag_decoder_impl.cc
+    dstar_decoder_impl.cc
+    ysf_decoder_impl.cc
+    p25_decoder_impl.cc
     # Supporting blocks
     gr_4fsk_discriminator_impl.cc
     zero_idle_bursts_impl.cc
     mmdvm_source_impl.cc
     mmdvm_sink_impl.cc
     rssi_tag_block_impl.cc
+    m17_deframer_impl.cc
     # Supporting blocks (CESSB)
     clipper_cc_impl.cc
     stretcher_cc_impl.cc
@@ -101,20 +114,25 @@ target_include_directories(
     ${GR_ANALOG_INCLUDE_DIRS}
     ${GR_FEC_INCLUDE_DIRS}
     ${GR_VOCODER_INCLUDE_DIRS}
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../src  # For src/gr/emphasis.h
 )
 
 target_include_directories(
     gnuradio-qradiolink
     PUBLIC $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
     PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../include>
+    PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../include/gnuradio/dsss> # For DSSS blocks
     PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../qradiolink/src/gr/cessb> # For CESSB blocks
-    PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../qradiolink/src/gr> # For DSSS blocks and zero_idle_bursts
-    PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../qradiolink> # For src/bursttimer.h (project root)
+    PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../qradiolink/src/gr> # For zero_idle_bursts
+        PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../qradiolink> # For src/bursttimer.h (project root)
+        PUBLIC $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/src> # For src/gr/emphasis.h
 )
 
-if(BUILD_SHARED_LIBS)
-    gr_library_foo(gnuradio-qradiolink)
-endif()
+# Note: gr_library_foo requires targetConfig.cmake.in template which is not present
+# For shared library builds, the library will still work without it
+# if(BUILD_SHARED_LIBS)
+#     gr_library_foo(gnuradio-qradiolink)
+# endif()
 
 ########################################################################
 # QA C++ Code (if needed)

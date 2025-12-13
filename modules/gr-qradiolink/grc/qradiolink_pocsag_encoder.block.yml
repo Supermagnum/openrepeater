@@ -1,0 +1,39 @@
+id: qradiolink_pocsag_encoder
+label: POCSAG Encoder
+category: '[QRadioLink]'
+flags: [ python ]
+
+parameters:
+-   id: baud_rate
+    label: Baud Rate
+    dtype: int
+    default: '1200'
+    options: [512, 1200, 2400]
+    option_labels: ['512 bps', '1200 bps', '2400 bps']
+
+-   id: address
+    label: Address (21 bits)
+    dtype: int
+    default: '0'
+
+-   id: function_bits
+    label: Function Bits (0-3)
+    dtype: int
+    default: '0'
+
+inputs:
+-   domain: stream
+    dtype: byte
+    label: Message
+
+outputs:
+-   domain: stream
+    dtype: byte
+    label: POCSAG Bits
+
+templates:
+    imports: from gnuradio import qradiolink
+    make: qradiolink.pocsag_encoder(baud_rate=${baud_rate}, address=${address}, function_bits=${function_bits})
+
+file_format: 1
+

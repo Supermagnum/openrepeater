@@ -42,7 +42,7 @@ EOF
 
 # Read config if available
 if [ -f "${RESULTS_DIR}/config.txt" ]; then
-    cat "${RESULTS_DIR}/config.txt" | sed 's/^/- /' >> "${RESULTS_MD_FILE}"
+    sed 's/^/- /' "${RESULTS_DIR}/config.txt" >> "${RESULTS_MD_FILE}"
 fi
 
 cat >> "${RESULTS_MD_FILE}" << EOF
